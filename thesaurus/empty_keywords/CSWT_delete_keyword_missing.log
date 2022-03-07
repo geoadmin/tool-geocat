@@ -1,0 +1,1299 @@
+2021-08-18 13:31:03|   0.1|  0.1|INFORM|FME 2020.1.3.0 (20201001 - Build 20632 - WIN64)
+2021-08-18 13:31:03|   0.1|  0.0|WARN  |Failed to free sufficient memory to reach the process usage limit. To improve stability and performance please increase the memory available to FME. Available memory can be increased by adding physical RAM, increasing swap space, or closing other applications
+2021-08-18 13:31:03|   0.1|  0.0|INFORM|FME_HOME is 'C:\Program Files\FME\'
+2021-08-18 13:31:04|   0.1|  0.0|INFORM|FME Desktop ESRI Edition (floating)
+2021-08-18 13:31:04|   0.1|  0.0|INFORM|Permanent License.
+2021-08-18 13:31:04|   0.1|  0.0|INFORM|Machine host name is: CM036511
+2021-08-18 13:31:04|   0.1|  0.0|INFORM|START - ProcessID: 9404, peak process memory usage: 38576 kB, current process memory usage: 38576 kB
+2021-08-18 13:31:04|   0.1|  0.0|INFORM|FME Configuration: Command line arguments are `C:\Program Files\FME\fme.exe' `//v0t0020a.adr.admin.ch/iprod/gdwh-vector/test/TESTING/egs/geocat/empty_keywords\wb-xlate-1629286253964_2796' `LOG_STANDARDOUT' `YES' `LogCountServerName' `{e5f3b063-db35-42d2-9ac7-d4b7d637757a}'
+2021-08-18 13:31:04|   0.1|  0.0|INFORM|FME Configuration: Connection Storage: 'C:\Users\U80858786\AppData\Roaming\Safe Software\FME\'
+2021-08-18 13:31:08|   1.2|  1.0|INFORM|Shared folders for formats are : C:\Program Files\FME\datasources;\\adb.intra.admin.ch\Userhome$\All\data\Documents\FME\Formats
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|Shared folders for transformers are : C:\Users\U80858786\AppData\Roaming\Safe Software\FME\Packages\20632-win64\transformers;C:\Program Files\FME\transformers;C:\Users\U80858786\AppData\Roaming\Safe Software\FME\FME Store\Transformers
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|Shared folders for coordinate systems are : \\adb.intra.admin.ch\Userhome$\All\data\Documents\FME\CoordinateSystems
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|Shared folders for coordinate system exceptions are : \\adb.intra.admin.ch\Userhome$\All\data\Documents\FME\CoordinateSystemExceptions
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|Shared folders for coordinate system grid overrides are : \\adb.intra.admin.ch\Userhome$\All\data\Documents\FME\CoordinateSystemGridOverrides
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|Shared folders for CS-MAP transformation exceptions are : \\adb.intra.admin.ch\Userhome$\All\data\Documents\FME\CsmapTransformationExceptions
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|Shared folders for transformer categories are : \\adb.intra.admin.ch\Userhome$\All\data\Documents\FME\TransformerCategories
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: Reader Keyword is `MULTI_READER'
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: Writer Keyword is `NULL_DEST'
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: Writer Group Definition Keyword is `NULL_DEST_DEF'
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: Reader type is `MULTI_READER'
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: Writer type is `NULL'
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: Current working folder is `\\v0t0020a.adr.admin.ch\iprod\gdwh-vector\test\TESTING\egs\geocat\empty_keywords'
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: Temporary folder is `C:\Users\U80858~1\AppData\Local\Temp\wbrun_1629285460982_2796\fmetmp_1629286260706_2796', set from environment variable `FME_TEMP'
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: FME_HOME is `C:\Program Files\FME\'
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: FME_BASE is 'no'
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: FME_MF_DIR is '\\v0t0020a.adr.admin.ch\iprod\gdwh-vector\test\TESTING\egs\geocat\empty_keywords/'
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: FME_MF_NAME is 'CSWT_delete_keyword_missing.fmw'
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Configuration: FME_PRODUCT_NAME is 'FME(R) 2020.1.3.0'
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|System Status: 27.89 GB of disk space available in the FME temporary folder (C:\Users\U80858~1\AppData\Local\Temp\wbrun_1629285460982_2796\fmetmp_1629286260706_2796)
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|System Status: 7.88 GB of physical memory available
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|System Status: 31.53 GB of virtual memory available
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|Operating System: Microsoft Windows 10 64-bit  (Build 18362)
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|FME Platform: WIN64
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|Locale: de_CH
+2021-08-18 13:31:08|   1.2|  0.0|INFORM|System Encoding: windows-1252
+2021-08-18 13:31:08|   1.2|  0.0|WARN  |FME Configuration: Extremely low initial memory conditions detected. To improve stability and performance please increase the memory available to FME. Available memory can be increased by adding physical RAM, increasing swap space, or closing other applications
+2021-08-18 13:31:09|   1.3|  0.1|INFORM|Creating writer for format: NULL (Nothing)
+2021-08-18 13:31:09|   1.3|  0.0|INFORM|Trying to find a DYNAMIC plugin for writer named `NULL'
+2021-08-18 13:31:09|   1.3|  0.0|INFORM|Loaded module 'NULL' from file 'C:\Program Files\FME\plugins/NULL.dll'
+2021-08-18 13:31:09|   1.3|  0.0|INFORM|FME API version of module 'NULL' matches current internal version (3.8 20200115)
+2021-08-18 13:31:09|   1.3|  0.0|INFORM|Creating reader for format: 
+2021-08-18 13:31:09|   1.3|  0.0|INFORM|MULTI_READER(MULTI_READER): Will fail with first member reader failure
+2021-08-18 13:31:09|   1.3|  0.0|INFORM|MULTI_READER(MULTI_READER): Adding CSV2 Reader with keyword CSV2_1
+2021-08-18 13:31:09|   1.3|  0.0|INFORM|Using Multi Reader with keyword `MULTI_READER' to read multiple datasets
+2021-08-18 13:31:10|   1.4|  0.1|INFORM|Creating reader for format: CSV (Comma Separated Value)
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|Trying to find a DYNAMIC plugin for reader named `CSV2'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|Loaded module 'CSV2' from file 'C:\Program Files\FME\plugins/CSV2.dll'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|FME API version of module 'CSV2' matches current internal version (3.8 20200115)
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Opening dataset '\\v0t0020a.adr.admin.ch\iprod\gdwh-vector\test\TESTING\egs\geocat\empty_keywords\PROD\uuids_empty_keywords_PROD_Kanton Nidwalden.csv'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_DELIMITER' has the value 'auto'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_FIELD_NAMES_LINE' has the value '1'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_DATA_START_LINE' has the value '2'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_SCAN_MAX_ROWS' has the value '10000'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_READ_SKIPPED_LINES' has the value 'No'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_ENCODING' has the value 'windows-1252'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_SKIP_DUPLICATE_DELIMITERS' has the value 'No'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_FIELD_QUALIFIER_CHARACTER' has the value '"'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_FIELD_QUALIFIER_ESCAPE_CHARACTER' has the value '"'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_TRIM_FIELD_NAME_QUALIFIERS' has the value 'Yes'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_TRIM_FIELD_VALUE_QUALIFIERS' has the value 'Yes'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_PRESERVE_SOURCE_ENCODING' has the value 'No'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_CASE_SENSITIVE_FIELD_NAMES' has the value 'Yes'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_ENFORCE_STRICT_SCHEMA' has the value 'No'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_SCAN_TYPES' has the value 'Yes'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_SCAN_ADDITIONAL_FIELDS' has the value 'No'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|CSV reader: Directive '_CHUNK_SIZE' has the value '100000'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|FME API version of module 'NULL' matches current internal version (3.8 20200115)
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|FME API version of module 'NULL' matches current internal version (3.8 20200115)
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|Loaded module 'LogCount_func' from file 'C:\Program Files\FME\plugins/LogCount_func.dll'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|FME API version of module 'LogCount_func' matches current internal version (3.8 20200115)
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|Loaded module 'HTTPFactory' from file 'C:\Program Files\FME\plugins/HTTPFactory.dll'
+2021-08-18 13:31:10|   1.5|  0.0|INFORM|FME API version of module 'HTTPFactory' matches current internal version (3.8 20200115)
+2021-08-18 13:31:10|   1.5|  0.0|WARN  |CSV reader: Detected excess data and/or delimiters in addition to the defined schema in line 2 with value '0;74b79f38-d654-4587-a5b8-d8048a97d265;1' read from file '\\v0t0020a.adr.admin.ch\iprod\gdwh-vector\test\TESTING\egs\geocat\empty_keywords\PROD\uuids_empty_keywords_PROD_Kanton Nidwalden.csv'.  Excess data will not be read.  This can occur if the file is not uniform in the number of fields per row or if fields have been intentionally removed from the source feature type.  In order to read the excess data, recreate the source feature type and set a larger value for the 'Maximum Rows to Scan' option to scan additional rows for fields.  If the file contains field names, ensure that the field names line represents all of the columns in data rows, or enable the 'Scan for Additional Fields' option.  This may also be caused by a misplaced field qualifier character.  In this case, ensure that field qualifiers in the row are correct, or consider changing the Field Qualifier Character value
+2021-08-18 13:31:10|   1.5|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_CSV -1 26 -1  0  80fb24da2ef239c35a714d14a4ba5bb993ed8e4d.ffsupdating'
+2021-08-18 13:31:10|   1.6|  0.0|INFORM|FFS writer: Writing 211 feature(s) to file 'C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_CSV -1 26 -1  0  80fb24da2ef239c35a714d14a4ba5bb993ed8e4d.fts'
+2021-08-18 13:31:10|   1.6|  0.1|STATS |Storing feature(s) to FME feature store file `C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_StringConcatenator_2 -1 79 fo 0 OUTPUT  0  b7d3222c996e6775f9b4c74905058cee2cbf140a.ffsupdating'
+2021-08-18 13:31:10|   1.7|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Splitting bulk mode features into features
+2021-08-18 13:31:11|   1.7|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_Decelerator -1 66 fo 0 OUTPUT  0  66f461180617244cfc0e7458942b7596d59fb0a2.ffsupdating'
+2021-08-18 13:31:12|   1.7|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:12|   1.7|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:12|   1.7|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:12|   1.7|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:12|   1.7|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '0.002127 seconds', total transfer time: '1.011455 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:12|   1.7|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_HTTPUploader -1 3 fo 0 OUTPUT  0  df82b755c30362714a16b3fd4f8780f367774029.ffsupdating'
+2021-08-18 13:31:13|   1.8|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_http_status -1 34 fo 0 200  0  120653c99ed6bd10d36f048e007c8307e23e4f0a.ffsupdating'
+2021-08-18 13:31:13|   1.8|  0.0|STATS |Storing feature(s) to FME feature store file `C:\Users\U80858~1\AppData\Local\Temp\wb-inspectors-Dpjfwu\inspector.ffs'
+2021-08-18 13:31:14|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:14|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:14|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:14|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:14|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.2e-5 seconds', total transfer time: '0.590864 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:15|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:15|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:16|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:16|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:16|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.2e-5 seconds', total transfer time: '0.642607 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:16|   1.8|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 3 of 211 features
+2021-08-18 13:31:17|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:17|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:18|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:18|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:18|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '7.6e-5 seconds', total transfer time: '0.676572 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:19|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:19|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:19|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:19|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:19|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.3e-5 seconds', total transfer time: '0.693709 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:20|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:20|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:21|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:21|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:21|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.1e-5 seconds', total transfer time: '0.676511 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:21|   1.8|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 6 of 211 features
+2021-08-18 13:31:22|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:22|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:23|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:23|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:23|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.1e-5 seconds', total transfer time: '0.664391 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:24|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:24|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:24|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:24|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:24|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.3e-5 seconds', total transfer time: '0.773703 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:25|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:25|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:26|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:26|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:26|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.7e-5 seconds', total transfer time: '0.730203 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:26|   1.8|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 9 of 211 features
+2021-08-18 13:31:27|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:27|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:28|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:28|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:28|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.7e-5 seconds', total transfer time: '0.652353 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:29|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:29|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:29|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:29|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:29|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.7e-5 seconds', total transfer time: '0.66198 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:31|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:31|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:31|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:31|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:31|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.3e-5 seconds', total transfer time: '0.90023 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:31|   1.8|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 12 of 211 features
+2021-08-18 13:31:32|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:32|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:33|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:33|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:33|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.1e-5 seconds', total transfer time: '1.095534 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:35|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:35|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:35|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:35|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:35|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.1e-5 seconds', total transfer time: '0.668565 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:36|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:36|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:37|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:37|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:37|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.2e-5 seconds', total transfer time: '0.637697 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:37|   1.8|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 15 of 211 features
+2021-08-18 13:31:38|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:38|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:39|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:39|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:39|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '6e-5 seconds', total transfer time: '0.726705 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:40|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:40|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:40|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:40|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:40|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.1e-5 seconds', total transfer time: '0.666736 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:41|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:41|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:42|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:42|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:42|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '8.1e-5 seconds', total transfer time: '0.693775 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:42|   1.8|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 18 of 211 features
+2021-08-18 13:31:43|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:43|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:44|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:44|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:44|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.640978 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:45|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:45|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:45|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:45|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:45|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.806117 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:46|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:46|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:47|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:47|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:47|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.7e-5 seconds', total transfer time: '0.738234 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:47|   1.8|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 21 of 211 features
+2021-08-18 13:31:48|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:48|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:49|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:49|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:49|   1.8|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.2e-5 seconds', total transfer time: '0.71922 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:50|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:50|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:51|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:51|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:51|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.7e-5 seconds', total transfer time: '0.728315 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:52|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:52|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:52|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:52|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:52|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.755577 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:52|   1.9|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 24 of 211 features
+2021-08-18 13:31:53|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:53|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:54|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:54|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:54|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.7e-5 seconds', total transfer time: '0.600414 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:55|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:55|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:56|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:56|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:56|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.7e-5 seconds', total transfer time: '0.775551 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:57|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:57|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:57|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:57|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:57|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.692705 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:31:58|   1.9|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 27 of 211 features
+2021-08-18 13:31:59|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:31:59|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:31:59|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:31:59|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:31:59|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '0.000129 seconds', total transfer time: '0.704676 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:01|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:01|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:01|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:01|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:01|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.1e-5 seconds', total transfer time: '1.014211 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:02|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:02|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:03|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:03|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:03|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5e-5 seconds', total transfer time: '0.886038 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:03|   1.9|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 30 of 211 features
+2021-08-18 13:32:04|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:04|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:05|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:05|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:05|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.71941 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:06|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:06|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:07|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:07|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:07|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.7e-5 seconds', total transfer time: '0.694007 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:08|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:08|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:08|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:08|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:08|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '7.5e-5 seconds', total transfer time: '0.679941 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:08|   1.9|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 33 of 211 features
+2021-08-18 13:32:09|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:09|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:10|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:10|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:10|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.995337 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:11|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:11|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:12|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:12|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:12|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.755687 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:13|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:13|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:14|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:14|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:14|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5e-5 seconds', total transfer time: '0.698618 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:14|   1.9|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 36 of 211 features
+2021-08-18 13:32:15|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:15|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:15|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:15|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:15|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '0.698005 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:17|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:17|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:17|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:17|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:17|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.8e-5 seconds', total transfer time: '0.741232 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:18|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:18|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:19|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:19|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:19|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.7e-5 seconds', total transfer time: '0.64615 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:19|   1.9|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 39 of 211 features
+2021-08-18 13:32:20|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:20|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:20|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:20|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:21|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.615546 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:22|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:22|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:22|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:22|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:22|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.707198 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:23|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:23|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:24|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:24|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:24|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '6.6e-5 seconds', total transfer time: '0.674472 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:24|   1.9|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 42 of 211 features
+2021-08-18 13:32:25|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:25|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:26|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:26|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:26|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.7e-5 seconds', total transfer time: '0.806594 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:27|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:27|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:27|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:27|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:27|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.741956 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:29|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:29|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:29|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:29|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:29|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '0.000347 seconds', total transfer time: '0.911923 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:29|   1.9|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 45 of 211 features
+2021-08-18 13:32:30|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:30|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:31|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:31|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:31|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.77106 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:32|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:32|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:33|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:33|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:33|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.906674 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:34|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:34|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:35|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:35|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:35|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '8.7e-5 seconds', total transfer time: '0.992853 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:35|   1.9|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 48 of 211 features
+2021-08-18 13:32:36|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:36|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:37|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:37|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:37|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.4e-5 seconds', total transfer time: '0.694305 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:38|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:38|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:39|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:39|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:39|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.5e-5 seconds', total transfer time: '0.808791 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:40|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:40|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:40|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:40|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:40|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.4e-5 seconds', total transfer time: '0.655443 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:40|   1.9|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 51 of 211 features
+2021-08-18 13:32:41|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:41|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:42|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:42|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:42|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.761892 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:43|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:43|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:44|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:44|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:44|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.3e-5 seconds', total transfer time: '0.718849 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:45|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:45|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:46|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:46|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:46|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.4e-5 seconds', total transfer time: '0.858918 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:46|   1.9|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 54 of 211 features
+2021-08-18 13:32:47|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:47|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:47|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:47|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:47|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.6e-5 seconds', total transfer time: '0.713873 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:48|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:48|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:49|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:49|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:49|   1.9|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.5e-5 seconds', total transfer time: '0.745874 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:50|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:50|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:51|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:51|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:51|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.63123 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:51|   2.0|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 57 of 211 features
+2021-08-18 13:32:52|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:52|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:52|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:53|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:53|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '0.675694 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:54|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:54|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:54|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:54|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:54|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '0.000122 seconds', total transfer time: '0.692647 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:55|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:55|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:56|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:56|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:56|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.1e-5 seconds', total transfer time: '0.773245 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:56|   2.0|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 60 of 211 features
+2021-08-18 13:32:57|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:57|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:58|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:58|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:58|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.7e-5 seconds', total transfer time: '0.690551 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:32:59|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:32:59|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:32:59|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:32:59|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:32:59|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.7e-5 seconds', total transfer time: '0.729087 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:00|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:00|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:01|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:01|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:01|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.9e-5 seconds', total transfer time: '0.663564 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:01|   2.0|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 63 of 211 features
+2021-08-18 13:33:02|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:02|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:03|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:03|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:03|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.4e-5 seconds', total transfer time: '0.975276 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:04|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:04|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:05|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:05|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:05|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.7e-5 seconds', total transfer time: '0.75069 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:06|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:06|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:06|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:06|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:06|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.61718 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:07|   2.0|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 66 of 211 features
+2021-08-18 13:33:08|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:08|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:08|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:08|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:08|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.677137 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:09|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:09|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:10|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:10|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:10|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '8.6e-5 seconds', total transfer time: '0.965501 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:11|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:11|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:12|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:12|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:12|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.668164 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:12|   2.0|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 69 of 211 features
+2021-08-18 13:33:13|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:13|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:14|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:14|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:14|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.765104 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:15|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:15|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:15|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:15|   2.0|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:15|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5e-5 seconds', total transfer time: '0.697734 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:16|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:16|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:17|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:17|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:17|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '0.715762 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:17|   2.1|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 72 of 211 features
+2021-08-18 13:33:18|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:18|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:19|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:19|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:19|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.713976 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:20|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:20|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:20|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:20|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:20|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.5e-5 seconds', total transfer time: '0.568077 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:21|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:21|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:22|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:22|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:22|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.1e-5 seconds', total transfer time: '0.731518 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:22|   2.1|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 75 of 211 features
+2021-08-18 13:33:23|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:23|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:24|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:24|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:24|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.8e-5 seconds', total transfer time: '0.664375 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:25|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:25|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:25|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:25|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:25|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '0.0001 seconds', total transfer time: '0.682211 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:27|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:27|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:27|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:27|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:27|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5e-5 seconds', total transfer time: '0.778551 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:27|   2.1|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 78 of 211 features
+2021-08-18 13:33:28|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:28|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:29|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:29|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:29|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.5e-5 seconds', total transfer time: '0.651821 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:30|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:30|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:31|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:31|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:31|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '0.690036 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:32|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:32|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:32|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:32|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:32|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.685039 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:32|   2.1|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 81 of 211 features
+2021-08-18 13:33:33|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:33|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:34|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:34|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:34|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.780575 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:35|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:35|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:36|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:36|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:36|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.7e-5 seconds', total transfer time: '0.636105 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:37|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:37|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:38|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:38|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:38|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.795386 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:38|   2.1|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 84 of 211 features
+2021-08-18 13:33:39|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:39|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:39|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:39|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:39|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.5e-5 seconds', total transfer time: '0.679141 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:40|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:40|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:41|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:41|   2.1|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:41|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.9e-5 seconds', total transfer time: '0.703244 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:42|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:42|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:43|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:43|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:43|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.649303 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:43|   2.2|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 87 of 211 features
+2021-08-18 13:33:44|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:44|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:44|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:44|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:44|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '0.590374 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:45|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:45|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:46|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:46|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:46|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.1e-5 seconds', total transfer time: '0.773997 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:47|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:47|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:48|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:48|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:48|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '0.738019 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:48|   2.2|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 90 of 211 features
+2021-08-18 13:33:49|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:49|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:49|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:49|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:49|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.5e-5 seconds', total transfer time: '0.675857 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:51|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:51|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:51|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:51|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:51|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.826554 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:52|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:52|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:53|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:53|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:53|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.64719 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:53|   2.2|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 93 of 211 features
+2021-08-18 13:33:54|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:54|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:55|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:55|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:55|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '0.000116 seconds', total transfer time: '0.539966 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:56|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:56|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:56|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:56|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:56|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.1e-5 seconds', total transfer time: '0.767982 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:57|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:57|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:33:58|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:33:58|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:33:58|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.645068 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:33:58|   2.2|  0.0|INFORM|ResourceManager: Optimizing Memory Usage.  Please wait...
+2021-08-18 13:33:58|   2.2|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 96 of 211 features
+2021-08-18 13:33:59|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:33:59|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:00|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:00|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:00|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.838605 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:01|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:01|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:02|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:02|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:02|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.763818 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:03|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:03|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:03|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:03|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:03|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '6.3e-5 seconds', total transfer time: '0.684158 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:03|   2.2|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 99 of 211 features
+2021-08-18 13:34:04|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:04|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:05|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:05|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:05|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.745831 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:06|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:06|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:07|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:07|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:07|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.735476 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:08|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:08|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:09|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:09|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:09|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.723041 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:09|   2.2|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 102 of 211 features
+2021-08-18 13:34:10|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:10|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:10|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:10|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:10|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '6.9e-5 seconds', total transfer time: '0.706522 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:11|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:11|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:13|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:13|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:13|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.7e-5 seconds', total transfer time: '1.375278 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:14|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:14|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:14|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:14|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:14|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.644701 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:14|   2.2|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 105 of 211 features
+2021-08-18 13:34:15|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:15|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:16|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:16|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:16|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '0.000186 seconds', total transfer time: '0.720222 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:17|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:17|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:18|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:18|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:18|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.760578 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:19|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:19|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:19|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:19|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:19|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.7e-5 seconds', total transfer time: '0.571684 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:19|   2.2|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 108 of 211 features
+2021-08-18 13:34:20|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:20|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:21|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:21|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:21|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.664701 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:22|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:22|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:23|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:23|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:23|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '0.642753 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:24|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:24|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:25|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:25|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:25|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.78174 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:25|   2.2|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 111 of 211 features
+2021-08-18 13:34:26|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:26|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:26|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:26|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:26|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.5e-5 seconds', total transfer time: '0.93228 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:28|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:28|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:28|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:28|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:28|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.642147 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:29|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:29|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:30|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:30|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:30|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.786291 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:30|   2.2|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 114 of 211 features
+2021-08-18 13:34:31|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:31|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:32|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:32|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:32|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '0.69174 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:33|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:33|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:33|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:33|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:33|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '0.688508 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:34|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:34|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:35|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:35|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:35|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.8e-5 seconds', total transfer time: '0.805085 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:35|   2.2|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 117 of 211 features
+2021-08-18 13:34:36|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:36|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:37|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:37|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:37|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.5e-5 seconds', total transfer time: '0.639299 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:38|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:38|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:38|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:38|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:38|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.4e-5 seconds', total transfer time: '0.60178 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:39|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:39|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:40|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:40|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:40|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.9e-5 seconds', total transfer time: '0.769267 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:40|   2.2|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 120 of 211 features
+2021-08-18 13:34:41|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:41|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:42|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:42|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:42|   2.2|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '6.7e-5 seconds', total transfer time: '0.653687 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:43|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:43|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:44|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:44|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:44|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '9.3e-5 seconds', total transfer time: '0.769131 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:45|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:45|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:45|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:45|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:45|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.4e-5 seconds', total transfer time: '0.651337 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:45|   2.3|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 123 of 211 features
+2021-08-18 13:34:46|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:46|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:47|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:47|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:47|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.636707 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:48|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:48|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:49|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:49|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:49|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.7e-5 seconds', total transfer time: '0.662272 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:50|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:50|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:50|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:50|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:50|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.665897 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:50|   2.3|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 126 of 211 features
+2021-08-18 13:34:51|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:51|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:52|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:52|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:52|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '6.2e-5 seconds', total transfer time: '0.664083 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:53|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:53|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:54|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:54|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:54|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.7e-5 seconds', total transfer time: '0.717156 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:55|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:55|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:55|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:55|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:55|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.631026 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:55|   2.3|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 129 of 211 features
+2021-08-18 13:34:56|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:56|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:57|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:57|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:57|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.602416 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:34:58|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:34:58|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:34:59|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:34:59|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:34:59|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.705194 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:00|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:00|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:00|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:00|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:00|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.718985 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:00|   2.3|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 132 of 211 features
+2021-08-18 13:35:01|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:01|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:02|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:02|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:02|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.8e-5 seconds', total transfer time: '0.683661 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:03|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:03|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:04|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:04|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:04|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.66864 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:05|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:05|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:06|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:06|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:06|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.7e-5 seconds', total transfer time: '0.815137 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:06|   2.3|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 135 of 211 features
+2021-08-18 13:35:07|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:07|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:07|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:07|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:07|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.686132 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:08|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:08|   2.3|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:09|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:09|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:09|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.702273 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:10|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:10|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:11|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:11|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:11|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.707237 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:11|   2.4|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 138 of 211 features
+2021-08-18 13:35:12|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:12|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:12|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:12|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:12|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.675418 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:13|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:14|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:14|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:14|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:14|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.8e-5 seconds', total transfer time: '0.684279 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:15|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:15|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:16|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:16|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:16|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.660125 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:16|   2.4|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 141 of 211 features
+2021-08-18 13:35:17|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:17|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:17|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:17|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:18|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.674225 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:19|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:19|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:19|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:19|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:19|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.712008 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:20|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:20|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:21|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:21|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:21|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '0.663198 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:21|   2.4|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 144 of 211 features
+2021-08-18 13:35:22|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:22|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:23|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:23|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:23|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.735435 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:24|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:24|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:24|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:24|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:24|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.7e-5 seconds', total transfer time: '0.789594 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:25|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:26|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:27|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:27|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:27|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.5e-5 seconds', total transfer time: '1.12807 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:27|   2.4|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 147 of 211 features
+2021-08-18 13:35:28|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:28|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:29|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:29|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:29|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '1.085824 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:30|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:30|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:31|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:31|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:31|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '6.7e-5 seconds', total transfer time: '1.068928 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:32|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:32|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:33|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:33|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:33|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '1.186691 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:33|   2.4|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 150 of 211 features
+2021-08-18 13:35:34|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:34|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:35|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:35|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:35|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.9e-5 seconds', total transfer time: '1.142546 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:36|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:36|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:37|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:37|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:37|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.2e-5 seconds', total transfer time: '1.121853 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:38|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:38|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:39|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:39|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:39|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.2e-5 seconds', total transfer time: '1.184121 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:39|   2.4|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 153 of 211 features
+2021-08-18 13:35:41|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:41|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:42|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:42|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:42|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '1.072682 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:43|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:43|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:44|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:44|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:44|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '1.07382 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:44|   2.4|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 155 of 211 features
+2021-08-18 13:35:45|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:45|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:46|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:46|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:46|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '1.2345 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:47|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:47|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:48|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:48|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:48|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '7.8e-5 seconds', total transfer time: '1.123657 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:49|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:49|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:50|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:50|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:50|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.1e-5 seconds', total transfer time: '1.205183 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:50|   2.4|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 158 of 211 features
+2021-08-18 13:35:51|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:51|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:52|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:52|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:52|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.7e-5 seconds', total transfer time: '1.093534 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:53|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:53|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:54|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:54|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:54|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '1.039118 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:55|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:55|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:56|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:57|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:57|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '1.123694 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:57|   2.4|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 161 of 211 features
+2021-08-18 13:35:58|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:58|   2.4|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:35:58|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:35:58|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:35:58|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.7e-5 seconds', total transfer time: '0.637571 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:35:59|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:35:59|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:00|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:00|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:00|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.8e-5 seconds', total transfer time: '0.812335 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:01|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:01|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:02|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:02|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:02|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.659581 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:02|   2.5|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 164 of 211 features
+2021-08-18 13:36:03|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:03|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:03|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:03|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:03|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.676894 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:04|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:04|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:05|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:05|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:05|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '0.726835 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:06|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:06|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:07|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:07|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:07|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '6.3e-5 seconds', total transfer time: '0.650011 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:07|   2.5|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 167 of 211 features
+2021-08-18 13:36:08|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:08|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:08|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:08|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:08|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '0.000114 seconds', total transfer time: '0.613974 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:09|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:09|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:10|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:10|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:10|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.3e-5 seconds', total transfer time: '0.764485 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:11|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:11|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:12|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:12|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:12|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.711734 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:12|   2.5|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 170 of 211 features
+2021-08-18 13:36:13|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:13|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:14|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:14|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:14|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5e-5 seconds', total transfer time: '0.654558 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:15|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:15|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:15|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:15|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:15|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.60159 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:16|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:16|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:17|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:17|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:17|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '9.3e-5 seconds', total transfer time: '0.652989 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:17|   2.5|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 173 of 211 features
+2021-08-18 13:36:18|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:18|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:18|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:18|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:19|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.3e-5 seconds', total transfer time: '0.640631 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:20|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:20|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:20|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:20|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:20|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.620401 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:21|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:21|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:22|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:22|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:22|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.6e-5 seconds', total transfer time: '0.74212 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:22|   2.5|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 176 of 211 features
+2021-08-18 13:36:23|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:23|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:24|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:24|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:24|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.9e-5 seconds', total transfer time: '0.613516 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:25|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:25|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:25|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:25|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:25|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.808223 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:26|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:26|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:27|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:27|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:27|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '0.000134 seconds', total transfer time: '0.633982 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:27|   2.5|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 179 of 211 features
+2021-08-18 13:36:28|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:28|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:29|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:29|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:29|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.5e-5 seconds', total transfer time: '0.661355 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:30|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:30|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:30|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:30|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:30|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.8e-5 seconds', total transfer time: '0.798002 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:32|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:32|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:32|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:32|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:32|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.4e-5 seconds', total transfer time: '0.670841 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:32|   2.5|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 182 of 211 features
+2021-08-18 13:36:33|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:33|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:34|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:34|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:34|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.666616 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:35|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:35|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:35|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:35|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:35|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.7e-5 seconds', total transfer time: '0.630091 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:37|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:37|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:37|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:37|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:37|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.721997 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:37|   2.5|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 185 of 211 features
+2021-08-18 13:36:38|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:38|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:39|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:39|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:39|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.730841 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:40|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:40|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:41|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:41|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:41|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.702543 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:42|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:42|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:43|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:43|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:43|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '0.000135 seconds', total transfer time: '0.911289 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:43|   2.5|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 188 of 211 features
+2021-08-18 13:36:44|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:44|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:44|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:44|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:44|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.4e-5 seconds', total transfer time: '0.662193 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:45|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:45|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:46|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:46|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:46|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.678446 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:47|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:47|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:48|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:48|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:48|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.69977 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:48|   2.5|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 191 of 211 features
+2021-08-18 13:36:49|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:49|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:49|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:49|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:49|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.764197 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:50|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:51|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:51|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:51|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:51|   2.5|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.654234 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:52|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:52|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:53|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:53|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:53|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.1e-5 seconds', total transfer time: '0.698839 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:53|   2.6|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 194 of 211 features
+2021-08-18 13:36:54|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:54|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:54|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:54|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:54|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.624827 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:56|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:56|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:56|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:56|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:56|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.725172 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:57|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:57|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:36:58|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:36:58|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:36:58|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '9.4e-5 seconds', total transfer time: '0.659585 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:36:58|   2.6|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 197 of 211 features
+2021-08-18 13:36:59|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:36:59|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:00|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:00|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:00|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5.2e-5 seconds', total transfer time: '0.716184 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:01|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:01|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:02|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:02|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:02|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.5e-5 seconds', total transfer time: '1.046538 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:03|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:03|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:03|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:03|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:03|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.713919 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:03|   2.6|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 200 of 211 features
+2021-08-18 13:37:04|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:04|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:05|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:05|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:05|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4e-5 seconds', total transfer time: '0.825823 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:06|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:06|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:07|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:07|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:07|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '6.7e-5 seconds', total transfer time: '0.685224 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:08|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:08|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:09|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:09|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:09|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '5e-5 seconds', total transfer time: '0.854108 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:09|   2.6|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 203 of 211 features
+2021-08-18 13:37:10|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:10|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:11|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:11|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:11|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.9e-5 seconds', total transfer time: '0.958743 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:12|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:12|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:13|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:13|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:13|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '6.4e-5 seconds', total transfer time: '0.812975 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:14|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:14|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:14|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:14|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:14|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.7e-5 seconds', total transfer time: '0.72944 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:14|   2.6|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 206 of 211 features
+2021-08-18 13:37:15|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:15|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:16|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:16|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:16|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.5e-5 seconds', total transfer time: '0.721429 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:17|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:17|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:18|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:18|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:18|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '3.8e-5 seconds', total transfer time: '0.699995 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:19|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:19|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:19|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:19|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:19|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '9.2e-5 seconds', total transfer time: '0.689379 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:19|   2.6|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 209 of 211 features
+2021-08-18 13:37:21|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:21|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:21|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:21|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:21|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '4.7e-5 seconds', total transfer time: '0.649363 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:22|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP upload to 'www.geocat.ch'. Expected transfer size: 1110 bytes
+2021-08-18 13:37:22|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Upload: sent 1110 bytes
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): Starting HTTP download from 'www.geocat.ch'. Expected transfer size: 337 bytes
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP Download: received 337 bytes
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|HTTPUploader (HTTPFactory): HTTP transfer summary - status code: 200, download size: '337 bytes', DNS lookup time: '9e-5 seconds', total transfer time: '0.881931 seconds', url: 'https://www.geocat.ch/geonetwork/srv/eng/csw-publication'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Decelerator_DelayRejector (TestFactory): Processed 211 of 211 features
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|MULTI_READER(MULTI_READER): Done reading 211 features from 1 readers
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Emptying factory pipeline
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Router and Unexpected Input Remover (RoutingFactory): Tested 211 input feature(s), wrote 211 output feature(s): 211 matched merge filters, 211 were routed to output, 0 could not be routed.
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Unexpected Input Remover Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |CSV_CSV2_1 Splitter (TeeFactory): Cloned 211 input feature(s) into 211 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |CSV_CSV2_1 Feature Counter -1 27 (TeeFactory): Cloned 211 input feature(s) into 211 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Starter_Output Feature Counter -1 70 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Starter_Output Disabled Nuker -1 70 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |_CREATOR_BRANCH_TARGET (TeeFactory): Cloned 211 input feature(s) into 211 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |AttributeCreator (Disabled) Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |AttributeCreator_OUTPUT Feature Counter -1 28 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |StringConcatenator_2 (TeeFactory): Cloned 211 input feature(s) into 211 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |StringConcatenator_2_OUTPUT Feature Counter -1 60 (TeeFactory): Cloned 211 input feature(s) into 211 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Decelerator_DelayRejector (TestFactory): Tested 211 input feature(s) -- 211 feature(s) passed and 0 feature(s) failed
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Decelerator_MaximumRejector (TestFactory): Tested 211 input feature(s) -- 211 feature(s) passed and 0 feature(s) failed
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Decelerator_Decelerator (TeeFactory): Cloned 211 input feature(s) into 211 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Decelerator_OUTPUT Feature Counter -1 68 (TeeFactory): Cloned 211 input feature(s) into 211 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |HTTPUploader_OUTPUT Feature Counter -1 35 (TeeFactory): Cloned 211 input feature(s) into 211 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |HTTPUploader_<REJECTED> Feature Counter -1 11 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |HTTPUploader__Rejected__DirCreator (CreationFactory): Created 1 features
+2021-08-18 13:37:23|   2.6|  0.0|STATS |HTTPUploader__Rejected__DirCreatorCleanerUpper (TeeFactory): Cloned 1 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |HTTPUploader__Rejected__FeatureDirector (TestFactory): Tested 0 input feature(s) -- 0 feature(s) passed and 0 feature(s) failed
+2021-08-18 13:37:23|   2.6|  0.0|STATS |HTTPUploader__Rejected____FeatureDirector1 (TestFactory): Tested 0 input feature(s) -- 0 feature(s) passed and 0 feature(s) failed
+2021-08-18 13:37:23|   2.6|  0.0|STATS |HTTPUploader__Rejected__VectorSetterUpper (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |HTTPUploader__Rejected____PointCloudThinner (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |HTTPUploader__Rejected__RasterSetterUpper (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |http_status (TeeFactory): Cloned 211 input feature(s) into 211 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |http_status_Condition_1 (TestFactory): Tested 211 input feature(s) -- 211 feature(s) passed and 0 feature(s) failed
+2021-08-18 13:37:23|   2.6|  0.0|STATS |http_status_<lt>UNFILTERED<gt> (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |http_status_200 Feature Counter -1 37 (TeeFactory): Cloned 211 input feature(s) into 211 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |http_status_<lt>UNFILTERED<gt> Feature Counter -1 39 (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter__Unfiltered__DirCreator (CreationFactory): Created 1 features
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter__Unfiltered__DirCreatorCleanerUpper (TeeFactory): Cloned 1 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter__Unfiltered__FeatureDirector (TestFactory): Tested 0 input feature(s) -- 0 feature(s) passed and 0 feature(s) failed
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter__Unfiltered____FeatureDirector1 (TestFactory): Tested 0 input feature(s) -- 0 feature(s) passed and 0 feature(s) failed
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter__Unfiltered__VectorSetterUpper (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter__Unfiltered____PointCloudThinner (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter__Unfiltered__RasterSetterUpper (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter_200_DirCreator (CreationFactory): Created 1 features
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter_200_DirCreatorCleanerUpper (TeeFactory): Cloned 1 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter_200_FeatureDirector (TestFactory): Tested 211 input feature(s) -- 0 feature(s) passed and 211 feature(s) failed
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter_200___FeatureDirector1 (TestFactory): Tested 211 input feature(s) -- 0 feature(s) passed and 211 feature(s) failed
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter_200_VectorSetterUpper (TeeFactory): Cloned 211 input feature(s) into 211 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter_200___PointCloudThinner (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |TestFilter_200_RasterSetterUpper (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Stored 211 feature(s) to FME feature store file `C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_http_status -1 34 fo 0 200  0  120653c99ed6bd10d36f048e007c8307e23e4f0a.ffsupdating'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_http_status -1 34 fo 0 200  0  120653c99ed6bd10d36f048e007c8307e23e4f0a.fsi'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_http_status -1 34 fo 0 200  0  120653c99ed6bd10d36f048e007c8307e23e4f0a.fsi'
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Stored 1 feature(s) to FME feature store file `C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_CSV -1 26 -1  0  80fb24da2ef239c35a714d14a4ba5bb993ed8e4d.ffsupdating'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_CSV -1 26 -1  0  80fb24da2ef239c35a714d14a4ba5bb993ed8e4d.fsi'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_CSV -1 26 -1  0  80fb24da2ef239c35a714d14a4ba5bb993ed8e4d.fsi'
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Stored 1 feature(s) to FME feature store file `C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_StringConcatenator_2 -1 79 fo 0 OUTPUT  0  b7d3222c996e6775f9b4c74905058cee2cbf140a.ffsupdating'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_StringConcatenator_2 -1 79 fo 0 OUTPUT  0  b7d3222c996e6775f9b4c74905058cee2cbf140a.fsi'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_StringConcatenator_2 -1 79 fo 0 OUTPUT  0  b7d3222c996e6775f9b4c74905058cee2cbf140a.fsi'
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Stored 211 feature(s) to FME feature store file `C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_Decelerator -1 66 fo 0 OUTPUT  0  66f461180617244cfc0e7458942b7596d59fb0a2.ffsupdating'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_Decelerator -1 66 fo 0 OUTPUT  0  66f461180617244cfc0e7458942b7596d59fb0a2.fsi'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_Decelerator -1 66 fo 0 OUTPUT  0  66f461180617244cfc0e7458942b7596d59fb0a2.fsi'
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Stored 211 feature(s) to FME feature store file `C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_HTTPUploader -1 3 fo 0 OUTPUT  0  df82b755c30362714a16b3fd4f8780f367774029.ffsupdating'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_HTTPUploader -1 3 fo 0 OUTPUT  0  df82b755c30362714a16b3fd4f8780f367774029.fsi'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\U80858~1\AppData\Local\Temp\wb-cache-CSWT_delete_keyword_missing-ndvSbx\Main_HTTPUploader -1 3 fo 0 OUTPUT  0  df82b755c30362714a16b3fd4f8780f367774029.fsi'
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Stored 211 feature(s) to FME feature store file `C:\Users\U80858~1\AppData\Local\Temp\wb-inspectors-Dpjfwu\inspector.ffs'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Saving spatial index into file 'C:\Users\U80858~1\AppData\Local\Temp\wb-inspectors-Dpjfwu\inspector.fsi'
+2021-08-18 13:37:23|   2.6|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\U80858~1\AppData\Local\Temp\wb-inspectors-Dpjfwu\inspector.fsi'
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Destination Feature Type Routing Correlator (RoutingFactory): Tested 0 input feature(s), wrote 0 output feature(s): 0 matched merge filters, 0 were routed to output, 0 could not be routed.
+2021-08-18 13:37:23|   2.6|  0.0|STATS |Final Output Nuker (TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |VisualizerProcessor (CreationFactory): Created 1 features
+2021-08-18 13:37:23|   2.6|  0.0|STATS |VisualizerCleaner (TeeFactory): Cloned 1 input feature(s) into 0 output feature(s)
+2021-08-18 13:37:23|   2.6|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-08-18 13:37:24|   2.6|  0.0|STATS |                            Features Read Summary
+2021-08-18 13:37:24|   2.6|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-08-18 13:37:24|   2.6|  0.0|STATS |CSV                                                                        211
+2021-08-18 13:37:24|   2.6|  0.0|STATS |==============================================================================
+2021-08-18 13:37:24|   2.6|  0.0|STATS |Total Features Read                                                        211
+2021-08-18 13:37:24|   2.6|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-08-18 13:37:24|   2.6|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-08-18 13:37:24|   2.6|  0.0|STATS |                           Features Written Summary
+2021-08-18 13:37:24|   2.6|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-08-18 13:37:24|   2.6|  0.0|STATS |==============================================================================
+2021-08-18 13:37:24|   2.6|  0.0|STATS |Total Features Written                                                       0
+2021-08-18 13:37:24|   2.6|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2021-08-18 13:37:24|   2.6|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+2021-08-18 13:37:24|   2.6|  0.0|WARN  |-~                                                                             ~-
+2021-08-18 13:37:24|   2.6|  0.0|WARN  |-~    Feature caches have been recorded at every stage of the translation.     ~-
+2021-08-18 13:37:24|   2.6|  0.0|WARN  |-~                      To inspect the recorded features,                      ~-
+2021-08-18 13:37:24|   2.6|  0.0|WARN  |-~              click the feature cache icons next to the ports.               ~-
+2021-08-18 13:37:24|   2.6|  0.0|WARN  |-~                                                                             ~-
+2021-08-18 13:37:24|   2.6|  0.0|WARN  |-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-
+2021-08-18 13:37:24|   2.6|  0.0|INFORM|Translation was SUCCESSFUL with 10 warning(s) (0 feature(s) output)
+2021-08-18 13:37:24|   2.6|  0.0|INFORM|FME Session Duration: 6 minutes 20.5 seconds. (CPU: 0.8s user, 0.9s system)
+2021-08-18 13:37:24|   2.6|  0.0|INFORM|END - ProcessID: 9404, peak process memory usage: 70412 kB, current process memory usage: 53584 kB

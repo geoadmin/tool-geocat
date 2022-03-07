@@ -1,0 +1,499 @@
+Activités économiques
+aire d'exploitation
+appellation d'origine protégées AOP
+entreprise
+exploitation
+économie alpestre
+gastronomie extérieur
+indication géographique protégée IGP
+production de bois
+unité de gestion
+unité de production
+zone artisanale
+
+Administration
+autorisation de construire
+catalogue
+conception directrice
+coordination
+inventaire
+limitation
+mesure
+obligation d'annocer
+obligation d'autorisation
+préavis
+registre
+SIA405
+
+Agriculture
+affermage
+allmend
+aptitude culturale
+eléments nutritifs des plantes
+estivage
+exploitation agricole
+prairies et pâturages secs PPS
+région agricole
+surface agricole utile SAU
+surface d'affectation
+surface d'assolement SDA
+surface primaire
+surfache cultivée
+vigne
+viticulture
+
+Altimétrie
+altitude orthométrique
+cote d'altitude
+courbe de niveau
+déclivité
+isohypse
+isophyse
+MNA (modèle numérique d'altitude)
+MNS (modèle numérique de surface)
+modèle numérique de terrain MNT
+mosaïque d'orthophotos numériques en couleur
+point altimétrique
+
+Approvisionnement, élimination, communication
+aménagement des cours d'eau
+antenne
+captage
+captage des eaux souterraines
+communication par câble
+conduite
+conduite d'eau
+conduite de gaz
+conduite de gaz naturel
+courant
+déchet biogène
+déchets de chantier tout venant
+EGIP (European Geothermal Information Platform)
+géothermie
+introduction
+radio communication mobile
+réseau électrique
+réservoir
+rétention
+sonde terrestre
+station d'épuration
+téléphonie mobile
+
+Armée, sécurité
+armée
+installation de tir
+mil_formation
+mil_personnel
+sirène
+
+Atmosphère, climatologie
+climat local
+climat urbain
+endroit de mesurage
+hygiène de l'air
+intempéries
+phénologie
+sécheresse
+
+Cartes de référence, couverture du sol, images aériennes
+Airborne-Laser-Scanning
+carte de base
+carte des stations
+carte générale
+carte historique
+carte nationale
+carte synoptique
+couche superficielle
+couverture du sol
+désignation
+documentation de modèle
+GALILEO
+généralisation cartographique
+GLONASS
+grille
+Landsat
+laserscanning
+LIDAR (Light Detection And Ranging)
+modèle de géodonnées minimal MGDM
+modèle de représentation
+modèle du territoire
+ombrage
+orthophoto
+plan d'ensemble
+plan de base
+plan de localité
+plan de situation
+plan de ville
+plan détaillé
+précision
+représentation du terrain
+service de consultation
+surface
+symbole individuel
+topographie
+transformation
+
+Développement territorial, cadastre foncier
+affectation primaire
+alignement
+aménagement local
+aptitude
+bien-fonds
+cadastre des conduites
+cadastre des événements
+cadastre des risques
+cadastre des usines
+desserte
+développement du site
+développement territorial
+développement urbain
+domaine de numérotation
+fond de plan
+INTERREG III
+mensuration nationale
+mensuration officielle MO
+milieu bâti
+niveau de tolérance
+outil de planification
+périmètre
+plan d'affectation
+plan d'affectation de zone PAZ
+plan d'affectation générale
+plan d'aménagement
+plan de quartier
+plan de zones
+plan directeur
+plan directeur cantonal
+plan sectoriel
+plan spécial
+planification de l'utilisation du sol
+planification directrice
+projet de construction
+projet de planification
+propriété foncière
+RDPPF
+restrictions de la propriété
+répartition du plan
+servitude
+terrain
+terrain de fondation
+zone
+zone agricole
+zone à affectation particulière
+zone à bâtir
+zone d'affectation
+zone d'habitation
+zone de verdure
+zone interdite
+zone réservée
+zone spécifique
+zone viticole
+
+difices, infrastructures, ouvrages
+abri
+adresse de bâtiment
+bâtiment historique
+château
+construction
+construction publique
+entrée de bâtiment
+escalier
+ébauche
+étage
+fortifications de la ville
+objet artificiel
+objet divers
+ouvrage de protection
+Registre des bâtiments et logements BL
+
+Forêt, flore, faune
+arrondissement forestier
+bas-marais
+biodiversité
+bois flottant
+chauve-souris
+constatation de la nature forestière
+corridor faunistique
+criquet
+déboisement
+déchet de bois
+ecomorphologie
+espèce de poisson
+évolution de la forêt
+faune piscicole
+FISE (Forest Information System for Europe)
+fonction de la forêt
+forêt de protection
+fourmi
+haut-marais
+limite forestière
+lisière
+macrofaune
+macrozoobenthos
+néobiote
+ombrogène
+prairie forestière
+station forestière
+surface boisée
+tique
+triage forestier
+usage de la fôret
+zone alluviale
+zone à reptiles
+
+Gestion des données, fourniture de données
+AtOS (Atom OpenSearch)
+catalogue des objets
+description de données
+disponibilité des données
+données harmonisées
+données raster
+e-geo.ch
+geodienste.ch
+géodonnées
+géodonnées de base
+géomarketing
+géoservice
+géoservice de base
+GPS (Global Positioning System)
+IFDG l’Infrastructure Fédérale de données géographiques
+infrastructure de données
+INSPIRE
+inventaire national
+linked data
+modèle de géodonnées
+opendata.swiss
+Planification de la conservation et de l'archivage AAP - Conféderation
+repérage
+service de positionnement
+SIG (Système d'Information Géographique)
+simulation 3D
+swiss positioning service SWIPOS
+téléchargement de données
+visualisation 3D
+WMS
+
+Géologie, sols, dangers naturels
+1G-E (OneGeology-Europe)
+anomalie de bouguer
+carte des dangers
+carte des dangers naturels
+carte géologique
+carte géophysique
+cartographie des sols
+charriage
+chronostratigraphie
+chute de pierres
+danger naturel
+dépôt superficiel
+doline
+extraction des matières premières
+événement naturel
+faille
+GeoMol
+géologie de la surface
+géologie hamonisée
+géotope
+glissement de terrain
+gravimétrie
+lave torrentielle
+ligne de faille
+lithologie
+microzonage
+mine
+OneGeology
+OneGeology-Europe
+pétrographie
+processus d'écroulement
+processus hydrologique
+profondeur du sol
+propriétés du sol
+qualité du sol
+récupération des sols
+roche cohérente
+roche magmatique
+roche mère
+roche métamorphique
+roche sédimentaire
+service géologique national
+soulèvement alpin
+stratigraphie
+structure harmonisée
+territoire en mouvement permanent
+unités géologiques harmonisées
+zone de sédimentation
+
+Hydrographie
+courbe des fonds des lacs
+cours d'eau
+direction d'écoulement
+eau stagnante
+espace réservé aux eaux
+écoulement
+état des eaux
+GEWISS
+glaciation
+hauteur d'eau souterraine
+horizon sourcier
+hydrosystème fluvial historique
+ligne de rives
+niveau
+niveau d'eau moyen
+périmètre de protection des eaux souterraines
+ressources en eaux souterraines
+rivière
+ruissellement
+secteur de protection des eaux
+torrent
+
+Limites politiques et administratives
+canton
+confédération
+district
+division administrative
+frontière nationale
+grande région
+ligne de frontières
+limite politique
+limite territoriale
+quartier
+régional
+
+Localisation, systèmes de référence
+cadre de référence
+coordonnée
+coordonnées nationales
+FINELTRA
+géoïde
+localité
+nom de lieu
+nom de territoire
+nom local
+numéro postal d'acheminement NPA
+point de référence
+point fixe
+point repère
+système de référence
+toponymie
+
+Population, société, culture 
+Augusta Raurica
+centre de loisirs
+collection (archive, bibliothèque, musée)
+déblai
+enquête
+école secondaire
+époque romaine
+équitation
+fouille
+fouille archéologique
+histoire culturelle
+inventaire de monuments
+inventaire fédéral
+ISOS
+jardin familial
+lieu de découverte archéologique
+lieu de rencontre
+lieu de rencontre
+logements destinés aux personnes âgées
+maison de retraite
+manifestation
+monument culturel
+point d'intérêt POI
+prise en charge
+protection des biens culturels PBC
+protection des sites construits
+protection d’ouvrage
+randonnée à ski
+Randonnées pédestres
+raquette à neige
+remontée mécanique
+romain
+site construit
+site historique
+skating
+ski
+sport de neige
+zone d'escalade
+
+Protection de l'environnement et de la nature
+accident majeur
+avantage écologique
+degré de sensibilité au bruit
+district franc
+étude de conservation
+fonction protectrice
+invasive
+mesure de protection
+nature
+périmètre de protection
+prévention des accidents
+protection
+revitalisation
+réseau de biotopes
+site pollué
+tranquillité
+zone de protection
+zone de tranquillité
+zone naturelle protégée
+
+Santé
+DAE (Défibrillateur automatique externe)
+defibrillateur
+encéphalite à tiques
+MEVE
+piqûre de tique
+
+Transport
+aérodrome
+arrêt
+avion
+axe
+axe routier
+bac
+bruit routier
+charge de trafic
+chemin
+espace aérien
+héliport
+itinéraire
+itinéraires cantonaux pour convois exceptionnels
+lieu d'accident
+ligne de chemin de fer
+mobilité
+navigation
+navigation aérienne
+obstacle
+obstacle à la navigation aérienne
+ouvrage d'art
+parapente
+piéton
+piste cyclable
+pistes de vélo
+poteau indicateur
+rail
+revêtement routier
+réseau de chemin
+réseau de transport
+réseau routier
+route
+route cantonale
+route d’approvisionnement
+route forestière
+route nationale
+route principale
+sécurité aérienne
+signalisation
+station téléférique
+téléphérique
+trafic non motorisé
+tramway
+verrouillage
+vélo
+vélo tout-terrain VTT
+voie cyclable
+voie de communication historique
+vol à voile
+zone de vol
+zone piétonne
+

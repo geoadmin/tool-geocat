@@ -1,0 +1,460 @@
+﻿;concept-cat_id;de;fr;it;en;all_nr;all_pub_unpub;harvested_nr (valid=-1)
+http://geocat.ch/concept#168;168;Landsat;Landsat;Landsat;Landsat;50;51;0
+http://geocat.ch/concept#167;167;Landesvermessung;mensuration nationale;misurazione nazionale;national survey;13;13;0
+http://geocat.ch/concept#166;166;Landeskoordinaten;coordonnées nationales;coordinate nazionali;national coordinates;11;11;0
+http://custom.shared.obj.ch/concept#f9600e3a-1715-4247-b319-9327f01dc4e6;f9600e3a-1715-4247-b319-9327f01dc4e6;Naturereignis;événement naturel;evento naturale;natural event;14;14;3
+http://geocat.ch/concept#39;39;Bodenbedeckung;couverture du sol;copertura del suolo;land cover;150;154;12
+http://geocat.ch/concept#106;106;Geschiebe;charriage;carico di fondo;bedload;4;4;0
+http://geocat.ch/concept#169;169;Landschaftsmodell;modèle du territoire;modello del territorio;landscape model;47;50;2
+http://geocat.ch/concept#208;208;Ortsbildschutz;protection des sites construits;protezione degli insediamenti;heritage site protection;3;5;2
+http://geocat.ch/concept#f89cdc55-5870-47e1-8ec1-327f2cf83e3e;f89cdc55-5870-47e1-8ec1-327f2cf83e3e;Begegnungsort;lieu de rencontre;luogo d'incontro;meeting place;1;1;0
+http://geocat.ch/concept#265;265;Spezialzone;zone spécifique;zona speciale;special zone;11;13;2
+http://geocat.ch/concept#b6291656-f6fd-4199-9678-ad9be0fefe9f;b6291656-f6fd-4199-9678-ad9be0fefe9f;Geodatenmodell;modèle de géodonnées;modello di geodati;geodata model;577;577;0
+http://geocat.ch/concept#163;163;Landesgrenze;frontière nationale;confine nazionale;national border;28;29;0
+http://custom.shared.obj.ch/concept#727d11e0-c596-4b28-b6b4-9f44c788c9f3;727d11e0-c596-4b28-b6b4-9f44c788c9f3;Belasteter Standort;site pollué;sito inquinato;polluted site;20;23;3
+http://custom.shared.obj.ch/concept#9be04bad-d148-4ae0-a707-84f0306ecd66;9be04bad-d148-4ae0-a707-84f0306ecd66;Ruhe;tranquillité;tranquillità;tranquility;27;27;0
+http://custom.shared.obj.ch/concept#4a1ebc5a-f3cd-49a9-bceb-50f9dff9b0ce;4a1ebc5a-f3cd-49a9-bceb-50f9dff9b0ce;Luftraum;espace aérien;spazio aereo;airspace;10;19;0
+http://geocat.ch/concept#127;127;Grundstück;terrain;fondo;site;22;22;2
+http://geocat.ch/concept#165;165;Landeskarte;carte nationale;carta nazionale;national map;71;84;4
+http://custom.shared.obj.ch/concept#9541fcd2-b429-44d7-b049-c28c0edb0528;9541fcd2-b429-44d7-b049-c28c0edb0528;FINELTRA;FINELTRA;FINELTRA;FINELTRA;4;4;0
+http://custom.shared.obj.ch/concept#eec9ecbc-d5c9-46bc-8717-248bce7111fa;eec9ecbc-d5c9-46bc-8717-248bce7111fa;Sturzprozess;processus d'écroulement;processo di franamento;rockfall process;2;2;0
+http://geocat.ch/concept#36;36;Bezugsmarkierung;point repère;punto di riferimento;fiducial mark;3;3;0
+http://custom.shared.obj.ch/concept#ed329b28-1236-44ea-af43-1da8e077ff0a;ed329b28-1236-44ea-af43-1da8e077ff0a;Eignung;aptitude;attitudine;aptitude;3;3;2
+http://custom.shared.obj.ch/concept#b1037c88-0a8f-4dd5-bde4-c00cc1ef29e9;b1037c88-0a8f-4dd5-bde4-c00cc1ef29e9;Gebäude- und Wohnungsregister GWR;Registre des bâtiments et logements BL;registro degli edifici e delle abitazioni REA;federal register of buildings and dwellings RBD;2;2;0
+http://geocat.ch/concept#262;262;Skitour;randonnée à ski;escursione con gli sci;ski tour;9;11;0
+http://custom.shared.obj.ch/concept#948082ad-0adf-4d3c-8c4f-685f9d4d9372;948082ad-0adf-4d3c-8c4f-685f9d4d9372;e-geo.ch;e-geo.ch;e-geo.ch;e-geo.ch;129;137;1
+http://geocat.ch/concept#0e9bfdb0-09b4-4692-ad49-aa1e1e478ae4;0e9bfdb0-09b4-4692-ad49-aa1e1e478ae4;Sperrgebiet;zone interdite;zona vietata;prohibited area;3;4;1
+http://geocat.ch/concept#264;264;Sömmerung;estivage;estivazione;summering;16;16;0
+http://geocat.ch/concept#194;194;Nationalstrasse;route nationale;strada nazionale;motorway;21;23;1
+http://geocat.ch/concept#62;62;Ereigniskataster;cadastre des événements;catasto degli eventi;register of events;8;8;3
+http://geocat.ch/concept#178;178;Leitungskataster;cadastre des conduites;catasto delle condotte;pipeline cadastre;695;739;19
+http://geocat.ch/concept#290;290;Übersichtsplan;plan d'ensemble;piano corografico;survey plan;59;59;3
+http://geocat.ch/concept#2bc5df5c-653b-4794-8611-2fdc37f82d25;2bc5df5c-653b-4794-8611-2fdc37f82d25;Gewässerraum;espace réservé aux eaux;spazio riservato alle acque;space provided for waters;11;12;2
+http://custom.shared.obj.ch/concept#aad24e6c-4348-4c54-8458-abc757b7a2a1;aad24e6c-4348-4c54-8458-abc757b7a2a1;Gestaltungsplan;plan d'aménagement;piano d'edificabilità;development plan;32;57;4
+http://geocat.ch/concept#289;289;Übersichtskarte;carte synoptique;carta corografica;outline map;14;15;1
+http://geocat.ch/concept#266;266;Stadtplan;plan de ville;carta di città;city map;16;16;0
+http://geocat.ch/concept#75;75;Flugzeug;avion;aeroplano;aeroplane;0;1;0
+http://www.geocat.ch/concept#3a908f24-5f99-4e37-b47d-0afbd536f595;3a908f24-5f99-4e37-b47d-0afbd536f595;Versorgungsroute;route d’approvisionnement;via di approvvigionamento;supply route;3;3;0
+http://custom.shared.obj.ch/concept#163e2873-5257-4c81-8a89-8e902884776e;163e2873-5257-4c81-8a89-8e902884776e;Wildtierkorridor;corridor faunistique;corridoio faunistico;wildlife corridor;15;16;1
+http://geocat.ch/concept#268;268;Standortskarte;carte des stations;carta delle stazioni;site class map;4;4;2
+http://geocat.ch/concept#270;270;Steinschlag;chute de pierres;caduta di sassi;rockfall;17;17;0
+http://geocat.ch/concept#299;299;Verkehrsnetz;réseau de transport;rete di trasporto;traffic network;91;99;4
+http://www.geocat.ch/concept#711a8d5e-159b-4370-be1e-d0d7b5a249eb;711a8d5e-159b-4370-be1e-d0d7b5a249eb;Schutz;protection;protezione;protection;19;19;0
+http://custom.shared.obj.ch/concept#da072394-c4a1-49b0-808e-04606edd7a35;da072394-c4a1-49b0-808e-04606edd7a35;Schiene;rail;rotaia;rail;1;1;0
+http://geocat.ch/concept#297;297;Fahrrad;vélo;bicicletta;bike;37;38;1
+http://geocat.ch/concept#158;158;Koordinate;coordonnée;coordinate;coordinate;14;14;0
+http://custom.shared.obj.ch/concept#04c0f143-6611-4c2e-af22-e9a7f375e7ea;04c0f143-6611-4c2e-af22-e9a7f375e7ea;Geodaten;géodonnées;geodati;geodata;351;364;5
+http://geocat.ch/concept#dda62993-8aa7-44eb-8c9c-5be1d5440a9a;dda62993-8aa7-44eb-8c9c-5be1d5440a9a;Dateninfrastruktur;infrastructure de données;infrastruttura di dati;data infrastructure;1;1;0
+http://custom.shared.obj.ch/concept#40b6d496-8c95-4dca-ae33-81f204ce5d3d;40b6d496-8c95-4dca-ae33-81f204ce5d3d;GEWISS;GEWISS;GEWISS;GEWISS;42;48;2
+http://geocat.ch/concept#170;170;Landwirtschaftliche Nutzfläche LN;surface agricole utile SAU;superficie agricola utile SAU;usable agricultural area UAA;34;36;2
+http://custom.shared.obj.ch/concept#dd6b4072-a1c1-41d7-97fe-8b6978abe825;dd6b4072-a1c1-41d7-97fe-8b6978abe825;Kulturfläche;surfache cultivée;superficie coltivata;cultivated area;9;10;1
+http://geocat.ch/concept#171;171;Landwirtschaftsgebiet;région agricole;regione agricola;agricultural region;4;5;0
+http://custom.shared.obj.ch/concept#963fd8a2-b11f-461c-aa6e-d1952f2c9e8c;963fd8a2-b11f-461c-aa6e-d1952f2c9e8c;Trockenwiesen und -weiden TWW;prairies et pâturages secs PPS;prati e pascoli secchi PPS;dry grasslands DGS;3;3;0
+http://custom.shared.obj.ch/concept#f9b04274-5404-404a-8ac2-2a0ac988b4dc;f9b04274-5404-404a-8ac2-2a0ac988b4dc;Erhaltungsplanung;étude de conservation;studio di conservazione;conservation planning;1;2;1
+http://geocat.ch/concept#173;173;Landwirtschaftszone;zone agricole;zona agricola;agricultural zone;10;14;2
+http://custom.shared.obj.ch/concept#a5b230bc-a724-4a87-948f-42f8f9f6e064;a5b230bc-a724-4a87-948f-42f8f9f6e064;Bewilligungspflicht;obligation d'autorisation;obbligo dell'auorizzazione;requirement of authorisation;2;2;0
+http://geocat.ch/concept#24;24;Baulinie;alignement;linea di edificazione;building line;314;333;5
+http://geocat.ch/concept#179;179;LIDAR (Light Detection And Ranging);LIDAR (Light Detection And Ranging);LIDAR (Light Detection And Ranging);LIDAR (Light Detection And Ranging);34;34;0
+http://custom.shared.obj.ch/concept#07361d35-ab49-41b8-84c4-483e5b27763f;07361d35-ab49-41b8-84c4-483e5b27763f;Römische Epoche;époque romaine;epoca romana;roman age;12;13;0
+http://geocat.ch/concept#177;177;Laserscanning;laserscanning;laserscanning;laserscanning;17;17;0
+http://geocat.ch/concept#314;314;Waldstandort;station forestière;stazione forestale;forest site;12;12;0
+http://geocat.ch/concept#176;176;Lärmempfindlichkeitsstufe;degré de sensibilité au bruit;livello di sensibilità al rumore;noise sensitivity level;112;112;0
+http://geocat.ch/concept#9;9;Alpwirtschaft;économie alpestre;economia alpestre;alpine economy;10;10;0
+http://custom.shared.obj.ch/concept#bd5fb23a-002a-4fec-b23e-aeb6e23c42c4;bd5fb23a-002a-4fec-b23e-aeb6e23c42c4;1G-E (OneGeology-Europa);1G-E (OneGeology-Europe);1G-E (OneGeology-Europa);1G-E (OneGeology-Europe);2;2;0
+http://geocat.ch/concept#174;174;Langsamverkehr;trafic non motorisé;traffico lento;human-powered mobility;56;59;8
+http://custom.shared.obj.ch/concept#dac85a16-5646-4497-94d9-f3c665731ecd;dac85a16-5646-4497-94d9-f3c665731ecd;Kunstbau;ouvrage d'art;opera di costruzione;art construction;4;4;0
+http://www.geocat.ch/concept#fecf7e7f-ac9c-4791-b1a7-adf9ec61b86c;fecf7e7f-ac9c-4791-b1a7-adf9ec61b86c;Klettergebiet;zone d'escalade;area di arrampicata;climbing area;1;1;0
+http://custom.shared.obj.ch/concept#aa321bbb-dab3-4cca-b081-0cb9f1880f39;aa321bbb-dab3-4cca-b081-0cb9f1880f39;Messstelle;endroit de mesurage;posizione di misura;point of mesurement;1;1;0
+http://geocat.ch/concept#282;282;Tram;tramway;tram;tramway;2;2;0
+http://custom.shared.obj.ch/concept#c11ba4bc-5f9c-4871-a6ca-a9b4183f50d6;c11ba4bc-5f9c-4871-a6ca-a9b4183f50d6;Mittelschule;école secondaire;scuola secondaria;secondary school;1;1;0
+http://geocat.ch/concept#331;331;Zonenplan;plan de zones;piano delle zone;zoning plan;456;493;7
+http://custom.shared.obj.ch/concept#4deec269-f678-4eac-8d6c-9690ba6a32be;4deec269-f678-4eac-8d6c-9690ba6a32be;Oberfläche;surface;superficie;surface;3;3;0
+http://geocat.ch/concept#279;279;Topografie;topographie;topografia;topography;69;77;2
+http://geocat.ch/concept#198;198;Nummerierungsbereich;domaine de numérotation;area di numerazione;numbering range;42;42;0
+http://geocat.ch/concept#278;278;Toleranzstufe;niveau de tolérance;grado di tolleranza;tolerance level;25;25;0
+http://geocat.ch/concept#1;1;3D Simulation;simulation 3D;simulazione 3D;3D simulation;12;12;0
+http://geocat.ch/concept#277;277;Swiss Positioning Service SWIPOS;swiss positioning service SWIPOS;swiss positioning service SWIPOS;swiss positioning service SWIPOS;2;2;0
+http://geocat.ch/concept#125;125;Grundeigentum;propriété foncière;proprietà fondiaria;landed property;10;11;0
+http://custom.shared.obj.ch/concept#f735b5d1-f934-41b9-9e85-7f8d6fd5180e;f735b5d1-f934-41b9-9e85-7f8d6fd5180e;Stromnetz;réseau électrique;rete elettrica;power grid;54;57;0
+http://custom.shared.obj.ch/concept#49a51182-cc70-4ccd-b8ff-e418ca2fdfa5;49a51182-cc70-4ccd-b8ff-e418ca2fdfa5;Nutzungsplanung;planification de l'utilisation du sol;pianificazione dell'utilizzazione;land use planning;244;246;10
+http://custom.shared.obj.ch/concept#0ba7f8c2-9f03-45c3-b900-52389caaca40;0ba7f8c2-9f03-45c3-b900-52389caaca40;Störfallvorsorge;prévention des accidents;antinfortunistica;accident prevention;1;1;0
+http://custom.shared.obj.ch/concept#bf17fc51-05ae-48cd-a8ad-c664ef880d2a;bf17fc51-05ae-48cd-a8ad-c664ef880d2a;Störfall;accident majeur;incidente rilevante;major accident;9;9;0
+http://geocat.ch/concept#283;283;Transformation;transformation;trasformazione;transformation;9;9;0
+http://geocat.ch/concept#245;245;Schutzbau;ouvrage de protection;opera di protezione;protection structure;10;10;0
+http://www.geocat.ch/concept#94e3e974-8246-45e9-a6f4-487302293320;94e3e974-8246-45e9-a6f4-487302293320;Defibrillator;defibrillateur;defibrillatore;defibrillator;1;1;0
+http://custom.shared.obj.ch/concept#c61bd245-02a7-49df-a7b0-9cb710d9b945;c61bd245-02a7-49df-a7b0-9cb710d9b945;Bruchlinie;ligne de faille;linee di faglia;faults;3;3;0
+http://geocat.ch/concept#115;115;GIS (Geografisches Informationssystem);SIG (Système d'Information Géographique);SIG (Sistema Informativo Geografico);GIS (Geographic Information System);66;69;1
+http://geocat.ch/concept#281;281;Toponymie;toponymie;toponomastica;toponymy;7;7;0
+http://custom.shared.obj.ch/concept#ef05f5a1-36e6-4e9e-8ec6-b365e4a6cdd2;ef05f5a1-36e6-4e9e-8ec6-b365e4a6cdd2;Abbaustelle;mine;mina;mine;1;2;1
+http://custom.shared.obj.ch/concept#0e87497e-f298-4bfd-ae20-02fb0a0198f3;0e87497e-f298-4bfd-ae20-02fb0a0198f3;Koordination;coordination;coordinamento;coordination;6;8;0
+http://www.geocat.ch/concept#72a9e6ef-99a4-4301-8230-177da3aded5b;72a9e6ef-99a4-4301-8230-177da3aded5b;Geothermie;géothermie;geotermia;geothermal energy;48;57;6
+http://geocat.ch/concept#193;193;Nationales Inventar;inventaire national;inventario nazionale;national inventory;1;1;0
+http://geocat.ch/concept#59;59;Einzelsignatur;symbole individuel;simbolo individuale;individual Symbol;7;7;0
+http://www.geocat.ch/concept#5f8a5303-72bf-4763-9243-209a185ffbc7;5f8a5303-72bf-4763-9243-209a185ffbc7;Veloweg;voie cyclable;ciclopista;cycleway;23;23;0
+http://geocat.ch/concept#184;184;Luftfahrt;navigation aérienne;navigazione aerea;air navigation;33;42;0
+http://custom.shared.obj.ch/concept#10348ab2-0689-4dbb-a72e-303891a39bc2;10348ab2-0689-4dbb-a72e-303891a39bc2;Planungsinstrument;outil de planification;strumento di pianificazione;planning tool;1;1;0
+http://geocat.ch/concept#220;220;Primärfläche;surface primaire;superficie primaria;primary surface;4;4;0
+http://geocat.ch/concept#181;181;Lithologie;lithologie;litologia;lithology;20;20;0
+http://www.geocat.ch/concept#16f62d33-51f5-4bd4-8768-c043d3a1d5f6;16f62d33-51f5-4bd4-8768-c043d3a1d5f6;Radweg;piste cyclable;percorsi per ciclisti;cycling routes;12;12;2
+http://custom.shared.obj.ch/concept#51569217-affd-489b-bbea-99bf31cd6e2c;51569217-affd-489b-bbea-99bf31cd6e2c;Richtplanung;planification directrice;pianificazione direttrice;structural planning;10;10;1
+http://custom.shared.obj.ch/concept#fff9ac81-3cb2-48eb-a9c6-d7fe2fb8bc1b;fff9ac81-3cb2-48eb-a9c6-d7fe2fb8bc1b;Pegel;niveau;livello;level;2;2;1
+http://geocat.ch/concept#180;180;Liegenschaft;bien-fonds;bene immobile;immoveable property;29;30;1
+http://geocat.ch/concept#23;23;Baugrund;terrain de fondation;terreno di fondazione;building land;4;4;0
+http://custom.shared.obj.ch/concept#8e2856cf-d500-450e-b1f2-66891e754059;8e2856cf-d500-450e-b1f2-66891e754059;Zone;zone;zona;zone;42;65;3
+http://www.geocat.ch/concept#e677de77-65cd-470e-9382-ef902d047c98;e677de77-65cd-470e-9382-ef902d047c98;Raumentwicklung;développement territorial;sviluppo territoriale;spatial development;18;18;9
+http://geocat.ch/concept#102;102;Geophysikalische Karte;carte géophysique;carta geofisica;geophysical map;23;24;0
+http://custom.shared.obj.ch/concept#bd1d4425-98f2-4d6f-9026-ee7d0a03ed0e;bd1d4425-98f2-4d6f-9026-ee7d0a03ed0e;Chronostratigrafie;chronostratigraphie;cronostratigrafia;chronostratigraphy;1;1;0
+http://geocat.ch/concept#40;40;Bouguer-Anomalie;anomalie de bouguer;anomalie di bouguer;bouguer anomaly;6;7;0
+http://custom.shared.obj.ch/concept#b7d7461f-5d6c-452b-8e53-3b8b42864e4b;b7d7461f-5d6c-452b-8e53-3b8b42864e4b;Planungsvorhaben;projet de planification;progetto di pianificazione;planning project;25;25;0
+http://geocat.ch/concept#88;88;Gebietsname;nom de territoire;nome di territorio;area name;1;2;0
+http://geocat.ch/concept#141;141;Hoheitsgrenze;limite territoriale;confine giurisdizionale;sovereign border;38;38;0
+http://custom.shared.obj.ch/concept#c5eeb50c-3c28-48ff-956a-5a455faf0932;c5eeb50c-3c28-48ff-956a-5a455faf0932;Fischfauna;faune piscicole;fauna ittica;fish fauna;1;1;0
+http://geocat.ch/concept#144;144;Höhenkurve;courbe de niveau;curva di livello;contour line;29;29;0
+http://custom.shared.obj.ch/concept#c334c478-eea3-41b7-bf4e-a3c0d6145c27;c334c478-eea3-41b7-bf4e-a3c0d6145c27;Archäologische Ausgrabung;fouille archéologique;scavo archeologico;archaeological excavation;2;2;0
+http://custom.shared.obj.ch/concept#f672f422-4592-45e2-8f41-303405efefb8;f672f422-4592-45e2-8f41-303405efefb8;Archäologische Fundstätten;lieu de découverte archéologique;luogo del rinvenimento archeologico;place of archeological discovery;4;4;0
+http://custom.shared.obj.ch/concept#e518f121-d4bf-4e07-ae3c-2064127031ef;e518f121-d4bf-4e07-ae3c-2064127031ef;Gitter;grille;griglia;grid;1;1;0
+http://www.geocat.ch/concept#57963c44-1c97-4971-b1ef-e0a78ed1a34d;57963c44-1c97-4971-b1ef-e0a78ed1a34d;Detailplan;plan détaillé;piano particolareggiato;detailled plan;1;1;0
+http://custom.shared.obj.ch/concept#26ace107-0692-4029-b981-f080ce1bd26d;26ace107-0692-4029-b981-f080ce1bd26d;Magmatisches Gestein;roche magmatique;roccia magmatica;igneous rock;1;1;0
+http://geocat.ch/concept#143;143;Höhenkote;cote d'altitude;quota altimetrica;spot height;6;6;0
+http://custom.shared.obj.ch/concept#3c170e9d-3b1a-4fc2-95f1-034919d1019d;3c170e9d-3b1a-4fc2-95f1-034919d1019d;Historisches Gebäude;bâtiment historique;edificio storico;historical building;4;4;0
+http://custom.shared.obj.ch/concept#c81091b6-2f06-4150-b464-302aea98a88f;c81091b6-2f06-4150-b464-302aea98a88f;Katalog;catalogue;catalogo;catalogue;99;99;0
+http://geocat.ch/concept#145;145;Höhenpunkt;point altimétrique;punto quotato;spot elevation;6;6;0
+http://www.geocat.ch/concept#3cf3ddcc-e617-4b29-97ce-5ab707625bc2;3cf3ddcc-e617-4b29-97ce-5ab707625bc2;Route;itinéraire;itinerario;route;110;112;13
+http://www.geocat.ch/concept#b5c01cab-332f-4493-98ad-1403473a6063;b5c01cab-332f-4493-98ad-1403473a6063;Darstellungsdienst;service de consultation;servizio di rappresentazione;presentation service;24;26;2
+http://geocat.ch/concept#233;233;Rohrleitung;conduite;condotta;pipeline;68;69;3
+http://www.geocat.ch/concept#caffd41d-8ffe-4a1d-869e-8a9a5717eafe;caffd41d-8ffe-4a1d-869e-8a9a5717eafe;Zeckenstich;piqûre de tique;morso di zecca;tick bite;1;1;0
+http://custom.shared.obj.ch/concept#86b0b24a-0ceb-4bc9-9116-69681e48d377;86b0b24a-0ceb-4bc9-9116-69681e48d377;Sperrung;verrouillage;blocco;blocking;3;3;0
+http://custom.shared.obj.ch/concept#335eb0f8-8d2b-4d6f-9ece-313af5ddb7f8;335eb0f8-8d2b-4d6f-9ece-313af5ddb7f8;Stadtbefestigung;fortifications de la ville;forificazione della città;town fortification;1;1;0
+http://custom.shared.obj.ch/concept#eaeb5d8f-b32f-40dc-82e7-474ca2cfa29b;eaeb5d8f-b32f-40dc-82e7-474ca2cfa29b;Grundnutzung;affectation primaire;utilizzazione di base;primary use;14;14;0
+http://geocat.ch/concept#32b4aaed-2d13-45b6-9932-7d14e11785a1;32b4aaed-2d13-45b6-9932-7d14e11785a1;Grundwassermächtigkeit;hauteur d'eau souterraine;spessore dell'acqua sotterranee;depth of the groundwater;1;1;0
+http://geocat.ch/concept#315;315;Waldwiese;prairie forestière;prato boschivo;forest meadow;14;15;0
+http://geocat.ch/concept#312;312;Waldnutzung;usage de la fôret;utilizzazione del bosco;forest use;2;5;0
+http://geocat.ch/concept#94;94;Geländedarstellung;représentation du terrain;rappresentazione del terreno;terrain representation;43;50;2
+http://www.geocat.ch/concept#1a573c46-7882-4262-b5ac-8c323f81506d;1a573c46-7882-4262-b5ac-8c323f81506d;AtOS (Atom OpenSearch);AtOS (Atom OpenSearch);AtOS (Atom OpenSearch);AtOS (Atom OpenSearch);2;2;0
+http://www.geocat.ch/concept#474fdc69-65e6-4954-bd14-5ceee60b72ff;474fdc69-65e6-4954-bd14-5ceee60b72ff;Minimales Geodatenmodel MGDM;modèle de géodonnées minimal MGDM;modello di geodati minimi MGDM;minimum geodata model MGDM;44;47;3
+http://www.geocat.ch/concept#d09dd314-4fa6-4a25-851e-ece796c98551;d09dd314-4fa6-4a25-851e-ece796c98551;Landwirtschaftliche Bewirtschaftung;exploitation agricole;gestione agricola;agricultural exploitation;46;50;2
+http://custom.shared.obj.ch/concept#edab6b44-d0a1-4b0f-a68c-3b8aee290cc0;edab6b44-d0a1-4b0f-a68c-3b8aee290cc0;Kantonaler Richtplan;plan directeur cantonal;piano direttore cantonale;cantonal structure plan;3;4;0
+http://geocat.ch/concept#e6485c01-fe69-485e-b194-035f682463db;e6485c01-fe69-485e-b194-035f682463db;opendata.swiss;opendata.swiss;opendata.swiss;opendata.swiss;2060;2085;1320
+http://www.geocat.ch/concept#4854ea37-d269-4400-8282-29adbef73956;4854ea37-d269-4400-8282-29adbef73956;Siedlungsentwicklung;développement urbain;sviluppo degli insediamenti;urban development;6;8;1
+http://geocat.ch/concept#33e6396e-d5e5-42b3-bf2e-93f08bf2366a;33e6396e-d5e5-42b3-bf2e-93f08bf2366a;Grundwasserfassung;captage des eaux souterraines;captazione d'acqua sotterranea;groundwater catchment;7;7;0
+http://geocat.ch/concept#291;291;Uferlinie;ligne de rives;linea di rive;shore line;3;3;1
+http://custom.shared.obj.ch/concept#2a56a38e-26c4-4802-9e65-a57998c3335c;2a56a38e-26c4-4802-9e65-a57998c3335c;Bauprojekt;projet de construction;progetto di costruzione;construction project;1;1;0
+http://custom.shared.obj.ch/concept#d719d11c-d8c7-411d-aa69-987f443b603a;d719d11c-d8c7-411d-aa69-987f443b603a;Invasiv;invasive;invasivo;invasive;7;7;0
+http://www.geocat.ch/concept#6e89b2eb-278c-48e2-982f-40072ffdc56f;6e89b2eb-278c-48e2-982f-40072ffdc56f;Unternehmen;entreprise;impresa;company;16;16;6
+http://custom.shared.obj.ch/concept#cb0e0ff1-9cf9-4c7a-bcbd-3a21773790e3;cb0e0ff1-9cf9-4c7a-bcbd-3a21773790e3;Treppe;escalier;scala;stairs;14;14;0
+http://custom.shared.obj.ch/concept#bf3bd716-9b0f-4032-858c-0436931dc50b;bf3bd716-9b0f-4032-858c-0436931dc50b;Bewirtschaftungseinheit;unité de gestion;unità di gestione;unit of management;12;12;0
+http://custom.shared.obj.ch/concept#7f829266-0428-47e2-844b-cdf50024355a;7f829266-0428-47e2-844b-cdf50024355a;Betriebsstandort;aire d'exploitation;sito aziendale;industrial site;4;4;2
+http://www.geocat.ch/concept#e6b026bd-2d26-49bb-8fc4-62d904c9fb99;e6b026bd-2d26-49bb-8fc4-62d904c9fb99;Phänologie;phénologie;fenologia;phenology;1;1;0
+http://custom.shared.obj.ch/concept#bd145036-5551-4082-ace8-2552bd226bf0;bd145036-5551-4082-ace8-2552bd226bf0;Schiessanlage;installation de tir;poligono di tiro;firing range installation;2;4;0
+http://custom.shared.obj.ch/concept#dfd0879a-0423-43da-a56c-a6f41cb332e8;dfd0879a-0423-43da-a56c-a6f41cb332e8;Reptiliengebiet;zone à reptiles;area rettili;reptile area;1;2;0
+http://geocat.ch/concept#150;150;Isophyse;isophyse;isofise;isophysis;3;3;0
+http://custom.shared.obj.ch/concept#efbd2a87-fd26-4239-b677-ee9b92318961;efbd2a87-fd26-4239-b677-ee9b92318961;INTERREG III;INTERREG III;INTERREG III;INTERREG III;1;1;0
+http://geocat.ch/concept#151;151;Jagdbanngebiet;district franc;bandita di caccia;game reserve;12;12;0
+http://custom.shared.obj.ch/concept#7f070e4a-6048-44bb-baa6-302a4df3c895;7f070e4a-6048-44bb-baa6-302a4df3c895;Strasse;route;strada;road;177;179;13
+http://geocat.ch/concept#154;154;Kantonsstrasse;route cantonale;strada cantonale;cantonal road;66;69;2
+http://custom.shared.obj.ch/concept#262f3cc6-ce71-483b-ab79-76047ece9c48;262f3cc6-ce71-483b-ab79-76047ece9c48;Strassenachse;axe routier;asse stradale;road axis;9;9;0
+http://geocat.ch/concept#219;219;Postleitzahl PLZ;numéro postal d'acheminement NPA;numero postale d'avviamento NPA;post code;8;8;0
+http://custom.shared.obj.ch/concept#9cc57550-2518-4478-aebc-a64ec4b8bf68;9cc57550-2518-4478-aebc-a64ec4b8bf68;Quartier;quartier;quartiere;quarter;22;25;6
+http://custom.shared.obj.ch/concept#d32de034-c790-4695-938b-bcbfefe53245;d32de034-c790-4695-938b-bcbfefe53245;Familiengarten;jardin familial;giardino di famiglia;family garden;1;1;0
+http://www.geocat.ch/concept#0aed7c32-bc6b-4cda-8012-58dcebd9b3b4;0aed7c32-bc6b-4cda-8012-58dcebd9b3b4;Freizeitanlage;centre de loisirs;centro per il tempo libero;leisure facility;1;1;0
+http://geocat.ch/concept#14;14;Amtliche Vermessung AV;mensuration officielle MO;misurazione ufficiale MU;cadastral surveying;530;537;5
+http://custom.shared.obj.ch/concept#adab909a-7347-42bd-990a-83fbe68496a2;adab909a-7347-42bd-990a-83fbe68496a2;Historische Stätte;site historique;sito storico;historic site;9;10;1
+http://custom.shared.obj.ch/concept#ca61669d-cd72-432d-949b-5328792d6ab2;ca61669d-cd72-432d-949b-5328792d6ab2;Gebäudeeingang;entrée de bâtiment;entrata d'edificio;building entrance;1;1;0
+http://geocat.ch/concept#156;156;Kartografische Generalisierung;généralisation cartographique;generalizzazione cartografica;cartographic generalisation;4;4;0
+http://custom.shared.obj.ch/concept#3e478930-8a66-4821-99e4-9e2a57781895;3e478930-8a66-4821-99e4-9e2a57781895;Kanton;canton;cantone;canton;189;217;6
+http://custom.shared.obj.ch/concept#e570537d-bfb3-4ddd-a0c2-23b3d5243611;e570537d-bfb3-4ddd-a0c2-23b3d5243611;Gründigkeit;profondeur du sol;potenza del terreno;root penetration depth;2;2;0
+http://custom.shared.obj.ch/concept#912f0579-e416-4fbe-8322-12e6b9ba5792;912f0579-e416-4fbe-8322-12e6b9ba5792;Störung;faille;faglia;fault;9;9;0
+http://geocat.ch/concept#4020caf9-20f7-4cb6-bb98-712eb76860e0;4020caf9-20f7-4cb6-bb98-712eb76860e0;Point of Interest POI;point d'intérêt POI;punto di interesse POI;point of interest POI;8;8;0
+http://geocat.ch/concept#38;38;Bezugssystem;système de référence;sistema di riferimento;reference system;15;15;1
+http://geocat.ch/concept#298;298;Vergletscherung;glaciation;glaciazione;glaciation;9;10;0
+http://geocat.ch/concept#251;251;Segelflug;vol à voile;volo a vela;glider;3;4;0
+http://custom.shared.obj.ch/concept#888c7cf0-8a2f-4b22-a583-7bdce92f8367;888c7cf0-8a2f-4b22-a583-7bdce92f8367;Dauernde Bodenverschiebung;territoire en mouvement permanent;spostamento di terreno permanente;permanent landslip area;23;24;1
+http://geocat.ch/concept#295;295;Unwetter;intempéries;intemperie;severe weather;2;2;0
+http://custom.shared.obj.ch/concept#a30aeff5-f7d2-4d0b-89fa-ce01cf8e7f74;a30aeff5-f7d2-4d0b-89fa-ce01cf8e7f74;Makrozoobenthos;macrozoobenthos;macrozoobenthos;macrozoobenthos;1;1;0
+http://custom.shared.obj.ch/concept#4775d5ab-8a76-478f-9031-48865a79d4ee;4775d5ab-8a76-478f-9031-48865a79d4ee;Quellhorizont;horizon sourcier;fonte orizzonte;spring horizon;1;1;0
+http://geocat.ch/concept#48;48;DHM (Digitales Höhenmodell);MNA (modèle numérique d'altitude);DEM (modello digitale di elevazione);DEM (digital elevation model);47;47;0
+http://custom.shared.obj.ch/concept#9bd3e05e-8b53-4bfa-af61-de3710f28146;9bd3e05e-8b53-4bfa-af61-de3710f28146;Allmend;allmend;almenda;common land;1;1;0
+http://custom.shared.obj.ch/concept#39af3584-ccb0-49e8-bc38-4363d79e8cd3;39af3584-ccb0-49e8-bc38-4363d79e8cd3;Grundwasservorkommen;ressources en eaux souterraines;risorse idriche sotterranee;groundwater resources;10;10;1
+http://geocat.ch/concept#5689ad47-2213-432f-83da-eec715b56a1f;5689ad47-2213-432f-83da-eec715b56a1f;Reservoir;réservoir;serbatoio;reservoir;1;1;0
+http://custom.shared.obj.ch/concept#7a4c6992-b167-453e-aed9-bfa4a4e8aa22;7a4c6992-b167-453e-aed9-bfa4a4e8aa22;Fliessgewässer;cours d'eau;corso d'acqua;watercourse;56;59;4
+http://geocat.ch/concept#161;161;Künstliches Objekt;objet artificiel;oggetto artificiale;artificial object;1;1;0
+http://geocat.ch/concept#139;139;Historischer Verkehrsweg;voie de communication historique;via di communicazione storica;historic traffic route;12;12;0
+http://custom.shared.obj.ch/concept#c4091aed-f568-49ea-a701-6fac3e073276;c4091aed-f568-49ea-a701-6fac3e073276;Natur;nature;natura;nature;68;88;2
+http://geocat.ch/concept#160;160;Kulturgüterschutz KGS;protection des biens culturels PBC;protezione dei beni culturali PBC;protection of cultural property PCP;25;25;0
+http://custom.shared.obj.ch/concept#a6d2b46e-4dc6-490e-8ca4-be8ec62ad299;a6d2b46e-4dc6-490e-8ca4-be8ec62ad299;Deckschicht;couche superficielle;strato superficiale;armour layer;2;2;1
+http://www.geocat.ch/concept#b02e1d90-d67e-473d-9871-ef65428315e7;b02e1d90-d67e-473d-9871-ef65428315e7;Haltestelle;arrêt;fermata;stop;8;10;2
+http://custom.shared.obj.ch/concept#5904b8ab-993e-4fe1-a3fe-69336c756242;5904b8ab-993e-4fe1-a3fe-69336c756242;Pflanzennährstoff;eléments nutritifs des plantes;impianto di nutrienti;plant nutrient;1;1;0
+http://geocat.ch/concept#222;222;Quartierplan;plan de quartier;piano di quartiere;quarter map;16;17;1
+http://geocat.ch/concept#128;128;Grundwasserschutzareal;périmètre de protection des eaux souterraines;area di protezione delle acque sotterranee;groundwater protection area;9;9;0
+http://custom.shared.obj.ch/concept#0c8cae68-e19d-41de-8472-0645b3980657;0c8cae68-e19d-41de-8472-0645b3980657;Genauigkeit;précision;precisione;precision;1;1;0
+http://custom.shared.obj.ch/concept#3a65d6b4-3722-4cc2-b21b-b77006c2e41d;3a65d6b4-3722-4cc2-b21b-b77006c2e41d;Airborne-Laser-Scanning;Airborne-Laser-Scanning;Airborne-Laser-Scanning;Airborne-Laser-Scanning;6;6;0
+http://geocat.ch/concept#43bacba2-6046-4dff-9cf2-d08cf839e7ff;43bacba2-6046-4dff-9cf2-d08cf839e7ff;Holzproduktion;production de bois;produzione di legname;timber production;1;1;0
+http://custom.shared.obj.ch/concept#df549034-b93d-41e5-bed1-ba6dbaec8e44;df549034-b93d-41e5-bed1-ba6dbaec8e44;Massnahme;mesure;misura;measure;1;1;0
+http://custom.shared.obj.ch/concept#4cfc542a-a5ea-4493-b0e4-2a339e58e4f4;4cfc542a-a5ea-4493-b0e4-2a339e58e4f4;Ökologischer Nutzen;avantage écologique;beneficio ambientale;ecological benefit;1;1;0
+http://custom.shared.obj.ch/concept#e0872afd-9fa1-4b8e-bec7-ab735faf2a53;e0872afd-9fa1-4b8e-bec7-ab735faf2a53;Projektierungszone;zone réservée;zona di progettazione;project planning zone;2;5;2
+http://geocat.ch/concept#196;196;Naturschutzzone;zone naturelle protégée;zona naturale protetta;protected natural zone;16;21;2
+http://geocat.ch/concept#123;123;Grossregion;grande région;grande regione;major region;3;3;0
+http://geocat.ch/concept#117;117;GLONASS;GLONASS;GLONASS;GLONASS;1;1;0
+http://geocat.ch/concept#226;226;Rasterdaten;données raster;dati raster;raster data;16;21;1
+http://geocat.ch/concept#319;319;Weg;chemin;cammino;path;23;26;2
+http://geocat.ch/concept#330;330;Zonennutzungsplan ZNP;plan d'affectation de zone PAZ;piano regolatore;zonal use plan;155;191;2
+http://geocat.ch/concept#227;227;Rebbauzone;zone viticole;zona viticola;vineyard zone;14;18;0
+http://custom.shared.obj.ch/concept#44157dac-756a-414b-9259-e6b0e312accb;44157dac-756a-414b-9259-e6b0e312accb;Augusta Raurica;Augusta Raurica;Augusta Raurica;Augusta Raurica;17;18;0
+http://custom.shared.obj.ch/concept#0eec01de-bb61-4f43-b1e2-c06eb386037b;0eec01de-bb61-4f43-b1e2-c06eb386037b;Ausgrabung;fouille;scavo;excavation;3;3;0
+http://custom.shared.obj.ch/concept#5334a3c9-a0e6-4088-a3b0-c5122fa3d1e9;5334a3c9-a0e6-4088-a3b0-c5122fa3d1e9;historischer Wasserlauf;hydrosystème fluvial historique;corso d'acqua storico;historical watercourse;1;1;0
+http://geocat.ch/concept#126;126;Grundplan;fond de plan;piano di base;basic plan;48;49;1
+http://geocat.ch/concept#21;21;Basiskarte;carte de base;carta di base;base map;13;14;0
+http://geocat.ch/concept#229;229;Register;registre;registro;register;25;25;0
+http://geocat.ch/concept#120;120;Gravimetrie;gravimétrie;gravimetria;gravimetry;11;11;0
+http://geocat.ch/concept#47;47;Digitales Farborthofotomosaik;mosaïque d'orthophotos numériques en couleur;mosaico di ortofoto digitali a colori;digital color orthophoto mosaic;15;15;1
+http://geocat.ch/concept#121;121;Grenzlinie;ligne de frontières;linea di confine;boundary line;1;1;0
+http://geocat.ch/concept#114;114;Gewerbezone;zone artisanale;zona artigianale;artisan zone;30;30;0
+http://www.geocat.ch/concept#636a7ad8-9aa3-46d0-a0ad-b325fe3ac356;636a7ad8-9aa3-46d0-a0ad-b325fe3ac356;Geodienst;géoservice;geoservizio;geoservice;25;27;2
+http://geocat.ch/concept#44;44;Datenbeschreibung;description de données;descrizione di dati;data description;1;1;0
+http://geocat.ch/concept#dbd14ac6-342f-40fd-b22b-e1f17f9ab485;dbd14ac6-342f-40fd-b22b-e1f17f9ab485;Fussgänger;piéton;pedone;pedestrian;20;20;1
+http://custom.shared.obj.ch/concept#354272b9-e3d2-4c7a-8f1d-0f2044c73856;354272b9-e3d2-4c7a-8f1d-0f2044c73856;Biogener Abfall;déchet biogène;rifiuto biogeno;biodegradable waste;1;1;0
+http://geocat.ch/concept#17;17;Antenne;antenne;antenna;antenna;43;44;0
+http://geocat.ch/concept#231;231;Richtplan;plan directeur;piano direttore;structure plan;57;59;5
+http://custom.shared.obj.ch/concept#c4e98ef0-cc49-4f02-aa36-d10a55a58085;c4e98ef0-cc49-4f02-aa36-d10a55a58085;Revitalisierung;revitalisation;rivitalizzazione;revitalisation;5;5;1
+http://custom.shared.obj.ch/concept#ae21d759-4f43-4997-8c10-c147390a9361;ae21d759-4f43-4997-8c10-c147390a9361;Gewässerzustand;état des eaux;stato delle acque;water status;1;1;0
+http://geocat.ch/concept#207;207;Ortsbild;site construit;insediamento;heritage site;11;12;2
+http://custom.shared.obj.ch/concept#fb81c1a4-d869-4be4-a94d-a2985fbada3d;fb81c1a4-d869-4be4-a94d-a2985fbada3d;Harmonisierte Struktur;structure harmonisée;struttura armonizzata;harmonised structure;2;2;0
+http://custom.shared.obj.ch/concept#ec664d59-d78e-49fc-95cf-7f883bb4bb8e;ec664d59-d78e-49fc-95cf-7f883bb4bb8e;Harmonisierte geologische Einheiten;unités géologiques harmonisées;unità geologiche armonizzate;harmonised geologic units;2;2;0
+http://geocat.ch/concept#235;235;Rutschung;glissement de terrain;franamento;slide;53;53;0
+http://geocat.ch/concept#236;236;Sammlung (Archiv, Bibliothek, Museum);collection (archive, bibliothèque, musée);collezione (archivio, biblioteca, museo);collection (archive, librarie, museum);2;2;0
+http://geocat.ch/concept#246;246;Schutzwald;forêt de protection;bosco di protezione;protection forest;14;14;5
+http://geocat.ch/concept#138;138;Historische Karte;carte historique;carta storica;historic map;105;105;28
+http://geocat.ch/concept#7950c5b9-e991-44cd-b6e4-ee7cbdf96062;7950c5b9-e991-44cd-b6e4-ee7cbdf96062;Modelldokumentation;documentation de modèle;documentazione del modello;model documentation;167;167;0
+http://custom.shared.obj.ch/concept#4c004956-f8fa-4d54-a440-fe81219bc09b;4c004956-f8fa-4d54-a440-fe81219bc09b;Biotopverbund;réseau de biotopes;reticolo biologico;biotope network;5;5;0
+http://geocat.ch/concept#2;2;3D Visualisierung;visualisation 3D;visualizzazione 3D;3D visualisation;28;29;0
+http://custom.shared.obj.ch/concept#03a2b111-683c-43ef-86a2-4019596f8052;03a2b111-683c-43ef-86a2-4019596f8052;Helikopterlandeplatz;héliport;eliporto;heliport;7;12;0
+http://geocat.ch/concept#200;200;Nutzungszone;zone d'affectation;zona di utilizzazione;land use zone;97;98;0
+http://geocat.ch/concept#78;78;Fluss;rivière;fiume;river;15;16;3
+http://geocat.ch/concept#137;137;Hindernis;obstacle;ostacolo;obstacle;2;2;0
+http://custom.shared.obj.ch/concept#bcc068e6-549f-47a4-aa4b-8efab1792f38;bcc068e6-549f-47a4-aa4b-8efab1792f38;Werkkataster;cadastre des usines;mappe fabbriche;factory cadastre;1;1;0
+http://geocat.ch/concept#134;134;Hangneigung;déclivité;acclività;gradient;15;16;0
+http://www.geocat.ch/concept#2b091dd3-308f-4739-bea0-ca349bc50bda;2b091dd3-308f-4739-bea0-ca349bc50bda;Regional;régional;regionale;regional;1;1;0
+http://geocat.ch/concept#135;135;Hauptstrasse;route principale;strada principale;main road;6;6;0
+http://custom.shared.obj.ch/concept#c7623af7-aa48-4ee5-b4b6-0defa4aa5602;c7623af7-aa48-4ee5-b4b6-0defa4aa5602;Sachplan;plan sectoriel;piano settoriale;sectoral plan;9;9;0
+http://geocat.ch/concept#130;130;Grünzone;zone de verdure;zona verde;green belt;30;30;0
+http://www.geocat.ch/concept#9ae8128e-1a43-4ba7-b9e9-04e6ccba3075;9ae8128e-1a43-4ba7-b9e9-04e6ccba3075;Veranstaltung;manifestation;manifestazioni;event;2;2;1
+http://custom.shared.obj.ch/concept#4b73307b-3511-4da5-aace-b4dd801de45d;4b73307b-3511-4da5-aace-b4dd801de45d;Einleitung;introduction;introduzione;introduction;2;2;1
+http://custom.shared.obj.ch/concept#03726599-c18c-4b94-8538-9cf2c57a8bbd;03726599-c18c-4b94-8538-9cf2c57a8bbd;Gutachten;préavis;preavviso;expertise;18;19;2
+http://custom.shared.obj.ch/concept#2ef9e62e-6319-41f7-9409-0e572fe6a083;2ef9e62e-6319-41f7-9409-0e572fe6a083;Aufgrabung;déblai;sterro di trincea;excavation;2;2;0
+http://geocat.ch/concept#5;5;Achse;axe;asse;axis;8;9;0
+http://geocat.ch/concept#22;22;Baubewilligung;autorisation de construire;autorizzazione di costruzione;construction permit;4;11;0
+http://geocat.ch/concept#242;242;Schummerung;ombrage;ombreggiatura;hillshade;9;9;0
+http://geocat.ch/concept#107;107;Geschützte Geografische Angabe GGA;indication géographique protégée IGP;indicazione geografica protetta IGP;protected geographical indication PGI;6;6;0
+http://geocat.ch/concept#37;37;Bezugsrahmen;cadre de référence;quadro di riferimento;reference frame;13;13;0
+http://custom.shared.obj.ch/concept#aeed57e1-66f4-4a1b-9d24-c21ea4be954a;aeed57e1-66f4-4a1b-9d24-c21ea4be954a;ÖREB;RDPPF;RDPP;OeREB;21;27;10
+http://geocat.ch/concept#108;108;Geschützte Ursprungsbezeichnung GUB;appellation d'origine protégées AOP;denominazione d'origine controllata DOP;protected designation of origin PDO;7;7;0
+http://geocat.ch/concept#69;69;Fixpunkt;point fixe;punto fisso;fixpoint;54;54;0
+http://geocat.ch/concept#247;247;Schutzzone;zone de protection;zona di protezione;protection zone;22;23;0
+http://custom.shared.obj.ch/concept#12ac299e-68d9-4a47-954a-e9421cd10511;12ac299e-68d9-4a47-954a-e9421cd10511;Abfallholz;déchet de bois;materiale di scarto;cullwood;1;2;1
+http://geocat.ch/concept#241;241;Schloss;château;castello;castle;4;4;0
+http://custom.shared.obj.ch/concept#e3630db2-9af1-4ac7-82e6-2453e64afa14;e3630db2-9af1-4ac7-82e6-2453e64afa14;Verkehrsbelastung;charge de trafic;carico di traffico;traffic load;10;10;0
+http://custom.shared.obj.ch/concept#fbd3b6b5-0387-4ba8-ae2a-1c57f95383a5;fbd3b6b5-0387-4ba8-ae2a-1c57f95383a5;Fliessrichtung;direction d'écoulement;direzione della corrente;flow direction;1;1;0
+http://custom.shared.obj.ch/concept#86a64841-0b80-4c47-8d1a-d10710a7dd26;86a64841-0b80-4c47-8d1a-d10710a7dd26;Betrieb;exploitation;funzionamento;operation;18;18;1
+http://custom.shared.obj.ch/concept#1d01ca9a-d50b-459a-b056-2241541819a3;1d01ca9a-d50b-459a-b056-2241541819a3;Heuschrecke;criquet;locusta;locust;1;1;0
+http://custom.shared.obj.ch/concept#dc9bcbde-13cd-4479-a78b-0863f622502b;dc9bcbde-13cd-4479-a78b-0863f622502b;Wasserleitung;conduite d'eau;condotta d'acqua;water pipe;75;77;0
+http://www.geocat.ch/concept#8eee4b11-ead5-4020-ad61-f0d2924b5b21;8eee4b11-ead5-4020-ad61-f0d2924b5b21;Zeckenenzephalitis;encéphalite à tiques;encefalite da morso di zecca;tick-borne encephalitis;1;1;0
+http://www.geocat.ch/concept#e8c53eaf-f6ec-4330-b78a-a93ee9e470e7;e8c53eaf-f6ec-4330-b78a-a93ee9e470e7;FISE (Forest Information System for Europe);FISE (Forest Information System for Europe);FISE (Forest Information System for Europe);FISE (Forest Information System for Europe);3;3;0
+http://custom.shared.obj.ch/concept#ed69e5ee-89ae-4511-9e0f-99f070d0d6d6;ed69e5ee-89ae-4511-9e0f-99f070d0d6d6;Oberflächengeologie;géologie de la surface;geologia superficiale;surface geology;2;2;0
+http://custom.shared.obj.ch/concept#a7b948b7-f5da-4c6a-9047-d562ea293113;a7b948b7-f5da-4c6a-9047-d562ea293113;Oberflächenablagerung;dépôt superficiel;depositi superficiali;superficial deposit;1;1;0
+http://geocat.ch/concept#100;100;Geologische Karte;carte géologique;carta geologica;geologic map;36;37;0
+http://geocat.ch/concept#91;91;Gefahrenkarte;carte des dangers;carta dei pericoli;hazard map;62;65;9
+http://custom.shared.obj.ch/concept#0b763f09-207e-4383-aede-3b81b30d8c4e;0b763f09-207e-4383-aede-3b81b30d8c4e;Positionierungsdienst;service de positionnement;servizio di posizionamento;positioning service;2;2;0
+http://geocat.ch/concept#101;101;Geomarketing;géomarketing;geomarketing;geomarketing;1;1;0
+http://www.geocat.ch/concept#2ca4dc33-0955-45e9-92d7-0a92a82d0641;2ca4dc33-0955-45e9-92d7-0a92a82d0641;geodienste.ch;geodienste.ch;geodienste.ch;geodienste.ch;46;49;3
+http://custom.shared.obj.ch/concept#ad7dd875-0806-4aad-9175-d1f673a2507e;ad7dd875-0806-4aad-9175-d1f673a2507e;GeoMol;GeoMol;GeoMol;GeoMol;5;6;0
+http://geocat.ch/concept#249;249;Seebodenkurve;courbe des fonds des lacs;quota altimetrica dei laghi;contour in lakes;4;4;0
+http://www.geocat.ch/concept#53bae33f-afd0-45f1-861c-4534a1795217;53bae33f-afd0-45f1-861c-4534a1795217;Hochmoor;haut-marais;torbiera alta;raised bog;17;17;1
+http://custom.shared.obj.ch/concept#c806316f-0390-4e1a-bc72-71e66c2003aa;c806316f-0390-4e1a-bc72-71e66c2003aa;Gasleitung;conduite de gaz;condotta di gas;gas pipeline;32;34;0
+http://geocat.ch/concept#5cef859a-3020-4a7a-a3e6-bc0dd725c6f9;5cef859a-3020-4a7a-a3e6-bc0dd725c6f9;Treffpunkt;lieu de rencontre;luogo di ritrovo;meeting point;1;1;0
+http://geocat.ch/concept#104;104;Geotop;géotope;geotopo;geotope;7;7;0
+http://custom.shared.obj.ch/concept#38bc0707-c997-44f1-b8f8-a909f1096b78;38bc0707-c997-44f1-b8f8-a909f1096b78;Zecke;tique;zecca;tick;1;1;0
+http://geocat.ch/concept#212;212;Ortung;repérage;localizzazione;locating;19;19;0
+http://geocat.ch/concept#15;15;Anbaueignung;aptitude culturale;attitudine alla coltura;cultivation suitability;21;21;0
+http://custom.shared.obj.ch/concept#e98d91f6-9a04-4ade-b30b-6f17f35a6996;e98d91f6-9a04-4ade-b30b-6f17f35a6996;Kulturgeschichte;histoire culturelle;storia culturale;cultural history;2;2;0
+http://custom.shared.obj.ch/concept#1fc4cafb-d9ad-428b-b952-cbb852e3de74;1fc4cafb-d9ad-428b-b952-cbb852e3de74;INSPIRE;INSPIRE;INSPIRE;INSPIRE;90;97;0
+http://geocat.ch/concept#257;257;Siedlungsgebiet;milieu bâti;zona di insediamento;settlement area;11;14;0
+http://geocat.ch/concept#119;119;GPS (Global Positioning System);GPS (Global Positioning System);GPS (Global Positioning System);GPS (Global Positioning System);1;3;0
+http://custom.shared.obj.ch/concept#34fad600-90f2-4a30-b4b0-a565edccb82d;34fad600-90f2-4a30-b4b0-a565edccb82d;WMS;WMS;WMS;WMS;25;27;2
+http://geocat.ch/concept#258;258;Signalisierung;signalisation;segnalizzazione;signalling;0;3;0
+http://geocat.ch/concept#253;253;Seilbahnstation;station téléférique;stazione teleferica;cableway station;1;1;0
+http://geocat.ch/concept#116;116;Gleitschirm;parapente;parapendio;paragliding;0;3;0
+http://custom.shared.obj.ch/concept#4e5d3d6c-3515-4f90-b518-e8825170f12c;4e5d3d6c-3515-4f90-b518-e8825170f12c;Wasserprozess;processus hydrologique;processo idrologico;water related process;1;2;0
+http://geocat.ch/concept#252;252;Seilbahn;téléphérique;teleferica;cableway;11;11;1
+http://www.geocat.ch/concept#84ec96bd-d435-4da6-b67e-f5a180f3edf8;84ec96bd-d435-4da6-b67e-f5a180f3edf8;Objektschutz;protection d’ouvrage;protezione di opere;local protection;1;1;0
+http://geocat.ch/concept#328;328;Wohnzone;zone d'habitation;zona di abitazione;residential zone;30;30;0
+http://geocat.ch/concept#96;96;Generalkarte;carte générale;carta generale;general map;3;6;1
+http://custom.shared.obj.ch/concept#d43a68c0-b473-4f5d-8e68-fdeaea482c8f;d43a68c0-b473-4f5d-8e68-fdeaea482c8f;Schonzone;périmètre de protection;zona di rispetto;careful treatment zone;2;3;1
+http://geocat.ch/concept#99;99;Geoid;géoïde;geoide;geoid;5;5;0
+http://geocat.ch/concept#317;317;Wasserbau;aménagement des cours d'eau;sistemazione dei corsi d'acqua;river management;15;15;4
+http://custom.shared.obj.ch/concept#ae677a16-f81a-4533-9243-a87831115079;ae677a16-f81a-4533-9243-a87831115079;BGDI Bundesgeodaten-Infrastruktur;IFDG l’Infrastructure Fédérale de données géographiques;IFDG Infrastruttura federale dei dati geografici;FSDI Federal Spatial Data Infrastructure;821;917;35
+http://geocat.ch/concept#113;113;Gewässerschutzbereich;secteur de protection des eaux;settore di protezione delle acque;water protection sector;13;13;0
+http://custom.shared.obj.ch/concept#6a71eb70-3103-432a-bf96-4ab92b6fc954;6a71eb70-3103-432a-bf96-4ab92b6fc954;Harmonisierte Geologie;géologie hamonisée;geologia armonizzata;harmonised geology;7;8;0
+http://geocat.ch/concept#261;261;Skilift;remontée mécanique;risalita meccanica;mountain lift;15;16;1
+http://www.geocat.ch/concept#7a2f0400-a90a-4808-9063-8377311d8c35;7a2f0400-a90a-4808-9063-8377311d8c35;Ski;ski;sci;ski;4;5;0
+http://geocat.ch/concept#260;260;Situationsplan;plan de situation;piano di situazione;situation plan;2;2;0
+http://www.geocat.ch/concept#e91c3cea-6489-4928-9b88-e3fcbd07d181;e91c3cea-6489-4928-9b88-e3fcbd07d181;Sirene;sirène;sirena;siren;21;21;0
+http://www.geocat.ch/concept#91f24f52-10f8-45dd-badc-41e449f69f83;91f24f52-10f8-45dd-badc-41e449f69f83;Risikokataster;cadastre des risques;catasto dei rischi;risk register;8;8;0
+http://custom.shared.obj.ch/concept#b0207d96-1d5d-4a26-97b8-ab4870fc83aa;b0207d96-1d5d-4a26-97b8-ab4870fc83aa;Unfallstandort;lieu d'accident;sito di un incidente;accident site;3;3;2
+http://custom.shared.obj.ch/concept#b867c681-9b7b-4bed-adf0-d3e9e69fac23;b867c681-9b7b-4bed-adf0-d3e9e69fac23;OneGeology-Europe;OneGeology-Europe;OneGeology-Europe;OneGeology-Europe;4;4;0
+http://geocat.ch/concept#77;77;Flurname;nom local;nome locale;local name;16;16;0
+http://custom.shared.obj.ch/concept#f1275f5b-4f5f-4ada-bf47-0bfbbcbfaf4b;f1275f5b-4f5f-4ada-bf47-0bfbbcbfaf4b;Radroute;pistes de vélo;percorsi per ciclisti;cycling route;1;1;0
+http://custom.shared.obj.ch/concept#8356ac25-0a9d-4eb4-bd05-1ef9e16a8c94;8356ac25-0a9d-4eb4-bd05-1ef9e16a8c94;Leitbild;conception directrice;linee direttive;general principle;1;1;0
+http://custom.shared.obj.ch/concept#77c33a18-9451-4bf4-a046-f8ad25a23e4f;77c33a18-9451-4bf4-a046-f8ad25a23e4f;Alpenhebung;soulèvement alpin;innalzamento delle alpi;alpine uplift;1;1;0
+http://geocat.ch/concept#3;3;Ablagerungszone;zone de sédimentation;zona di sedimentazione;deposition zone;2;2;0
+http://custom.shared.obj.ch/concept#2d6ccf0a-c744-4d96-a0db-e181e5b5e9c5;2d6ccf0a-c744-4d96-a0db-e181e5b5e9c5;Strassenlärm;bruit routier;rumore stradale;road noise;29;30;2
+http://custom.shared.obj.ch/concept#84795192-a5d6-4252-a7aa-74151f3a172c;84795192-a5d6-4252-a7aa-74151f3a172c;Schneeschuh;raquette à neige;racchetta da neve;snowshoe;5;6;0
+http://geocat.ch/concept#11fcc338-bf35-477a-bd4b-e45e76df2dae;11fcc338-bf35-477a-bd4b-e45e76df2dae;Darstellungsmodell;modèle de représentation;modello di rappresentazione;representation model;120;120;0
+http://www.geocat.ch/concept#e1946cf9-ef4c-4a9f-9fc2-d75c19de9ddf;e1946cf9-ef4c-4a9f-9fc2-d75c19de9ddf;Schutzraum;abri;rifugio;shelter;25;26;1
+http://custom.shared.obj.ch/concept#ef050a66-ded6-4022-b4fe-90aab4a9079e;ef050a66-ded6-4022-b4fe-90aab4a9079e;Luftfahrthindernis;obstacle à la navigation aérienne;ostacolo alla navigazione aerea;air navigation obstacle;16;17;0
+http://custom.shared.obj.ch/concept#6f9ad1c5-4b95-4c35-aedd-16bd8c414735;6f9ad1c5-4b95-4c35-aedd-16bd8c414735;Anlage;ébauche;complesso;site;25;25;0
+http://custom.shared.obj.ch/concept#354d9241-902c-4f80-89a6-3bf56944410e;354d9241-902c-4f80-89a6-3bf56944410e;Sondernutzungsplan;plan spécial;piano di utilizzazione speciale;plan of special use;81;92;1
+http://custom.shared.obj.ch/concept#4a247507-2ca0-45af-b80f-29da80747033;4a247507-2ca0-45af-b80f-29da80747033;Verzeichnis;inventaire;inventario;register;46;50;0
+http://www.geocat.ch/concept#e8f9bbe2-f61a-4de9-b3df-d1cc7cc8666a;e8f9bbe2-f61a-4de9-b3df-d1cc7cc8666a;Schneesport;sport de neige;sport della neve;snowsport;5;6;1
+http://geocat.ch/concept#308;308;Waldgrenze;limite forestière;limite del bosco;forest line;136;136;0
+http://custom.shared.obj.ch/concept#7a6dd485-5aa6-4a48-b36c-ea13cba0b2dc;7a6dd485-5aa6-4a48-b36c-ea13cba0b2dc;Bund;confédération;confederazione;confederation;4;5;0
+http://custom.shared.obj.ch/concept#6ab1fd5e-1e4c-49a6-b0b4-71eeac92fe57;6ab1fd5e-1e4c-49a6-b0b4-71eeac92fe57;Isohypse;isohypse;isoipsa;isohypse;1;1;0
+http://geocat.ch/concept#f0e75772-d759-47eb-875a-d9fd53336b3b;f0e75772-d759-47eb-875a-d9fd53336b3b;Skating;skating;skating;skating;18;18;1
+http://custom.shared.obj.ch/concept#4d27c999-21ff-401c-bfee-23f599175ed9;4d27c999-21ff-401c-bfee-23f599175ed9;Denkmalinventar;inventaire de monuments;inventario dei monumenti;inventory of monuments;1;1;0
+http://custom.shared.obj.ch/concept#4a97b852-f7cb-4aa8-b601-9e4be3cca073;4a97b852-f7cb-4aa8-b601-9e4be3cca073;Waldabstand;déboisement;disboscamento;forest clearance;132;132;0
+http://geocat.ch/concept#27;27;Bauzone;zone à bâtir;zona edificabile;construction zone;172;177;3
+http://custom.shared.obj.ch/concept#74696515-34ec-4a4c-b36a-9dfc11fd0766;74696515-34ec-4a4c-b36a-9dfc11fd0766;Schutzmassnahme;mesure de protection;misura di protezione;protective measure;4;4;0
+http://geocat.ch/concept#6dced9b5-f579-4de5-9180-7c19d9e86fe3;6dced9b5-f579-4de5-9180-7c19d9e86fe3;Schutzfunktion;fonction protectrice;funzione protettiva;protective function;3;3;1
+http://custom.shared.obj.ch/concept#0d5ee014-66ef-43a6-bb86-a280fd9b008b;0d5ee014-66ef-43a6-bb86-a280fd9b008b;Kläranlage;station d'épuration;impianto di depurazione delle acque;wastewater treatment plant;3;3;1
+http://www.geocat.ch/concept#895bc58e-ed58-4190-a4f2-46d0dbf4da03;895bc58e-ed58-4190-a4f2-46d0dbf4da03;Einschränkung;limitation;limitazione;limitation;15;15;0
+http://custom.shared.obj.ch/concept#732293ba-68e1-4475-9d5c-858a58c98790;732293ba-68e1-4475-9d5c-858a58c98790;Bau;construction;costruzione;construction;13;23;1
+http://geocat.ch/concept#73;73;Flugplatz;aérodrome;aerodromo;airfield;23;30;0
+http://custom.shared.obj.ch/concept#cdd3b825-cf1e-4d5d-803d-15fd91f33c1a;cdd3b825-cf1e-4d5d-803d-15fd91f33c1a;Öffentliche Baute;construction publique;edificio pubblica;public building;14;14;0
+http://geocat.ch/concept#191;191;Murgang;lave torrentielle;lava torrentizia;debris flow;14;14;3
+http://custom.shared.obj.ch/concept#242013d2-4d22-45d0-8c1c-311f1e37f8df;242013d2-4d22-45d0-8c1c-311f1e37f8df;Metamorphes Gestein;roche métamorphique;roccia metamorfica;metamorphic rock;1;1;0
+http://geocat.ch/concept#306;306;Waldfläche;surface boisée;superficie boschiva;wooded area;16;16;0
+http://www.geocat.ch/concept#17dc0d35-c4e1-42be-9419-2b223517af4b;17dc0d35-c4e1-42be-9419-2b223517af4b;Geobasisdienst;géoservice de base;geoservizio di base;official geoservice;37;39;2
+http://custom.shared.obj.ch/concept#17c25f8a-a2cd-4d6e-817c-f959e67a0538;17c25f8a-a2cd-4d6e-817c-f959e67a0538;Mountainbike;vélo tout-terrain VTT;mountain bike;mountain bike;7;7;1
+http://custom.shared.obj.ch/concept#9f622a58-728c-4b47-858c-1f9eab40d30d;9f622a58-728c-4b47-858c-1f9eab40d30d;Mobilfunk;radio communication mobile;radiomobile;mobile communication;3;3;0
+http://geocat.ch/concept#18;18;Auengebiet;zone alluviale;zona golenale;alluvial site;7;10;1
+http://www.geocat.ch/concept#be372047-ffca-4e0a-be30-a9455314d13d;be372047-ffca-4e0a-be30-a9455314d13d;Ameise;fourmi;formica;ant;1;1;0
+http://geocat.ch/concept#188;188;Mobiltelefonie;téléphonie mobile;telefonia mobile;mobile telephony;32;34;0
+http://custom.shared.obj.ch/concept#10179f7f-6bbe-4ce3-8dab-95ed8c79f0ad;10179f7f-6bbe-4ce3-8dab-95ed8c79f0ad;Fassung;captage;captazione;catchment;7;11;4
+http://custom.shared.obj.ch/concept#f6a06480-5764-4b85-b047-44fc13197605;f6a06480-5764-4b85-b047-44fc13197605;Abschwemmung;ruissellement;alluvione;run-off;1;1;0
+http://custom.shared.obj.ch/concept#6a292931-2a8b-45e3-8219-954d89ecc5fd;6a292931-2a8b-45e3-8219-954d89ecc5fd;Nutzungsfläche;surface d'affectation;superficie d'utilizzazione;surface of utilisation;5;5;0
+http://custom.shared.obj.ch/concept#8ea23c1b-f2b0-407d-b19b-75efad6060bc;8ea23c1b-f2b0-407d-b19b-75efad6060bc;Erdgasleitung;conduite de gaz naturel;metandotto;natural gas pipeline;35;45;7
+http://geocat.ch/concept#302;302;Verpachtung;affermage;affitto;lease;1;1;0
+http://custom.shared.obj.ch/concept#a4e0a9cc-5744-4dd8-b1f2-1972728ddcb5;a4e0a9cc-5744-4dd8-b1f2-1972728ddcb5;Bodenverwertung;récupération des sols;recupero del suolo;soil recovery;2;2;0
+http://geocat.ch/concept#204;204;Ort;localité;località;place;56;56;1
+http://custom.shared.obj.ch/concept#e0b666eb-ae28-4805-aaa9-c3afee791f86;e0b666eb-ae28-4805-aaa9-c3afee791f86;Bausperrgut;déchets de chantier tout venant;rifiuto edile ingombrante;bulky construction goods;1;1;0
+http://custom.shared.obj.ch/concept#8d02fdc7-d0f6-416c-b7e4-8b7e9aa86435;8d02fdc7-d0f6-416c-b7e4-8b7e9aa86435;Felsuntergrund;roche mère;roccia in posto;bedrock;1;1;0
+http://geocat.ch/concept#52;52;Doline;doline;dolina;doline;3;4;0
+http://custom.shared.obj.ch/concept#4a3a9a9c-2839-4503-9560-93ed1b46a520;4a3a9a9c-2839-4503-9560-93ed1b46a520;OneGeology;OneGeology;OneGeology;OneGeology;6;6;0
+http://geocat.ch/concept#197;197;Navigation;navigation;navigazione;navigation;3;4;0
+http://geocat.ch/concept#199;199;Nutzungsplan;plan d'affectation;piano d'utilizzazione;land use plan;421;466;9
+http://custom.shared.obj.ch/concept#c84e9e52-5e3d-4fdd-b9d5-1883be44ebcb;c84e9e52-5e3d-4fdd-b9d5-1883be44ebcb;Kabelkommunikation;communication par câble;comunicazione via cavo;cable communication;3;3;0
+http://geocat.ch/concept#218;218;Politische Grenze;limite politique;confine politico;political boundary;43;43;0
+http://www.geocat.ch/concept#23a12206-94a9-4cd5-b630-f34b3c66ffb9;23a12206-94a9-4cd5-b630-f34b3c66ffb9;ISOS;ISOS;ISOS;ISOS;4;4;0
+http://custom.shared.obj.ch/concept#4db3484b-604e-4cb2-938b-0de359e4eb1b;4db3484b-604e-4cb2-938b-0de359e4eb1b;Aussenbewirtung;gastronomie extérieur;gastronomia all'aperto;outdoor catering;1;1;0
+http://geocat.ch/concept#94202915-c2c1-44fd-a106-71488110e399;94202915-c2c1-44fd-a106-71488110e399;Aufbewahrungs- und Archivierungsplanung AAP - Bund;Planification de la conservation et de l'archivage AAP - Conféderation;Pianificazione della conservazione e dell’archiviazione AAP - Confederazione;Conservation and archiving planning AAP - Confederation;317;409;29
+http://geocat.ch/concept#d3bd9f86-7e77-4be7-b3f9-3f72a9ed0401;d3bd9f86-7e77-4be7-b3f9-3f72a9ed0401;Mobilität;mobilité;mobilità;mobility;11;11;0
+http://custom.shared.obj.ch/concept#2ac856a7-aa16-42d0-87f5-d8c0225191b3;2ac856a7-aa16-42d0-87f5-d8c0225191b3;Mikrozonierung;microzonage;microzonazione;microzonation;3;4;0
+http://custom.shared.obj.ch/concept#844574eb-112f-49f6-b18e-e27ec43ec987;844574eb-112f-49f6-b18e-e27ec43ec987;Speicherung;rétention;ritenzione;retention;13;13;10
+http://custom.shared.obj.ch/concept#cc31ab9b-ec27-47a9-99ef-eacaac6188e3;cc31ab9b-ec27-47a9-99ef-eacaac6188e3;Fussgängerzone;zone piétonne;zona pedonale;pedestrian area;3;3;0
+http://geocat.ch/concept#82;82;Forststrasse;route forestière;strada forestale;forest road;1;1;0
+http://geocat.ch/concept#65;65;Fähre;bac;traghetto;ferry;4;4;0
+http://custom.shared.obj.ch/concept#bc9c99c7-f46e-47bc-8ab6-e546b389c9ac;bc9c99c7-f46e-47bc-8ab6-e546b389c9ac;Wanderrouten;Randonnées pédestres;Percorsi a piedi;Walking routes;2;2;0
+http://custom.shared.obj.ch/concept#c8a66cab-89c5-468f-a28c-5976a0c2715c;c8a66cab-89c5-468f-a28c-5976a0c2715c;Rohstoffgewinnung;extraction des matières premières;estrazione della materia prima;raw material extraction;2;2;0
+http://geocat.ch/concept#86;86;GALILEO;GALILEO;GALILEO;GALILEO;1;1;0
+http://geocat.ch/concept#209;209;Ortsname;nom de lieu;nome del luogo;place name;36;38;0
+http://custom.shared.obj.ch/concept#80231876-6c7d-4f7e-90fb-27413b2a1da6;80231876-6c7d-4f7e-90fb-27413b2a1da6;Bundesinventar;inventaire fédéral;inventario federale;federal inventory;6;7;2
+http://www.geocat.ch/concept#39861fa0-68d9-416d-b838-620699281d56;39861fa0-68d9-416d-b838-620699281d56;Betreuung;prise en charge;assistenza;care;5;5;2
+http://geocat.ch/concept#321;321;Wegweiser;poteau indicateur;cartello indicatore;fingerpost;7;9;0
+http://geocat.ch/concept#83;83;Erhebung;enquête;rilevamento;survey;7;7;0
+http://custom.shared.obj.ch/concept#b5b2bc9e-f521-4a36-8ee3-c2e94558f8e8;b5b2bc9e-f521-4a36-8ee3-c2e94558f8e8;Lokalklima;climat local;clima locale;local climate;1;1;0
+http://custom.shared.obj.ch/concept#8e6d1fbd-2232-42f2-a6cf-f064ab8f9b34;8e6d1fbd-2232-42f2-a6cf-f064ab8f9b34;Armee;armée;esercito;army;1;3;1
+http://custom.shared.obj.ch/concept#87ee4ee8-9e79-4bf9-b581-b648a6b34faa;87ee4ee8-9e79-4bf9-b581-b648a6b34faa;Bezugspunkt;point de référence;punto di riferimento;reference point;15;15;0
+http://geocat.ch/concept#320;320;Wegnetz;réseau de chemin;rete di cammino;path netwok;24;24;0
+http://custom.shared.obj.ch/concept#ed9b7128-bc24-4287-a36c-3ccff23c2df5;ed9b7128-bc24-4287-a36c-3ccff23c2df5;Fledermaus;chauve-souris;pipistrello;bat;2;3;1
+http://custom.shared.obj.ch/concept#d2d5093a-a657-44e3-b72d-6fb0e0cbbfea;d2d5093a-a657-44e3-b72d-6fb0e0cbbfea;Schwemmholz;bois flottant;legname galleggiante;driftwood;1;1;0
+http://geocat.ch/concept#313;313;Waldrand;lisière;margine forestale;forest edge;18;18;0
+http://geocat.ch/concept#324;324;Wildbach;torrent;torrente;torrent;3;3;0
+http://custom.shared.obj.ch/concept#3ed11491-0175-4324-9d73-8076ee2e0cf1;3ed11491-0175-4324-9d73-8076ee2e0cf1;Trockenheit;sécheresse;secchezza;dryness;2;2;0
+http://geocat.ch/concept#6326aee7-3e04-4c05-92b7-36264e7621b0;6326aee7-3e04-4c05-92b7-36264e7621b0;Waldfunktion;fonction de la forêt;funzione della foresta;forest function;11;11;1
+http://geocat.ch/concept#1378b131-dc7a-449d-afbb-24c852aad908;1378b131-dc7a-449d-afbb-24c852aad908;Linked Data;linked data;linked data;linked data;1;1;0
+http://www.geocat.ch/concept#42c5a7e5-9a44-46cf-b2b6-6a7d9726beb3;42c5a7e5-9a44-46cf-b2b6-6a7d9726beb3;Rebbau;viticulture;viticoltura;viticulture;20;24;1
+http://custom.shared.obj.ch/concept#d5e9f21a-e44e-427d-b1e3-fbacddf74eb7;d5e9f21a-e44e-427d-b1e3-fbacddf74eb7;Erschliessung;desserte;viabilità;accessibility;21;21;0
+http://custom.shared.obj.ch/concept#eb0c8dea-c857-4754-ae9a-09263e1ac361;eb0c8dea-c857-4754-ae9a-09263e1ac361;Basisplan;plan de base;piano di base;basis plan;90;91;2
+http://custom.shared.obj.ch/concept#9866b847-d7fd-412f-9108-bfc5392995a4;9866b847-d7fd-412f-9108-bfc5392995a4;EGIP (European Geothermal Information Platform);EGIP (European Geothermal Information Platform);EGIP (European Geothermal Information Platform);EGIP (European Geothermal Information Platform);12;21;2
+http://custom.shared.obj.ch/concept#b23ec449-5ea5-4455-ae56-f020069ff56c;b23ec449-5ea5-4455-ae56-f020069ff56c;Beschriftung;désignation;caratterizzazione;labelling;1;1;0
+http://www.geocat.ch/concept#9e5d9b3e-dfde-400c-b73e-5d6c5d546e71;9e5d9b3e-dfde-400c-b73e-5d6c5d546e71;Produktionsstätte;unité de production;unità di produzione;production unit;2;2;0
+http://custom.shared.obj.ch/concept#ab642d3d-d74f-400c-bb01-81c6dde26247;ab642d3d-d74f-400c-bb01-81c6dde26247;Geobasisdaten;géodonnées de base;geodati di base;official geodata;253;294;11
+http://geocat.ch/concept#77579584-6138-47b7-aa71-39862f9790f9;77579584-6138-47b7-aa71-39862f9790f9;Mil_Personell;mil_personnel;mil_personale;mil_staff;0;1;0
+http://www.geocat.ch/concept#ddd898ba-53c3-4455-a021-924c43b39fd8;ddd898ba-53c3-4455-a021-924c43b39fd8;ombrogen;ombrogène;ombrogeno;ombrogenic;3;3;0
+http://custom.shared.obj.ch/concept#2f917dc0-a296-444a-b6c2-cf9bcc0495a3;2f917dc0-a296-444a-b6c2-cf9bcc0495a3;Lufthygiene;hygiène de l'air;igiene dell'aria;air hygiene;4;10;6
+http://geocat.ch/concept#49;49;DOM (Digitales Oberflächenmodell);MNS (modèle numérique de surface);DSM (modello digitale di superficie);DSM (digital surface model);22;22;0
+http://custom.shared.obj.ch/concept#a2e4fa3c-2f4f-4677-a2fc-94de15c9b015;a2e4fa3c-2f4f-4677-a2fc-94de15c9b015;SIA405;SIA405;SIA405;SIA405;20;21;0
+http://custom.shared.obj.ch/concept#a418332d-63cb-45eb-8f70-6b3129149c3e;a418332d-63cb-45eb-8f70-6b3129149c3e;Naturgefahrenkarte;carte des dangers naturels;mappa dei rischi naturali;natural hazard map;20;21;1
+http://custom.shared.obj.ch/concept#5f6a478d-6103-48d9-8a7c-01bc5184d4d7;5f6a478d-6103-48d9-8a7c-01bc5184d4d7;Landesgeologie;service géologique national;servizio geologico nazionale;swiss geological survey;2;2;0
+http://geocat.ch/concept#305;305;Waldfeststellung;constatation de la nature forestière;accertamento del carattere forestale;declaration as forest;134;134;1
+http://geocat.ch/concept#304;304;Waldentwicklung;évolution de la forêt;evoluzione della foresta;forest evolution;13;13;3
+http://geocat.ch/concept#311;311;Forstkreis;arrondissement forestier;circondario forestale;forest district;4;4;2
+http://geocat.ch/concept#217;217;Planeinteilung;répartition du plan;ripartizione del piano;plan division;44;48;0
+http://geocat.ch/concept#7738cfcd-ae7f-4fc0-8fad-d1b01babbe94;7738cfcd-ae7f-4fc0-8fad-d1b01babbe94;Wildruhezone;zone de tranquillité;zone di tranquillità;zone of tranquility;4;4;0
+http://www.geocat.ch/concept#e31aabe1-d39d-401c-8164-8ffa01a02185;e31aabe1-d39d-401c-8164-8ffa01a02185;Strassenbelag;revêtement routier;rivestimento stradale;road surfacing;1;1;0
+http://custom.shared.obj.ch/concept#d48eb465-02da-4e73-b12e-9873c23ad9fb;d48eb465-02da-4e73-b12e-9873c23ad9fb;Stockwerk;étage;piano;floor;10;10;1
+http://custom.shared.obj.ch/concept#6b6d9b72-663e-455b-98f3-7150e3cdc62f;6b6d9b72-663e-455b-98f3-7150e3cdc62f;Strassennetz;réseau routier;rete stradale;road network;34;34;1
+http://geocat.ch/concept#68;68;Festgestein;roche cohérente;roccia coerente;well-consolidated rock;7;7;0
+http://custom.shared.obj.ch/concept#11f96cd3-261c-4ef1-933a-105a2ee06e9a;11f96cd3-261c-4ef1-933a-105a2ee06e9a;Sondernutzungszone;zone à affectation particulière;zona di utilizzazione speciale;zone for special usage;12;12;0
+http://geocat.ch/concept#34;34;Bezirk;district;distretto;district;34;35;0
+http://custom.shared.obj.ch/concept#53db3bc7-fc94-46e5-ad7f-e1059ecd7519;53db3bc7-fc94-46e5-ad7f-e1059ecd7519;Rebe;vigne;vite;vine;16;18;0
+http://geocat.ch/concept#4594c232-eafe-4f42-a375-74fc3032e220;4594c232-eafe-4f42-a375-74fc3032e220;Mil_Ausbildung;mil_formation;mil_formazione;mil_training;0;5;0
+http://geocat.ch/concept#216;216;Petrografie;pétrographie;petrografia;petrography;12;12;0
+http://custom.shared.obj.ch/concept#0be59201-1f01-49d6-964e-970fd4be9897;0be59201-1f01-49d6-964e-970fd4be9897;Dienstbarkeit;servitude;servitù;easement;5;5;0
+http://geocat.ch/concept#72;72;Flachmoor;bas-marais;palude;swamp;46;49;4
+http://geocat.ch/concept#215;215;Perimeter;périmètre;perimetro;perimeter;9;20;2
+http://geocat.ch/concept#74;74;Flugsicherung;sécurité aérienne;sicurezza aerea;air traffic control;7;17;0
+http://geocat.ch/concept#76;76;Flugzone;zone de vol;zona di volo;flight zone;5;9;0
+http://geocat.ch/concept#210;210;Ortsplan;plan de localité;piano di località;location plan;13;14;0
+http://custom.shared.obj.ch/concept#4ce2ffff-5fb4-4adb-8d81-811a03316153;4ce2ffff-5fb4-4adb-8d81-811a03316153;Harmonisierte Daten;données harmonisées;dati armonizzati;harmonised data;1;1;0
+http://geocat.ch/concept#211;211;Ortsplanung;aménagement local;pianificazione locale;local planning;44;48;2
+http://custom.shared.obj.ch/concept#7564b6ea-121b-4fff-a532-d4b00ee0dd8f;7564b6ea-121b-4fff-a532-d4b00ee0dd8f;Rahmennutzungsplan;plan d'affectation générale;piano d'utilizzazione quadro;framework use plan;86;86;0
+http://custom.shared.obj.ch/concept#c1d0acc2-ce83-4867-90be-382971a86fef;c1d0acc2-ce83-4867-90be-382971a86fef;Abfluss;écoulement;emissario;drain;3;3;2
+http://geocat.ch/concept#205;205;Orthofoto;orthophoto;ortofoto;orthophoto;127;128;15
+http://geocat.ch/concept#85;85;Fruchtfolgefläche FFF;surface d'assolement SDA;superficie per l'avvicendamento delle colture;surface of crop rotation SCR;9;11;1
+http://geocat.ch/concept#206;206;Orthometrische Höhe;altitude orthométrique;quota ortometrica;orthometric height;1;1;0
+http://www.geocat.ch/concept#7be707ef-0ee6-4659-a8f4-eeecddce78d9;7be707ef-0ee6-4659-a8f4-eeecddce78d9;FSME;MEVE;FSME;TBE;1;1;0
+http://geocat.ch/concept#87;87;Gebäudeadresse;adresse de bâtiment;indirizzo di edificio;building address;101;101;1
+http://geocat.ch/concept#203;203;Ökomorphologie;ecomorphologie;ecomorfologia;ecomorphology;9;9;3
+http://geocat.ch/concept#81;81;Forstrevier;triage forestier;settore forestale;forest district;5;5;3
+http://custom.shared.obj.ch/concept#6ff51089-d9bc-4459-8dc8-c8256c876288;6ff51089-d9bc-4459-8dc8-c8256c876288;Meldepflicht;obligation d'annocer;obbligo di notificazione;obligation to notify;1;1;0
+http://geocat.ch/concept#57;57;Eigentumsbeschränkung;restrictions de la propriété;restrizione del diritto di proprietà;restriction on ownership;1;1;0
+http://geocat.ch/concept#58;58;Einzelobjekt;objet divers;oggetto singolo;single object;50;52;0
+http://custom.shared.obj.ch/concept#34791aba-6167-4763-a295-db78465c57eb;34791aba-6167-4763-a295-db78465c57eb;Strom;courant;corrente;current;47;48;2
+http://geocat.ch/concept#45;45;Datendownload;téléchargement de données;download di dati;data download;3;4;0
+http://geocat.ch/concept#50;50;Digitales Terrainmodell DTM;modèle numérique de terrain MNT;modello digitale del terreno DTM;digital terrain model DTM;37;37;0
+http://www.geocat.ch/concept#fe6d352e-3cf9-4e34-9ef2-28d03febf8c8;fe6d352e-3cf9-4e34-9ef2-28d03febf8c8;Kantonale Ausnahmetransportrouten KATR;itinéraires cantonaux pour convois exceptionnels;itinerari cantonali per trasporti eccezionali;cantonal routes for exceptional loads;6;6;0
+http://custom.shared.obj.ch/concept#4f6f0d52-2315-4176-95eb-d8113ecd0921;4f6f0d52-2315-4176-95eb-d8113ecd0921;Stehendes Gewässer;eau stagnante;acqua stagnante;standing water;2;2;0
+http://geocat.ch/concept#6;6;Administrative Einteilung;division administrative;divisione amministrativa;administrative division;47;47;6
+http://custom.shared.obj.ch/concept#7e2f77f8-b7c8-43d6-bea0-1731ca9548cc;7e2f77f8-b7c8-43d6-bea0-1731ca9548cc;Mittelwasserstand;niveau d'eau moyen;livello medio d'acqua;average water level;1;1;0
+http://geocat.ch/concept#60;60;Eisenbahnlinie;ligne de chemin de fer;linea di ferrovia;railway track;2;2;0
+http://geocat.ch/concept#61;61;Erdsonde;sonde terrestre;sonda terrestra;geothermal probe;6;6;1
+http://custom.shared.obj.ch/concept#9cf3a947-7ca4-4917-9ce1-c8b5eea7263d;9cf3a947-7ca4-4917-9ce1-c8b5eea7263d;Sedimentgestein;roche sédimentaire;roccia sedimentaria;sedimentary rock;1;1;0
+http://custom.shared.obj.ch/concept#4af4b1b1-a8c8-4622-9e80-5f2614d9db56;4af4b1b1-a8c8-4622-9e80-5f2614d9db56;Stratigrafie;stratigraphie;stratigrafia;stratigraphy;1;1;0
+http://geocat.ch/concept#46;46;Datenverfügbarkeit;disponibilité des données;disponibilità di dati;data availability;9;9;0
+http://custom.shared.obj.ch/concept#7c7dfcd8-416f-466f-8d94-f84be26a662f;7c7dfcd8-416f-466f-8d94-f84be26a662f;Naturgefahr;danger naturel;pericolo naturale;natural hazard;40;49;3
+http://custom.shared.obj.ch/concept#958f7315-5325-4c50-b323-28337162019f;958f7315-5325-4c50-b323-28337162019f;Arealentwicklung;développement du site;sviluppo del sito;area developpement;1;1;0
+http://custom.shared.obj.ch/concept#b4280e61-e712-4bd9-b5ef-c52f2892ae58;b4280e61-e712-4bd9-b5ef-c52f2892ae58;AED (Automatischer Externer Defibrillator);DAE (Défibrillateur automatique externe);DAE (Defibrillatore semiautomatico);AED (Automated External Defibrillator);1;1;0
+http://geocat.ch/concept#d0065481-9a97-417d-aa05-7d10f1893614;d0065481-9a97-417d-aa05-7d10f1893614;Objektkatalog;catalogue des objets;catalogo degli oggetti;object catalog;174;174;0
+http://custom.shared.obj.ch/concept#243dc800-194f-46b4-9f51-898a8a4e9653;243dc800-194f-46b4-9f51-898a8a4e9653;Alterswohnen;logements destinés aux personnes âgées;appartamento per anziani;housing for the elderly;1;1;0
+http://custom.shared.obj.ch/concept#7bfbdd6e-7702-437e-bee2-97669b7ce6b5;7bfbdd6e-7702-437e-bee2-97669b7ce6b5;Makrofauna;macrofaune;macrofauna;macrofauna;1;1;0
+http://custom.shared.obj.ch/concept#13d8124d-237e-4063-8c9b-103a7129be5b;13d8124d-237e-4063-8c9b-103a7129be5b;Neobiota;néobiote;neobiota;neobiota;4;4;1
+http://custom.shared.obj.ch/concept#6fff658f-2693-45ee-a6e1-b4a8497afcd4;6fff658f-2693-45ee-a6e1-b4a8497afcd4;Fischart;espèce de poisson;specie di pesce;fish specie;1;1;0
+http://custom.shared.obj.ch/concept#d2ad50f3-e045-4871-9904-64d249f7defd;d2ad50f3-e045-4871-9904-64d249f7defd;Biodiversität;biodiversité;biodiversità;biodiversity;15;16;5
+http://custom.shared.obj.ch/concept#7e87464a-2c33-440d-aa5c-04e548ecf368;7e87464a-2c33-440d-aa5c-04e548ecf368;Reiten;équitation;equitazione;horse back riding;1;1;0
+http://custom.shared.obj.ch/concept#954d37f1-f271-4649-9ddd-08c1343c5964;954d37f1-f271-4649-9ddd-08c1343c5964;Römer;romain;romano;roman;2;2;0
+http://custom.shared.obj.ch/concept#c2b6b811-a1d1-41eb-ab7d-c0887aa516b4;c2b6b811-a1d1-41eb-ab7d-c0887aa516b4;Bodeneigenschaften;propriétés du sol;proprietà del suolo;soil properties;8;8;5
+http://custom.shared.obj.ch/concept#129b3691-8b86-45db-851b-91d95430a8ed;129b3691-8b86-45db-851b-91d95430a8ed;Bodenqualität;qualité du sol;qualità del suolo;soil quality;2;2;0
+http://custom.shared.obj.ch/concept#5b9a06a3-9333-4e6f-a529-12fd0aeb80e1;5b9a06a3-9333-4e6f-a529-12fd0aeb80e1;Bodenkartierung;cartographie des sols;mappatura del suolo;soil mapping;3;3;0
+http://custom.shared.obj.ch/concept#d62f582c-571c-47df-8c95-a9fc18795b2a;d62f582c-571c-47df-8c95-a9fc18795b2a;Kulturdenkmal;monument culturel;monumento culturale;cultural monument;3;3;1
+http://custom.shared.obj.ch/concept#6ed74b95-ac86-4562-b86c-0d678256c485;6ed74b95-ac86-4562-b86c-0d678256c485;Stadtklima;climat urbain;clima urbano;urban climate;1;1;0
+http://custom.shared.obj.ch/concept#b596f9d0-1405-4c5b-b3b7-002c5e5f0565;b596f9d0-1405-4c5b-b3b7-002c5e5f0565;Altersheim;maison de retraite;casa per anziani;retirement home;2;2;0

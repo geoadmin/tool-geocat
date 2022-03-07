@@ -1,0 +1,499 @@
+Administration
+Baubewilligung
+Bewilligungspflicht
+Einschränkung
+Gutachten
+Katalog
+Koordination
+Leitbild
+Massnahme
+Meldepflicht
+Register
+SIA405
+Verzeichnis
+
+Atmosphäre, Luft, Klima
+Lokalklima
+Lufthygiene
+Messstelle
+Phänologie
+Stadtklima
+Trockenheit
+Unwetter
+
+Basiskarten, Bodenbedeckung, Bilddaten
+Airborne-Laser-Scanning
+Basiskarte
+Basisplan
+Beschriftung
+Bodenbedeckung
+Darstellungsdienst
+Darstellungsmodell
+Deckschicht
+Detailplan
+Einzelsignatur
+GALILEO
+Geländedarstellung
+Genauigkeit
+Generalkarte
+Gitter
+GLONASS
+Historische Karte
+Kartografische Generalisierung
+Landeskarte
+Landsat
+Landschaftsmodell
+Laserscanning
+LIDAR (Light Detection And Ranging)
+Minimales Geodatenmodel MGDM
+Modelldokumentation
+Oberfläche
+Orthofoto
+Ortsplan
+Schummerung
+Situationsplan
+Stadtplan
+Standortskarte
+Topografie
+Transformation
+Übersichtskarte
+Übersichtsplan
+
+Bevölkerung, Gesellschaft, Kultur
+Altersheim
+Alterswohnen
+Archäologische Ausgrabung
+Archäologische Fundstätten
+Aufgrabung
+Augusta Raurica
+Ausgrabung
+Begegnungsort
+Betreuung
+Bundesinventar
+Denkmalinventar
+Erhebung
+Familiengarten
+Freizeitanlage
+Historische Stätte
+ISOS
+Klettergebiet
+Kulturdenkmal
+Kulturgeschichte
+Kulturgüterschutz KGS
+Mittelschule
+Objektschutz
+Ortsbild
+Ortsbildschutz
+Point of Interest POI
+Reiten
+Römer
+Römische Epoche
+Sammlung (Archiv, Bibliothek, Museum)
+Schneeschuh
+Schneesport
+Skating
+Ski
+Skilift
+Skitour
+Treffpunkt
+Veranstaltung
+Wanderrouten
+
+Datenhaltung, Datenbereitstellung
+3D Simulation
+3D Visualisierung
+AtOS (Atom OpenSearch)
+Aufbewahrungs- und Archivierungsplanung AAP - Bund
+BGDI Bundesgeodaten-Infrastruktur
+Datenbeschreibung
+Datendownload
+Dateninfrastruktur
+Datenverfügbarkeit
+e-geo.ch
+Geobasisdaten
+Geobasisdienst
+Geodaten
+Geodatenmodell
+Geodienst
+geodienste.ch
+Geomarketing
+GIS (Geografisches Informationssystem)
+GPS (Global Positioning System)
+Harmonisierte Daten
+INSPIRE
+Linked Data
+Nationales Inventar
+Objektkatalog
+opendata.swiss
+Ortung
+Positionierungsdienst
+Rasterdaten
+Swiss Positioning Service SWIPOS
+WMS
+
+Gebäude, Anlagen
+Anlage
+Bau
+Einzelobjekt
+Gebäude- und Wohnungsregister GWR
+Gebäudeadresse
+Gebäudeeingang
+Historisches Gebäude
+Künstliches Objekt
+Öffentliche Baute
+Schloss
+Schutzbau
+Schutzraum
+Stadtbefestigung
+Stockwerk
+Treppe
+
+Geologie, Boden, naturbedingte Risiken
+1G-E (OneGeology-Europa)
+Abbaustelle
+Ablagerungszone
+Alpenhebung
+Bodeneigenschaften
+Bodenkartierung
+Bodenqualität
+Bodenverwertung
+Bouguer-Anomalie
+Bruchlinie
+Chronostratigrafie
+Dauernde Bodenverschiebung
+Doline
+Felsuntergrund
+Festgestein
+Gefahrenkarte
+Geologische Karte
+GeoMol
+Geophysikalische Karte
+Geotop
+Geschiebe
+Gravimetrie
+Gründigkeit
+Harmonisierte Geologie
+Harmonisierte geologische Einheiten
+Harmonisierte Struktur
+Landesgeologie
+Lithologie
+Magmatisches Gestein
+Metamorphes Gestein
+Mikrozonierung
+Murgang
+Naturereignis
+Naturgefahr
+Naturgefahrenkarte
+Oberflächenablagerung
+Oberflächengeologie
+OneGeology
+OneGeology-Europe
+Petrografie
+Rohstoffgewinnung
+Rutschung
+Sedimentgestein
+Steinschlag
+Störung
+Stratigrafie
+Sturzprozess
+Wasserprozess
+
+Gesundheit
+AED (Automatischer Externer Defibrillator)
+Defibrillator
+FSME
+Zeckenenzephalitis
+Zeckenstich
+
+Gewässer
+Abfluss
+Abschwemmung
+Fliessgewässer
+Fliessrichtung
+Fluss
+Gewässerraum
+Gewässerschutzbereich
+Gewässerzustand
+GEWISS
+Grundwassermächtigkeit
+Grundwasserschutzareal
+Grundwasservorkommen
+historischer Wasserlauf
+Mittelwasserstand
+Pegel
+Quellhorizont
+Seebodenkurve
+Stehendes Gewässer
+Uferlinie
+Vergletscherung
+Wildbach
+
+Höhen
+DHM (Digitales Höhenmodell)
+Digitales Farborthofotomosaik
+Digitales Terrainmodell DTM
+DOM (Digitales Oberflächenmodell)
+Hangneigung
+Höhenkote
+Höhenkurve
+Höhenpunkt
+Isohypse
+Isophyse
+Orthometrische Höhe
+
+Landwirtschaft
+Allmend
+Anbaueignung
+Fruchtfolgefläche FFF
+Kulturfläche
+Landwirtschaftliche Bewirtschaftung
+Landwirtschaftliche Nutzfläche LN
+Landwirtschaftsgebiet
+Nutzungsfläche
+Pflanzennährstoff
+Primärfläche
+Rebbau
+Rebe
+Sömmerung
+Trockenwiesen und -weiden TWW
+Verpachtung
+
+Militär, Sicherheit
+Armee
+Mil_Ausbildung
+Mil_Personell
+Schiessanlage
+Sirene
+
+Ortsangaben, Referenzsysteme
+Bezugsmarkierung
+Bezugspunkt
+Bezugsrahmen
+Bezugssystem
+FINELTRA
+Fixpunkt
+Flurname
+Gebietsname
+Geoid
+Koordinate
+Landeskoordinaten
+Ort
+Ortsname
+Postleitzahl PLZ
+Toponymie
+
+Politische und administrative Grenzen
+Administrative Einteilung
+Bezirk
+Bund
+Grenzlinie
+Grossregion
+Hoheitsgrenze
+Kanton
+Landesgrenze
+Politische Grenze
+Quartier
+Regional
+
+Raumplanung, Grundstückkataster
+Amtliche Vermessung AV
+Arealentwicklung
+Baugrund
+Baulinie
+Bauprojekt
+Bauzone
+Dienstbarkeit
+Eigentumsbeschränkung
+Eignung
+Ereigniskataster
+Erschliessung
+Gestaltungsplan
+Grundeigentum
+Grundnutzung
+Grundplan
+Grundstück
+Grünzone
+INTERREG III
+Kantonaler Richtplan
+Landesvermessung
+Landwirtschaftszone
+Leitungskataster
+Liegenschaft
+Nummerierungsbereich
+Nutzungsplan
+Nutzungsplanung
+Nutzungszone
+Ortsplanung
+ÖREB
+Perimeter
+Planeinteilung
+Planungsinstrument
+Planungsvorhaben
+Projektierungszone
+Quartierplan
+Rahmennutzungsplan
+Raumentwicklung
+Rebbauzone
+Richtplan
+Richtplanung
+Risikokataster
+Sachplan
+Siedlungsentwicklung
+Siedlungsgebiet
+Sondernutzungsplan
+Sondernutzungszone
+Sperrgebiet
+Spezialzone
+Toleranzstufe
+Werkkataster
+Wohnzone
+Zone
+Zonennutzungsplan ZNP
+Zonenplan
+
+Umwelt-, Naturschutz
+Belasteter Standort
+Biotopverbund
+Erhaltungsplanung
+Invasiv
+Jagdbanngebiet
+Lärmempfindlichkeitsstufe
+Natur
+Naturschutzzone
+Ökologischer Nutzen
+Revitalisierung
+Ruhe
+Schonzone
+Schutz
+Schutzfunktion
+Schutzmassnahme
+Schutzzone
+Störfall
+Störfallvorsorge
+Wildruhezone
+
+Ver-, Entsorgung, Kommunikation
+Antenne
+Bausperrgut
+Biogener Abfall
+EGIP (European Geothermal Information Platform)
+Einleitung
+Erdgasleitung
+Erdsonde
+Fassung
+Gasleitung
+Geothermie
+Grundwasserfassung
+Kabelkommunikation
+Kläranlage
+Mobilfunk
+Mobiltelefonie
+Reservoir
+Rohrleitung
+Speicherung
+Strom
+Stromnetz
+Wasserbau
+Wasserleitung
+
+Verkehr
+Achse
+Eisenbahnlinie
+Fahrrad
+Fähre
+Flugplatz
+Flugsicherung
+Flugzeug
+Flugzone
+Forststrasse
+Fussgänger
+Fussgängerzone
+Gleitschirm
+Haltestelle
+Hauptstrasse
+Helikopterlandeplatz
+Hindernis
+Historischer Verkehrsweg
+Kantonale Ausnahmetransportrouten KATR
+Kantonsstrasse
+Kunstbau
+Langsamverkehr
+Luftfahrt
+Luftfahrthindernis
+Luftraum
+Mobilität
+Mountainbike
+Nationalstrasse
+Navigation
+Radroute
+Radweg
+Route
+Schiene
+Segelflug
+Seilbahn
+Seilbahnstation
+Signalisierung
+Sperrung
+Strasse
+Strassenachse
+Strassenbelag
+Strassenlärm
+Strassennetz
+Tram
+Unfallstandort
+Veloweg
+Verkehrsbelastung
+Verkehrsnetz
+Versorgungsroute
+Weg
+Wegnetz
+Wegweiser
+
+Wald, Flora, Fauna
+Abfallholz
+Ameise
+Auengebiet
+Biodiversität
+Fischart
+Fischfauna
+FISE (Forest Information System for Europe)
+Flachmoor
+Fledermaus
+Forstkreis
+Forstrevier
+Heuschrecke
+Hochmoor
+Makrofauna
+Makrozoobenthos
+Neobiota
+ombrogen
+Ökomorphologie
+Reptiliengebiet
+Schutzwald
+Schwemmholz
+Waldabstand
+Waldentwicklung
+Waldfeststellung
+Waldfläche
+Waldfunktion
+Waldgrenze
+Waldnutzung
+Waldrand
+Waldstandort
+Waldwiese
+Wildtierkorridor
+Zecke
+
+Wirtschaftliche Aktivitäten
+Alpwirtschaft
+Aussenbewirtung
+Betrieb
+Betriebsstandort
+Bewirtschaftungseinheit
+Geschützte Geografische Angabe GGA
+Geschützte Ursprungsbezeichnung GUB
+Gewerbezone
+Holzproduktion
+Produktionsstätte
+Unternehmen
+
