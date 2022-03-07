@@ -1,4 +1,4 @@
-# Metadata replace contact
+# Replace metadata contact
 Replace a given contact (subtemplate) either in every metadata or in a specific one.
 ### Requirements
 The scripts run on python 3. Following packages are needed :
