@@ -1,0 +1,17 @@
+﻿;TECHPUBLAYERNAME;uuid
+211;ch.bav.anlagen-schienengueterverkehr;dda92878-86a1-4191-a073-9721671d6bc1
+212;ch.bav.haltestellen-oev;841d42ff-8177-4e07-a96b-e8e5455ae048
+213;ch.bav.kataster-belasteter-standorte-oev;c022c6b6-67ad-4023-8d01-cd0d89cf73a6
+214;ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht;e449ba1d-ee2a-42d5-97a9-ad9fcf48b696
+215;ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag;a488ff49-540f-4013-aa23-af9a2d2d0d34
+216;ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht;a7efd280-1c64-4fdf-98dd-bec607ff6a9d
+217;ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag;2d35d97f-e7b9-4d40-8654-d6adfaf26240
+218;ch.bav.laermbelastung-eisenbahn_laermschutzwaende;ed8f4713-e0c7-4dca-a7b0-3ef7aeb1bc73
+219;ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht;49f67f0b-6122-42f3-8391-f2ceeb367c2f
+220;ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag;c4622adc-282a-4368-b3a8-d15769882b6f
+221;ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht;79b73ff5-e8af-4f26-82b6-6d3eda65fc30
+222;ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag;1abcda60-f48d-4340-bc53-4611d49d716c
+223;ch.bav.sachplan-infrastruktur-schiene_kraft;80d0a3a6-56a3-408a-8964-6a48a500678e
+224;ch.bav.sachplan-infrastruktur-schifffahrt_kraft;fa9b082a-57a8-4c11-816b-2365e2741215
+225;ch.bav.schienennetz;4545b545-cdc9-4713-809c-210ee84436b0
+226;ch.bav.seilbahnen-bundeskonzession;43a660c0-baa2-4366-ad04-a458afe1ec2c

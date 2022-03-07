@@ -1,0 +1,35 @@
+name;id_int;label.ger_int;harvested_int;id_prod;label.ger_prod;harvested_prod
+ARE;22;Bundesamt für Raumentwicklung ARE;no;22;Bundesamt für Raumentwicklung ARE;no
+ART;10;Forschungsanstalt Agroscope Reckenholz-Tänikon ART;no;10;Forschungsanstalt Agroscope Reckenholz-Tänikon ART;no
+ASTRA;23;Bundesamt für Strassen ASTRA;no;23;Bundesamt für Strassen ASTRA;no
+BABS;39;Bundesamt für Bevölkerungsschutz BABS;no;39;Bundesamt für Bevölkerungsschutz BABS;no
+BAFU;52;Bundesamt für Umwelt BAFU;no;52;Bundesamt für Umwelt BAFU;no
+BAG;38;Bundesamt für Gesundheit BAG;no;38;Bundesamt für Gesundheit BAG;no
+BAK;37;Bundesamt für Kultur BAK;no;37;Bundesamt für Kultur BAK;no
+BAKOM;27;Bundesamt für Kommunikation BAKOM;no;27;Bundesamt für Kommunikation BAKOM;no
+BAV;26;Bundesamt für Verkehr BAV;no;26;Bundesamt für Verkehr BAV;no
+BAZL;41;Bundesamt für Zivilluftfahrt BAZL;no;41;Bundesamt für Zivilluftfahrt BAZL;no
+BFE;40;Bundesamt für Energie BFE;no;40;Bundesamt für Energie BFE;no
+BFS;8;Bundesamt für Statistik BFS;no;8;Bundesamt für Statistik BFS;no
+BLV;36;Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV;no;36;Bundesamt für Lebensmittelsicherheit und Veterinärwesen BLV;no
+BLW;25;Bundesamt für Landwirtschaft BLW;no;;;-
+Bundesamt für Landwirtschaft BLW;;;-;25;Bundesamt für Landwirtschaft BLW;no
+Bundesamt für Sport BASPO;29125806;Bundesamt für Sport BASPO;no;29125806;Bundesamt für Sport BASPO;no
+DMS-BGDI;19444118;DMS-BGDI;no;19444118;DMS-BGDI;no
+ENSI;53;Eidgenössisches Nuklearsicherheitsinspektorat ENSI;no;53;Eidgenössisches Nuklearsicherheitsinspektorat ENSI;no
+ETHZ;74;Eidgenössische Technische Hochschule Zürich ETHZ;yes;74;Eidgenössische Technische Hochschule Zürich ETHZ;yes
+Eidgenössische Alkoholverwaltung EAV;19647867;Eidgenössische Alkoholverwaltung EAV;no;19647867;Eidgenössische Alkoholverwaltung EAV;no
+Gruppe Verteidigung;69;Gruppe Verteidigung;no;69;Gruppe Verteidigung;no
+KGK;;;-;34799060;Konferenz der kantonalen Geoinformations- und Katasterstellen (KGK);no
+KKGEO;34799060;Konferenz der Kantonalen Geoinformationsstellen KKGEO;no;;;-
+Liechtenstein;13;Fürstentum Liechtenstein;no;13;Fürstentum Liechtenstein;no
+MGDI;6436437;MGDI;no;6436437;MGDI;no
+MeteoSchweiz;34;Bundesamt für Meteorologie und Klimatologie MeteoSchweiz;no;34;Bundesamt für Meteorologie und Klimatologie MeteoSchweiz;no
+Staatssekretariat für Migration SEM;26805108;Staatssekretariat für Migration SEM;no;26805108;Staatssekretariat für Migration SEM;no
+TestGroup;42;TestGroup;no;42;TestGroup;no
+TestPartner;55;TestPartner;no;55;TestPartner;no
+VBS;51;Verteidigung, Bevölkerungsschutz und Sport VBS;no;51;Verteidigung, Bevölkerungsschutz und Sport VBS;no
+WSL;57;Eidg. Forschungsanstalt für Wald, Schnee und Landschaft WSL;no;57;Eidg. Forschungsanstalt für Wald, Schnee und Landschaft WSL;no
+geoadmin;50;Geoportal des Bundes;no;50;Geoportal des Bundes;no
+swisstopo;6;Bundesamt für Landestopografie swisstopo;no;6;Bundesamt für Landestopografie swisstopo;no
+geocat.ch;17;Zentraler Katalog;no;17;Zentraler Katalog;no

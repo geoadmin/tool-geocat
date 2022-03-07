@@ -1,0 +1,486 @@
+﻿;number;layer;TECHPUBLAYERNAME;uuid
+0;1;ch.are.agglomerationsverkehr (Städte und Agglomerationen BeSA);ch.are.agglomerationsverkehr;f4b72bb8-aff0-4eab-b1e8-48e698c0e8fb
+1;2;ch.are.alpenkonvention (Alpenkonvention);ch.are.alpenkonvention;8698bf0b-fceb-4f0f-989b-111e7c4af0a4
+2;3;ch.are.bauzonen (Bauzonen Schweiz (harmonisiert));ch.are.bauzonen;055192b1-c378-4e66-8d43-c926f0be7980
+3;4;ch.are.belastung-personenverkehr-bahn (Personenverkehr Schiene);ch.are.belastung-personenverkehr-bahn;6fa32c65-988d-4e09-8034-6c5abcbd4e3f
+4;5;ch.are.belastung-personenverkehr-strasse (Personen-/Güterverkehr Strasse);ch.are.belastung-personenverkehr-strasse;4540e0db-04c7-4509-b809-11542e7acba9
+5;6;ch.are.erreichbarkeit-miv (Erreichbarkeit auf der Strasse);ch.are.erreichbarkeit-miv;f0835478-07fc-4e12-bf48-51646a59c809
+6;7;ch.are.erreichbarkeit-oev (Erreichbarkeit mit dem ÖV);ch.are.erreichbarkeit-oev;e3437f64-68e1-4b07-ae35-22597ca89cc2
+7;8;ch.are.gemeindetypen (Gemeindetypologie ARE);ch.are.gemeindetypen;c967f055-9482-4bcb-a1bb-8de7971e7293
+8;9;ch.are.gueteklassen_oev (ÖV-Güteklassen ARE);ch.are.gueteklassen_oev;61a79435-b986-495e-b3ea-fe97c4abd558
+9;10;ch.are.landschaftstypen (Landschaftstypologie Schweiz);ch.are.landschaftstypen;27a33007-d187-41d9-97b7-6dc733a06e9b
+10;11;ch.are.reisezeit-agglomerationen-miv (Reisezeit zu Agglos Strasse);ch.are.reisezeit-agglomerationen-miv;d23ebfb6-00a4-44d6-8463-4d34d57a5ff4
+11;12;ch.are.reisezeit-agglomerationen-oev (Reisezeit zu Agglos ÖV);ch.are.reisezeit-agglomerationen-oev;333489d5-6ea1-468d-b1d5-bd213d9f1d0b
+12;13;ch.are.reisezeit-miv (Reisezeit zu Zentren Strasse);ch.are.reisezeit-miv;aee88d88-6fa6-445c-8d4d-5b40f592436b
+13;14;ch.are.reisezeit-oev (Reisezeit zu Zentren ÖV);ch.are.reisezeit-oev;b8193af2-bc91-4baa-92aa-64c6cbccb4a8
+14;15;ch.are.windenergie-bundesinteressen (Wind: Bundesinteressen);ch.are.windenergie-bundesinteressen;171a7520-27b2-4a60-9251-acf9b450d6b6
+15;16;ch.are.wohnungsinventar-zweitwohnungsanteil (Wohnungsinventar);ch.are.wohnungsinventar-zweitwohnungsanteil;ed80ebde-99a0-4523-bc8a-4ec23426d966
+16;17;ch.astra.baulinien-nationalstrassen (Baulinien Nationalstrassen);ch.astra.baulinien-nationalstrassen;fce3b347-cc58-4b29-bb87-a35eed4487ea
+17;18;ch.astra.hauptstrassennetz (Hauptstrassennetz);ch.astra.hauptstrassennetz;c1333de6-fb91-4b0b-be95-8eab89b05358
+18;19;ch.astra.ivs-nat (IVS National);ch.astra.ivs-nat;70b6e2ac-c7ea-4699-a22e-65792aa3b0b9
+19;20;ch.astra.ivs-nat-verlaeufe (IVS nationale Bed. hist. Verlauf);ch.astra.ivs-nat-verlaeufe;8c750eb5-d781-4b14-8dee-3d8943b04465
+20;21;ch.astra.ivs-reg_loc (IVS Regional und Lokal);ch.astra.ivs-reg_loc;f59f9e16-1f67-47bf-ade0-fcce715ce6fe
+21;22;ch.astra.mountainbikeland (Mountainbikeland Schweiz);ch.astra.mountainbikeland;d4f1ebde-f999-4c56-b4a5-7ec8720a4052
+22;23;ch.astra.mountainbikeland-sperrungen_umleitungen (Sperrungen Mountainbike);ch.astra.mountainbikeland-sperrungen_umleitungen;fa5f0dfb-162f-4b83-828c-7b880ad5e972
+23;24;ch.astra.nationalstrassenachsen (Nationalstrassenachsen);ch.astra.nationalstrassenachsen;cc9bb928-851d-4ecd-8dd8-ba6abcad19a4
+24;25;ch.astra.sachplan-infrastruktur-strasse_kraft (ch.astra.sachplan-infrastruktur-strasse_kraft);ch.astra.sachplan-infrastruktur-strasse_kraft;13780ac3-7340-454b-b721-fc4dd490d0fc
+25;26;ch.astra.schwerverunfallte-kanton_alkohol (Unfälle pro Einwohner - Alkohol);ch.astra.schwerverunfallte-kanton_alkohol;38ec4641-d068-49a0-bdd1-b2b11b6e6d4d
+26;27;ch.astra.schwerverunfallte-kanton_geschwindigkeit (Unfälle pro Einwohner - Geschwindig);ch.astra.schwerverunfallte-kanton_geschwindigkeit;3a3ef559-8bd1-4681-b544-5a53b14bbde2
+27;28;ch.astra.schwerverunfallte-kanton_jahresvergleich (Unfälle im Jahresvergleich);ch.astra.schwerverunfallte-kanton_jahresvergleich;164f5ce7-4870-431b-9807-242dff20b844
+28;29;ch.astra.schwerverunfallte-kanton_pro_einwohner (Unfälle pro Einwohner);ch.astra.schwerverunfallte-kanton_pro_einwohner;3244a0b1-9589-43bb-b808-359c4aa13953
+29;30;ch.astra.skatingland (Skatingland Schweiz);ch.astra.skatingland;deeb1f0f-ea25-46f0-977a-6ae1031cc55b
+30;31;ch.astra.skatingland-sperrungen_umleitungen (Sperrungen Skating);ch.astra.skatingland-sperrungen_umleitungen;e943182a-0126-4cfa-a02d-090dbe89e88e
+31;32;ch.astra.strassenverkehrszaehlung-uebergeordnet (Verkehrszählung - übergeordnet);ch.astra.strassenverkehrszaehlung-uebergeordnet;4ae9023e-bba8-4807-ab5c-de97c7ee0af9
+32;33;ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal (Zählstellen (regional));ch.astra.strassenverkehrszaehlung_messstellen-regional_lokal;46d802a1-ee53-4e3a-8af6-77b322e62bf1
+33;34;ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet (Zählstellen (übergeordnet));ch.astra.strassenverkehrszaehlung_messstellen-uebergeordnet;56b6461f-1046-412c-9e70-06fb433f0dbf
+34;35;ch.astra.unfaelle-personenschaeden_alle (Unfälle mit Personenschaden);ch.astra.unfaelle-personenschaeden_alle;a76e370a-eb4c-409b-bf10-5dbda021528e
+35;36;ch.astra.unfaelle-personenschaeden_fahrraeder (Unfälle mit Fahrradbeteiligung);ch.astra.unfaelle-personenschaeden_fahrraeder;b3f51682-cb44-46ce-b215-ac5b5f996286
+36;37;ch.astra.unfaelle-personenschaeden_fussgaenger (Unfälle mit Fussgängerbeteiligung);ch.astra.unfaelle-personenschaeden_fussgaenger;578457c1-debb-41b9-8f2c-18d33148cfa5
+37;38;ch.astra.unfaelle-personenschaeden_getoetete (Unfälle mit Getöteten);ch.astra.unfaelle-personenschaeden_getoetete;7ef105ec-9192-4029-abb6-7112f0f4187b
+38;39;ch.astra.unfaelle-personenschaeden_motorraeder (Unfälle mit Motorradbeteiligung);ch.astra.unfaelle-personenschaeden_motorraeder;2e3c55c6-b8cf-4822-bdd4-2fd368697c93
+39;40;ch.astra.veloland (Veloland Schweiz);ch.astra.veloland;16d16fa3-a416-4e8b-99fc-69c7267f134d
+40;41;ch.astra.veloland-sperrungen_umleitungen (Sperrungen Velo);ch.astra.veloland-sperrungen_umleitungen;c1293eab-eeb0-45a5-b79f-0909129c7e5a
+41;42;ch.astra.wanderland (Wanderland);ch.astra.wanderland;95638869-ef86-4e95-ae60-20e84e8dca8c
+42;43;ch.astra.wanderland-sperrungen_umleitungen (Sperrungen Wanderwege);ch.astra.wanderland-sperrungen_umleitungen;b440815a-07e5-48db-959d-cb2ca4458f3a
+43;44;ch.babs.kulturgueter (KGS Inventar);ch.babs.kulturgueter;c1a6591c-31a8-416a-a871-666eeeb7dc91
+44;45;ch.babs.kulturgueter-anhoerung (KGS Inventar 2021);ch.babs.kulturgueter-anhoerung;60ca4670-dcc2-4dfd-b86b-c27888074093
+45;46;ch.bafu.alpweiden-herdenschutzhunde (Alpweiden mit Herdenschutzhunden);ch.bafu.alpweiden-herdenschutzhunde;88ec92d4-409f-40ee-9c46-83aa4fb992aa
+46;47;ch.bafu.amphibienwanderung-verkehrskonflikte (Amphibienwanderungen mit Konflikten);ch.bafu.amphibienwanderung-verkehrskonflikte;8dc1e2a5-eab0-467a-a570-d994830f8340
+47;48;ch.bafu.auen-ausserhalb_bundesinventar (Auen ausserhalb Bundesinventar);ch.bafu.auen-ausserhalb_bundesinventar;feff7d50-4917-40d0-bcbe-675680d4aa0e
+48;49;ch.bafu.auen-ausserhalb_bundesinventar_alpin (Alpine Auen ausserhalb Bundesinv.);ch.bafu.auen-ausserhalb_bundesinventar_alpin;ecee1c92-9d66-41c7-af14-900902f54527
+49;50;ch.bafu.auen-vegetationskarten (Auen Vegetationskarten);ch.bafu.auen-vegetationskarten;ab76361f-657d-4705-9053-95f89ecab126
+50;51;ch.bafu.biogeographische_regionen (Biogeographische Regionen);ch.bafu.biogeographische_regionen;fc110d43-cfbc-4029-a73c-f24bd67c9689
+51;52;ch.bafu.bundesinventare-amphibien (Amphibien Ortsfeste Objekte);ch.bafu.bundesinventare-amphibien;1b48774e-1047-4e8f-b743-769a2b3901cb
+52;53;ch.bafu.bundesinventare-amphibien_anhang4 (Amphibien Anhang 3);ch.bafu.bundesinventare-amphibien_anhang4;2a701f93-3bd3-4068-a6a8-59d7383a3b30
+53;54;ch.bafu.bundesinventare-amphibien_wanderobjekte (Amphibien Wanderobjekte);ch.bafu.bundesinventare-amphibien_wanderobjekte;36a55486-04be-4533-9936-9c05407114a1
+54;55;ch.bafu.bundesinventare-auen (Auengebiete);ch.bafu.bundesinventare-auen;d47dffc7-8072-40c2-bbf7-4fb47367bd29
+55;56;ch.bafu.bundesinventare-auen_anhang2 (Auengebiete - Anhang 2);ch.bafu.bundesinventare-auen_anhang2;5b5b3700-245d-4c15-aabb-5fb177860db5
+56;57;ch.bafu.bundesinventare-auen_vegetation_alpin (Vegetation alpine Auen);ch.bafu.bundesinventare-auen_vegetation_alpin;24ff96e5-0cda-485b-9ec0-365960a11190
+57;58;ch.bafu.bundesinventare-bln (BLN);ch.bafu.bundesinventare-bln;bc3f1564-1e56-44e9-98b6-f0d8c5130410
+58;59;ch.bafu.bundesinventare-flachmoore (Flachmoore);ch.bafu.bundesinventare-flachmoore;c98723f6-4c76-480b-bada-c8a5ce3d20d8
+59;60;ch.bafu.bundesinventare-hochmoore (Hochmoore);ch.bafu.bundesinventare-hochmoore;2ce98519-dd40-4cc1-bd95-8f4234d78492
+60;61;ch.bafu.bundesinventare-jagdbanngebiete (Jagdbanngebiete);ch.bafu.bundesinventare-jagdbanngebiete;200a2d0e-afe1-45d8-aeaf-ea3621cc6afe
+61;62;ch.bafu.bundesinventare-moorlandschaften (Moorlandschaften);ch.bafu.bundesinventare-moorlandschaften;7ed73e2f-0a41-4e8b-a7ff-413f2d9b5ece
+62;63;ch.bafu.bundesinventare-trockenwiesen_trockenweiden (Trockenwiesen und -weiden (TWW));ch.bafu.bundesinventare-trockenwiesen_trockenweiden;8fa24249-1ad0-48d3-a879-6ba6893db1d7
+63;64;ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2 (TWW Anhang 2);ch.bafu.bundesinventare-trockenwiesen_trockenweiden_anhang2;9391d96a-280b-4e7b-bcc7-7836007b30f1
+64;65;ch.bafu.bundesinventare-vogelreservate (Wasser- und Zugvogelreservate);ch.bafu.bundesinventare-vogelreservate;8fc6f748-80ce-47b2-8d49-b05a0c8ba975
+65;66;ch.bafu.fauna-steinbockkolonien (Steinbockkolonien);ch.bafu.fauna-steinbockkolonien;9c762bb5-4d8c-4174-9b77-95e85b962439
+66;67;ch.bafu.fauna-wildtierkorridor_national (Wildtierkorridore Überregional);ch.bafu.fauna-wildtierkorridor_national;df8e620a-6f8a-41f8-85fb-394d6ceda8a0
+67;68;ch.bafu.feststoffe-geschiebemessnetz (SOLID Bund, Geschiebe);ch.bafu.feststoffe-geschiebemessnetz;05ba053f-60ca-492b-a1f5-bd70f6de8761
+68;69;ch.bafu.fischerei-krebspest (Krebspest);ch.bafu.fischerei-krebspest;722d70aa-8404-47ca-ae5d-1e521e4229e9
+69;70;ch.bafu.flora-weltensutter_atlas (Atlas Welten&Sutter);ch.bafu.flora-weltensutter_atlas;09e50e6f-67ec-4892-b993-94686b0d9739
+70;71;ch.bafu.flussordnungszahlen-strahler (Flussordnung);ch.bafu.flussordnungszahlen-strahler;e8b4794c-7045-4970-85eb-6caba4384976
+71;72;ch.bafu.gefahren-baugrundklassen (Seismische Baugrundklassen);ch.bafu.gefahren-baugrundklassen;812485e6-821c-412d-8504-459c6b314d1c
+72;73;ch.bafu.gefahren-historische_erdbeben (Historische Erdbeben);ch.bafu.gefahren-historische_erdbeben;3d1d7649-8c27-435c-ae74-7c0f2e3fbcf1
+73;74;ch.bafu.gefahren-spektral (Spektrale Mikrozonierung);ch.bafu.gefahren-spektral;a869c0d0-ff03-4cbf-93e8-c568f01bf9bc
+74;75;ch.bafu.gewaesserschutz-badewasserqualitaet (Badegewässerqualität);ch.bafu.gewaesserschutz-badewasserqualitaet;5601eb96-45cb-40a4-a595-2ec0ebda8e8c
+75;76;ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen (Kieselalgen (Diatomeen));ch.bafu.gewaesserschutz-biologischer_zustand_diatomeen;04193332-3a11-4fa6-bdc0-1bee0deb4bc1
+76;77;ch.bafu.gewaesserschutz-biologischer_zustand_fische (Fische);ch.bafu.gewaesserschutz-biologischer_zustand_fische;16a81f2f-c2ce-4f6b-adf5-60c9a246819e
+77;78;ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten (Wasserpflanzen (Makrophyten));ch.bafu.gewaesserschutz-biologischer_zustand_makrophyten;0ecdff3c-29b0-4556-a641-2e95d54cd406
+78;79;ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos (Makrozoobenthos);ch.bafu.gewaesserschutz-biologischer_zustand_makrozoobenthos;b0b3a9f3-0a3f-4177-ba89-ad21c8b39a10
+79;80;ch.bafu.gewaesserschutz-chemischer_zustand_ammonium (Ammonium);ch.bafu.gewaesserschutz-chemischer_zustand_ammonium;35fe15e6-ea42-467e-928c-ce2b75512972
+80;81;ch.bafu.gewaesserschutz-chemischer_zustand_doc (Gelöster organ. Kohlenstoff (DOC));ch.bafu.gewaesserschutz-chemischer_zustand_doc;7ecace17-ab1a-4629-b80c-cb8599e8d07b
+81;82;ch.bafu.gewaesserschutz-chemischer_zustand_nitrat (Nitrat);ch.bafu.gewaesserschutz-chemischer_zustand_nitrat;e1a5a3ea-483e-4ccc-968e-0026d7df5e61
+82;83;ch.bafu.gewaesserschutz-chemischer_zustand_nitrit (Nitrit);ch.bafu.gewaesserschutz-chemischer_zustand_nitrit;cbe62982-11ff-46c1-9264-4b3bb67a7743
+83;84;ch.bafu.gewaesserschutz-chemischer_zustand_phosphat (Phosphat);ch.bafu.gewaesserschutz-chemischer_zustand_phosphat;4c2c25da-35fe-40a8-97be-feb29051a170
+84;85;ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt (Gesamt-Phosphor);ch.bafu.gewaesserschutz-chemischer_zustand_phosphor_gesamt;359e590e-4c29-494a-80ba-182a9682173c
+85;86;ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor (Diffuse Phosphoreinträge);ch.bafu.gewaesserschutz-diffuse_eintraege_phosphor;9c4bf1ae-ee0a-491c-9ce3-156a3001a954
+86;87;ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff (Diffuse Stickstoffeinträge);ch.bafu.gewaesserschutz-diffuse_eintraege_stickstoff;9b7dc233-813b-490b-b13c-3b3ab787e11f
+87;88;ch.bafu.gewaesserschutz-klaeranlagen_anteilq347 (ARA - Abwasserant. an Q347);ch.bafu.gewaesserschutz-klaeranlagen_anteilq347;4e8a2a6b-9ede-4107-9b50-6e9af7389144
+88;89;ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse (ARA - Ausbaugrösse (EGW));ch.bafu.gewaesserschutz-klaeranlagen_ausbaugroesse;5e06e47a-8d78-440f-b98e-e46cfa52c474
+89;90;ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp (ARA - Reinigungstyp);ch.bafu.gewaesserschutz-klaeranlagen_reinigungstyp;c80d9b2e-522e-45cb-a587-c5fe028d63df
+90;91;ch.bafu.grundwasserkoerper (Grundwasserkörper);ch.bafu.grundwasserkoerper;2bd1ab86-83ec-4c3e-b937-ab81b4968bc6
+91;92;ch.bafu.hydrogeologie-markierversuche (Markierversuche);ch.bafu.hydrogeologie-markierversuche;fedac2fe-5f2b-4b4f-a21d-3c9fc216c496
+92;93;ch.bafu.hydrogeologische-karte_100 (Hydrogeologische Karte 100);ch.bafu.hydrogeologische-karte_100;b01523a1-9f61-43a2-95cb-be843cc1b18a
+93;94;ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser (Messstandorte Gewässerzustand Bund);ch.bafu.hydrologie-daueruntersuchung_fliessgewaesser;89a644dc-b73d-4d01-b72e-8feefc8f4bf7
+94;95;ch.bafu.hydrologie-gewaesserzustandsmessstationen (Messstandorte Gewässerzustand CH);ch.bafu.hydrologie-gewaesserzustandsmessstationen;f48022fc-52a9-4303-95c7-18f5096f1a00
+95;96;ch.bafu.hydrologie-hochwassergrenzwertpegel (Hochwassergrenzwertpegel);ch.bafu.hydrologie-hochwassergrenzwertpegel;36bcd44f-fd6e-49cd-a220-a6e9f386028e
+96;97;ch.bafu.hydrologie-hochwasserstatistik (Hochwasserstatistik);ch.bafu.hydrologie-hochwasserstatistik;74936192-7935-4686-86ad-c7c795d31b44
+97;98;ch.bafu.hydrologie-hydromessstationen (Hydrologische Messstationen);ch.bafu.hydrologie-hydromessstationen;bd377507-c61d-4fe2-bf81-9605b405d8ad
+98;99;ch.bafu.hydrologie-messstationen_gefahren (Hochwasser Gefahrenstufen 24h);ch.bafu.hydrologie-messstationen_gefahren;acca4141-17e4-46a2-8bc8-f4456fb2d822
+99;100;ch.bafu.hydrologie-niedrigwasserstatistik (Niedrigwasserstatistik);ch.bafu.hydrologie-niedrigwasserstatistik;5cfc8b95-c901-44b9-baa3-b768a5edb647
+100;101;ch.bafu.hydrologie-q347 (Grundlagen zur Bestimmung Q347);ch.bafu.hydrologie-q347;83e6752a-e668-4ade-9ad5-fd9d555d35da
+101;102;ch.bafu.hydrologie-untersuchungsgebiete (HUG Hydro. Untersuchungsgebiete);ch.bafu.hydrologie-untersuchungsgebiete;eb6b589d-1184-441f-84cf-d4fa6ac46a38
+102;103;ch.bafu.hydrologie-untersuchungsgebiete_stationen (HUG-Messstationen);ch.bafu.hydrologie-untersuchungsgebiete_stationen;9ce0ce29-35b2-4fdd-bfc8-247e189dca8f
+103;104;ch.bafu.hydrologie-wassertemperaturmessstationen (Messstationen Wassertemperatur);ch.bafu.hydrologie-wassertemperaturmessstationen;4f10c35a-8fac-4000-ab6d-7a294284059a
+104;105;ch.bafu.hydrologischer-atlas_basisgebiete (Basisgebiet);ch.bafu.hydrologischer-atlas_basisgebiete;f9e7ce17-3622-4ae4-8cbb-067011d5eed5
+105;106;ch.bafu.hydrologischer-atlas_bilanzgebiete (Bilanzgebiet);ch.bafu.hydrologischer-atlas_bilanzgebiete;52d0c066-65dd-4dd1-ac94-2b34f83a9bd6
+106;107;ch.bafu.hydrologischer-atlas_flussgebiete (Flussgebiet);ch.bafu.hydrologischer-atlas_flussgebiete;edff6d33-ba8c-441e-b8bd-7ab4969d4440
+107;108;ch.bafu.hydrologischer-atlas_kantonale-messstationen (Kantonale und private Messstationen);ch.bafu.hydrologischer-atlas_kantonale-messstationen;48143f81-0076-463f-a71d-b888cc7fe01b
+108;109;ch.bafu.hydroweb-messstationen_gefahren (Hochwasser Gefahrenstufen);ch.bafu.hydroweb-messstationen_gefahren;7c64e2fa-1afe-41f4-9f91-ed251079965c
+109;110;ch.bafu.hydroweb-messstationen_grundwasser (NAQUA-QUANT Messstellen);ch.bafu.hydroweb-messstationen_grundwasser;6146dc21-18b6-4d94-8865-8c2b99256e1b
+110;111;ch.bafu.hydroweb-messstationen_grundwasserzustand (Grundwasserstände/Quellschüttungen);ch.bafu.hydroweb-messstationen_grundwasserzustand;f87d692e-8d65-4188-94ba-61b4c61d621c
+111;112;ch.bafu.hydroweb-messstationen_temperatur (Wassertemperatur der Flüsse);ch.bafu.hydroweb-messstationen_temperatur;eb9d3cc1-0c04-4cda-9f21-7742b8376be7
+112;113;ch.bafu.hydroweb-messstationen_vorhersage (Hydrol. Stationen Vorhersagen);ch.bafu.hydroweb-messstationen_vorhersage;6655ccdb-fb9b-4049-8bf5-4d5a0b3bfe4f
+113;114;ch.bafu.hydroweb-messstationen_zustand (Lage Fliessgewässer und Seen);ch.bafu.hydroweb-messstationen_zustand;b034fd62-6405-44a7-969a-e1f5ebe873ee
+114;115;ch.bafu.hydroweb-warnkarte_national (Warnkarte nationale Gewässer);ch.bafu.hydroweb-warnkarte_national;e1d0c17a-0dbd-4455-bc83-1606e1e04298
+115;116;ch.bafu.hydroweb-warnkarte_regional (Warnkarte regionale Flüsse);ch.bafu.hydroweb-warnkarte_regional;a81982a8-ab5f-41ae-8ce8-3fa524dfe963
+116;117;ch.bafu.karst-ausdehnung_grundwasservorkommen (Karstwasservorkommen);ch.bafu.karst-ausdehnung_grundwasservorkommen;4ea295bb-a098-492b-84f8-e7687737fb35
+117;118;ch.bafu.karst-einzugsgebiete (Karst-Einzugsgebiete);ch.bafu.karst-einzugsgebiete;01811bd5-7f55-4c89-92f2-78fcd379affa
+118;119;ch.bafu.karst-einzugsgebietseinheiten (Karst-Einzugsgebietseinheiten);ch.bafu.karst-einzugsgebietseinheiten;fa918831-97d1-4486-a348-c891f4e900ad
+119;120;ch.bafu.karst-quellen_schwinden (Karstquellen und Schwinden);ch.bafu.karst-quellen_schwinden;1786c0cc-8aac-44b1-880c-aa627de09c1e
+120;121;ch.bafu.karst-unterirdische_fliesswege (Unterirdische Fliesswege);ch.bafu.karst-unterirdische_fliesswege;7db32f1d-691d-4d2d-a842-ee188210acf6
+121;122;ch.bafu.landesforstinventar-produktionsregionen (Produktionsregionen LFI);ch.bafu.landesforstinventar-produktionsregionen;3cc48f49-5641-4bd9-a5a9-22ab01063147
+122;123;ch.bafu.landesforstinventar-schutzwaldregionen (Schutzwaldregionen LFI);ch.bafu.landesforstinventar-schutzwaldregionen;3f0550c4-bbfa-4fcd-89ba-217e26b20b71
+123;124;ch.bafu.landesforstinventar-vegetationshoehenmodell (Vegetationshöhe LFI);ch.bafu.landesforstinventar-vegetationshoehenmodell;8b7c23ef-88a4-47d6-87dc-6f5b5d91928c
+124;125;ch.bafu.landesforstinventar-vegetationshoehenmodell_relief (Oberflächenmodell LFI);ch.bafu.landesforstinventar-vegetationshoehenmodell_relief;55eb4917-ce3b-423b-873f-2c8efb1c6762
+125;126;ch.bafu.landesforstinventar-wirtschaftsregionen (Wirtschaftsregionen LFI);ch.bafu.landesforstinventar-wirtschaftsregionen;5a1886a3-b107-4794-8784-3077e67dc568
+126;127;ch.bafu.mittlere-abfluesse (Mittlere Abflüsse (m³/s) und Regime);ch.bafu.mittlere-abfluesse;75c48c9d-34ec-4a11-bdd8-6dc019f0ec9e
+127;128;ch.bafu.mittlere-abfluesse_zukunft (Mittlere Abflüsse in der Zukunft);ch.bafu.mittlere-abfluesse_zukunft;144e7781-cfff-404c-ae9c-474525ed9a1f
+128;129;ch.bafu.moose (Rote Liste Moose);ch.bafu.moose;07b046a7-1b21-4cd0-b605-a113f2e5e94d
+129;130;ch.bafu.nabelstationen (Messstationen Luftqualität);ch.bafu.nabelstationen;14de1375-09ae-42b4-9592-5f0af091d050
+130;131;ch.bafu.oekomorphologie-f_abschnitte (Ökomorphologie F - Abschnitte);ch.bafu.oekomorphologie-f_abschnitte;ea12e280-75cf-4b71-90f0-d2bcc9d7fdfa
+131;132;ch.bafu.oekomorphologie-f_abstuerze (Ökomorphologie F - Abstürze);ch.bafu.oekomorphologie-f_abstuerze;1ec44d95-573a-489c-9a57-7bc278cc6792
+132;133;ch.bafu.oekomorphologie-f_bauwerke (Ökomorphologie F - Bauwerke);ch.bafu.oekomorphologie-f_bauwerke;5742b03b-d567-4acb-a84d-a3069faaa396
+133;134;ch.bafu.schutzgebiete-aulav_auen (Auengebiete AuLaV);ch.bafu.schutzgebiete-aulav_auen;54d007ed-2ab9-4cb3-9b41-b3c74a519eae
+134;135;ch.bafu.schutzgebiete-aulav_jagdbanngebiete (Jagdbanngebiete AuLaV);ch.bafu.schutzgebiete-aulav_jagdbanngebiete;e3cf990a-23d5-4876-b279-206f9eb5f4c9
+135;136;ch.bafu.schutzgebiete-aulav_moorlandschaften (Moorlandschaften AuLaV);ch.bafu.schutzgebiete-aulav_moorlandschaften;947f9c40-eef0-497a-90f2-9acf59a25f0c
+136;137;ch.bafu.schutzgebiete-aulav_uebrige (Übrige Schutzgebiete AuLaV);ch.bafu.schutzgebiete-aulav_uebrige;3e13af56-e32b-4092-a6eb-2adb6d3967cb
+137;138;ch.bafu.schutzgebiete-biosphaerenreservate (Biosphärenreservate);ch.bafu.schutzgebiete-biosphaerenreservate;c212a19c-6e06-4ca4-bdee-3ec62ccd7b1e
+138;139;ch.bafu.schutzgebiete-paerke_nationaler_bedeutung (Schweizer Pärke (Zonierung));ch.bafu.schutzgebiete-paerke_nationaler_bedeutung;b1fb8e29-8387-4081-9976-022ff925823b
+139;140;ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter (Schweizer Pärke (Perimeter));ch.bafu.schutzgebiete-paerke_nationaler_bedeutung_perimeter;bc4bd921-cec6-4f29-a784-29049c9f8026
+140;141;ch.bafu.schutzgebiete-ramsar (Ramsar);ch.bafu.schutzgebiete-ramsar;d960a5c8-44e4-4d10-a9f6-95f58568563c
+141;142;ch.bafu.schutzgebiete-smaragd (Smaragd);ch.bafu.schutzgebiete-smaragd;d31b13f3-f68f-4432-a1f8-5344046c2dd2
+142;143;ch.bafu.strukturguete-hochrhein_linkesufer (Strukturgüte Linkes Ufer);ch.bafu.strukturguete-hochrhein_linkesufer;536e1742-182c-4fb3-a067-12899be38afa
+143;144;ch.bafu.strukturguete-hochrhein_linkesumfeld (Strukturgüte Linkes Umfeld);ch.bafu.strukturguete-hochrhein_linkesumfeld;9b3f9ceb-3072-410f-b8ab-033ee151991c
+144;145;ch.bafu.strukturguete-hochrhein_rechtesufer (Strukturgüte Rechtes Ufer);ch.bafu.strukturguete-hochrhein_rechtesufer;0486c8a6-620b-4983-9e2e-7f91fd42c0d6
+145;146;ch.bafu.strukturguete-hochrhein_rechtesumfeld (Strukturgüte Rechtes Umfeld);ch.bafu.strukturguete-hochrhein_rechtesumfeld;0343f09b-8638-4694-91d6-c2b2ba1b124d
+146;147;ch.bafu.strukturguete-hochrhein_sohle (Strukturgüte Sohle);ch.bafu.strukturguete-hochrhein_sohle;06c4d44c-2e9a-4ee2-8926-6457bb78dce2
+147;148;ch.bafu.sturm-boeenspitzen_100 (Sturmgefährdung Böenspitzen 100);ch.bafu.sturm-boeenspitzen_100;4d1d17aa-2b92-42a9-b847-d6597631a264
+148;149;ch.bafu.sturm-boeenspitzen_30 (Sturmgefährdung Böenspitzen 30);ch.bafu.sturm-boeenspitzen_30;83d7e62e-2e5e-4877-8434-93f0cabc6438
+149;150;ch.bafu.sturm-boeenspitzen_300 (Sturmgefährdung Böenspitzen 300);ch.bafu.sturm-boeenspitzen_300;a7956843-bc72-4271-b238-72fb4a21baa0
+150;151;ch.bafu.sturm-boeenspitzen_50 (Sturmgefährdung Böenspitzen 50);ch.bafu.sturm-boeenspitzen_50;17531a73-040c-4bd8-8d77-3f24c733b37a
+151;152;ch.bafu.sturm-staudruck_100 (Sturmgefährdung Staudruck 100);ch.bafu.sturm-staudruck_100;4200db1b-16dd-48bb-8378-75afe4ec002b
+152;153;ch.bafu.sturm-staudruck_30 (Sturmgefährdung Staudruck 30);ch.bafu.sturm-staudruck_30;6edc63b6-f56b-4fb6-8ba3-1506bea16ec8
+153;154;ch.bafu.sturm-staudruck_300 (Sturmgefährdung Staudruck 300);ch.bafu.sturm-staudruck_300;d416fce6-2319-4afc-9d28-3455083b2f40
+154;155;ch.bafu.sturm-staudruck_50 (Sturmgefährdung Staudruck 50);ch.bafu.sturm-staudruck_50;41ace4c6-967d-4b99-b7aa-a0e51bc63611
+155;156;ch.bafu.swissprtr (Schadstoff-Freisetzungen (SwissPRTR));ch.bafu.swissprtr;980b541f-f651-439b-ad0c-ec0f7f10e514
+156;157;ch.bafu.typisierung-fliessgewaesser (Typisierung Fliessgewässer);ch.bafu.typisierung-fliessgewaesser;50a848cc-fe89-426a-940b-cc409cb4ff50
+157;158;ch.bafu.vec25-gewaessernetz_2000 (Gewässernetz 1:2 Mio.);ch.bafu.vec25-gewaessernetz_2000;30b22e49-7ef5-4fa6-b957-7b38cc3beb27
+158;159;ch.bafu.vec25-seen (Seen);ch.bafu.vec25-seen;b3bcb280-b613-4b43-8889-bc386e621e0d
+159;160;ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken (Höhenstufen 2085 mässig trocken);ch.bafu.wald-vegetationshoehenstufen_2085_weniger_trocken;c63a8513-7d77-4e11-9f6f-8d36debb036b
+160;161;ch.bafu.waldreservate (Waldreservate);ch.bafu.waldreservate;4b9ff750-3e52-43e9-80d1-c07c59c469fd
+161;162;ch.bafu.wasser-entnahme (Wasserentnahme);ch.bafu.wasser-entnahme;a4ecf3a4-9943-4826-a997-9d7523e4d8ad
+162;163;ch.bafu.wasser-gebietsauslaesse (Gebietsauslässe);ch.bafu.wasser-gebietsauslaesse;1a4d7eee-5135-4895-a255-e1dfd1fd6ff9
+163;164;ch.bafu.wasser-leitungen (Zuleitung);ch.bafu.wasser-leitungen;ae65e4e3-f47b-4544-a3a2-81dbf79d5a73
+164;165;ch.bafu.wasser-rueckgabe (Wasserrückgabe);ch.bafu.wasser-rueckgabe;ed1931ac-81bc-4517-9860-80090e530e33
+165;166;ch.bafu.wasser-teileinzugsgebiete_2 (Teileinzugsgebiete 2 km²);ch.bafu.wasser-teileinzugsgebiete_2;6d9c8ba5-2532-46ed-bc26-0a4017787a56
+166;167;ch.bafu.wasser-teileinzugsgebiete_40 (Teileinzugsgebiete 40 km²);ch.bafu.wasser-teileinzugsgebiete_40;102e547e-6210-46ea-9246-123f966ba9be
+167;168;ch.bafu.wasser-vorfluter (Vorfluterabschnitte);ch.bafu.wasser-vorfluter;300a3547-7b21-40a1-85d4-5d5387e81afc
+168;169;ch.bafu.wasserbau-querprofilmarken (Querprofilachse);ch.bafu.wasserbau-querprofilmarken;a5bdee12-cbec-4fbd-ba88-91f0d4ae8c10
+169;170;ch.bafu.wasserbau-vermessungsstrecken (Vermessungsabschnitt);ch.bafu.wasserbau-vermessungsstrecken;80a307f9-c24b-4ec2-adab-9e0c9e251f88
+170;171;ch.bafu.wrz-jagdbanngebiete_select (Wildtierschutzgebiete);ch.bafu.wrz-jagdbanngebiete_select;35f25047-ea29-4422-9497-3dac46e00eb9
+171;172;ch.bafu.wrz-wildruhezonen_portal (Wildruhezonen);ch.bafu.wrz-wildruhezonen_portal;4a0c8bc7-89d1-484e-a34a-454a31267c41
+172;173;ch.bag.radioaktivitaet-atmosphaere (Radioaktivität in der Atmosphäre);ch.bag.radioaktivitaet-atmosphaere;170800fb-e85c-42b7-8c4b-ba33b364b79f
+173;174;ch.bag.radonkarte (Radonkarte);ch.bag.radonkarte;54a8a239-ace3-4510-8fd4-7b4ddc370727
+174;175;ch.bag.zecken-fsme-faelle (FSME - Gemeldete Stichorte);ch.bag.zecken-fsme-faelle;836e4e0e-f2b5-4cbc-a20a-62fca7fd2ebe
+175;176;ch.bag.zecken-fsme-impfung (FSME - Impfempfehlung);ch.bag.zecken-fsme-impfung;c5b6314d-91ac-466b-ab97-4b7c3c6e5f94
+176;177;ch.bak.bundesinventar-schuetzenswerte-ortsbilder (ISOS - Ortsbildaufnahmen);ch.bak.bundesinventar-schuetzenswerte-ortsbilder;954451d0-f68a-4785-92e1-60aff077dd91
+177;178;ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos (ISOS - Bilder);ch.bak.bundesinventar-schuetzenswerte-ortsbilder_fotos;b9c1d690-008f-494c-a47f-ec96d9a8d84f
+178;179;ch.bak.schutzgebiete-unesco_weltkulturerbe (UNESCO-Welterbe Kulturstätten);ch.bak.schutzgebiete-unesco_weltkulturerbe;fb349ad4-5e01-43b7-9fcd-a0f60ae9c4db
+179;180;ch.bakom.anbieter-eigenes_festnetz (Anzahl Leitungsanbieter);ch.bakom.anbieter-eigenes_festnetz;b9b367de-baf0-47d9-b642-bd0f7f29c842
+180;181;ch.bakom.mobil-antennenstandorte-5g (Antennenstandorte 5G (NR));ch.bakom.mobil-antennenstandorte-5g;43814de7-42b6-4f33-a4d5-cdca8ca0d6cd
+181;182;ch.bakom.mobil-antennenstandorte-gsm (Antennenstandorte 2G (GSM));ch.bakom.mobil-antennenstandorte-gsm;1d7e059a-3d60-4876-905c-722cb469ac1d
+182;183;ch.bakom.mobil-antennenstandorte-lte (Antennenstandorte 4G (LTE));ch.bakom.mobil-antennenstandorte-lte;4399b61b-23d9-49a8-ba8b-dd2452adbc7c
+183;184;ch.bakom.mobil-antennenstandorte-umts (Antennenstandorte 3G (UMTS));ch.bakom.mobil-antennenstandorte-umts;312ddf6a-52b1-4bd9-9610-f0e3707dedff
+184;185;ch.bakom.notruf (Notrufe per Gemeinde);ch.bakom.notruf;7f3287d8-6ae7-491c-b8e1-1d9f81b194b4
+185;186;ch.bakom.notruf-112_festnetz (112 Festnetz);ch.bakom.notruf-112_festnetz;415a014c-b3f6-40bd-8b38-c955e9e214e6
+186;187;ch.bakom.notruf-112_mobilnetz (112 Mobilnetz);ch.bakom.notruf-112_mobilnetz;261dd9f1-3387-4bd9-b093-21cc7bf23970
+187;188;ch.bakom.notruf-112_satellit (112 Satellitennetz);ch.bakom.notruf-112_satellit;29139f7c-2b57-43de-b308-38666acfa0b9
+188;189;ch.bakom.notruf-112_zentral (112 Alarmzentralen);ch.bakom.notruf-112_zentral;cb6d8528-ef3d-4412-8962-03f5ce6bfad3
+189;190;ch.bakom.notruf-117_festnetz (117 Festnetz);ch.bakom.notruf-117_festnetz;33185a17-c810-41e0-aacd-3f3d44e410bd
+190;191;ch.bakom.notruf-117_mobilnetz (117 Mobilnetz);ch.bakom.notruf-117_mobilnetz;b8bc1b3f-ea78-4254-b093-91d97894623d
+191;192;ch.bakom.notruf-117_zentral (117 Alarmzentralen);ch.bakom.notruf-117_zentral;5ee5430f-1bd8-4027-a3fa-9df0d716da61
+192;193;ch.bakom.notruf-118_festnetz (118 Festnetz);ch.bakom.notruf-118_festnetz;48964dfd-eaaa-4443-a281-6a91d6692073
+193;194;ch.bakom.notruf-118_mobilnetz (118 Mobilnetz);ch.bakom.notruf-118_mobilnetz;c7baa23e-f09f-4940-a100-ab5321d67461
+194;195;ch.bakom.notruf-118_zentral (118 Alarmzentralen);ch.bakom.notruf-118_zentral;cfad6c18-ac21-44d2-9eec-efb7f62a9be8
+195;196;ch.bakom.notruf-143_festnetz (143 Festnetz);ch.bakom.notruf-143_festnetz;1a30baed-509c-4fe2-b7a7-1bcd885e7827
+196;197;ch.bakom.notruf-143_mobilnetz (143 Mobilnetz);ch.bakom.notruf-143_mobilnetz;c2c6114c-707d-424d-a860-ffe4e22330c6
+197;198;ch.bakom.notruf-143_zentral (143 Alarmzentralen);ch.bakom.notruf-143_zentral;5b41971f-599c-415e-9445-75b59f22a0bf
+198;199;ch.bakom.notruf-144_festnetz (144 Festnetz);ch.bakom.notruf-144_festnetz;8eff7061-f805-4d8c-a37e-574f41e68869
+199;200;ch.bakom.notruf-144_mobilnetz (144 Mobilnetz);ch.bakom.notruf-144_mobilnetz;261f29ed-3043-4668-998e-a76c63b8e3e2
+200;201;ch.bakom.notruf-144_zentral (144 Alarmzentralen);ch.bakom.notruf-144_zentral;e8914fd0-4b48-4446-af8e-1afeea435060
+201;202;ch.bakom.notruf-145_festnetz (145 Festnetz);ch.bakom.notruf-145_festnetz;d500e71f-68b0-4275-b73a-c35e254752f0
+202;203;ch.bakom.notruf-145_mobilnetz (145 Mobilnetz);ch.bakom.notruf-145_mobilnetz;4ab16b53-65f3-4427-a667-8cce75f71fd0
+203;204;ch.bakom.notruf-145_zentral (145 Alarmzentralen);ch.bakom.notruf-145_zentral;8aa977ba-61e7-4239-8b20-6e6880341fde
+204;205;ch.bakom.notruf-147_festnetz (147 Festnetz);ch.bakom.notruf-147_festnetz;30bb29fc-55ec-4c10-a504-dc650c135b09
+205;206;ch.bakom.notruf-147_mobilnetz (147 Mobilnetz);ch.bakom.notruf-147_mobilnetz;c883aaf2-3707-433f-a0d9-32f245f44eb9
+206;207;ch.bakom.notruf-147_zentral (147 Alarmzentralen);ch.bakom.notruf-147_zentral;00347ff2-fc9d-4171-bc6d-5fe49658e80b
+207;208;ch.bakom.radio-fernsehsender (Radio- und Fernsehsender);ch.bakom.radio-fernsehsender;b92fae28-d12b-4278-8535-1929807341cd
+208;209;ch.bakom.versorgungsgebiet-tv (Versorgungsgebiete TV);ch.bakom.versorgungsgebiet-tv;f57f174b-15ab-4428-b41f-916f33ea4cbb
+209;210;ch.bakom.versorgungsgebiet-ukw (Versorgungsgebiete Radio);ch.bakom.versorgungsgebiet-ukw;60a2fcd0-3a04-4fea-9bae-c3e0f9b31604
+210;211;ch.baspo.nationales-sportanlagenkonzept (Sportanlagen NASAK);ch.baspo.nationales-sportanlagenkonzept;9b3799d2-02e6-43c7-9655-9e3d268551c2
+211;212;ch.bav.anlagen-schienengueterverkehr (Anlagen Gütertransport Schiene);ch.bav.anlagen-schienengueterverkehr;dda92878-86a1-4191-a073-9721671d6bc1
+212;213;ch.bav.haltestellen-oev (öV-Haltestellen);ch.bav.haltestellen-oev;841d42ff-8177-4e07-a96b-e8e5455ae048
+213;214;ch.bav.kataster-belasteter-standorte-oev (Belastete Standorte öV);ch.bav.kataster-belasteter-standorte-oev;c022c6b6-67ad-4023-8d01-cd0d89cf73a6
+214;215;ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht (Eisenbahnlärm, tats. Immission N);ch.bav.laermbelastung-eisenbahn_effektive_immissionen_nacht;e449ba1d-ee2a-42d5-97a9-ad9fcf48b696
+215;216;ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag (Eisenbahnlärm, tats. Immission T);ch.bav.laermbelastung-eisenbahn_effektive_immissionen_tag;a488ff49-540f-4013-aa23-af9a2d2d0d34
+216;217;ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht (Eisenbahnlärm, festgel. Emission N);ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_nacht;a7efd280-1c64-4fdf-98dd-bec607ff6a9d
+217;218;ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag (Eisenbahnlärm, festgel. Emission T);ch.bav.laermbelastung-eisenbahn_festgelegte_emissionen_tag;2d35d97f-e7b9-4d40-8654-d6adfaf26240
+218;219;ch.bav.laermbelastung-eisenbahn_laermschutzwaende (Eisenbahnlärm, Lärmschutzwände);ch.bav.laermbelastung-eisenbahn_laermschutzwaende;ed8f4713-e0c7-4dca-a7b0-3ef7aeb1bc73
+219;220;ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht (Eisenbahnlärm, tats. Emission N);ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_nacht;49f67f0b-6122-42f3-8391-f2ceeb367c2f
+220;221;ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag (Eisenbahnlärm, tats. Emission T);ch.bav.laermbelastung-eisenbahn_tatsaechliche_emissionen_tag;c4622adc-282a-4368-b3a8-d15769882b6f
+221;222;ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht (Eisenbahnlärm, zuläss. Immission N);ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_nacht;79b73ff5-e8af-4f26-82b6-6d3eda65fc30
+222;223;ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag (Eisenbahnlärm, zuläss. Immission T);ch.bav.laermbelastung-eisenbahn_zulaessige_immissionen_tag;1abcda60-f48d-4340-bc53-4611d49d716c
+223;224;ch.bav.sachplan-infrastruktur-schiene_kraft (ch.bav.sachplan-infrastruktur-schiene_kraft);ch.bav.sachplan-infrastruktur-schiene_kraft;80d0a3a6-56a3-408a-8964-6a48a500678e
+224;225;ch.bav.sachplan-infrastruktur-schifffahrt_kraft (ch.bav.sachplan-infrastruktur-schifffahrt_kraft);ch.bav.sachplan-infrastruktur-schifffahrt_kraft;fa9b082a-57a8-4c11-816b-2365e2741215
+225;226;ch.bav.schienennetz (Schienennetz);ch.bav.schienennetz;4545b545-cdc9-4713-809c-210ee84436b0
+226;227;ch.bav.seilbahnen-bundeskonzession (Seilbahnen mit Bundeskonzession);ch.bav.seilbahnen-bundeskonzession;43a660c0-baa2-4366-ad04-a458afe1ec2c
+227;228;ch.bazl.einschraenkungen-drohnen (Einschränkungen für Drohnen);ch.bazl.einschraenkungen-drohnen;c3ebd7ba-0fd5-411a-9074-3d0cdc46bc4d
+228;229;ch.bazl.flugplaetze-heliports (Flugplätze + Heliports);ch.bazl.flugplaetze-heliports;4fbaa79b-688f-4060-9afd-b1c5b2147ee2
+229;230;ch.bazl.gebirgslandeplaetze (Gebirgslandeplätze);ch.bazl.gebirgslandeplaetze;d31ecd5b-e00c-430b-ab2e-d9148a199b9c
+230;231;ch.bazl.kataster-belasteter-standorte-zivilflugplaetze (Belastete Standorte Zivilflugplätze);ch.bazl.kataster-belasteter-standorte-zivilflugplaetze;3f7c8f9f-b1be-4eb6-a9e2-7bdacf35dd58
+231;232;ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde (Lärmbelastung 1. Nachtstunde);ch.bazl.laermbelastungskataster-zivilflugplaetze_erste-nachtstunde;e53ef5a2-628d-46bd-a14e-d0d275cdec77
+232;233;ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter (Lärmbelastung Helikopter Lr);ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter;7d6f8271-37ef-40e2-a7c0-8014100697b8
+233;234;ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel (Lärmbelastung Helikopter Lmax);ch.bazl.laermbelastungskataster-zivilflugplaetze_helikopter-maximalpegel;16e974d6-94ef-4006-97ff-f17428ea6687
+234;235;ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge (Lärmbelast. Klein- / Grossflugzeuge);ch.bazl.laermbelastungskataster-zivilflugplaetze_klein-grossflugzeuge;f08c2e4b-e458-431f-b98b-32c59ec7baec
+235;236;ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge (Lärmbelastung Kleinluftfahrzeuge);ch.bazl.laermbelastungskataster-zivilflugplaetze_kleinluftfahrzeuge;88237a28-1e39-440f-89c4-a26c8a605243
+236;237;ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde (Lärmbelastung letzte Nachtstunde);ch.bazl.laermbelastungskataster-zivilflugplaetze_letzte-nachtstunde;474bf1cb-ffd3-45d7-a24b-0d89beaa4ad2
+237;238;ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt (Lärmbelast. Militärflugpl. (gesamt));ch.bazl.laermbelastungskataster-zivilflugplaetze_militaer-gesamt;cd12a6cd-38f0-4ea4-bbeb-4cc1be8bf0a6
+238;239;ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde (Lärmbelastung 2. Nachtstunde);ch.bazl.laermbelastungskataster-zivilflugplaetze_zweite-nachtstunde;f9bff7c5-8390-4538-82b6-9595d6133e31
+239;240;ch.bazl.luftfahrthindernis (Luftfahrthindernisse);ch.bazl.luftfahrthindernis;b43208df-1ac2-4d00-b559-d83e4d86ba1a
+240;241;ch.bazl.luftraeume-fluginformationsgebiet (Lufträume - FIR);ch.bazl.luftraeume-fluginformationsgebiet;cde5d669-5c65-4338-9e7c-dc839df4a8b4
+241;242;ch.bazl.luftraeume-fluginformationszonen (Lufträume - FIZ);ch.bazl.luftraeume-fluginformationszonen;4d9bdb6f-3af1-4ef1-aad0-d6560ff996e0
+242;243;ch.bazl.luftraeume-kontrollbezirke (Lufträume - CTA);ch.bazl.luftraeume-kontrollbezirke;5fd1a95b-8f2c-4fff-8038-a7b2922488ad
+243;244;ch.bazl.luftraeume-kontrollzonen (Lufträume - CTR);ch.bazl.luftraeume-kontrollzonen;ee7cdbda-996a-45f9-aeff-aa63fa0d446a
+244;245;ch.bazl.projektierungszonen-flughafenanlagen (Projektierungszonen Flughäfen);ch.bazl.projektierungszonen-flughafenanlagen;d76d6e8d-c6ac-40f3-92c0-2a953cb99d9f
+245;246;ch.bazl.sachplan-infrastruktur-luftfahrt_kraft (ch.bazl.sachplan-infrastruktur-luftfahrt_kraft);ch.bazl.sachplan-infrastruktur-luftfahrt_kraft;ae5fa63c-c153-496a-b8a6-c896126398b1
+246;247;ch.bazl.schutzgebiete-aulav_liechtenstein (Schutzgebiete Liechtenstein AuLaV);ch.bazl.schutzgebiete-aulav_liechtenstein;25c6e9dd-b658-41fa-8f8d-3fc2775e3a6f
+247;248;ch.bazl.sicherheitszonenplan (Sicherheitszonenplan);ch.bazl.sicherheitszonenplan;f0ac2ddb-8b07-421b-ada6-8c192b593bca
+248;249;ch.bazl.spitallandeplaetze (Spitallandeplätze);ch.bazl.spitallandeplaetze;afcad9a9-3c1c-4640-a6a9-aa279e4d501c
+249;250;ch.bfe.abgeltung-wasserkraftnutzung (Verzicht Wasserkraftnutzung);ch.bfe.abgeltung-wasserkraftnutzung;6c5acaa7-ac82-414a-a2bc-490f60c82580
+250;251;ch.bfe.biogasanlagen (Biogasanlagen);ch.bfe.biogasanlagen;d303ef3f-2ab2-4b83-9d81-7594173e3728
+251;252;ch.bfe.biomasse-nicht-verholzt (Nicht-verholzte Biomassen);ch.bfe.biomasse-nicht-verholzt;a1e28820-056f-4371-9bb3-8c17b846e56f
+252;253;ch.bfe.biomasse-verholzt (Verholzte Biomassen);ch.bfe.biomasse-verholzt;b8539dc3-3a56-467e-8433-80f522bfd6fc
+253;254;ch.bfe.elektrizitaetsproduktionsanlagen (Elektrizitätsproduktionsanlagen);ch.bfe.elektrizitaetsproduktionsanlagen;e5a00bdb-5022-4856-ad4a-d1afe7bf38b0
+254;255;ch.bfe.energieberatungsstellen (Energieberatungsstellen);ch.bfe.energieberatungsstellen;26b94fae-3709-4436-901b-eb27546e9afe
+255;256;ch.bfe.energieforschung (Pilot- und Demonstrationsprojekte);ch.bfe.energieforschung;b77e2add-87d1-45a4-b5fc-73cb403ee268
+256;257;ch.bfe.energiestaedte (Energiestädte);ch.bfe.energiestaedte;393940cd-6a67-4190-8b91-378669cdea1d
+257;258;ch.bfe.energiestaedte-2000watt-areale (2000-Watt-Areale);ch.bfe.energiestaedte-2000watt-areale;d11e76bf-7df2-4057-8fa8-71a0a19523ea
+258;259;ch.bfe.erneuerbarheizen (Impulsberatung EFH und kleine MFH);ch.bfe.erneuerbarheizen;0f756190-b7f7-4a4b-94db-696ed67676a4
+259;260;ch.bfe.erneuerbarheizen-mehrfamilienhaeuser (Impulsberatung grosse MFH);ch.bfe.erneuerbarheizen-mehrfamilienhaeuser;0f756190-b7f7-4a4b-94db-696ed67676a4
+260;261;ch.bfe.fernwaerme-angebot (Wärme- und Kälteangebot);ch.bfe.fernwaerme-angebot;b6c8d9c6-a2ca-435a-af0a-6a8ac94199fc
+261;262;ch.bfe.fernwaerme-nachfrage_industrie (Wärme-/Kältenachfrage Industrie);ch.bfe.fernwaerme-nachfrage_industrie;25de2a79-1714-4db8-a7ad-48efc8a4f5c7
+262;263;ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude (Wärme-/Kältenachfrage Wohnen und DL);ch.bfe.fernwaerme-nachfrage_wohn_dienstleistungsgebaeude;32a8a3cd-d269-4915-b983-54fd979ca486
+263;264;ch.bfe.kehrichtverbrennungsanlagen (Kehrichtverbrennungsanlagen);ch.bfe.kehrichtverbrennungsanlagen;d9596eaf-5629-4756-9a46-4f178407b905
+264;265;ch.bfe.kernkraftwerke (Kernkraftwerke);ch.bfe.kernkraftwerke;74e0e4a7-165a-414d-b1a5-1921162f04ab
+265;266;ch.bfe.kleinwasserkraftpotentiale (Kleinwasserkraftpotentiale);ch.bfe.kleinwasserkraftpotentiale;c4b695b0-23ad-4d0d-a496-16fc0f597819
+266;267;ch.bfe.komo-projekte (KOMO-Projekte);ch.bfe.komo-projekte;0d216c1b-2998-4eb9-a47b-ac88aafb7271
+267;268;ch.bfe.meteorologische-vereisung (Vereisungshäufigkeit);ch.bfe.meteorologische-vereisung;94cedad7-6d19-46b2-9ecf-0d1d1a58bea8
+268;269;ch.bfe.minergiegebaeude (Minergie);ch.bfe.minergiegebaeude;ad60a67c-f0a0-41fa-84f2-20b8565c9da9
+269;270;ch.bfe.sachplan-geologie-tiefenlager (SP Geologische Tiefenlager);ch.bfe.sachplan-geologie-tiefenlager;7162f14b-4c16-4ec3-8ac6-b158136e65c7
+270;271;ch.bfe.sachplan-uebertragungsleitungen_kraft (SP Übertragungsleitungen);ch.bfe.sachplan-uebertragungsleitungen_kraft;e1134feb-55d7-4b44-8e13-125e983b259b
+271;272;ch.bfe.solarenergie-eignung-daecher (Solarenergie: Eignung Dächer);ch.bfe.solarenergie-eignung-daecher;b614de5c-2f12-4355-b2c9-7aef2c363ad6
+272;273;ch.bfe.solarenergie-eignung-fassaden (Solarenergie: Eignung Fassaden);ch.bfe.solarenergie-eignung-fassaden;3849f57d-9bdd-428c-8d13-08be446e197a
+273;274;ch.bfe.statistik-wasserkraftanlagen (Statistik Wasserkraft);ch.bfe.statistik-wasserkraftanlagen;a7d239f2-4202-4760-9537-41e1a8c3c984
+274;275;ch.bfe.stauanlagen-bundesaufsicht (Stauanlagen);ch.bfe.stauanlagen-bundesaufsicht;b5225e07-9884-47b9-8bc2-161d07d1e7f2
+275;276;ch.bfe.thermische-netze (Thermische Netze);ch.bfe.thermische-netze;92b85345-4513-45a8-b64a-d7dbebd648a3
+276;277;ch.bfe.waermepotential-gewaesser (Potenzial Wärmenutzung Gewässer);ch.bfe.waermepotential-gewaesser;f51ab0db-c25c-4211-ab07-365734380066
+277;278;ch.bfe.windenergie-geschwindigkeit_h100 (Windgeschwindigkeit 100 m Höhe);ch.bfe.windenergie-geschwindigkeit_h100;216fd29a-b016-457f-aecf-3a8b1cc70803
+278;279;ch.bfe.windenergie-geschwindigkeit_h125 (Windgeschwindigkeit 125 m Höhe);ch.bfe.windenergie-geschwindigkeit_h125;8d78a2a4-03fa-4d95-8a37-57594f2bf7d4
+279;280;ch.bfe.windenergie-geschwindigkeit_h150 (Windgeschwindigkeit 150 m Höhe);ch.bfe.windenergie-geschwindigkeit_h150;bb51c6f0-2be5-4933-9582-90dc613c8c75
+280;281;ch.bfe.windenergie-geschwindigkeit_h50 (Windgeschwindigkeit 50 m Höhe);ch.bfe.windenergie-geschwindigkeit_h50;69f9bf6d-f168-4250-8c5a-77398fa750cb
+281;282;ch.bfe.windenergie-geschwindigkeit_h75 (Windgeschwindigkeit 75 m Höhe);ch.bfe.windenergie-geschwindigkeit_h75;d5892cf4-38fa-4af7-9ddb-f87dd2ed06cd
+282;283;ch.bfe.windenergieanlagen (Windenergieanlagen);ch.bfe.windenergieanlagen;empty
+283;284;ch.bfs.arealstatistik (Arealstatistik Standard);ch.bfs.arealstatistik;8ac687ee-ad27-4ac7-8c1c-b64abee9e3b3
+284;285;ch.bfs.arealstatistik-1985 (Arealstatistik 1979/85 NOAS04);ch.bfs.arealstatistik-1985;0dff304b-d90c-4f9c-bd9d-f3c315a128c2
+285;286;ch.bfs.arealstatistik-1997 (Arealstatistik 1992/97 NOAS04);ch.bfs.arealstatistik-1997;260bbbe0-0c10-4a31-b566-cd0d6f143a09
+286;287;ch.bfs.arealstatistik-bodenbedeckung (Arealstatistik Bedeckung);ch.bfs.arealstatistik-bodenbedeckung;b53c03bb-a168-491f-b266-c7e9ec0af320
+287;288;ch.bfs.arealstatistik-bodenbedeckung-1985 (Arealstatistik 1979/85 NOLC04);ch.bfs.arealstatistik-bodenbedeckung-1985;1c6bc7a0-b243-49f0-9078-6576b37716b7
+288;289;ch.bfs.arealstatistik-bodenbedeckung-1997 (Arealstatistik 1992/97 NOLC04);ch.bfs.arealstatistik-bodenbedeckung-1997;af74a95b-7295-47b8-8cfe-795e9a09a086
+289;290;ch.bfs.arealstatistik-bodennutzung (Arealstatistik 2004/09 NOLU04 );ch.bfs.arealstatistik-bodennutzung;5082c28a-33cc-47d6-a577-a6118238def5
+290;291;ch.bfs.arealstatistik-bodennutzung-1985 (Arealstatistik 1979/85 NOLU04);ch.bfs.arealstatistik-bodennutzung-1985;f954beeb-7f1e-44a4-b975-19ea9b8c369f
+291;292;ch.bfs.arealstatistik-bodennutzung-1997 (Arealstatistik 1992/97 NOLU04);ch.bfs.arealstatistik-bodennutzung-1997;5257c12e-bb39-4983-a98a-8103cb3f1611
+292;293;ch.bfs.betriebszaehlungen-arbeitsstaetten (Arbeitsstätten);ch.bfs.betriebszaehlungen-arbeitsstaetten;ecc82a85-9ecb-4f14-873d-bd07d8468bad
+293;294;ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente (Beschäftigte (VZÄ));ch.bfs.betriebszaehlungen-beschaeftigte_vollzeitaequivalente;1a764cdd-9d11-4cfe-b440-66d7caef7fa4
+294;295;ch.bfs.gebaeude_wohnungs_register (Gebäude- und Wohnungsregister);ch.bfs.gebaeude_wohnungs_register;56553efe-4a2c-449d-93ba-cf7edd518d56
+295;296;ch.bfs.generalisierte-grenzen_agglomerationen_g1 (Administrative Grenzen G1, Agglomerationen);ch.bfs.generalisierte-grenzen_agglomerationen_g1;68924d22-bc42-425e-bbcc-a2f75c5c796c
+296;297;ch.bfs.generalisierte-grenzen_agglomerationen_g2 (Administrative Grenzen G2, Agglomerationen);ch.bfs.generalisierte-grenzen_agglomerationen_g2;4aa954c6-2d71-4d96-ab85-cb5fb128be8e
+297;298;ch.bfs.landschaftswandel (Bilddokumentation Landschaftswandel);ch.bfs.landschaftswandel;826921fb-2bf7-44af-a71a-af56bda3dd6d
+298;299;ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner (Bevölkerung (Einwohner));ch.bfs.volkszaehlung-bevoelkerungsstatistik_einwohner;4bfbbf20-d90e-4131-8fe2-4c454ad45c16
+299;300;ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude (Gebäude);ch.bfs.volkszaehlung-gebaeudestatistik_gebaeude;ac730d03-1840-4f64-bc89-9f06d2491e25
+300;301;ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen (Wohnungen);ch.bfs.volkszaehlung-gebaeudestatistik_wohnungen;987a55d8-fcc5-497a-b553-da1f1517e5c4
+301;302;ch.blw.bodeneignung-gruendigkeit (Gründigkeit);ch.blw.bodeneignung-gruendigkeit;a1c56c8d-05c9-425f-9aed-71e265081634
+302;303;ch.blw.bodeneignung-kulturland (Bodeneignung für Kulturland);ch.blw.bodeneignung-kulturland;843de9c9-6feb-4577-ab3b-e4fb62a9c56a
+303;304;ch.blw.bodeneignung-kulturtyp (Bodeneignung: Kulturtyp);ch.blw.bodeneignung-kulturtyp;4d7ea1c8-451b-46b6-8e16-ffee10e0c9a7
+304;305;ch.blw.bodeneignung-naehrstoffspeichervermoegen (Nährstoffspeichervermögen);ch.blw.bodeneignung-naehrstoffspeichervermoegen;05216096-7514-4084-a361-49a2cee1f44c
+305;306;ch.blw.bodeneignung-skelettgehalt (Skelettgehalt);ch.blw.bodeneignung-skelettgehalt;b07f2385-ee3d-4dae-aac2-3fce678ead33
+306;307;ch.blw.bodeneignung-vernaessung (Vernässung);ch.blw.bodeneignung-vernaessung;ace71da1-bfd1-4745-a2f1-40b4567f4907
+307;308;ch.blw.bodeneignung-wasserdurchlaessigkeit (Wasserdurchlässigkeit);ch.blw.bodeneignung-wasserdurchlaessigkeit;d5bd22a3-0656-4582-97bc-37f77b5426ca
+308;309;ch.blw.bodeneignung-wasserspeichervermoegen (Wasserspeichervermögen);ch.blw.bodeneignung-wasserspeichervermoegen;6caf4d0f-52da-433a-809f-92781316ad0e
+309;310;ch.blw.klimaeignung-futterbau (Klimaeignung Futterbau);ch.blw.klimaeignung-futterbau;4f01b7dd-a576-45ee-9158-82789334c577
+310;311;ch.blw.klimaeignung-getreidebau (Klimaeignung Getreidebau);ch.blw.klimaeignung-getreidebau;04aa6587-d884-4c20-87a3-ff537e6d2626
+311;312;ch.blw.klimaeignung-kartoffeln (Klimaeignung Kartoffeln);ch.blw.klimaeignung-kartoffeln;859f26d4-f820-4b1f-bad4-44e88bae59a6
+312;313;ch.blw.klimaeignung-koernermais (Klimaeignung Körnermais);ch.blw.klimaeignung-koernermais;aaa31b34-09da-4944-b43e-fb1b21cc6f96
+313;314;ch.blw.klimaeignung-kulturland (Klimaeignung Kulturland);ch.blw.klimaeignung-kulturland;8148d26b-7aae-48b1-8c02-a391c33f59a7
+314;315;ch.blw.klimaeignung-spezialkulturen (Klimaeignung Spezialkulturen);ch.blw.klimaeignung-spezialkulturen;fe7c18e2-87d3-464f-a22e-7cc03e61d480
+315;316;ch.blw.klimaeignung-typ (Klimaeignung Übersicht);ch.blw.klimaeignung-typ;f743a51c-7487-46a5-af16-5bf031edc417
+316;317;ch.blw.klimaeignung-zwischenfruchtbau (Klimaeignung Zwischenfruchtbau);ch.blw.klimaeignung-zwischenfruchtbau;17b0f989-a79e-4837-b5a2-cf38c23a662c
+317;318;ch.blw.niederschlagshaushalt (Niederschlagshaushalt);ch.blw.niederschlagshaushalt;0335f9f0-b0b1-4925-9c9d-d530ed2dd1cf
+318;319;ch.blw.ursprungsbezeichnungen-fleisch (GGA Fleischware);ch.blw.ursprungsbezeichnungen-fleisch;d8a34a75-b1c3-4387-8b03-63dd150f529b
+319;320;ch.blw.ursprungsbezeichnungen-kaese (GUB Käse);ch.blw.ursprungsbezeichnungen-kaese;2109a970-681d-4efb-9fd5-6f7da5ae0e14
+320;321;ch.blw.ursprungsbezeichnungen-konditoreiwaren (GGA Konditoreiware);ch.blw.ursprungsbezeichnungen-konditoreiwaren;0652c964-e9d5-4c4a-8efe-5043f48b457f
+321;322;ch.blw.ursprungsbezeichnungen-pflanzen (GUB Pflanzliche Produkte);ch.blw.ursprungsbezeichnungen-pflanzen;199c9078-9da7-4a77-b811-b342adc2a116
+322;323;ch.blw.ursprungsbezeichnungen-spirituosen (GUB Spirituosen);ch.blw.ursprungsbezeichnungen-spirituosen;bc34236a-ffe9-40af-9eae-d2cf1e0e96e6
+323;324;ch.ensi.zonenplan-notfallschutz-kernanlagen (Zonenpläne für den Notfallschutz);ch.ensi.zonenplan-notfallschutz-kernanlagen;60e40dd3-a00b-4b34-a9c6-8813f21711b9
+324;325;ch.kantone.cadastralwebmap-farbe (CadastralWebMap);ch.kantone.cadastralwebmap-farbe;cf93dfb6-ffff-43ce-bd9b-271baba2d217
+325;326;ch.nagra.aeromagnetische-karte_1100 (Aeromagnetik Aargau 1100 m 100);ch.nagra.aeromagnetische-karte_1100;2ffdbb13-27dc-4380-8349-8debfeca4fd9
+326;327;ch.nagra.aeromagnetische-karte_1500 (Aeromagnetik Aargau 1500 m 100);ch.nagra.aeromagnetische-karte_1500;b814401b-9eb2-4e6c-b4a9-f24df7b8bba6
+327;328;ch.pronatura.naturschutzgebiete (Pro Natura Naturschutzgebiete);ch.pronatura.naturschutzgebiete;db4b251f-d431-457d-9ed6-4abf59d2a54a
+328;329;ch.pronatura.waldreservate (Pro Natura Waldreservate);ch.pronatura.waldreservate;8a69330f-c6db-4c56-bedc-d244542ad86c
+329;330;ch.sem.sachplan-asyl_kraft (SP Asyl);ch.sem.sachplan-asyl_kraft;23a9027d-37a1-4ba4-b529-54c658540914
+330;331;ch.swisstopo-vd.amtliche-vermessung (OpenData-AV);ch.swisstopo-vd.amtliche-vermessung;a3c0f7fb-1be0-4385-9c54-33b65ae3e1ae
+331;332;ch.swisstopo-vd.geometa-gemeinde (Gemeindeinformationen);ch.swisstopo-vd.geometa-gemeinde;9114e8ee-f90c-4c05-af2e-0fe999f833bb
+332;333;ch.swisstopo-vd.geometa-grundbuch (Grundbuchinformationen);ch.swisstopo-vd.geometa-grundbuch;dad4a841-708b-4a99-94bc-743bb28e0ab0
+333;334;ch.swisstopo-vd.geometa-nfgeom (Nachführungsgeometer/in);ch.swisstopo-vd.geometa-nfgeom;601959f6-8345-429e-884c-8f0d37c414da
+334;335;ch.swisstopo-vd.geometa-periodische_nachfuehrung (Periodische Nachführung);ch.swisstopo-vd.geometa-periodische_nachfuehrung;67e2ea0a-868f-445e-848a-c33eb1528ec5
+335;336;ch.swisstopo-vd.ortschaftenverzeichnis_plz (PLZ und Ortschaften);ch.swisstopo-vd.ortschaftenverzeichnis_plz;972cd117-f1ed-4818-be14-233d89ab9fdf
+336;337;ch.swisstopo-vd.spannungsarme-gebiete (Spannungsarme Gebiete);ch.swisstopo-vd.spannungsarme-gebiete;c8b1a15e-b4db-49b0-ad3a-5b113c072fca
+337;338;ch.swisstopo-vd.stand-oerebkataster (Verfügbarkeit des ÖREB-Katasters);ch.swisstopo-vd.stand-oerebkataster;fb60594e-2b16-45af-9bc0-b444035070f5
+338;339;ch.swisstopo.amtliches-gebaeudeadressverzeichnis (Amtliches Gebäudeadressverzeichnis);ch.swisstopo.amtliches-gebaeudeadressverzeichnis;150c38c5-2650-4018-b5c7-939e2cdd56ce
+339;340;ch.swisstopo.amtliches-strassenverzeichnis (Amtliches Strassenverzeichnis);ch.swisstopo.amtliches-strassenverzeichnis;caf39a72-92be-4bd1-a976-4eaaeb770a44
+340;341;ch.swisstopo.dreiecksvermaschung (LV95 Dreiecksvermaschung);ch.swisstopo.dreiecksvermaschung;fb7fe701-04b1-4a0c-ba3a-90dbc5bd23d3
+341;342;ch.swisstopo.fixpunkte-agnes (AGNES);ch.swisstopo.fixpunkte-agnes;d2152a5b-3c64-4a4a-abf5-0ae342f2f108
+342;343;ch.swisstopo.fixpunkte-hfp1 (Höhenfixpunkte HFP1);ch.swisstopo.fixpunkte-hfp1;1ca6ef94-7204-424c-b2a6-d73158305df6
+343;344;ch.swisstopo.fixpunkte-hfp2 (Höhenfixpunkte HFP2);ch.swisstopo.fixpunkte-hfp2;06044c35-4164-41c6-a4df-297749c03227
+344;345;ch.swisstopo.fixpunkte-lfp1 (Lagefixpunkte LFP1);ch.swisstopo.fixpunkte-lfp1;7a49183b-9766-40dd-936c-fb09fdded185
+345;346;ch.swisstopo.fixpunkte-lfp2 (Lagefixpunkte LFP2);ch.swisstopo.fixpunkte-lfp2;12ee04c7-b38d-4809-b417-ce304df6c7cc
+346;347;ch.swisstopo.geologie-bohrungen_tiefer_500 (Bohrungen > 500 m);ch.swisstopo.geologie-bohrungen_tiefer_500;a61d9f7a-00cd-4448-a36d-b81423f1f566
+347;348;ch.swisstopo.geologie-dosisleistung-terrestrisch (Terrestrische Strahlung);ch.swisstopo.geologie-dosisleistung-terrestrisch;eccbc751-9928-4221-89e1-1184cbb3aff5
+348;349;ch.swisstopo.geologie-eiszeit-lgm (Letzteiszeitl. Max. (Vektor) 500);ch.swisstopo.geologie-eiszeit-lgm;75c2f212-413c-4d55-8a93-c021c8bbfc95
+349;350;ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata (Einteilung Letzteiszeitlisches Max. 500 Papier);ch.swisstopo.geologie-eiszeit-lgm-raster_papier.metadata;388210bc-331b-49c1-8146-3fda75a678cf
+350;351;ch.swisstopo.geologie-felslabore (Felslabore);ch.swisstopo.geologie-felslabore;f995a522-62cb-4316-a762-f6a319985ed7
+351;352;ch.swisstopo.geologie-generalkarte-ggk200.metadata (Einteilung Geologische Generalkarte 200 Raster);ch.swisstopo.geologie-generalkarte-ggk200.metadata;c17ba742-9a43-4ed2-9331-e776d6e9065d
+352;353;ch.swisstopo.geologie-geocover (GeoCover - Vektordaten);ch.swisstopo.geologie-geocover;2467ab13-e794-4c13-8c55-59fe276398c5
+353;354;ch.swisstopo.geologie-geocover.metadata (Einteilung GeoCover);ch.swisstopo.geologie-geocover.metadata;f7485f4f-2224-4b76-a43c-52cbf8883a42
+354;355;ch.swisstopo.geologie-geodaesie-bouguer_anomalien (Bouguer-Anomalien 500);ch.swisstopo.geologie-geodaesie-bouguer_anomalien;618c9697-129f-47c7-830a-7a256b4c2499
+355;356;ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata (Einteilung Bouguer-Anomalien 500 Papier);ch.swisstopo.geologie-geodaesie-bouguer_anomalien_papier.metadata;cff2a951-b5ec-4a51-a0f2-f89dd90e5782
+356;357;ch.swisstopo.geologie-geodaesie-isostatische_anomalien (Isostatische Anomalien 500);ch.swisstopo.geologie-geodaesie-isostatische_anomalien;7234896a-842c-4524-8710-5d900953cb1d
+357;358;ch.swisstopo.geologie-geoevents_anfrage (GeoEvents auf Anfrage);ch.swisstopo.geologie-geoevents_anfrage;6f4fc3a9-8dc0-4cc2-b176-f804e5157dab
+358;359;ch.swisstopo.geologie-geoevents_demnaechst (GeoEvents demnächst);ch.swisstopo.geologie-geoevents_demnaechst;64508bcc-8a66-4d90-bb9a-bc83c931b0c6
+359;360;ch.swisstopo.geologie-geologische_3dmodelle (Geologische 3D-Modelle);ch.swisstopo.geologie-geologische_3dmodelle;11836d3b-181e-4078-b83f-f55fc44b5776
+360;361;ch.swisstopo.geologie-geologische_karte (Geologie 500);ch.swisstopo.geologie-geologische_karte;ca917a71-dcc9-44b6-8804-823c694be516
+361;362;ch.swisstopo.geologie-geologische_karte_papier.metadata (Einteilung Geologische Karte 500 Papier);ch.swisstopo.geologie-geologische_karte_papier.metadata;c8e951b2-35d1-4382-9c41-d7c55d846960
+362;363;ch.swisstopo.geologie-geologischer_atlas (Geologischer Atlas GA25);ch.swisstopo.geologie-geologischer_atlas;258814a5-8fcf-47df-b0c6-160602b0078c
+363;364;ch.swisstopo.geologie-geologischer_atlas.metadata (Einteilung Geologischer Atlas 25 Raster);ch.swisstopo.geologie-geologischer_atlas.metadata;a891e1e7-7f85-4c92-94d9-7120edf91a9c
+364;365;ch.swisstopo.geologie-geologischer_atlas_papier.metadata (Einteilung Geologischer Atlas 25 Papier);ch.swisstopo.geologie-geologischer_atlas_papier.metadata;0d2e9e88-6151-4a3f-a1c8-85894c718f73
+365;366;ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten (Temperaturmodell - Daten);ch.swisstopo.geologie-geomol-temperaturmodell_eingangsdaten;63ed59b1-d9fb-4c6e-a629-550c8f6b9bf2
+366;367;ch.swisstopo.geologie-geomol-temperaturverteilung_1000 (Temperaturen 1000 m Tiefe);ch.swisstopo.geologie-geomol-temperaturverteilung_1000;5e32ea72-a356-4250-b40a-a441165fd936
+367;368;ch.swisstopo.geologie-geomol-temperaturverteilung_1500 (Temperaturen 1500 m Tiefe);ch.swisstopo.geologie-geomol-temperaturverteilung_1500;162989d7-5c1c-48fb-8d16-2ccf5be339b9
+368;369;ch.swisstopo.geologie-geomol-temperaturverteilung_2000 (Temperaturen 2000 m Tiefe);ch.swisstopo.geologie-geomol-temperaturverteilung_2000;ac604460-7a7a-44c5-bc5a-41062fbd21ff
+369;370;ch.swisstopo.geologie-geomol-temperaturverteilung_3000 (Temperaturen 3000 m Tiefe);ch.swisstopo.geologie-geomol-temperaturverteilung_3000;47f79661-212e-4297-b048-2606db7affa8
+370;371;ch.swisstopo.geologie-geomol-temperaturverteilung_4000 (Temperaturen 4000 m Tiefe);ch.swisstopo.geologie-geomol-temperaturverteilung_4000;739e9095-77f6-462d-9a1e-438898cf0c9c
+371;372;ch.swisstopo.geologie-geomol-temperaturverteilung_500 (Temperaturen 500 m Tiefe);ch.swisstopo.geologie-geomol-temperaturverteilung_500;08e66941-4ebb-4017-8018-b39caa8fd107
+372;373;ch.swisstopo.geologie-geomorphologie (Übersicht Geomorphologie);ch.swisstopo.geologie-geomorphologie;1bf16162-a44c-4970-9da1-044383bacff8
+373;374;ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura (Aeromagnetik Mittelland/Jura 500);ch.swisstopo.geologie-geophysik-aeromagnetische_karte_jura;f952b9be-9a11-478c-a21c-9d5e8631c7c2
+374;375;ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz (Aeromagnetik 500);ch.swisstopo.geologie-geophysik-aeromagnetische_karte_schweiz;4cc706a2-0005-4cc6-8326-7b944a1d5b05
+375;376;ch.swisstopo.geologie-geophysik-deklination (Deklination 500);ch.swisstopo.geologie-geophysik-deklination;8f38b25f-f984-450a-ae48-02290e82136c
+376;377;ch.swisstopo.geologie-geophysik-geothermie (Wärmestromdichte 500);ch.swisstopo.geologie-geophysik-geothermie;2d8174b2-8c4a-44ea-b470-cb3f216b90d1
+377;378;ch.swisstopo.geologie-geophysik-inklination (Inklination 500);ch.swisstopo.geologie-geophysik-inklination;639c0536-bfea-44d3-b088-ed7b6b43cde9
+378;379;ch.swisstopo.geologie-geophysik-totalintensitaet (Magnetfeldstärke 500);ch.swisstopo.geologie-geophysik-totalintensitaet;132d9ff6-92de-4c02-87a7-72df26bcb33e
+379;380;ch.swisstopo.geologie-geosites (Geosites);ch.swisstopo.geologie-geosites;af46b0e7-25b4-49ca-a357-c0ab6e794dd6
+380;381;ch.swisstopo.geologie-geotechnik-gk200 (Geotechnische Karte 200);ch.swisstopo.geologie-geotechnik-gk200;6dd16d72-047b-4489-91dc-b36eeabf972e
+381;382;ch.swisstopo.geologie-geotechnik-gk500-genese (Entstehung der Gesteine 500);ch.swisstopo.geologie-geotechnik-gk500-genese;65652bdd-76e3-4df2-9329-140a04a2a66c
+382;383;ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung (Gesteinsklassen 500);ch.swisstopo.geologie-geotechnik-gk500-gesteinsklassierung;f2c81b93-f0c5-4899-83a9-974ce36c48e6
+383;384;ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen (Min. Rohstoffe (vereinfacht) 500);ch.swisstopo.geologie-geotechnik-gk500-lithologie_hauptgruppen;435522fb-599e-41c0-a7c0-49d922ea6acf
+384;385;ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200 (Mineralische Rohstoffe 200);ch.swisstopo.geologie-geotechnik-mineralische_rohstoffe200;d86f291c-49b8-4bc8-93f7-dbab48dcb26c
+385;386;ch.swisstopo.geologie-geotechnik-steinbrueche_1915 (Steinbrüche 1915);ch.swisstopo.geologie-geotechnik-steinbrueche_1915;e9fb4d2c-8843-4586-b6f3-c9276a6d2890
+386;387;ch.swisstopo.geologie-geotechnik-steinbrueche_1965 (Steinbrüche 1965);ch.swisstopo.geologie-geotechnik-steinbrueche_1965;375ee9c3-11ea-405f-aefe-1e26cec99003
+387;388;ch.swisstopo.geologie-geotechnik-steinbrueche_1980 (Steinbrüche 1980);ch.swisstopo.geologie-geotechnik-steinbrueche_1980;d2420114-b83d-4658-b205-4ccf8e4d1a07
+388;389;ch.swisstopo.geologie-geotechnik-steinbrueche_1995 (Steinbrüche 1995);ch.swisstopo.geologie-geotechnik-steinbrueche_1995;1c7751e9-9909-45c2-ab3a-daff34a56ef1
+389;390;ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke (Naturwerksteine an Bauwerken);ch.swisstopo.geologie-geotechnik-steine_historische_bauwerke;efe1b3cf-dac4-4660-a5bd-a9269a3d97db
+390;391;ch.swisstopo.geologie-geotechnik-zementindustrie_1965 (Zementindustrie 1965);ch.swisstopo.geologie-geotechnik-zementindustrie_1965;900f56f2-31d0-4b97-a1af-fa016df24193
+391;392;ch.swisstopo.geologie-geotechnik-zementindustrie_1995 (Zementindustrie 1995);ch.swisstopo.geologie-geotechnik-zementindustrie_1995;895a5d84-485e-4e47-b76e-2ab0283b0655
+392;393;ch.swisstopo.geologie-geotechnik-ziegeleien_1907 (Ziegeleien 1907);ch.swisstopo.geologie-geotechnik-ziegeleien_1907;060d2502-5eb7-4a0a-9364-e36b0fd12a2e
+393;394;ch.swisstopo.geologie-geothermische_potenzialstudien_regional (Geothermische Potenzialstudien);ch.swisstopo.geologie-geothermische_potenzialstudien_regional;1c050393-fe3a-41b1-a31e-3173f51181d8
+394;395;ch.swisstopo.geologie-geotope (Geotope der Schweiz);ch.swisstopo.geologie-geotope;e7dd54e9-fc98-4e5c-b46a-694d1ba6c84e
+395;396;ch.swisstopo.geologie-geotope_kantone_stand (Stand kantonale Geotope);ch.swisstopo.geologie-geotope_kantone_stand;c4d2c1b0-b075-4d7b-be7c-54d26411cda3
+396;397;ch.swisstopo.geologie-geowege (Geowege);ch.swisstopo.geologie-geowege;3356602e-23d5-4e42-9d75-55fe9cc2daba
+397;398;ch.swisstopo.geologie-gesteinsdichte (Dichte von Gesteinen);ch.swisstopo.geologie-gesteinsdichte;c4a7ceb5-8bf5-457d-ab0a-57216dafce53
+398;399;ch.swisstopo.geologie-gletscherausdehnung (Gletscherausdehnung);ch.swisstopo.geologie-gletscherausdehnung;f6fb6139-f13e-4a56-bf01-01b7dd4358d5
+399;400;ch.swisstopo.geologie-gletschermaechtigkeit (Gletschermächtigkeit);ch.swisstopo.geologie-gletschermaechtigkeit;57052989-5074-4841-abb6-22d1989d615f
+400;401;ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte (Gravimetrische Messpunkte 100);ch.swisstopo.geologie-gravimetrischer_atlas.messpunkte;297a1958-3636-45af-a17c-e90120605132
+401;402;ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata (Einteilung Gravimetrischer Atlas 100 Papier);ch.swisstopo.geologie-gravimetrischer_atlas_papier.metadata;2f9315dd-3d8f-4248-850c-46270e47dfe7
+402;403;ch.swisstopo.geologie-grundwasservorkommen_papier.metadata (Einteilung Grundwasservorkommen 500 Papier);ch.swisstopo.geologie-grundwasservorkommen_papier.metadata;af399b45-c233-48ec-a500-e6eb503b07dd
+403;404;ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata (Einteilung Grundwasservulnerabilität 500 Papier);ch.swisstopo.geologie-grundwasservulnerabilitaet_papier.metadata;7f8e47fa-cd31-4ff2-808e-6262aaea019b
+404;405;ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen (Grundwasservorkommen 500);ch.swisstopo.geologie-hydrogeologische_karte-grundwasservorkommen;f198f6f6-8efa-4235-a55f-99767ea0206c
+405;406;ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet (Grundwasservulnerabilität 500);ch.swisstopo.geologie-hydrogeologische_karte-grundwasservulnerabilitaet;b8efde6b-7323-4496-aa70-b976ec55cec9
+406;407;ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau (Gebrochene Gesteine: Abbau);ch.swisstopo.geologie-rohstoffe-gebrochene_gesteine_abbau;bb682732-ca6d-43f4-8c95-760b76004b22
+407;408;ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung (Gips: Abbau und Verarbeitung);ch.swisstopo.geologie-rohstoffe-gips_abbau_verarbeitung;33f974a7-8852-449d-ba68-646b10710f60
+408;409;ch.swisstopo.geologie-rohstoffe-industrieminerale (Industrieminerale: Vorkommen);ch.swisstopo.geologie-rohstoffe-industrieminerale;ec3471db-6e86-4148-abbf-d702196381bd
+409;410;ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas (Fossile Kohlenwasserstoffe: Vorkommen);ch.swisstopo.geologie-rohstoffe-kohlen_bitumen_erdgas;ee51374d-1472-44bd-a5a7-c65c4e46f3b4
+410;411;ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau (Naturwerksteine: Abbau);ch.swisstopo.geologie-rohstoffe-naturwerksteine_abbau;0b22a108-693c-4b6e-9e43-7614eb0e0bc3
+411;412;ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung (Salz: Abbau und Verarbeitung);ch.swisstopo.geologie-rohstoffe-salz_abbau_verarbeitung;e5bed380-6a35-46c9-97c9-0cbf5875f292
+412;413;ch.swisstopo.geologie-rohstoffe-vererzungen (Metallrohstoffe: Vorkommen);ch.swisstopo.geologie-rohstoffe-vererzungen;46dd5d50-6f7e-4175-ab64-051b16750e38
+413;414;ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung (Zementrohstoffe: Abbau und Verarb.);ch.swisstopo.geologie-rohstoffe-zement_abbau_verarbeitung;9128ae2a-acdf-42cf-bb67-00755f0857fb
+414;415;ch.swisstopo.geologie-rohstoffe-ziegel_abbau (Ziegeleirohstoffe: Abbau);ch.swisstopo.geologie-rohstoffe-ziegel_abbau;3d0120f4-34b2-40cf-b61c-127bd9a27522
+415;416;ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung (Ziegeleirohstoffe: Verarbeitung);ch.swisstopo.geologie-rohstoffe-ziegel_verarbeitung;93ad193c-cb3e-48a4-8977-6775c403c579
+416;417;ch.swisstopo.geologie-spezialkarten_schweiz.metadata (Einteilung Geologische Spezialkarten Raster);ch.swisstopo.geologie-spezialkarten_schweiz.metadata;5a7e79b5-0aef-4514-9df4-62fb92edee97
+417;418;ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata (Einteilung Geologische Spezialkarten Papier);ch.swisstopo.geologie-spezialkarten_schweiz_papier.metadata;0d93edd4-5ab4-47e1-b119-6df7289eb429
+418;419;ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata (Einteilung Geologische Spezialkarten Vector);ch.swisstopo.geologie-spezialkarten_schweiz_vector.metadata;b15b89ac-d7e5-412c-bd4a-5077c935806c
+419;420;ch.swisstopo.geologie-tektonische_karte (Tektonik 500);ch.swisstopo.geologie-tektonische_karte;a4cdef47-505e-41ab-b6a7-ad5b92d80e41
+420;421;ch.swisstopo.geologie-tektonische_karte_papier.metadata (Einteilung Tektonische Karte 500 Papier);ch.swisstopo.geologie-tektonische_karte_papier.metadata;9a6cf8f1-2475-4085-b202-8cd0fe0f0ca8
+421;422;ch.swisstopo.geologie-tiefengeothermie_projekte (Tiefengeothermie-Projekte);ch.swisstopo.geologie-tiefengeothermie_projekte;2df11e59-d85a-40cf-98cf-4b941577e23c
+422;423;ch.swisstopo.hebungsraten (Vertikalbewegungen);ch.swisstopo.hebungsraten;80a03e2f-7827-4497-8f0a-62ab8816d609
+423;424;ch.swisstopo.hiks-dufour (Dufourkarte Erstausgabe);ch.swisstopo.hiks-dufour;d12f970f-6a83-4c33-8cfe-7504b6a5dca9
+424;425;ch.swisstopo.hiks-dufour.metadata (Einteilung Dufourkarte Raster);ch.swisstopo.hiks-dufour.metadata;bfa9994f-c8b1-4dc1-90b2-fe1211bf2d22
+425;426;ch.swisstopo.hiks-siegfried (Siegfriedkarte Erstausgabe);ch.swisstopo.hiks-siegfried;d3b21424-70a4-4984-a693-aa7f11813c53
+426;427;ch.swisstopo.hiks-siegfried-ta25.metadata (Einteilung Siegfriedkarte 25 Raster);ch.swisstopo.hiks-siegfried-ta25.metadata;86c12e05-aabf-4384-a88a-eeea18044e83
+427;428;ch.swisstopo.hiks-siegfried-ta50.metadata (Einteilung Siegfriedkarte 50 Raster);ch.swisstopo.hiks-siegfried-ta50.metadata;b8642253-c0df-4d39-b92e-d05467caf0f5
+428;429;ch.swisstopo.images-swissimage-dop10.metadata (Einteilung SWISSIMAGE 10 cm Raster);ch.swisstopo.images-swissimage-dop10.metadata;3f340030-15de-4ab6-a1b1-5f33e09a997f
+429;430;ch.swisstopo.landesschwerenetz (Schweregrundnetz);ch.swisstopo.landesschwerenetz;95879cd4-e93d-4d4d-af57-4ec6731b9c97
+430;431;ch.swisstopo.lotabweichungen (Lotabweichungen);ch.swisstopo.lotabweichungen;ef5df57e-8eb3-4b55-96e5-0e70adead7ad
+431;432;ch.swisstopo.lubis-bildstreifen (Luftbildstreifen swisstopo);ch.swisstopo.lubis-bildstreifen;7392cfbf-2f3b-446f-934f-604bc9410978
+432;433;ch.swisstopo.lubis-luftbilder-dritte-firmen (Luftbilder Dritte);ch.swisstopo.lubis-luftbilder-dritte-firmen;f614decc-a4f2-480f-b007-b8d9b99bdde5
+433;434;ch.swisstopo.lubis-luftbilder-dritte-kantone (Luftbilder Kantone);ch.swisstopo.lubis-luftbilder-dritte-kantone;5327cb7b-269b-4d02-b199-19418ee33d54
+434;435;ch.swisstopo.lubis-luftbilder_farbe (Luftbilder swisstopo farbig);ch.swisstopo.lubis-luftbilder_farbe;352c0302-fac6-455b-bd81-092850a7ad4e
+435;436;ch.swisstopo.lubis-luftbilder_infrarot (Luftbilder swisstopo infrarot);ch.swisstopo.lubis-luftbilder_infrarot;aee873f9-127a-4567-86a9-abb740bb9706
+436;437;ch.swisstopo.lubis-luftbilder_schraegaufnahmen (Luftbilder swisstopo schräg);ch.swisstopo.lubis-luftbilder_schraegaufnahmen;b38ee443-8965-4a25-bb99-626b32c6227f
+437;438;ch.swisstopo.lubis-luftbilder_schwarzweiss (Luftbilder swisstopo s/w);ch.swisstopo.lubis-luftbilder_schwarzweiss;12970991-2623-4e1e-a420-7435a6b5046c
+438;439;ch.swisstopo.lubis-terrestrische_aufnahmen (Terrestrische Aufnahmen swisstopo);ch.swisstopo.lubis-terrestrische_aufnahmen;7e0b1343-0d6c-4d3d-9c63-9ed49ca2c0a9
+439;440;ch.swisstopo.schneeschuhwandern (Schneeschuhwandern);ch.swisstopo.schneeschuhwandern;56c1795e-c074-4731-9766-9a44050dc2a8
+440;441;ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill (Bezirksgrenzen);ch.swisstopo.swissboundaries3d-bezirk-flaeche.fill;e1b8837d-8c19-4b65-a8b5-21aaff44fa91
+441;442;ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill (Gemeindegrenzen);ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill;9961dc6c-20a9-4b16-8a24-b20c3d8ddb83
+442;443;ch.swisstopo.swissboundaries3d-kanton-flaeche.fill (Kantonsgrenzen);ch.swisstopo.swissboundaries3d-kanton-flaeche.fill;9eee6d40-f0a6-46c9-94ad-69679b9f3d38
+443;444;ch.swisstopo.swissboundaries3d-land-flaeche.fill (Landesgrenzen);ch.swisstopo.swissboundaries3d-land-flaeche.fill;c5bd42e6-033f-4d43-a398-320b42538798
+444;445;ch.swisstopo.swissimage-product.metadata (Einteilung SWISSIMAGE Zeitreise);ch.swisstopo.swissimage-product.metadata;1fc43fd9-f43f-4779-aa59-51e8f4833372
+445;446;ch.swisstopo.swissnames3d (Geografische Namen swissNAMES3D);ch.swisstopo.swissnames3d;ab24e5cc-7f53-451a-820a-f113fa545943
+446;447;ch.swisstopo.swisssurface3d-raster.metadata (Einteilung swissSURFACE3D Raster);ch.swisstopo.swisssurface3d-raster.metadata;36ad08cb-ba6b-4bd4-9960-c809a1ff7a66
+447;448;ch.swisstopo.swisssurface3d.metadata (Einteilung swissSURFACE3D LiDAR);ch.swisstopo.swisssurface3d.metadata;a1a07baa-2dfc-458e-91e7-b1710ce1de1d
+448;449;ch.swisstopo.swisstlm3d-eisenbahnnetz (Eisenbahn swissTLM3D);ch.swisstopo.swisstlm3d-eisenbahnnetz;b93d607a-9024-41c6-81c3-cbd311d00a44
+449;450;ch.swisstopo.swisstlm3d-gewaessernetz (Gewässer swissTLM3D);ch.swisstopo.swisstlm3d-gewaessernetz;3dc772fe-8356-4a9a-8663-ce5159a42de7
+450;451;ch.swisstopo.swisstlm3d-strassen (Strassen und Wege swissTLM3D);ch.swisstopo.swisstlm3d-strassen;be285f33-0373-4882-b911-de402bcdfeb4
+451;452;ch.swisstopo.swisstlm3d-uebrigerverkehr (Seilbahnen swissTLM3D);ch.swisstopo.swisstlm3d-uebrigerverkehr;ffc0267e-aca8-49ac-8f3e-86c9beca51f2
+452;453;ch.swisstopo.transformation-bezugsrahmen_hoehe (HTRANS LHN95-LN02);ch.swisstopo.transformation-bezugsrahmen_hoehe;b3362599-3bc6-4615-a290-546792f89c83
+453;454;ch.swisstopo.transformationsgenauigkeit (LV95 Transformationsgenauigkeit);ch.swisstopo.transformationsgenauigkeit;579e0ecf-6700-4652-81f5-bf0e28f2fcd6
+454;455;ch.swisstopo.treasurehunt (Schatzkarte);ch.swisstopo.treasurehunt;
+455;456;ch.swisstopo.vec200-adminboundaries-protectedarea (Schutzgebiete swissTLMRegio);ch.swisstopo.vec200-adminboundaries-protectedarea;37c78660-531a-404c-86f8-8cdde0c3d985
+456;457;ch.swisstopo.vec200-hydrography (Gewässernetz swissTLMRegio);ch.swisstopo.vec200-hydrography;f22843ce-ee17-43b3-adc8-ad7015043984
+457;458;ch.swisstopo.vec200-landcover (Prim. Bodenbedeckung swissTLMRegio);ch.swisstopo.vec200-landcover;cfbd4793-4225-4743-942b-d9b97acfbfcc
+458;459;ch.swisstopo.vec200-miscellaneous (Einzelobjekte swissTLMRegio);ch.swisstopo.vec200-miscellaneous;2ba45ce9-b062-4792-95ba-9bbc8d840652
+459;460;ch.swisstopo.vec200-names-namedlocation (Namen swissTLMRegio);ch.swisstopo.vec200-names-namedlocation;4af350f6-2df1-4b5b-947f-6d65aea528f8
+460;461;ch.swisstopo.vec200-transportation-oeffentliche-verkehr (Öffentlicher Verkehr swissTLMRegio);ch.swisstopo.vec200-transportation-oeffentliche-verkehr;dbcb87f1-3704-4eb6-8bd4-efed536bbf56
+461;462;ch.swisstopo.vec200-transportation-strassennetz (Strassennetz swissTLMRegio);ch.swisstopo.vec200-transportation-strassennetz;2816b787-2508-42c8-8dec-094d68f5f094
+462;463;ch.swisstopo.vec25-anlagen (Anlagen VECTOR25);ch.swisstopo.vec25-anlagen;67047f47-13d7-491a-bb7e-bb2c8016582d
+463;464;ch.swisstopo.vec25-einzelobjekte (Einzelobjekte VECTOR25);ch.swisstopo.vec25-einzelobjekte;5fb1376e-554a-4bcc-9c1d-e0b9b39d7aaa
+464;465;ch.swisstopo.vec25-gebaeude (Gebäude VECTOR25);ch.swisstopo.vec25-gebaeude;112c4f0e-0755-44bb-bdb0-249e9c56f8bb
+465;466;ch.swisstopo.vec25-gewaessernetz_referenz (Gewässernetz VECTOR25);ch.swisstopo.vec25-gewaessernetz_referenz;0351bc2e-3cdc-4e8a-b422-0142e494e7b4
+466;467;ch.swisstopo.vec25-heckenbaeume (Hecken und Bäume VECTOR25);ch.swisstopo.vec25-heckenbaeume;664aacf5-91f8-43b1-a6b4-f01eca6cc082
+467;468;ch.swisstopo.vec25-primaerflaechen (Primärflächen VECTOR25);ch.swisstopo.vec25-primaerflaechen;fb4c7281-bd58-4aae-b86a-3a73ba82e0aa
+468;469;ch.swisstopo.verschiebungsvektoren-tsp1 (LV95 Verschiebungsvektoren TSP1);ch.swisstopo.verschiebungsvektoren-tsp1;b7630e06-7e06-4ab0-9ed5-9fd2e66b6433
+469;470;ch.swisstopo.verschiebungsvektoren-tsp2 (LV95 Verschiebungsvektoren TSP2);ch.swisstopo.verschiebungsvektoren-tsp2;fcd80c13-8824-4c3b-835b-95172eb9e4e6
+470;471;ch.swisstopo.zeitreihen (Zeitreise - Kartenwerke);ch.swisstopo.zeitreihen;22287cd6-b75b-4caf-9413-aa3f196548b2
+471;472;ch.vbs.armee-kriegsdenkmaeler (Armee- und Kriegsdenkmäler);ch.vbs.armee-kriegsdenkmaeler;acc444ae-742f-4832-9dad-ec027f7b85b8
+472;473;ch.vbs.armeelogistikcenter (Armeelogistikcenter ALC);ch.vbs.armeelogistikcenter;ae538f59-74af-4ed4-999b-66cfb52c36de
+473;474;ch.vbs.bundestankstellen-bebeco (Tankstellen BEBECO);ch.vbs.bundestankstellen-bebeco;7f8c99f2-7736-4fe6-8d69-0af201f01526
+474;475;ch.vbs.kataster-belasteter-standorte-militaer (Belastete Standorte Militär);ch.vbs.kataster-belasteter-standorte-militaer;d56dc013-2659-4664-8829-7e097dfa4173
+475;476;ch.vbs.logistikraeume-armeelogistikcenter (Logistikräume ALC);ch.vbs.logistikraeume-armeelogistikcenter;270a2032-d346-42c5-a657-9129186f1f08
+476;477;ch.vbs.panzerverschiebungsrouten (Panzerverschiebungsrouten);ch.vbs.panzerverschiebungsrouten;b0478e7d-63df-4ff8-b90c-336a2b5176db
+477;478;ch.vbs.patrouilledesglaciers-a_rennen (Patrouille des Glaciers (A Rennen));ch.vbs.patrouilledesglaciers-a_rennen;30c41be6-0f35-4caa-aeda-45f8705911fb
+478;479;ch.vbs.patrouilledesglaciers-z_rennen (Patrouille des Glaciers (Z Rennen));ch.vbs.patrouilledesglaciers-z_rennen;64d14c1a-25bb-4bf5-bad3-057823a334ef
+479;480;ch.vbs.retablierungsstellen (Retablierungsstellen);ch.vbs.retablierungsstellen;e436f7aa-3d59-4f4e-8940-46d2b181a9b4
+480;481;ch.vbs.sachplan-infrastruktur-militaer_anhoerung (ch.vbs.sachplan-infrastruktur-militaer_anhoerung);ch.vbs.sachplan-infrastruktur-militaer_anhoerung;4817187f-700e-4588-94d6-0873fd23febd
+481;482;ch.vbs.sachplan-infrastruktur-militaer_kraft (ch.vbs.sachplan-infrastruktur-militaer_kraft);ch.vbs.sachplan-infrastruktur-militaer_kraft;5263bc47-8723-4c02-988a-4ae0d425099c
+482;483;ch.vbs.schiessanzeigen (Publizierte Schiessanzeigen und Gefahrenzonen);ch.vbs.schiessanzeigen;49b2cd7e-8513-4c8f-b3e6-ca8cd922b1cc
+483;484;ch.vbs.territorialregionen (Territorialdivisionen);ch.vbs.territorialregionen;f1d7d608-74d7-46fc-a478-b4357409f34b
+484;485;ch.vbs.waldschadenkarte (Waldschadenkarte - Projektil);ch.vbs.waldschadenkarte;2ff2299e-55b5-4ec7-bb92-fbb06e7ee422

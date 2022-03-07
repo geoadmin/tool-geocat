@@ -1,0 +1,12 @@
+;UUID;Protokoll;URL
+0;UUID;Protokoll;URL
+0;e52dcdcd-57e4-48a4-be68-1c65052dad75;ESRI:REST;https://api3.geo.admin.ch
+1;e52dcdcd-57e4-48a4-be68-1c65052dad75;WWW:LINK;https://www.bfe.admin.ch/bfe/de/home/versorgung/statistik-und-geodaten/geoinformation/geodaten/solar/solarenergie-eignung-hausdach.html
+2;e52dcdcd-57e4-48a4-be68-1c65052dad75;CHTOPO:specialised-geoportal;https://map.geo.admin.ch/?lang=de&topic=energie&bgLayer=ch.swisstopo.pixelkarte-grau&catalogNodes=2419,2420,2427,2480,2429,2431,2434,2436,2767,2441,3206&layers=ch.bfe.solarenergie-eignung-daecher
+3;e52dcdcd-57e4-48a4-be68-1c65052dad75;OGC:WMS;http://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities&lang=de
+0;33d27ac8-dbe2-4b60-a154-d4ba68989c93;MAP:Preview;https://map.geo.admin.ch/?layers=ch.bafu.neophyten-kirschlorbeer
+1;33d27ac8-dbe2-4b60-a154-d4ba68989c93;WWW:LINK;https://www.bafu.admin.ch/gebietsfremde-arten
+2;33d27ac8-dbe2-4b60-a154-d4ba68989c93;WWW:LINK;https://www.infoflora.ch/de/neophyten.html
+3;33d27ac8-dbe2-4b60-a154-d4ba68989c93;WWW:DOWNLOAD-URL;https://www.bafu.admin.ch/bafu/de/home/zustand/daten/geodaten/biodiversitaet--geodaten.html#-184504728
+4;33d27ac8-dbe2-4b60-a154-d4ba68989c93;CHTOPO:specialised-geoportal;http://www.bafu.admin.ch
+0;3d1b5388-fe5e-4bf2-8d5c-bb541f04e4f3;ESRI:REST;https://api3.geo.admin.ch/rest/services/api/MapServer/ch.swisstopo-karto.skitouren-notexistant

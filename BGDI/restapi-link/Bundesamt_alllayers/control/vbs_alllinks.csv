@@ -1,0 +1,15 @@
+;UUID;Protokoll;URL
+0;UUID;Protokoll;URL
+0;d56dc013-2659-4664-8829-7e097dfa4173;WWW:LINK;https://www.kbs-vbs.ch/
+1;d56dc013-2659-4664-8829-7e097dfa4173;WWW:DOWNLOAD-URL;http://data.geo.admin.ch/ch.vbs.kataster-belasteter-standorte-militaer/data.zip
+2;d56dc013-2659-4664-8829-7e097dfa4173;WWW:DOWNLOAD-URL;
+3;d56dc013-2659-4664-8829-7e097dfa4173;CHTOPO:specialised-geoportal;
+0;30c41be6-0f35-4caa-aeda-45f8705911fb;WWW:LINK;
+0;64d14c1a-25bb-4bf5-bad3-057823a334ef;WWW:LINK;
+0;4817187f-700e-4588-94d6-0873fd23febd;WWW:LINK;http://www.vbs.admin.ch/de/themen/raumplanung-immobilien/sachplan-militaer.html
+1;4817187f-700e-4588-94d6-0873fd23febd;WWW:DOWNLOAD-URL;https://data.geo.admin.ch/ch.vbs.sachplan-infrastruktur-militaer_anhoerung/
+2;4817187f-700e-4588-94d6-0873fd23febd;CHTOPO:specialised-geoportal;-
+0;5263bc47-8723-4c02-988a-4ae0d425099c;WWW:DOWNLOAD-URL;https://data.geo.admin.ch/ch.vbs.sachplan-infrastruktur-militaer_kraft/
+1;5263bc47-8723-4c02-988a-4ae0d425099c;WWW:LINK;https://www.vbs.admin.ch/de/themen/raumplanung-immobilien/sachplan-militaer.html
+2;5263bc47-8723-4c02-988a-4ae0d425099c;WWW:LINK;https://data.geo.admin.ch/ch.vbs.sachplan-infrastruktur-militaer_kraft/
+0;f1d7d608-74d7-46fc-a478-b4357409f34b;WWW:DOWNLOAD-URL;

@@ -1,0 +1,5 @@
+;UUID;Protokoll;URL
+1;d303ef3f-2ab2-4b83-9d81-7594173e3728;ESRI:REST;https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfe.biogasanlagen
+4;393940cd-6a67-4190-8b91-378669cdea1d;ESRI:REST docu;https://api3.geo.admin.ch/services/sdiservices.html
+5;393940cd-6a67-4190-8b91-378669cdea1d;ESRI:REST data;https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfe.energiestaedte
+1;92b85345-4513-45a8-b64a-d7dbebd648a3;ESRI:REST;https://api3.geo.admin.ch/rest/services/api/MapServer/ch.bfe.thermische-netze

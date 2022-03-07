@@ -1,0 +1,16 @@
+select p.techpublayername, p.gdstechname GDSKEY, p.geocatuuid, p.remarks, p.ingeststate, p.timestamp, p.HasWmtsService, p.HasWmsService, p.HasFreeWmsService, p.HasRawPackageService, p.IsPublishedInApi, p.IsPublishedInOnlineViewer
+from prod.publayer as p join prod.geodataset as g on p.gdstechname = g.gdstechname 
+where p.gdstechname = g.gdstechname and ingeststate in ('Productive') and (HasWmtsService or HasWmsService or HasFreeWmsService or HasRawPackageService or IsPublishedInApi or IsPublishedInOnlineViewer)
+order by g.gdstechname ;
+
+
+select p.techpublayername, p.gdstechname GDSKEY, p.geocatuuid, p.remarks, p.ingeststate, p.timestamp, p.HasWmtsService, p.HasWmsService, p.HasFreeWmsService, p.HasRawPackageService, p.IsPublishedInApi, p.IsPublishedInOnlineViewer
+from prod.publayer as p join prod.geodataset as g on p.gdstechname = g.gdstechname 
+where p.gdstechname = g.gdstechname and ingeststate in ('Productive') and (IsPublishedInOnlineViewer)
+order by g.gdstechname ;
+
+
+select p.gdstechname GDSKEY, p.geocatuuid, p.techpublayername, p.ingeststate 
+from prod.publayer as p join prod.geodataset as g on p.gdstechname = g.gdstechname 
+where (p.gdstechname = g.gdstechname) and ingeststate in ('Productive') and (IsPublishedInOnlineViewer)
+order by g.gdstechname ;
