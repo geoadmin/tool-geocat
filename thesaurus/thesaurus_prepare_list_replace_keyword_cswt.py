@@ -35,7 +35,7 @@ import getpass
 
 
 # TODO: adapt the following variables
-geocat_user = "egs"
+geocat_user = ""
 old_keyword_de = "Entwässerungsplan"
 old_keyword_fr = "plan de drainage"
 new_keyword_de = "Entwässerung"

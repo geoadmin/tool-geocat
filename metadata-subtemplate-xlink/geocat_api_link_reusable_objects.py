@@ -36,10 +36,10 @@ pd.options.mode.chained_assignment = None
 
 
 # TODO: adapt the following variables
-geocat_user = "egs"
+geocat_user = ""
 geocat_environment = "INT"  # "INT" or "PROD"
 proxydict = {"http": "prp03.admin.ch:8080", "https": "prp03.admin.ch:8080"}
-input_file = r"\\v0t0020a.adr.admin.ch\iprod\gdwh-vector\test\TESTING\egs\geocat\uuids_to_relink.csv"
+input_file = r""
 
 
 # other definitions and general informations

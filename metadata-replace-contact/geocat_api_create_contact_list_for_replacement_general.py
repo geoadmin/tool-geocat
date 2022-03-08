@@ -33,11 +33,11 @@ import getpass
 
 
 # TODO - define inputs
-geocat_user = "egs"
-mail_old = "info.au@llv.li"
+geocat_user = ""
+mail_old = ""
 geocat_environment = "INT"  # "INT" or "PROD"
 proxydict = {"http": "prp03.admin.ch:8080", "https": "prp03.admin.ch:8080"}
-path = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Scripts\contacts"
+path = r""
 filename = mail_old + "_" + geocat_environment + ".csv"
 
 # -----------------------------------------------------------------------------

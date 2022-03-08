@@ -36,7 +36,7 @@ import getpass
 
 
 # TODO: adapt the following variables
-geocat_user = "egs"
+geocat_user = ""
 FileIn = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Scripts\thesaurus\geocat_new.rdf"
 FileOut = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Scripts\thesaurus\geocat_20210908_count.csv"
 catalog = "geocat"

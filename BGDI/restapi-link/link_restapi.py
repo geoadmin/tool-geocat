@@ -33,7 +33,7 @@ import os
 import getpass
 
 # TODO: adapt the following variables
-geocat_user = "hut"
+geocat_user = ""
 protokoll = "ESRI:REST"
 title = {"de": "RESTful API von geo.admin.ch", "fr": "RESTful API de geo.admin.ch", "en": "RESTful API geo.admin.ch", "it": "RESTful API de geo.admin.ch", "rm": "RESTful API geo.admin.ch"}
 description = title

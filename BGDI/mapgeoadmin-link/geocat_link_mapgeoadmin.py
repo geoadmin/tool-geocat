@@ -32,7 +32,7 @@ import os
 import getpass
 
 # TODO: adapt the following variables
-geocat_user = "egs"
+geocat_user = ""
 protokoll = "MAP:Preview"
 title = {"de": "Vorschau map.geo.admin.ch", "fr": "Aperçu map.geo.admin.ch", "en": "Preview map.geo.admin.ch", "it": "Previsione map.geo.admin.ch"}
 description = title

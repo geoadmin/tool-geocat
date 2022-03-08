@@ -32,7 +32,7 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
 # TODO: adapt the following variables
-geocat_user = "egs"
+geocat_user = ""
 File_geocat = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Mots-clés_Schlüsselwörter\bereinigung\geocat_20210726_count_extended.xlsx"
 Path_File_out = r"\\v0t0020a.adr.admin.ch\iprod\gdwh-vector\test\TESTING\egs\geocat\Thesaurus\contact_updated"
 file_groupowners = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Scripts\groups.csv"

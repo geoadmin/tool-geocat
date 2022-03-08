@@ -28,10 +28,10 @@ import os
 import getpass
 
 # TODO: adapt the following variables
-geocat_user = "egs"
+geocat_user = ""
 geocat_environment = "PROD"  # "INT" or "PROD"
-input_file = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Scripts\egs_testing\vorlagen_prod.csv"
-folder = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Scripts\egs_testing\xmls\vorlagen_prod"
+input_file = r""
+folder = r""
 xml_types = ["ISO19139.che"]  # ["GM03", "ISO19139", "ISO19139.che"]
 zip_folder = "yes"
 proxydict = {"http": "prp03.admin.ch:8080", "https": "prp03.admin.ch:8080"}
