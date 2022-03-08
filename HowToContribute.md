@@ -25,6 +25,6 @@ This will create a new branch on GitHub. You can ask reo to merge this new branc
 ```
 git checkout main  # go back to the main branch
 git pull  # pull differences from GitHub (i.e. the new merge)
-git branch -d {ew-branch-name}  lete local {new-branch-name} branch
-git branch -d -r origin/{new-branch-name}  # 
+git branch -d {new-branch-name}  # Delete local {new-branch-name} branch
+git branch -d -r origin/{new-branch-name}  # delete remote {new-branch-name} branch on local git directory - nothing is deleted on github
 ```
