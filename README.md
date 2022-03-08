@@ -1,5 +1,5 @@
 # Geocat scripts and tools
-Test. Scripts and tools for the (meta)data management of geocat.ch. This does not contain the geocat.ch application !
+Scripts and tools for the (meta)data management of geocat.ch. This does not contain the geocat.ch application !
 ### Tools
 
 * **AddCoupledResource**
