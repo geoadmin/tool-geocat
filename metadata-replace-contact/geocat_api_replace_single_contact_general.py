@@ -34,15 +34,15 @@ import getpass
 
 
 # TODO - define inputs
-geocat_user = "egs"
-uuid = "a25241bb-61f5-410f-b430-3f4112a81c35"
-place = "ResourceContact"  # "MDContact", "ResourceContact", "DistributorContact"
-role = "pointOfContact"  # "resourceProvider", "pointOfContact", "distributor", ...
-orgname = "Test WO reviewer_geocat"
-mail = "test@test.ch"
-posname = "Beratung"
-first_name = "Beratungsstelle"
-last_name = "Müller"
+geocat_user = ""
+uuid = ""
+place = ""  # "MDContact", "ResourceContact", "DistributorContact"
+role = ""  # "resourceProvider", "pointOfContact", "distributor", ...
+orgname = ""
+mail = ""
+posname = ""
+first_name = ""
+last_name = ""
 delete = "yes"
 geocat_environment = "INT"  # "INT" or "PROD"
 proxydict = {"http": "prp03.admin.ch:8080", "https": "prp03.admin.ch:8080"}

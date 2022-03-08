@@ -37,8 +37,8 @@ import getpass
 
 
 # TODO: adapt the following variables
-geocat_user = "hut"
-file_out = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Scripts\mds_bgdi.csv"
+geocat_user = ""
+file_out = r""
 searching_keywords = ["BGDI Bundesgeodaten-Infrastruktur"]
 searching_any = []
 searching_group = []

@@ -30,7 +30,7 @@ from requests.auth import HTTPBasicAuth
 import getpass
 
 # TODO: adapt the following variables
-geocat_user = "egs"
+geocat_user = ""
 file_bmd4mum = r"\\v0t0020a.adr.admin.ch\iprod\gdwh-vector\test\TESTING\egs\geocat\BGDI\Report_20210603.xlsx"
 Path_File_out = r"\\v0t0020a.adr.admin.ch\iprod\gdwh-vector\test\TESTING\egs\geocat\BGDI\test.csv"
 file_groupowners = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Scripts\BGDI\groups_BGDI.csv"

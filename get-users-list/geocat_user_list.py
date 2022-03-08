@@ -26,9 +26,9 @@ import getpass
 pd.options.mode.chained_assignment = None
 
 # TODO: adapt the following variables
-geocat_user = "hut"
+geocat_user = ""
 geocat_environment = "INT"
-Path_File_out = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Scripts"
+Path_File_out = r""
 proxydict = {"http": "prp03.admin.ch:8080", "https": "prp03.admin.ch:8080"}
 
 ########################################################################################################################

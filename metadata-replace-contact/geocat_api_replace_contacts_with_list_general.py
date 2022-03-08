@@ -35,14 +35,14 @@ import getpass
 
 
 # TODO - define inputs
-geocat_user = "egs"
-list_file_in = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Scripts\contacts\test_contact.csv"
-list_file_out = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Scripts\contacts\test_contact_out.csv"
-orgname = "Bundesamt für Landestopografie"
-mail = "geocat@swisstopo.ch"
+geocat_user = ""
+list_file_in = r""
+list_file_out = r""
+orgname = ""
+mail = ""
 posname = ""
 first_name = ""
-last_name = "geocat.ch"
+last_name = ""
 geocat_environment = "INT"  # "INT" or "PROD"
 proxydict = {"http": "prp03.admin.ch:8080", "https": "prp03.admin.ch:8080"}
 

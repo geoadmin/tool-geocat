@@ -1,11 +1,13 @@
 #! <?xml version="1.0" encoding="UTF-8" ?>
 #! <WORKSPACE
-#    Command-line to run this workspace:
-#        "C:\Program Files\FME\fme.exe" \\v0t0020a.adr.admin.ch\iprod\gdwh-vector\test\TESTING\egs\geocat\empty_keywords\CSWT_delete_keyword_missing.fmw
-#              --AUTH_USERNAME "egs"
-#              --AUTH_PASSWORD "********"
-#              --SourceDataset_CSV2_3 "\\v0t0020a.adr.admin.ch\iprod\gdwh-vector\test\TESTING\egs\geocat\empty_keywords\PROD\uuids_empty_keywords_PROD_Kanton Nidwalden.csv"
+#    Command line to run this workspace:
+#        "C:\Program Files\FME\fme.exe" "\\v0t0020a\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Applikation\geocat.ch-Scripts\thesaurus\empty_keywords\CSWT_delete_keyword_missing.fmw"
+#          --AUTH_USERNAME "egs"
+#          --AUTH_PASSWORD "********"
+#          --SourceDataset_CSV2_3 "$(FME_MF_DIR_USERTYPED)PROD\uuids_empty_keywords_PROD_Kanton Nidwalden.csv"
+#          --FME_LAUNCH_VIEWER_APP "YES"
 #    
+#!   ARCGIS_COMPATIBILITY="ARCGIS_AUTO"
 #!   ATTR_TYPE_ENCODING="SDF"
 #!   BEGIN_PYTHON=""
 #!   BEGIN_TCL=""
@@ -18,18 +20,19 @@
 #!   END_PYTHON=""
 #!   END_TCL=""
 #!   EXPLICIT_BOOKMARK_ORDER="false"
-#!   FME_BUILD_NUM="20632"
-#!   FME_DOCUMENT_GUID="9ad50d67-fa40-4ab9-9ca2-a872167b67f8"
-#!   FME_DOCUMENT_PRIORGUID="e9cc4fb3-00b4-473d-a69f-44d9a8c34523,eb0031ea-9d2f-4da9-95bb-16c2a2ca2f89,8ed09621-f46c-4e7a-ae8d-8490fea07b79,7e8e878f-df47-45ad-bf56-e50ebfc9af9f,a3f24ef8-12b4-4305-933b-1012409c0024,bf584c58-6818-40c3-b17c-a1d02a0ea48c,deefcbb6-fd9c-4f47-a513-27a292000b48,7d1bc863-f21b-43a9-b7cc-0ee6306f8003,71d4fc56-2008-4559-bb11-ae2dcdf8698e,330bb1db-a884-4e98-98aa-7aa0f057f414,4eb50382-d879-459d-82a1-05452783dab9,eaac6287-8639-4347-95af-4212ab6aad35,f70ab8c7-ec2e-4401-b0f3-1f0705453739,2d3ebdfb-7bee-4485-bb4c-58058a3700a8,364ee7b2-2f0e-4637-9253-a410771f9025,2828fa80-7e07-4104-87cd-6d92f6b45458,26d0c95a-4807-4bd5-98c2-5be107b1cc88,67d59643-3681-4cd1-a667-4e91b8c73078,92a20cab-8675-499f-aba5-28816f6d216e,5013920b-7575-455b-8073-ece875609d96,537ba521-6b5b-421d-aeb0-5e7016a58f37,4b08a852-7df6-49da-928d-637d0d11d0de,7b450c69-6b7e-4b51-927d-99930b2efe68,ca14ea5b-20ff-4339-8a8a-15c4d741d1c2,41031dd5-dfd8-40b0-9135-43451617e247,89dc857e-3c71-4e28-9b2f-2ab42c60ccc1,d1dcb91d-8f3b-4fac-9a4c-2ab57d1be469,b7543181-107b-4d3c-8976-aeb481744619,f2b64110-d91a-4a17-88e6-29ec2e059bea,db24d9b7-65e8-469c-9334-37c7052e1fb0,186ab3af-229d-48ba-91a7-32a73b65645e,74596e42-7edd-427e-952e-025d7689d481,258052ec-e7e6-44a5-93cc-0b74de8c2421,e343c5ac-6995-4faa-ac87-e35819500055,06af7771-3c0a-47b4-9d1a-b106316d3497,dd0941e9-7a51-4ca4-a5f6-5750cdb19078,66215469-2a75-450b-b13f-232f2bbc4f6b,ad3d1405-0e5d-474d-b9ff-eac6317f331c,b8d5104d-f34d-437f-998a-b68a752e82eb,53072207-224e-413b-9330-f425d1a0aa71,28bbc187-f885-4b6d-a0a3-64abe87010cc,130ca605-b21e-4f51-a145-8a2437981041,7a66e2c1-d965-4a6f-90e6-2955cfd7ba9e,ecb19296-efc3-4ce2-beb0-6b0fd6896aff,a6b2f7d8-cbe3-47eb-a9eb-21228dd3d380,39a9d0d6-2606-43a9-8c0d-440dd3023908,ea29c717-83cb-4642-ae87-7a86d241565a,981682c6-ce48-4cba-bcea-c3ef0c036c14"
+#!   FME_BUILD_NUM="21806"
+#!   FME_DOCUMENT_GUID="797f2525-e455-4ee4-83fa-2f23096d2780"
+#!   FME_DOCUMENT_PRIORGUID="e9cc4fb3-00b4-473d-a69f-44d9a8c34523,eb0031ea-9d2f-4da9-95bb-16c2a2ca2f89,8ed09621-f46c-4e7a-ae8d-8490fea07b79,7e8e878f-df47-45ad-bf56-e50ebfc9af9f,a3f24ef8-12b4-4305-933b-1012409c0024,bf584c58-6818-40c3-b17c-a1d02a0ea48c,deefcbb6-fd9c-4f47-a513-27a292000b48,7d1bc863-f21b-43a9-b7cc-0ee6306f8003,71d4fc56-2008-4559-bb11-ae2dcdf8698e,330bb1db-a884-4e98-98aa-7aa0f057f414,4eb50382-d879-459d-82a1-05452783dab9,eaac6287-8639-4347-95af-4212ab6aad35,f70ab8c7-ec2e-4401-b0f3-1f0705453739,2d3ebdfb-7bee-4485-bb4c-58058a3700a8,364ee7b2-2f0e-4637-9253-a410771f9025,2828fa80-7e07-4104-87cd-6d92f6b45458,26d0c95a-4807-4bd5-98c2-5be107b1cc88,67d59643-3681-4cd1-a667-4e91b8c73078,92a20cab-8675-499f-aba5-28816f6d216e,5013920b-7575-455b-8073-ece875609d96,537ba521-6b5b-421d-aeb0-5e7016a58f37,4b08a852-7df6-49da-928d-637d0d11d0de,7b450c69-6b7e-4b51-927d-99930b2efe68,ca14ea5b-20ff-4339-8a8a-15c4d741d1c2,41031dd5-dfd8-40b0-9135-43451617e247,89dc857e-3c71-4e28-9b2f-2ab42c60ccc1,d1dcb91d-8f3b-4fac-9a4c-2ab57d1be469,b7543181-107b-4d3c-8976-aeb481744619,f2b64110-d91a-4a17-88e6-29ec2e059bea,db24d9b7-65e8-469c-9334-37c7052e1fb0,186ab3af-229d-48ba-91a7-32a73b65645e,74596e42-7edd-427e-952e-025d7689d481,258052ec-e7e6-44a5-93cc-0b74de8c2421,e343c5ac-6995-4faa-ac87-e35819500055,06af7771-3c0a-47b4-9d1a-b106316d3497,dd0941e9-7a51-4ca4-a5f6-5750cdb19078,66215469-2a75-450b-b13f-232f2bbc4f6b,ad3d1405-0e5d-474d-b9ff-eac6317f331c,b8d5104d-f34d-437f-998a-b68a752e82eb,53072207-224e-413b-9330-f425d1a0aa71,28bbc187-f885-4b6d-a0a3-64abe87010cc,130ca605-b21e-4f51-a145-8a2437981041,7a66e2c1-d965-4a6f-90e6-2955cfd7ba9e,ecb19296-efc3-4ce2-beb0-6b0fd6896aff,a6b2f7d8-cbe3-47eb-a9eb-21228dd3d380,39a9d0d6-2606-43a9-8c0d-440dd3023908,ea29c717-83cb-4642-ae87-7a86d241565a,981682c6-ce48-4cba-bcea-c3ef0c036c14,9ad50d67-fa40-4ab9-9ca2-a872167b67f8"
 #!   FME_GEOMETRY_HANDLING="Enhanced"
 #!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
+#!   FME_NAMES_ENCODING="windows-1252"
 #!   FME_REPROJECTION_ENGINE="FME"
 #!   FME_SERVER_SERVICES=""
 #!   FME_STROKE_MAX_DEVIATION="0"
 #!   HISTORY=""
 #!   IGNORE_READER_FAILURE="No"
-#!   LAST_SAVE_BUILD="FME(R) 2020.1.3.0 (20201001 - Build 20632 - WIN64)"
-#!   LAST_SAVE_DATE="2021-08-18T13:40:45"
+#!   LAST_SAVE_BUILD="FME(R) 2021.2.2.0 (20220106 - Build 21806 - WIN64)"
+#!   LAST_SAVE_DATE="2022-03-08T11:54:54"
 #!   LOG_FILE=""
 #!   LOG_MAX_RECORDED_FEATURES="200"
 #!   MARKDOWN_DESCRIPTION=""
@@ -37,7 +40,7 @@
 #!   MAX_LOG_FEATURES="200"
 #!   MULTI_WRITER_DATASET_ORDER="BY_ID"
 #!   PASSWORD=""
-#!   PYTHON_COMPATIBILITY="37"
+#!   PYTHON_COMPATIBILITY="38"
 #!   REDIRECT_TERMINATORS="NONE"
 #!   SAVE_ON_PROMPT_AND_RUN="Yes"
 #!   SHOW_ANNOTATIONS="true"
@@ -48,7 +51,7 @@
 #!   TITLE=""
 #!   USAGE=""
 #!   USE_MARKDOWN=""
-#!   VIEW_POSITION="-133.465 -2011.74"
+#!   VIEW_POSITION="-131.837 -1176.77"
 #!   WARN_INVALID_XFORM_PARAM="Yes"
 #!   WORKSPACE_VERSION="1"
 #!   ZOOM_SCALE="64"
@@ -67,7 +70,7 @@
 #!   WRITE_DEFS="true"
 #!   DEFLINE_TEMPLATE=""
 #!   DEFLINE_ATTRS="true"
-#!   EXPOSABLE_ATTRS="fme_geometry string fme_text_string string fme_primary_axis string multi_reader_full_id string fme_feature_type string fme_type string multi_reader_keyword string csv_total_number_of_columns uint32 fme_text_size string csv_type string fme_secondary_axis string fme_dataset string fme_start_angle string multi_reader_id string fme_rotation string multi_reader_type string csv_line_number uint64 fme_color string fme_fill_color string csv_skipped_line string csv_number_of_fields uint32 fme_basename string fme_sweep_angle string"
+#!   EXPOSABLE_ATTRS="csv_line_number uint64 csv_number_of_fields uint32 csv_skipped_line string csv_total_number_of_columns uint32 csv_type string fme_basename string fme_color string fme_dataset string fme_feature_type string fme_fill_color string fme_geometry string fme_primary_axis string fme_rotation string fme_secondary_axis string fme_start_angle string fme_sweep_angle string fme_text_size string fme_text_string string fme_type string multi_reader_full_id string multi_reader_id string multi_reader_keyword string multi_reader_type string"
 #!   DEFLINE_PARMS=""
 #!   ATTR_INDEX_TYPES=""
 #!   ATTR_NAME_INVALID_CHARS=""
@@ -141,43 +144,43 @@
 #! />
 #! <DATA_TYPE
 #!   IS_SOURCE="true"
-#!   FORMAT_TYPE="string"
+#!   FORMAT_TYPE="varchar(width)"
 #!   FME_TYPE="fme_varchar(width)"
 #!   FORMAT="CSV2"
 #! />
 #! <DATA_TYPE
 #!   IS_SOURCE="true"
-#!   FORMAT_TYPE="string"
+#!   FORMAT_TYPE="varchar(width)"
 #!   FME_TYPE="fme_varbinary(width)"
 #!   FORMAT="CSV2"
 #! />
 #! <DATA_TYPE
 #!   IS_SOURCE="true"
-#!   FORMAT_TYPE="string"
+#!   FORMAT_TYPE="varchar(width)"
 #!   FME_TYPE="fme_char(width)"
 #!   FORMAT="CSV2"
 #! />
 #! <DATA_TYPE
 #!   IS_SOURCE="true"
-#!   FORMAT_TYPE="string"
+#!   FORMAT_TYPE="varchar(width)"
 #!   FME_TYPE="fme_binary(width)"
 #!   FORMAT="CSV2"
 #! />
 #! <DATA_TYPE
 #!   IS_SOURCE="true"
-#!   FORMAT_TYPE="string"
+#!   FORMAT_TYPE="datetime"
 #!   FME_TYPE="fme_datetime"
 #!   FORMAT="CSV2"
 #! />
 #! <DATA_TYPE
 #!   IS_SOURCE="true"
-#!   FORMAT_TYPE="string"
+#!   FORMAT_TYPE="time"
 #!   FME_TYPE="fme_time"
 #!   FORMAT="CSV2"
 #! />
 #! <DATA_TYPE
 #!   IS_SOURCE="true"
-#!   FORMAT_TYPE="string"
+#!   FORMAT_TYPE="date"
 #!   FME_TYPE="fme_date"
 #!   FORMAT="CSV2"
 #! />
@@ -333,6 +336,54 @@
 #! />
 #! <DATA_TYPE
 #!   IS_SOURCE="true"
+#!   FORMAT_TYPE="number(width,decimal)"
+#!   FME_TYPE="fme_decimal(width,decimal)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_varchar(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_varbinary(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_char(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_binary(width)"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_datetime"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_time"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
+#!   FORMAT_TYPE="string"
+#!   FME_TYPE="fme_date"
+#!   FORMAT="CSV2"
+#! />
+#! <DATA_TYPE
+#!   IS_SOURCE="true"
 #!   FORMAT_TYPE="string"
 #!   FME_TYPE="fme_decimal(width,decimal)"
 #!   FORMAT="CSV2"
@@ -458,7 +509,7 @@
 #!   KEYWORD="CSV2_1"
 #!   PARMS_EDITED="true"
 #!   ENABLED="true"
-#!   HIDDEN_USER_ATTRS="org title"
+#!   HIDDEN_USER_ATTRS="title org"
 #!   READ_SELECT_ATTRS="true"
 #!   MERGE_FILTER="*"
 #!   MERGE_FILTER_TYPE="FILTER_TYPE_GLOB"
@@ -496,6 +547,15 @@
 #!   IS_STAND_ALONE="false"
 #! />
 #! </GLOBAL_PARAMETERS>
+#! <USER_PARAMETERS
+#!   FORM="eyJwYXJhbWV0ZXJzIjpbeyJkZWZhdWx0VmFsdWUiOiJlZ3MiLCJlZGl0b3IiOiJwbGFpbnRleHQiLCJuYW1lIjoiQVVUSF9VU0VSTkFNRSIsInByb21wdCI6IkhUVFAgQXV0aGVudGljYXRpb24gVXNlcm5hbWU6IiwicmVxdWlyZWQiOnRydWUsInNob3dFZGl0QnV0dG9uIjpmYWxzZSwic3VwcG9ydGVkVmFsdWVUeXBlcyI6WyJleHByZXNzaW9uIiwiZ2xvYmFsUGFyYW1ldGVyIl0sInR5cGUiOiJ0ZXh0IiwidmFsdWVUeXBlIjoic3RyaW5nIn0seyJkZWZhdWx0VmFsdWUiOiJmbWVfZGVjcnlwdChNRG93ZkNOOEkzeGNHM0dRL1RlUlJVSlVaNUxEUHRkdnBzY2JoN05qOWdHL0lOQmtBR0ErZmthRHJOYmhadGZhM3Jta1VVckN4S1dhQUZ3aVlzS2dXSk5sLzBtUnB4VXVQK0lUMmMrUWhoMjZKRVp0VVdBbXB1b2FRQ2RRM3lrS1dtMnphb0FNNU1CQ0dhR0V1WWUrNkFTMDcvbkxOUkp3cXAxamR3UDFGZ1ZDYlhSdlp0V2ZLakVabE5KWVErRWljVmM2Y3YyRHhDWUp5VGxqdlh3RjhtS3hlbk1MNkZLSmlIQVJRQ084T01KaWRLS1pRSlAxU2VZSWhxQjBZcnRHdzRjR1YyWnF1UUtpZnZSakIyVGw2d0JBV0RtZUNnK1IxanZmdDF0UjE3U0lTeVREdjc3SyttVjgwdzJhYVVTZ3liYkY3Y29NMEJyUVBjcGVoZmpsVytZeFY3Mys5bVBNRlhLUWV6bloyMlQ4TUpvcjU3TzQ0cDhVMk5RQ3czNUhpRkJzMG9WUDlWa2tZMEQvV3pHUmV2c2V5WDFwSUVXSlNRU0Z3a0pWaGl5WGF2TUR6NUU1U0VZZ1RaSGZWZUdCWENEdUlFRWJmUlJrUFU1eUQybncyWkFWaW1EUkQ3VVFoRUVZNlBvc0dxVTE3SGU0eTM1V0VmQWdnUTQwK0VLdXVwT1FTWlJzS290VFRxbFlHSEp0WDQ5eW11S3FmeVp6T0FVU1V6RE1jajhnZkRnek9DY3VodzJzSzNmSmFNc3pnamZNczlLT29iZUdobzUzdnl3T09ZenFnamNHbVc3ajdONmZobkY2TWcrZlFMejVVZzExUm5ncjY3R3pISGFFZElHV01wbHNDNUpVUUU5bzYzUWEwSng5Zi9oSVNIeWViS3hZZmxqeGV5OFdTRFlNSThGNnNjTnE4S3F3am1XaVhkWEswUDJ6SDBQc1NwaTM5blZVSGpPalF3WUFPZFhFREZzRUJ6Q3BYMHk5eGJqR0Z3OWQ1djJROVpLRGIray9Zb3BoWEErK1VoQU9oK01DS2Vna3dHQ1hMTzFycE1yRWl1M2Z0cFVxUkdGNlMxRldhc2lmODZzSENPdFRlQzBFa2d6ckZjS3d2eVFQMWhmQVVHUWxoTjdOQW11UEFmNGorOWxBOW92QzVpbXViaWpKUmViR2N5a1J4VTZubnVMOGFneGMrRGhEWHVlSGI0Z043bUovd1gwNDdSZGtCdFBJKSIsIm5hbWUiOiJBVVRIX1BBU1NXT1JEIiwicHJvbXB0IjoiSFRUUCBBdXRoZW50aWNhdGlvbiBQYXNzd29yZDoiLCJyZXF1aXJlZCI6dHJ1ZSwic2hvd0NvbmZpcm0iOmZhbHNlLCJzdXBwb3J0ZWRWYWx1ZVR5cGVzIjpbImV4cHJlc3Npb24iLCJnbG9iYWxQYXJhbWV0ZXIiXSwidHlwZSI6InBhc3N3b3JkIiwidmFsdWVUeXBlIjoic3RyaW5nIn0seyJhY2Nlc3NNb2RlIjoicmVhZCIsImRlZmF1bHRWYWx1ZSI6IiQoRk1FX01GX0RJUl9VU0VSVFlQRUQpUFJPRFxcdXVpZHNfZW1wdHlfa2V5d29yZHNfUFJPRF9LYW50b24gTmlkd2FsZGVuLmNzdiIsImZpbHRlcnMiOlt7ImRlc2NyaXB0aW9uIjoiQ1NWL0NvbXByZXNzZWQgQ1NWL1RFWFQgRmlsZXMiLCJmaWx0ZXIiOlsiKi5jc3YiLCIqLmd6IiwiKi50eHQiXX0seyJkZXNjcmlwdGlvbiI6IkNTViBGaWxlcyIsImZpbHRlciI6WyIqLmNzdiJdfSx7ImRlc2NyaXB0aW9uIjoiQ29tcHJlc3NlZCBDU1YgRmlsZXMiLCJmaWx0ZXIiOlsiKi5neiJdfSx7ImRlc2NyaXB0aW9uIjoiVGV4dCBGaWxlcyIsImZpbHRlciI6WyIqLnR4dCJdfSx7ImRlc2NyaXB0aW9uIjoiQ29tcHJlc3NlZCBGaWxlcyIsImZpbHRlciI6WyIqLmJ6MiIsIiouZ3oiXX0seyJkZXNjcmlwdGlvbiI6IkFyY2hpdmUgRmlsZXMiLCJmaWx0ZXIiOlsiKi43eiIsIiouN3ppcCIsIioucmFyIiwiKi5ydnoiLCIqLnRhciIsIioudGFyLmJ6MiIsIioudGFyLmd6IiwiKi50Z3oiLCIqLnppcCIsIiouemlweCJdfSx7ImRlc2NyaXB0aW9uIjoiQWxsIEZpbGVzIiwiZmlsdGVyIjpbIioiXX1dLCJpbmNsdWRlV2ViQnJvd3NlciI6dHJ1ZSwiaXRlbXNUb1NlbGVjdCI6ImZpbGVzIiwibmFtZSI6IlNvdXJjZURhdGFzZXRfQ1NWMl8zIiwicHJvbXB0IjoiU291cmNlIENTViAoQ29tbWEgU2VwYXJhdGVkIFZhbHVlKSBGaWxlKHMpOiIsInJlcXVpcmVkIjp0cnVlLCJzZWxlY3RNdWx0aXBsZSI6dHJ1ZSwidHlwZSI6ImZpbGUiLCJ2YWxpZGF0ZUV4aXN0ZW5jZSI6ZmFsc2UsInZhbHVlVHlwZSI6InN0cmluZyJ9XX0="
+#! >
+#! <PARAMETER_INFO>
+#!     <INFO NAME="AUTH_PASSWORD" IS_STAND_ALONE="false" />
+#!     <INFO NAME="AUTH_USERNAME" IS_STAND_ALONE="false" />
+#!     <INFO NAME="SourceDataset_CSV2_3" IS_STAND_ALONE="false" />
+#! </PARAMETER_INFO>
+#! </USER_PARAMETERS>
 #! <COMMENTS>
 #! <COMMENT
 #!   IDENTIFIER="12"
@@ -527,7 +587,7 @@
 #!   BOUNDING_RECT="2425.9499999999998 -2518.5500000000002 2658.9773924838009 1297.0745759988458"
 #!   STICKY="true"
 #!   COLOUR="0.7803921568627451,0.54509803921568623,0.3843137254901961,0.39215686274509803"
-#!   CONTENTS="36 68 66 38 10 11 34 35 12 3 39 37 "
+#!   CONTENTS="37 38 66 3 36 10 11 39 34 68 12 35 "
 #! >
 #! </BOOKMARK>
 #! <BOOKMARK
@@ -541,7 +601,7 @@
 #!   BOUNDING_RECT="71.390508491211136 -2471.5270259420481 1103.8838768097826 406.6148733777195"
 #!   STICKY="true"
 #!   COLOUR="0.85098039215686272,0.92941176470588238,0.60392156862745094,1"
-#!   CONTENTS="67 70 69 "
+#!   CONTENTS="69 67 70 "
 #! >
 #! </BOOKMARK>
 #! <BOOKMARK
@@ -781,13 +841,13 @@
 #! <TRANSFORMER
 #!   IDENTIFIER="67"
 #!   TYPE="SubDocumentTransformer"
-#!   VERSION="2"
+#!   VERSION="1"
 #!   POSITION="121.39050849121114 -2581.5270259420481"
 #!   BOUNDING_RECT="121.39050849121114 -2581.5270259420481 430 71"
 #!   ORDER="500000000000001"
 #!   PARMS_EDITED="true"
 #!   ENABLED="false"
-#!   LAST_PARM_EDIT="20632"
+#!   LAST_PARM_EDIT="21806"
 #! >
 #!     <OUTPUT_FEAT NAME="Output"/>
 #!     <FEAT_COLLAPSED COLLAPSED="0"/>
@@ -965,6 +1025,7 @@
 #! <SUBDOCUMENTS>
 #! <SUBDOCUMENT
 #!   NAME="Starter"
+#!   ARCGIS_COMPATIBILITY=""
 #!   CATEGORY="Workflows"
 #!   DESCRIPTION="&lt;p&gt;This transformer is intended to &lt;strong&gt;start&lt;/strong&gt; a workspace branch without the use of the creator transformer. This will end up without additional attributes &lt;em&gt;(_creation_instance)&lt;/em&gt; at the end of the workspace.&lt;/p&gt;&#10;"
 #!   DOC_DYNAMIC_INPUT_ATTRS="0"
@@ -972,6 +1033,7 @@
 #!   DOC_TOP_LEFT="307.503 -176.001"
 #!   FME_DOCUMENT_GUID="fb9194ad-8f6d-4945-83d0-da68ce85a438"
 #!   FME_DOCUMENT_PRIORGUID=""
+#!   FME_NAMES_ENCODING="windows-1252"
 #!   FME_PROCESS_COUNT="NO_PARALLELISM"
 #!   FME_PROCESS_GROUPS_ORDERED="No"
 #!   FME_PROCESS_GROUP_BY=""
@@ -996,6 +1058,12 @@
 #! >
 #! <GLOBAL_PARAMETERS>
 #! </GLOBAL_PARAMETERS>
+#! <USER_PARAMETERS
+#!   FORM="eyJwYXJhbWV0ZXJzIjpbXX0="
+#! >
+#! <PARAMETER_INFO>
+#! </PARAMETER_INFO>
+#! </USER_PARAMETERS>
 #! <COMMENTS>
 #! </COMMENTS>
 #! <CONSTANTS>
@@ -1067,14 +1135,20 @@
 #! </LOOKUP_TABLES>
 #! </WORKSPACE>
 
-FME_PYTHON_VERSION 37
+FME_PYTHON_VERSION 38
+ARCGIS_COMPATIBILITY ARCGIS_AUTO
 GUI IGNORE SourceDataset_CSV2_1,CSV2_IN_FIELDS_GROUP_CSV2_1,CSV2_IN_DELIMITER_CSV2_1,CSV2_IN_FIELD_NAMES_LINE_CSV2_1,CSV2_IN_DATA_START_LINE_CSV2_1,CSV2_IN_ADVANCED_GROUP_CSV2_1,CSV2_IN_FIELD_SEPARATION_GROUP_CSV2_1,CSV2_IN_SKIP_DUPLICATE_DELIMITERS_CSV2_1,CSV2_IN_FIELD_QUALIFIER_CHARACTER_CSV2_1,CSV2_IN_FIELD_QUALIFIER_ESCAPE_CHARACTER_CSV2_1,CSV2_IN_FIELD_NAMES_GROUP_CSV2_1,CSV2_IN_CASE_SENSITIVE_FIELD_NAMES_CSV2_1,CSV2_IN_ENFORCE_STRICT_SCHEMA_CSV2_1,CSV2_IN_FIELD_VALUES_GROUP_CSV2_1,CSV2_IN_TRIM_FIELD_VALUE_QUALIFIERS_CSV2_1,CSV2_IN_ENCODING_GROUP_CSV2_1,CSV2_IN_ENCODING_CSV2_1,CSV2_IN_PRESERVE_SOURCE_ENCODING_CSV2_1,CSV2_IN_SKIPPED_LINES_GROUP_CSV2_1,CSV2_IN_READ_SKIPPED_LINES_CSV2_1,CSV2_IN_NETWORK_AUTHENTICATION_CSV2_1
+# ============================================================================
 DEFAULT_MACRO AUTH_USERNAME egs
-GUI STRING AUTH_USERNAME HTTP Authentication Username:
 DEFAULT_MACRO AUTH_PASSWORD fme_decrypt(MDowfCN8I3xcG3GQ/TeRRUJUZ5LDPtdvpscbh7Nj9gG/INBkAGA+fkaDrNbhZtfa3rmkUUrCxKWaAFwiYsKgWJNl/0mRpxUuP+IT2c+Qhh26JEZtUWAmpuoaQCdQ3ykKWm2zaoAM5MBCGaGEuYe+6AS07/nLNRJwqp1jdwP1FgVCbXRvZtWfKjEZlNJYQ+EicVc6cv2DxCYJyTljvXwF8mKxenML6FKJiHARQCO8OMJidKKZQJP1SeYIhqB0YrtGw4cGV2ZquQKifvRjB2Tl6wBAWDmeCg+R1jvft1tR17SISyTDv77K+mV80w2aaUSgybbF7coM0BrQPcpehfjlW+YxV73+9mPMFXKQeznZ22T8MJor57O44p8U2NQCw35HiFBs0oVP9VkkY0D/WzGRevseyX1pIEWJSQSFwkJVhiyXavMDz5E5SEYgTZHfVeGBXCDuIEEbfRRkPU5yD2nw2ZAVimDRD7UQhEEY6PosGqU17He4y35WEfAggQ40+EKuupOQSZRsKotTTqlYGHJtX49ymuKqfyZzOAUSUzDMcj8gfDgzOCcuhw2sK3fJaMszgjfMs9KOobeGho53vywOOYzqgjcGmW7j7N6fhnF6Mg+fQLz5Ug11Rngr67GzHHaEdIGWMplsC5JUQE9o63Qa0Jx9f/hISHyebKxYfljxey8WSDYMI8F6scNq8KqwjmWiXdXK0P2zH0PsSpi39nVUHjOjQwYAOdXEDFsEBzCpX0y9xbjGFw9d5v2Q9ZKDb+k/YophXA++UhAOh+MCKegkwGCXLO1rpMrEiu3ftpUqRGF6S1FWasif86sHCOtTeC0EkgzrFcKwvyQP1hfAUGQlhN7NAmuPAf4j+9lA9ovC5imubijJRebGcykRxU6nnuL8agxc+DhDXueHb4gN7mJ/wX047RdkBtPI)
-GUI PASSWORD AUTH_PASSWORD HTTP Authentication Password:
 DEFAULT_MACRO SourceDataset_CSV2_3 $(FME_MF_DIR)PROD\uuids_empty_keywords_PROD_Kanton Nidwalden.csv
+# ============================================================================
+GUI STRING AUTH_USERNAME HTTP Authentication Username:
+GUI PASSWORD AUTH_PASSWORD HTTP Authentication Password:
 GUI MULTIFILE SourceDataset_CSV2_3 CSV/Compressed_CSV/TEXT_Files(*.csv;*.gz;*.txt)|*.csv;*.gz;*.txt|CSV_Files(*.csv)|*.csv|Compressed_CSV_Files(*.gz)|*.gz|Text_Files(*.txt)|*.txt|Compressed_Files(*.bz2;*.gz)|*.bz2;*.gz|Archive_Files(*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx)|*.7z;*.7zip;*.rar;*.rvz;*.tar;*.tar.bz2;*.tar.gz;*.tgz;*.zip;*.zipx|All_Files|* Source CSV (Comma Separated Value) File(s):
+# ============================================================================
+USER_PARAMETERS eyJwYXJhbWV0ZXJzIjpbeyJkZWZhdWx0VmFsdWUiOiJlZ3MiLCJlZGl0b3IiOiJwbGFpbnRleHQiLCJuYW1lIjoiQVVUSF9VU0VSTkFNRSIsInByb21wdCI6IkhUVFAgQXV0aGVudGljYXRpb24gVXNlcm5hbWU6IiwicmVxdWlyZWQiOnRydWUsInNob3dFZGl0QnV0dG9uIjpmYWxzZSwic3VwcG9ydGVkVmFsdWVUeXBlcyI6WyJleHByZXNzaW9uIiwiZ2xvYmFsUGFyYW1ldGVyIl0sInR5cGUiOiJ0ZXh0IiwidmFsdWVUeXBlIjoic3RyaW5nIn0seyJkZWZhdWx0VmFsdWUiOiJmbWVfZGVjcnlwdChNRG93ZkNOOEkzeGNHM0dRL1RlUlJVSlVaNUxEUHRkdnBzY2JoN05qOWdHL0lOQmtBR0ErZmthRHJOYmhadGZhM3Jta1VVckN4S1dhQUZ3aVlzS2dXSk5sLzBtUnB4VXVQK0lUMmMrUWhoMjZKRVp0VVdBbXB1b2FRQ2RRM3lrS1dtMnphb0FNNU1CQ0dhR0V1WWUrNkFTMDcvbkxOUkp3cXAxamR3UDFGZ1ZDYlhSdlp0V2ZLakVabE5KWVErRWljVmM2Y3YyRHhDWUp5VGxqdlh3RjhtS3hlbk1MNkZLSmlIQVJRQ084T01KaWRLS1pRSlAxU2VZSWhxQjBZcnRHdzRjR1YyWnF1UUtpZnZSakIyVGw2d0JBV0RtZUNnK1IxanZmdDF0UjE3U0lTeVREdjc3SyttVjgwdzJhYVVTZ3liYkY3Y29NMEJyUVBjcGVoZmpsVytZeFY3Mys5bVBNRlhLUWV6bloyMlQ4TUpvcjU3TzQ0cDhVMk5RQ3czNUhpRkJzMG9WUDlWa2tZMEQvV3pHUmV2c2V5WDFwSUVXSlNRU0Z3a0pWaGl5WGF2TUR6NUU1U0VZZ1RaSGZWZUdCWENEdUlFRWJmUlJrUFU1eUQybncyWkFWaW1EUkQ3VVFoRUVZNlBvc0dxVTE3SGU0eTM1V0VmQWdnUTQwK0VLdXVwT1FTWlJzS290VFRxbFlHSEp0WDQ5eW11S3FmeVp6T0FVU1V6RE1jajhnZkRnek9DY3VodzJzSzNmSmFNc3pnamZNczlLT29iZUdobzUzdnl3T09ZenFnamNHbVc3ajdONmZobkY2TWcrZlFMejVVZzExUm5ncjY3R3pISGFFZElHV01wbHNDNUpVUUU5bzYzUWEwSng5Zi9oSVNIeWViS3hZZmxqeGV5OFdTRFlNSThGNnNjTnE4S3F3am1XaVhkWEswUDJ6SDBQc1NwaTM5blZVSGpPalF3WUFPZFhFREZzRUJ6Q3BYMHk5eGJqR0Z3OWQ1djJROVpLRGIray9Zb3BoWEErK1VoQU9oK01DS2Vna3dHQ1hMTzFycE1yRWl1M2Z0cFVxUkdGNlMxRldhc2lmODZzSENPdFRlQzBFa2d6ckZjS3d2eVFQMWhmQVVHUWxoTjdOQW11UEFmNGorOWxBOW92QzVpbXViaWpKUmViR2N5a1J4VTZubnVMOGFneGMrRGhEWHVlSGI0Z043bUovd1gwNDdSZGtCdFBJKSIsIm5hbWUiOiJBVVRIX1BBU1NXT1JEIiwicHJvbXB0IjoiSFRUUCBBdXRoZW50aWNhdGlvbiBQYXNzd29yZDoiLCJyZXF1aXJlZCI6dHJ1ZSwic2hvd0NvbmZpcm0iOmZhbHNlLCJzdXBwb3J0ZWRWYWx1ZVR5cGVzIjpbImV4cHJlc3Npb24iLCJnbG9iYWxQYXJhbWV0ZXIiXSwidHlwZSI6InBhc3N3b3JkIiwidmFsdWVUeXBlIjoic3RyaW5nIn0seyJhY2Nlc3NNb2RlIjoicmVhZCIsImRlZmF1bHRWYWx1ZSI6IiQoRk1FX01GX0RJUl9VU0VSVFlQRUQpUFJPRFxcdXVpZHNfZW1wdHlfa2V5d29yZHNfUFJPRF9LYW50b24gTmlkd2FsZGVuLmNzdiIsImZpbHRlcnMiOlt7ImRlc2NyaXB0aW9uIjoiQ1NWL0NvbXByZXNzZWQgQ1NWL1RFWFQgRmlsZXMiLCJmaWx0ZXIiOlsiKi5jc3YiLCIqLmd6IiwiKi50eHQiXX0seyJkZXNjcmlwdGlvbiI6IkNTViBGaWxlcyIsImZpbHRlciI6WyIqLmNzdiJdfSx7ImRlc2NyaXB0aW9uIjoiQ29tcHJlc3NlZCBDU1YgRmlsZXMiLCJmaWx0ZXIiOlsiKi5neiJdfSx7ImRlc2NyaXB0aW9uIjoiVGV4dCBGaWxlcyIsImZpbHRlciI6WyIqLnR4dCJdfSx7ImRlc2NyaXB0aW9uIjoiQ29tcHJlc3NlZCBGaWxlcyIsImZpbHRlciI6WyIqLmJ6MiIsIiouZ3oiXX0seyJkZXNjcmlwdGlvbiI6IkFyY2hpdmUgRmlsZXMiLCJmaWx0ZXIiOlsiKi43eiIsIiouN3ppcCIsIioucmFyIiwiKi5ydnoiLCIqLnRhciIsIioudGFyLmJ6MiIsIioudGFyLmd6IiwiKi50Z3oiLCIqLnppcCIsIiouemlweCJdfSx7ImRlc2NyaXB0aW9uIjoiQWxsIEZpbGVzIiwiZmlsdGVyIjpbIioiXX1dLCJpbmNsdWRlV2ViQnJvd3NlciI6dHJ1ZSwiaXRlbXNUb1NlbGVjdCI6ImZpbGVzIiwibmFtZSI6IlNvdXJjZURhdGFzZXRfQ1NWMl8zIiwicHJvbXB0IjoiU291cmNlIENTViAoQ29tbWEgU2VwYXJhdGVkIFZhbHVlKSBGaWxlKHMpOiIsInJlcXVpcmVkIjp0cnVlLCJzZWxlY3RNdWx0aXBsZSI6dHJ1ZSwidHlwZSI6ImZpbGUiLCJ2YWxpZGF0ZUV4aXN0ZW5jZSI6ZmFsc2UsInZhbHVlVHlwZSI6InN0cmluZyJ9XX0=
+# ============================================================================
 INCLUDE [ if {{$(AUTH_USERNAME)} == {}} { puts_real {Parameter 'AUTH_USERNAME' must be given a value.}; exit 1; }; ]
 INCLUDE [ if {{$(AUTH_PASSWORD)} == {}} { puts_real {Parameter 'AUTH_PASSWORD' must be given a value.}; exit 1; }; ]
 INCLUDE [ if {{$(SourceDataset_CSV2_3)} == {}} { puts_real {Parameter 'SourceDataset_CSV2_3' must be given a value.}; exit 1; }; ]
@@ -1198,6 +1272,8 @@ FME_REPROJECTION_ENGINE FME
 FME_IMPLICIT_CSMAP_REPROJECTION_MODE Auto
 FME_GEOMETRY_HANDLING Enhanced
 FME_STROKE_MAX_DEVIATION 0
+FME_NAMES_ENCODING windows-1252
+LAST_SAVE_BUILD "FME 2021.2.2.0 (20220106 - Build 21806 - WIN64)"
 DEFAULT_MACRO DATASET_KEYWORD_CSV2_1 CSV2_1
 FME_PASSWORD_PARAMETER_LIST AUTH_PASSWORD
 # -------------------------------------------------------------------------
@@ -1233,8 +1309,8 @@ FACTORY_DEF * TeeFactory   FACTORY_NAME "$(WB_CURRENT_CONTEXT)_CREATOR_BRANCH_TA
 # -------------------------------------------------------------------------
 FACTORY_DEF * TeeFactory   FACTORY_NAME "AttributeCreator (Disabled) Nuker"   INPUT FEATURE_TYPE Starter_Output
 # -------------------------------------------------------------------------
-Tcl2 proc StringConcatenator_2_77598bc8_8a01_47b5_b158_73d0ed41e1522_doSetAttr {attrText} {    FME_SetAttribute [FME_DecodeText {post_body}] [FME_DecodeText $attrText] }
-FACTORY_DEF * TeeFactory    FACTORY_NAME StringConcatenator_2    INPUT  FEATURE_TYPE CSV_CSV2_1    INPUT  FEATURE_TYPE AttributeCreator_OUTPUT    OUTPUT FEATURE_TYPE StringConcatenator_2_OUTPUT        @Tcl2("StringConcatenator_2_77598bc8_8a01_47b5_b158_73d0ed41e1522_doSetAttr {@EvaluateExpression(FDIV,STRING_ENCODED,<lt>?xml<space>version=<quote>1.0<quote><space>encoding=<quote>UTF-8<quote>?<gt><lf><lt>csw:Transaction<space>service=<quote>CSW<quote><space>version=<quote>2.0.2<quote><space>xmlns:csw=<quote>http:<solidus><solidus>www.opengis.net<solidus>cat<solidus>csw<solidus>2.0.2<quote><space>xmlns:ogc=<quote>http:<solidus><solidus>www.opengis.net<solidus>ogc<quote><space>xmlns:apiso=<quote>http:<solidus><solidus>www.opengis.net<solidus>cat<solidus>csw<solidus>apiso<solidus>1.0<quote><space>xmlns:srv=<quote>http:<solidus><solidus>www.isotc211.org<solidus>2005<solidus>srv<quote><space>xmlns:gco=<quote>http:<solidus><solidus>www.isotc211.org<solidus>2005<solidus>gco<quote><space>xmlns:che=<quote>http:<solidus><solidus>www.geocat.ch<solidus>2008<solidus>che<quote><space>xmlns:xsi=<quote>http:<solidus><solidus>www.w3.org<solidus>2001<solidus>XMLSchema-instance<quote><space>xmlns:gml=<quote>http:<solidus><solidus>www.opengis.net<solidus>gml<quote><space>xmlns:gmd=<quote>http:<solidus><solidus>www.isotc211.org<solidus>2005<solidus>gmd<quote><gt><lf><tab><lt>csw:Update<gt><lf><tab><tab><lt>csw:RecordProperty<gt><lf><tab><tab><tab><lt>csw:Name<gt><solidus>che:CHE_MD_Metadata<solidus>gmd:identificationInfo<solidus>che:CHE_MD_DataIdentification<solidus>gmd:descriptiveKeywords<solidus>gmd:MD_Keywords<solidus>gmd:keyword<openbracket><at>gco:nilReason<space>=<space><apos>missing<apos><closebracket><solidus>..<solidus>..<lt><solidus>csw:Name<gt><lf><tab><tab><tab><lt>csw:Value<gt><lf><tab><tab><tab><tab><lt>gn_delete<gt><lf><tab><tab><tab><tab><lt><solidus>gn_delete<gt><lf><tab><tab><tab><lt><solidus>csw:Value<gt><lf><tab><tab><lt><solidus>csw:RecordProperty<gt><lf><tab><tab><lt>csw:Constraint<space>version=<quote>1.1.0<quote><gt><lf><tab><tab><tab><lt>ogc:Filter<gt><lf><tab><tab><tab><tab><lt>ogc:PropertyIsEqualTo<gt><lf><tab><tab><tab><tab><tab><lt>ogc:PropertyName<gt>Identifier<lt><solidus>ogc:PropertyName<gt><lf><tab><tab><tab><tab><tab><lt>ogc:Literal<gt><at>Value<openparen>uuid<closeparen><lt><solidus>ogc:Literal<gt><lf><tab><tab><tab><tab><lt><solidus>ogc:PropertyIsEqualTo<gt><lf><tab><tab><tab><lt><solidus>ogc:Filter<gt><lf><tab><tab><lt><solidus>csw:Constraint<gt><lf><tab><lt><solidus>csw:Update<gt><lf><lt><solidus>csw:Transaction<gt><lf>,StringConcatenator_2)} ")
+Tcl2 proc StringConcatenator_2_e6376ae0_7802_40a4_8ab8_d8f5a238b0cc0_doSetAttr {attrText} {    FME_SetAttribute [FME_DecodeText {post_body}] [FME_DecodeText $attrText] }
+FACTORY_DEF * TeeFactory    FACTORY_NAME StringConcatenator_2    INPUT  FEATURE_TYPE CSV_CSV2_1    INPUT  FEATURE_TYPE AttributeCreator_OUTPUT    OUTPUT FEATURE_TYPE StringConcatenator_2_OUTPUT        @Tcl2("StringConcatenator_2_e6376ae0_7802_40a4_8ab8_d8f5a238b0cc0_doSetAttr {@EvaluateExpression(FDIV,STRING_ENCODED,<lt>?xml<space>version=<quote>1.0<quote><space>encoding=<quote>UTF-8<quote>?<gt><lf><lt>csw:Transaction<space>service=<quote>CSW<quote><space>version=<quote>2.0.2<quote><space>xmlns:csw=<quote>http:<solidus><solidus>www.opengis.net<solidus>cat<solidus>csw<solidus>2.0.2<quote><space>xmlns:ogc=<quote>http:<solidus><solidus>www.opengis.net<solidus>ogc<quote><space>xmlns:apiso=<quote>http:<solidus><solidus>www.opengis.net<solidus>cat<solidus>csw<solidus>apiso<solidus>1.0<quote><space>xmlns:srv=<quote>http:<solidus><solidus>www.isotc211.org<solidus>2005<solidus>srv<quote><space>xmlns:gco=<quote>http:<solidus><solidus>www.isotc211.org<solidus>2005<solidus>gco<quote><space>xmlns:che=<quote>http:<solidus><solidus>www.geocat.ch<solidus>2008<solidus>che<quote><space>xmlns:xsi=<quote>http:<solidus><solidus>www.w3.org<solidus>2001<solidus>XMLSchema-instance<quote><space>xmlns:gml=<quote>http:<solidus><solidus>www.opengis.net<solidus>gml<quote><space>xmlns:gmd=<quote>http:<solidus><solidus>www.isotc211.org<solidus>2005<solidus>gmd<quote><gt><lf><tab><lt>csw:Update<gt><lf><tab><tab><lt>csw:RecordProperty<gt><lf><tab><tab><tab><lt>csw:Name<gt><solidus>che:CHE_MD_Metadata<solidus>gmd:identificationInfo<solidus>che:CHE_MD_DataIdentification<solidus>gmd:descriptiveKeywords<solidus>gmd:MD_Keywords<solidus>gmd:keyword<openbracket><at>gco:nilReason<space>=<space><apos>missing<apos><closebracket><solidus>..<solidus>..<lt><solidus>csw:Name<gt><lf><tab><tab><tab><lt>csw:Value<gt><lf><tab><tab><tab><tab><lt>gn_delete<gt><lf><tab><tab><tab><tab><lt><solidus>gn_delete<gt><lf><tab><tab><tab><lt><solidus>csw:Value<gt><lf><tab><tab><lt><solidus>csw:RecordProperty<gt><lf><tab><tab><lt>csw:Constraint<space>version=<quote>1.1.0<quote><gt><lf><tab><tab><tab><lt>ogc:Filter<gt><lf><tab><tab><tab><tab><lt>ogc:PropertyIsEqualTo<gt><lf><tab><tab><tab><tab><tab><lt>ogc:PropertyName<gt>Identifier<lt><solidus>ogc:PropertyName<gt><lf><tab><tab><tab><tab><tab><lt>ogc:Literal<gt><at>Value<openparen>uuid<closeparen><lt><solidus>ogc:Literal<gt><lf><tab><tab><tab><tab><lt><solidus>ogc:PropertyIsEqualTo<gt><lf><tab><tab><tab><lt><solidus>ogc:Filter<gt><lf><tab><tab><lt><solidus>csw:Constraint<gt><lf><tab><lt><solidus>csw:Update<gt><lf><lt><solidus>csw:Transaction<gt><lf>,StringConcatenator_2)} ")
 # -------------------------------------------------------------------------
 # This is just a simple delay, which is given a # of seconds to stall
 Tcl2 proc Decelerator_delay {seconds unused} {     after [expr round($seconds * 1000)]; }
@@ -1245,87 +1321,20 @@ Tcl2 proc Decelerator_maxpersecond {unused maxFeaturesPerSecond} {     global De
 # use by renaming the one we want to "Decelerator_Waiter"
 # Then that is what we'll actually call when a feature goes by.
 Tcl2 if { {Per Feature Delay} == {Per Feature Delay} } {         rename Decelerator_delay Decelerator_Waiter;      } else {         rename Decelerator_maxpersecond Decelerator_Waiter;      };
-FACTORY_DEF * TestFactory    FACTORY_NAME Decelerator_DelayRejector    INPUT  FEATURE_TYPE StringConcatenator_2_OUTPUT    TEST "1" TYPE NUM ENCODED    TEST PERFEATDELAY != PERFEATDELAY    BOOLEAN_OPERATOR OR    OUTPUT FAILED FEATURE_TYPE Decelerator_<REJECTED>       fme_rejection_code "INVALID_PARAMETER_DELAY_PER_FEATURE"    OUTPUT PASSED FEATURE_TYPE Decelerator__toMaximumRejector__
-FACTORY_DEF * TestFactory    FACTORY_NAME Decelerator_MaximumRejector    INPUT FEATURE_TYPE Decelerator__toMaximumRejector__    TEST "<Unused>" TYPE NUM ENCODED    TEST PERFEATDELAY != FEATPERSEC    BOOLEAN_OPERATOR OR    OUTPUT FAILED FEATURE_TYPE Decelerator_<REJECTED>       fme_rejection_code "INVALID_PARAMETER_MAXIMUM_FEATURES_PER_SECOND"    OUTPUT PASSED FEATURE_TYPE Decelerator__toOutput__
-FACTORY_DEF * TeeFactory    FACTORY_NAME Decelerator_Decelerator    INPUT FEATURE_TYPE Decelerator__toOutput__    OUTPUT FEATURE_TYPE Decelerator_OUTPUT         @Tcl2("Decelerator_Waiter {1} {<Unused>}")
+# If we're in Per Feature Delay mode, AND the Per Feature Delay is 0, let's very efficiently split
+# any feature table into individual features. If an individual feature would go in, this is a no op
+INCLUDE [    if { ( {Per Feature Delay} == {Per Feature Delay} ) && ( {1} == {0} ) } {       puts "MACRO SPLIT_FEATURE_TABLE {*}";       puts "MACRO NORMAL_DECELERATION _NO_";    } else {       puts "MACRO SPLIT_FEATURE_TABLE _NO_";       puts "MACRO NORMAL_DECELERATION {*}";    } ]
+FACTORY_DEF $(SPLIT_FEATURE_TABLE) FeatureTableSplitterFactory    FACTORY_NAME Decelerator    INPUT  FEATURE_TYPE StringConcatenator_2_OUTPUT    OUTPUT { FEATURES FEATURE_TYPE Decelerator_OUTPUT          }
+# Above for feature table splitting case (when per feature delay is 0, below for everything else
+FACTORY_DEF $(NORMAL_DECELERATION) TestFactory    FACTORY_NAME { Decelerator_DelayRejector }    INPUT  FEATURE_TYPE StringConcatenator_2_OUTPUT    TEST { "1" TYPE NUM ENCODED }    TEST { PERFEATDELAY != PERFEATDELAY }    BOOLEAN_OPERATOR OR    OUTPUT { FAILED FEATURE_TYPE Decelerator_<REJECTED>       fme_rejection_code "INVALID_PARAMETER_DELAY_PER_FEATURE"        }    OUTPUT { PASSED FEATURE_TYPE Decelerator__toMaximumRejector__ }
+FACTORY_DEF $(NORMAL_DECELERATION) TestFactory    FACTORY_NAME { Decelerator_MaximumRejector }    INPUT { FEATURE_TYPE Decelerator__toMaximumRejector__ }    TEST { "<Unused>" TYPE NUM ENCODED }    TEST { PERFEATDELAY != FEATPERSEC }    BOOLEAN_OPERATOR OR    OUTPUT { FAILED FEATURE_TYPE Decelerator_<REJECTED>       fme_rejection_code "INVALID_PARAMETER_MAXIMUM_FEATURES_PER_SECOND"        }    OUTPUT { PASSED FEATURE_TYPE Decelerator__toOutput__ }
+FACTORY_DEF $(NORMAL_DECELERATION) TeeFactory    FACTORY_NAME { Decelerator_Decelerator }    INPUT { FEATURE_TYPE Decelerator__toOutput__ }    OUTPUT { FEATURE_TYPE Decelerator_OUTPUT         @Tcl2("Decelerator_Waiter {1} {<Unused>}")          }
 # -------------------------------------------------------------------------
 FACTORY_DEF * HTTPFactory    FACTORY_NAME HTTPUploader       INPUT  FEATURE_TYPE Decelerator_OUTPUT    TARGET_URL "https:<solidus><solidus>www.geocat.ch<solidus>geonetwork<solidus>srv<solidus>eng<solidus>csw-publication"    TARGET_ATTR _url_contents    HTTP_METHOD POST    UPLOAD_BODY "@EvaluateExpression(FDIV,STRING_ENCODED,<at>Value<openparen>post_body<closeparen>,HTTPUploader)"    UPLOAD_CONTENT_TYPE "application/xml"    AUTH_USERNAME "@EvaluateExpression(FDIV,STRING,$(AUTH_USERNAME$encode),HTTPUploader)"    AUTH_PASSWORD "@EvaluateExpression(FDIV,STRING,$(AUTH_PASSWORD$encode),HTTPUploader)"    AUTH_METHOD Basic    SINGLE_SIGN_ON No    PROXY_URL http:<solidus><solidus>proxy-bvcol.admin.ch    PROXY_PORT 8080    PROXY_AUTH_METHOD Basic    TARGET_ATTRIBUTE_ENCODING utf-8    RESPONSE_HEADER_LIST_ATTR "_headers"    STATUS_CODE_ATTR "_http_status_code"    ERROR_ATTR "_error"    FOLLOW_REDIRECTS Yes    VERIFY_SSL_CERTIFICATES Yes    USE_COOKIES Yes    OUTPUT OUTPUT FEATURE_TYPE HTTPUploader_OUTPUT    OUTPUT REJECTED FEATURE_TYPE HTTPUploader_<REJECTED>
 # -------------------------------------------------------------------------
-# Set the directive to add all the meta-attributes to the features.
-# We do this so users see all possible information in the viewed
-# features.
-READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
-# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
-DEFAULT_MACRO WORKSPACE_TEMP_DIR
-INCLUDE [         set grpByAttrs {};         if { [string length $grpByAttrs] > 0 } {             if { [string first "@EvaluateExpression" $grpByAttrs] == 0 } {                 puts "MACRO CATMAC _$grpByAttrs" ;             } else {                set catter "" ;                set comma "" ;                foreach attr $grpByAttrs {                    set catter "$catter$comma@Value(\"$attr\")" ;                    set comma ",_," ;                } ;                puts "MACRO CATMAC _@Concatenate($catter)" ;             }         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {HTTPUploader__Rejected_} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
-# Make the temporary directory that the FFS files will live in.
-FACTORY_DEF * CreationFactory      FACTORY_NAME HTTPUploader__Rejected__DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
-FACTORY_DEF * TeeFactory    FACTORY_NAME HTTPUploader__Rejected__DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
-# Send raster, point cloud and vector features down different paths to prepare
-# them for viewing
-FACTORY_DEF * TestFactory    FACTORY_NAME HTTPUploader__Rejected__FeatureDirector    INPUT  FEATURE_TYPE HTTPUploader_<REJECTED>    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE HTTPUploader__Rejected____NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE HTTPUploader__Rejected____RasterFeatures___
-FACTORY_DEF * TestFactory    FACTORY_NAME HTTPUploader__Rejected____FeatureDirector1    INPUT FEATURE_TYPE HTTPUploader__Rejected____NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE HTTPUploader__Rejected____VectorFeatures___    OUTPUT PASSED FEATURE_TYPE HTTPUploader__Rejected____PointCloudFeatures___
-# Vector features simply may get their colors overridden
-FACTORY_DEF * TeeFactory    FACTORY_NAME HTTPUploader__Rejected__VectorSetterUpper    INPUT FEATURE_TYPE HTTPUploader__Rejected____VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
-# Point Cloud Features Might Need to be thinned
-# Note that we don't call the ThinPointCloud function directly, but rather
-# do it through TCL. This should allow this transformer to be used with a
-# Desktop license, even though ThinPointCloud requires Professional.
-Tcl2 proc HTTPUploader__Rejected__0cc4b3af_ba43_421f_a02a_489bb4341b8c2_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME HTTPUploader__Rejected____PointCloudThinner    INPUT FEATURE_TYPE HTTPUploader__Rejected____PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("HTTPUploader__Rejected__0cc4b3af_ba43_421f_a02a_489bb4341b8c2_thinPointCloud")
-Tcl2 proc HTTPUploader__Rejected__0cc4b3af_ba43_421f_a02a_489bb4341b8c2_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME HTTPUploader__Rejected__RasterSetterUpper    INPUT FEATURE_TYPE HTTPUploader__Rejected____RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("HTTPUploader__Rejected__0cc4b3af_ba43_421f_a02a_489bb4341b8c2_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
-# Now route all the features into the recorder, changing their
-# feature type to the transformer name so that they view nicely
-# HTTPUploader__Rejected__0cc4b3af_ba43_421f_a02a_489bb4341b8c2_VIS_FEAT_TYPE changes the feature types
-# of the features being visualized.
-DEFAULT_MACRO HTTPUploader__Rejected__0cc4b3af_ba43_421f_a02a_489bb4341b8c2_VIS_FEAT_TYPE HTTPUploader__Rejected_$(CATMAC)
-DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
-DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
-# [PR#45549] The Data Inspector will limit the maximum number of features
-# it reads on WIN32, so we will correspondingly limit the number of
-# features we record here using the MAX_FEATURES_TO_RECORD directive.
-FACTORY_DEF * RecorderFactory    FACTORY_NAME HTTPUploader__Rejected__Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($(HTTPUploader__Rejected__0cc4b3af_ba43_421f_a02a_489bb4341b8c2_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA uuid,buffer,post_body,buffer,_error,buffer,_http_status_code,buffer,_url_contents,buffer    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
-# -------------------------------------------------------------------------
 FACTORY_DEF * TeeFactory    FACTORY_NAME http_status    INPUT  FEATURE_TYPE HTTPUploader_OUTPUT    OUTPUT FEATURE_TYPE http_status_TESTFILTERINPUTLINE_0
-FACTORY_DEF * TestFactory FACTORY_NAME http_status_Condition_1 INPUT FEATURE_TYPE http_status_TESTFILTERINPUTLINE_0 TEST @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_http_status_code<closeparen>,http_status) = 200 ENCODED BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE http_status_200 OUTPUT FAILED FEATURE_TYPE http_status_TESTFILTERINPUTLINE_1
+FACTORY_DEF {*} TestFactory FACTORY_NAME http_status_Condition_1 INPUT FEATURE_TYPE http_status_TESTFILTERINPUTLINE_0 TEST { @EvaluateExpression(STRING_ENCODED,<at>Value<openparen>_http_status_code<closeparen>,http_status) = 200 ENCODED } BOOLEAN_OPERATOR OR COMPOSITE_TEST_EXPR <Unused> OUTPUT PASSED FEATURE_TYPE http_status_200 OUTPUT FAILED FEATURE_TYPE http_status_TESTFILTERINPUTLINE_1
 FACTORY_DEF * TeeFactory FACTORY_NAME http_status_<lt>UNFILTERED<gt> INPUT FEATURE_TYPE http_status_TESTFILTERINPUTLINE_1 OUTPUT FEATURE_TYPE http_status_<lt>UNFILTERED<gt>
-# -------------------------------------------------------------------------
-# Set the directive to add all the meta-attributes to the features.
-# We do this so users see all possible information in the viewed
-# features.
-READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
-# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
-DEFAULT_MACRO WORKSPACE_TEMP_DIR
-INCLUDE [         set grpByAttrs {};         if { [string length $grpByAttrs] > 0 } {             if { [string first "@EvaluateExpression" $grpByAttrs] == 0 } {                 puts "MACRO CATMAC _$grpByAttrs" ;             } else {                set catter "" ;                set comma "" ;                foreach attr $grpByAttrs {                    set catter "$catter$comma@Value(\"$attr\")" ;                    set comma ",_," ;                } ;                puts "MACRO CATMAC _@Concatenate($catter)" ;             }         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {TestFilter__Unfiltered_} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
-# Make the temporary directory that the FFS files will live in.
-FACTORY_DEF * CreationFactory      FACTORY_NAME TestFilter__Unfiltered__DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
-FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter__Unfiltered__DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
-# Send raster, point cloud and vector features down different paths to prepare
-# them for viewing
-FACTORY_DEF * TestFactory    FACTORY_NAME TestFilter__Unfiltered__FeatureDirector    INPUT  FEATURE_TYPE http_status_<lt>UNFILTERED<gt>    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE TestFilter__Unfiltered____NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE TestFilter__Unfiltered____RasterFeatures___
-FACTORY_DEF * TestFactory    FACTORY_NAME TestFilter__Unfiltered____FeatureDirector1    INPUT FEATURE_TYPE TestFilter__Unfiltered____NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE TestFilter__Unfiltered____VectorFeatures___    OUTPUT PASSED FEATURE_TYPE TestFilter__Unfiltered____PointCloudFeatures___
-# Vector features simply may get their colors overridden
-FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter__Unfiltered__VectorSetterUpper    INPUT FEATURE_TYPE TestFilter__Unfiltered____VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
-# Point Cloud Features Might Need to be thinned
-# Note that we don't call the ThinPointCloud function directly, but rather
-# do it through TCL. This should allow this transformer to be used with a
-# Desktop license, even though ThinPointCloud requires Professional.
-Tcl2 proc TestFilter__Unfiltered__74381017_20e4_4a2d_a0a4_1c356901ca932_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter__Unfiltered____PointCloudThinner    INPUT FEATURE_TYPE TestFilter__Unfiltered____PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("TestFilter__Unfiltered__74381017_20e4_4a2d_a0a4_1c356901ca932_thinPointCloud")
-Tcl2 proc TestFilter__Unfiltered__74381017_20e4_4a2d_a0a4_1c356901ca932_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter__Unfiltered__RasterSetterUpper    INPUT FEATURE_TYPE TestFilter__Unfiltered____RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("TestFilter__Unfiltered__74381017_20e4_4a2d_a0a4_1c356901ca932_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
-# Now route all the features into the recorder, changing their
-# feature type to the transformer name so that they view nicely
-# TestFilter__Unfiltered__74381017_20e4_4a2d_a0a4_1c356901ca932_VIS_FEAT_TYPE changes the feature types
-# of the features being visualized.
-DEFAULT_MACRO TestFilter__Unfiltered__74381017_20e4_4a2d_a0a4_1c356901ca932_VIS_FEAT_TYPE TestFilter__Unfiltered_$(CATMAC)
-DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
-DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
-# [PR#45549] The Data Inspector will limit the maximum number of features
-# it reads on WIN32, so we will correspondingly limit the number of
-# features we record here using the MAX_FEATURES_TO_RECORD directive.
-FACTORY_DEF * RecorderFactory    FACTORY_NAME TestFilter__Unfiltered__Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($(TestFilter__Unfiltered__74381017_20e4_4a2d_a0a4_1c356901ca932_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA uuid,buffer,post_body,buffer,_error,buffer,_http_status_code,buffer,_url_contents,buffer    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
 # -------------------------------------------------------------------------
 # Set the directive to add all the meta-attributes to the features.
 # We do this so users see all possible information in the viewed
@@ -1347,21 +1356,93 @@ FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter_200_VectorSetterUpper    INP
 # Note that we don't call the ThinPointCloud function directly, but rather
 # do it through TCL. This should allow this transformer to be used with a
 # Desktop license, even though ThinPointCloud requires Professional.
-Tcl2 proc TestFilter_200_761ae9ce_5567_4609_a8c9_438808ce6b822_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter_200___PointCloudThinner    INPUT FEATURE_TYPE TestFilter_200___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("TestFilter_200_761ae9ce_5567_4609_a8c9_438808ce6b822_thinPointCloud")
-Tcl2 proc TestFilter_200_761ae9ce_5567_4609_a8c9_438808ce6b822_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
-FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter_200_RasterSetterUpper    INPUT FEATURE_TYPE TestFilter_200___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("TestFilter_200_761ae9ce_5567_4609_a8c9_438808ce6b822_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
+Tcl2 proc TestFilter_200_35701f87_4f07_4371_bff7_11895f8776430_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter_200___PointCloudThinner    INPUT FEATURE_TYPE TestFilter_200___PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("TestFilter_200_35701f87_4f07_4371_bff7_11895f8776430_thinPointCloud")
+Tcl2 proc TestFilter_200_35701f87_4f07_4371_bff7_11895f8776430_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter_200_RasterSetterUpper    INPUT FEATURE_TYPE TestFilter_200___RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("TestFilter_200_35701f87_4f07_4371_bff7_11895f8776430_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
 # Now route all the features into the recorder, changing their
 # feature type to the transformer name so that they view nicely
-# TestFilter_200_761ae9ce_5567_4609_a8c9_438808ce6b822_VIS_FEAT_TYPE changes the feature types
+# TestFilter_200_35701f87_4f07_4371_bff7_11895f8776430_VIS_FEAT_TYPE changes the feature types
 # of the features being visualized.
-DEFAULT_MACRO TestFilter_200_761ae9ce_5567_4609_a8c9_438808ce6b822_VIS_FEAT_TYPE TestFilter_200$(CATMAC)
+DEFAULT_MACRO TestFilter_200_35701f87_4f07_4371_bff7_11895f8776430_VIS_FEAT_TYPE TestFilter_200$(CATMAC)
 DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
 DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
 # [PR#45549] The Data Inspector will limit the maximum number of features
 # it reads on WIN32, so we will correspondingly limit the number of
 # features we record here using the MAX_FEATURES_TO_RECORD directive.
-FACTORY_DEF * RecorderFactory    FACTORY_NAME TestFilter_200_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($(TestFilter_200_761ae9ce_5567_4609_a8c9_438808ce6b822_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA uuid,buffer,post_body,buffer,_error,buffer,_http_status_code,buffer,_url_contents,buffer    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+FACTORY_DEF * RecorderFactory    FACTORY_NAME TestFilter_200_Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($(TestFilter_200_35701f87_4f07_4371_bff7_11895f8776430_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA uuid,varchar<openparen>200<closeparen>,post_body,buffer,_error,buffer,_http_status_code,buffer,_url_contents,buffer    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+# -------------------------------------------------------------------------
+# Set the directive to add all the meta-attributes to the features.
+# We do this so users see all possible information in the viewed
+# features.
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [         set grpByAttrs {};         if { [string length $grpByAttrs] > 0 } {             if { [string first "@EvaluateExpression" $grpByAttrs] == 0 } {                 puts "MACRO CATMAC _$grpByAttrs" ;             } else {                set catter "" ;                set comma "" ;                foreach attr $grpByAttrs {                    set catter "$catter$comma@Value(\"$attr\")" ;                    set comma ",_," ;                } ;                puts "MACRO CATMAC _@Concatenate($catter)" ;             }         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {TestFilter__Unfiltered_} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
+# Make the temporary directory that the FFS files will live in.
+FACTORY_DEF * CreationFactory      FACTORY_NAME TestFilter__Unfiltered__DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
+FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter__Unfiltered__DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
+# Send raster, point cloud and vector features down different paths to prepare
+# them for viewing
+FACTORY_DEF * TestFactory    FACTORY_NAME TestFilter__Unfiltered__FeatureDirector    INPUT  FEATURE_TYPE http_status_<lt>UNFILTERED<gt>    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE TestFilter__Unfiltered____NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE TestFilter__Unfiltered____RasterFeatures___
+FACTORY_DEF * TestFactory    FACTORY_NAME TestFilter__Unfiltered____FeatureDirector1    INPUT FEATURE_TYPE TestFilter__Unfiltered____NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE TestFilter__Unfiltered____VectorFeatures___    OUTPUT PASSED FEATURE_TYPE TestFilter__Unfiltered____PointCloudFeatures___
+# Vector features simply may get their colors overridden
+FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter__Unfiltered__VectorSetterUpper    INPUT FEATURE_TYPE TestFilter__Unfiltered____VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
+# Point Cloud Features Might Need to be thinned
+# Note that we don't call the ThinPointCloud function directly, but rather
+# do it through TCL. This should allow this transformer to be used with a
+# Desktop license, even though ThinPointCloud requires Professional.
+Tcl2 proc TestFilter__Unfiltered__510a4153_f626_4160_8340_a0532c5efa960_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter__Unfiltered____PointCloudThinner    INPUT FEATURE_TYPE TestFilter__Unfiltered____PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("TestFilter__Unfiltered__510a4153_f626_4160_8340_a0532c5efa960_thinPointCloud")
+Tcl2 proc TestFilter__Unfiltered__510a4153_f626_4160_8340_a0532c5efa960_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME TestFilter__Unfiltered__RasterSetterUpper    INPUT FEATURE_TYPE TestFilter__Unfiltered____RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("TestFilter__Unfiltered__510a4153_f626_4160_8340_a0532c5efa960_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
+# Now route all the features into the recorder, changing their
+# feature type to the transformer name so that they view nicely
+# TestFilter__Unfiltered__510a4153_f626_4160_8340_a0532c5efa960_VIS_FEAT_TYPE changes the feature types
+# of the features being visualized.
+DEFAULT_MACRO TestFilter__Unfiltered__510a4153_f626_4160_8340_a0532c5efa960_VIS_FEAT_TYPE TestFilter__Unfiltered_$(CATMAC)
+DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
+DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
+# [PR#45549] The Data Inspector will limit the maximum number of features
+# it reads on WIN32, so we will correspondingly limit the number of
+# features we record here using the MAX_FEATURES_TO_RECORD directive.
+FACTORY_DEF * RecorderFactory    FACTORY_NAME TestFilter__Unfiltered__Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($(TestFilter__Unfiltered__510a4153_f626_4160_8340_a0532c5efa960_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA uuid,varchar<openparen>200<closeparen>,post_body,buffer,_error,buffer,_http_status_code,buffer,_url_contents,buffer    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
+# -------------------------------------------------------------------------
+# Set the directive to add all the meta-attributes to the features.
+# We do this so users see all possible information in the viewed
+# features.
+READER_META_ATTRIBUTES fme_feature_type fme_dataset fme_basename
+# Assumption is that the workspace temp dir has been already set and created.  See controldefs.cpp - ControlDefs::writeVisualizerTempDir
+DEFAULT_MACRO WORKSPACE_TEMP_DIR
+INCLUDE [         set grpByAttrs {};         if { [string length $grpByAttrs] > 0 } {             if { [string first "@EvaluateExpression" $grpByAttrs] == 0 } {                 puts "MACRO CATMAC _$grpByAttrs" ;             } else {                set catter "" ;                set comma "" ;                foreach attr $grpByAttrs {                    set catter "$catter$comma@Value(\"$attr\")" ;                    set comma ",_," ;                } ;                puts "MACRO CATMAC _@Concatenate($catter)" ;             }         }         else {             puts "MACRO CATMAC " ;         };         set safeName "[regsub -all {[^a-zA-Z0-9]} {HTTPUploader__Rejected_} _]_[expr round(rand() * 1000000)]_[clock clicks  -milliseconds]";         puts "MACRO SAFE_FFS_NAME $safeName";         ]
+# Make the temporary directory that the FFS files will live in.
+FACTORY_DEF * CreationFactory      FACTORY_NAME HTTPUploader__Rejected__DirCreator      OUTPUT FEATURE_TYPE __nukeme__          @Tcl2("catch {file mkdir {$(WORKSPACE_TEMP_DIR)}}")
+FACTORY_DEF * TeeFactory    FACTORY_NAME HTTPUploader__Rejected__DirCreatorCleanerUpper    INPUT FEATURE_TYPE __nukeme__
+# Send raster, point cloud and vector features down different paths to prepare
+# them for viewing
+FACTORY_DEF * TestFactory    FACTORY_NAME HTTPUploader__Rejected__FeatureDirector    INPUT  FEATURE_TYPE HTTPUploader_<REJECTED>    TEST &fme_type == "fme_raster"    OUTPUT FAILED FEATURE_TYPE HTTPUploader__Rejected____NotRasterFeatures___    OUTPUT PASSED FEATURE_TYPE HTTPUploader__Rejected____RasterFeatures___
+FACTORY_DEF * TestFactory    FACTORY_NAME HTTPUploader__Rejected____FeatureDirector1    INPUT FEATURE_TYPE HTTPUploader__Rejected____NotRasterFeatures___    TEST &fme_type == "fme_point_cloud"    OUTPUT FAILED FEATURE_TYPE HTTPUploader__Rejected____VectorFeatures___    OUTPUT PASSED FEATURE_TYPE HTTPUploader__Rejected____PointCloudFeatures___
+# Vector features simply may get their colors overridden
+FACTORY_DEF * TeeFactory    FACTORY_NAME HTTPUploader__Rejected__VectorSetterUpper    INPUT FEATURE_TYPE HTTPUploader__Rejected____VectorFeatures___    OUTPUT FEATURE_TYPE __viewme__
+# Point Cloud Features Might Need to be thinned
+# Note that we don't call the ThinPointCloud function directly, but rather
+# do it through TCL. This should allow this transformer to be used with a
+# Desktop license, even though ThinPointCloud requires Professional.
+Tcl2 proc HTTPUploader__Rejected__63156c14_2eb9_43c0_9eac_d31298a897150_thinPointCloud {} {    if {[string equal {NO_THINNING} {KEEPNPOINT}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {MAXNUMPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {FIRSTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }    elseif {[string equal {NO_THINNING} {LASTNPOINTS}]}    {       FME_Execute ThinPointCloud NO_THINNING "\"<Unused>\"";    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME HTTPUploader__Rejected____PointCloudThinner    INPUT FEATURE_TYPE HTTPUploader__Rejected____PointCloudFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("HTTPUploader__Rejected__63156c14_2eb9_43c0_9eac_d31298a897150_thinPointCloud")
+Tcl2 proc HTTPUploader__Rejected__63156c14_2eb9_43c0_9eac_d31298a897150_prepareRaster {subsetStartRow subsetNumRows subsetStartCol subsetNumCols} {    set useDI [string equal -nocase {$(FME_VIEWER_APP)} {fmedatainspector}];    if {!$useDI} {       FME_Execute ApplyRasterRotation BILINEAR;    };    set doResample [string equal {NoReduction} {Resample}];    set doSubset [string equal {NoReduction} {Subset}];    set doBounds [string equal {NoReduction} {BoundingBoxOnly}];    if {$doBounds}  {       FME_Execute GeometryType fme_polygon;    }    elseif {$doResample || $doSubset} {       set comment {          First, we need to prefix all the attributes. This is done because          we are going to call @RasterProperties, and we want to make sure          it doesn't overwrite any existing attributes.       };       set kAttrPrefix ".";       set allNames [FME_AttributeNames];       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $newName $oldName;       };       FME_Execute RasterProperties RASTER;       if {$doResample} {          set oldNumCols [FME_GetAttribute _num_columns];          set oldNumRows [FME_GetAttribute _num_rows];          set oldSpacingX [FME_GetAttribute _spacing_x];          set oldSpacingY [FME_GetAttribute _spacing_y];          set kMinNumCells 32;          set kMaxNumCells 512;          set comment {             We will only resample if both dimensions are greater than the             minimum num cells, and at least one is greater than the maximum.          };          if {$oldNumRows > $kMinNumCells && $oldNumCols > $kMinNumCells && ($oldNumRows > $kMaxNumCells || $oldNumCols > $kMaxNumCells)} {             set newSpacingX 1.0;             set newSpacingY 1.0;             if {$oldNumRows > $oldNumCols} {                set comment {                   If we have more rows than columns, we need to choose a spacing                   that reduces the number of rows to the maximum we've chosen.                };                set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMaxNumCells];                set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                set comment {                   Now we need to check if doing this will result in the columns                   going below the minimum. If so, choose the spacing such that                   we only go down to the minimum (and not past).                };                set newNumCols [expr $oldNumCols * $oldSpacingX / $newSpacingX];                if {$newNumCols < $kMinNumCells}                {                   set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMinNumCells];                   set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                };             }             else {                set comment {                   This is identical to the above case, except the roles of                   rows and cols are reversed.                };                set newSpacingX [expr 1.0 * $oldNumCols * $oldSpacingX / $kMaxNumCells];                set newSpacingY [expr 1.0 * $newSpacingX / $oldSpacingX * $oldSpacingY];                set newNumRows [expr $oldNumRows * $oldSpacingY / $newSpacingY];                if {$newNumRows < $kMinNumCells}                {                   set newSpacingY [expr 1.0 * $oldNumRows * $oldSpacingY / $kMinNumCells];                   set newSpacingX [expr 1.0 * $newSpacingY / $oldSpacingY * $oldSpacingX];                };             };             FME_Execute ResampleRaster CELL_SIZE $newSpacingX $newSpacingY NearestNeighbor;          };       }       elseif {$doSubset} {          set comment {             Get the value of some strings that may be attributes or constants.             Note that we pass in the attribute prefix we're using, because if             one does turn out to be an attribute, it won't actually be the exact             name in the string (since we renamed all our attributes above).          };          set rasterNumRows [FME_GetAttribute _num_rows];          set rasterNumCols [FME_GetAttribute _num_columns];          set comment {             Only do subsetting if the specified start position is actually             within the raster.          };          if {$subsetStartRow < $rasterNumRows && $subsetStartCol < $rasterNumCols}          {             set comment {                Now bound the subset to the size of the raster, so that                we don't create padding.             };             if {[expr $subsetStartRow + $subsetNumRows] > $rasterNumRows}             {                set subsetNumRows [expr $rasterNumRows - $subsetStartRow];             };             if {[expr $subsetStartCol + $subsetNumCols] > $rasterNumCols}             {                set subsetNumCols [expr $rasterNumCols - $subsetStartCol];             };             FME_Execute SubsetRaster $subsetStartRow $subsetNumRows $subsetStartCol $subsetNumCols;          };       };       set comment {          Remove all the attributes added by @RasterProperties and remove the          prefix from the real attributes. We assume they all start with an          underscore.       };       FME_Execute RemoveAttributes fme_regexp_match {^_};       foreach oldName $allNames {          set newName $kAttrPrefix;          append newName $oldName;          FME_RenameAttribute $oldName $newName;       };    }; }
+FACTORY_DEF * TeeFactory    FACTORY_NAME HTTPUploader__Rejected__RasterSetterUpper    INPUT FEATURE_TYPE HTTPUploader__Rejected____RasterFeatures___    OUTPUT FEATURE_TYPE __viewme__       @Tcl2("HTTPUploader__Rejected__63156c14_2eb9_43c0_9eac_d31298a897150_prepareRaster {<Unused>} {<Unused>} {<Unused>} {<Unused>}")
+# Now route all the features into the recorder, changing their
+# feature type to the transformer name so that they view nicely
+# HTTPUploader__Rejected__63156c14_2eb9_43c0_9eac_d31298a897150_VIS_FEAT_TYPE changes the feature types
+# of the features being visualized.
+DEFAULT_MACRO HTTPUploader__Rejected__63156c14_2eb9_43c0_9eac_d31298a897150_VIS_FEAT_TYPE HTTPUploader__Rejected_$(CATMAC)
+DEFAULT_MACRO VISUALIZER_FEATURE_FILE $(WORKSPACE_TEMP_DIR)/$(SAFE_FFS_NAME).ffs
+DEFAULT_MACRO VISUALIZER_CREATE_SPATIAL_INDEX NO
+# [PR#45549] The Data Inspector will limit the maximum number of features
+# it reads on WIN32, so we will correspondingly limit the number of
+# features we record here using the MAX_FEATURES_TO_RECORD directive.
+FACTORY_DEF * RecorderFactory    FACTORY_NAME HTTPUploader__Rejected__Recorder    INPUT FEATURE_TYPE __viewme__  _wb_termination_feature Yes @FeatureType(TERMINATOR_@Value(_wb_termination_xformer))    INPUT FEATURE_TYPE __viewme__  @FeatureType($(HTTPUploader__Rejected__63156c14_2eb9_43c0_9eac_d31298a897150_VIS_FEAT_TYPE))    FEATURE_FILE "$(VISUALIZER_FEATURE_FILE)"    CREATE_SPATIAL_INDEX "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    INSPECTOR "$(VISUALIZER_CREATE_SPATIAL_INDEX)"    FSC_SCHEMA uuid,varchar<openparen>200<closeparen>,post_body,buffer,_error,buffer,_http_status_code,buffer,_url_contents,buffer    MODE RECORD    STORE_SCANNED_METADATA    RECORD_DIRECTLY_TO_DISK YES    MAX_FEATURES_TO_RECORD WIN32 2000000
 # -------------------------------------------------------------------------
 
 FACTORY_DEF * RoutingFactory FACTORY_NAME "Destination Feature Type Routing Correlator"   COMMAND_PARM_EVALUATION SINGLE_PASS   INPUT FEATURE_TYPE *   FEATURE_TYPE_ATTRIBUTE __wb_out_feat_type__   OUTPUT ROUTED FEATURE_TYPE *    OUTPUT NOT_ROUTED FEATURE_TYPE __nuke_me__ @Tcl2("FME_StatMessage 818059 [FME_GetAttribute fme_template_feature_type] 818060 818061 fme_warn")

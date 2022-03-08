@@ -18,8 +18,8 @@ import os
 
 
 # TODO: adapt the following variables
-zip_folder = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Metadatenapplikation geocat.ch entwickeln und betreiben (463)\Software geocat.ch entwickeln\Betrieb Applikation geocat.ch\XML Backup\20220203_prod\backup_2022-02-03.zip"
-new_folder = r"\\v0t0020a.adr.admin.ch\prod\kogis\igeb\geocat\Koordination Geometadaten (573)\geocat.ch Management\geocat.ch Partner\BGDI\BFE"
+zip_folder = r""
+new_folder = r""
 all_uuids = ["74e0e4a7-165a-414d-b1a5-1921162f04ab"]
 
 
