@@ -1,10 +1,11 @@
+:warning: **This is a public repository ! Do not push sensitive information (password, username, token, e-mail,...)** :warning:
 # Add a new Tool
 If you want to add a new tool to this repository, please respect the following guidelines :
 * Keep the same structure (i.e. one folder per tool)
 * Document your tool with a dedicated README.md file at the root of your new folder
 * Adapt the main README.md file (at the root of the repository) with your new tool (title and short description)
 
-**The main branch is protected ! No direct push allowed ! Merge to the main branch needs to be reviewed by reo !**
+:warning: **The main branch is protected ! No direct push allowed ! Merge to the main branch needs to be reviewed by reo !** :warning:
 # Use git to contribute (for git beginners)
 If you don't already have a git folder corresponding to this repository, clone it to a dedicated directory :
 ```
