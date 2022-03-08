@@ -1,53 +1,30 @@
-# Geocat scripts and tools
-Scripts and tools for the (meta)data management of geocat.ch. This does not contain the geocat.ch application !
-### Tools
+# Add a new Tool
+If you want to add a new tool to this repository, please respect the following guidelines :
+* Keep the same structure (i.e. one folder per tool)
+* Document your tool with a dedicated README.md file at the root of your new folder
+* Adapt the main README.md file (at the root of the repository) with your new tool (title and short description)
 
-* **AddCoupledResource**
-
-  **This is a test.** Automatically add the coupled ressources of a geoservice's metadata (one ressource per service's layer). 
-  Read the getCapabilities to get all layers and another service to get the Geocat ID for each layer. Works  for the BGDI WMS.
-
-* **BGDI**
-
-  Manage metadata from BGDI datasets. 
-
-* **BackupGenerator**
-
-  Export all metadata, groups, users, thesaurus, subtemplates (reusable objects) and the unpublish report 
-  and save them into a directory with a comprehensive structure.
-
-* **export-xml-from-mef**
-
-  Export a given list of metadata (UUID) from a MEF (metadata exchange format) archive (.zip) and save them in XML.
-
-* **export-xml**
-
-  Export a given list of metadata (UUID) from geocat and save them in XML.
-
-* **get-groups-list**
-
-  Get a csv list with all groups information.
-
-* **get-list-from-search-request**
-
-  Get a csv list of metadata found by given search criteria
-
-* **get-users-list**
-
-  Get a csv list with all users information.
-
-* **metadata-bacth-edit**
-
-  Perform simple batch edits on a list of metadata (UUID).
-
-* **metadata-replace-contact**
-
-  Replace a given contact (subtemplate) in every metadata or in a defined single one.
-
-* **metadata-subtemplate-xlink**
-
-  Link all subtemplates (add the xlink in the XML) of a given list of metadata (UUID).
-
-* **thesaurus**
-
-  Manage thesaurus and keywords in the metadata.
+**The main branch is protected ! No direct push allowed ! Merge to the main branch needs to be reviewed by reo !**
+# Use git to contribute (for git beginners)
+If you don't already have a git folder corresponding to this repository, clone it to a dedicated directory :
+```
+git clone https://github.com/geoadmin/tool-geocat.git {folder-name}
+```
+If you do have a git directory matching this repo history, you can just pull the differences from GitHub :
+```
+git pull 
+```
+Do your stuff, create a new tool, fix/update/improve an exisiting one, then :
+```
+git checkout -b {new-branch-name}  # create a new branch
+git add {the-files-you-want-to-push}  # add all files you want to commit
+git commit -m "comments your commit"  # commit all your files and comment the commit
+git push -u origin {new-branch-name}  # push your files to the remote
+```
+This will create a new branch on GitHub. You can ask reo to merge this new branch to the main one. Once merged, you can delete the newly created branch in GitHub. To keep your git folder up-to-date (matching history), do the following :
+```
+git checkout main  # go back to the main branch
+git pull  # pull differences from GitHub (i.e. the new merge)
+git branch -d {ew-branch-name}  lete local {new-branch-name} branch
+git branch -d -r origin/{new-branch-name}  # 
+```
