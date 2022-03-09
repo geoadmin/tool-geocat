@@ -1,0 +1,1 @@
+add-opendataSwissPermalinkOnLineResource-to-geocatMDs
