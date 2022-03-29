@@ -569,3 +569,4 @@ fabric.properties
 
 # *.iml
 # modules.xml
+/add-opendataSwissPermalinkOnLineResource-to-geocatMDs/test.py
