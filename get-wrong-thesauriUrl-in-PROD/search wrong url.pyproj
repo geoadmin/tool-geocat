@@ -2,14 +2,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>147f78a5-1f81-4928-ac0d-e1434092222f</ProjectGuid>
+    <ProjectGuid>36cac9a6-8dd4-4001-b44a-ca62fa02d5c8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>migration_the_legends_in_geocat.py</StartupFile>
-    <SearchPath>..\ClassLibrary;..\ClassLibrary</SearchPath>
+    <StartupFile>search_wrong_url.py</StartupFile>
+    <SearchPath>..\ClassLibrary</SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>migration-the-legends-in-geocat</Name>
-    <RootNamespace>migration-the-legends-in-geocat</RootNamespace>
+    <Name>search wrong url</Name>
+    <RootNamespace>search wrong url</RootNamespace>
     <IsWindowsApplication>True</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -21,10 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="migration_the_legends_in_geocat.py" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="readme.md" />
+    <Compile Include="search_wrong_url.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

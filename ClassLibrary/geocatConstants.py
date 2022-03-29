@@ -36,6 +36,11 @@ def getLanguageDict(*args):
     return {"ger": "DE", "fre": "FR", "eng": "EN", "ita": "IT"}
 languageDict = getLanguageDict()
 
+def getLanguagesSufixList(*args):
+    """  """
+    return ["_de", "_fr", "_it", "_en", "_rm"]
+languagesSufixList = getLanguagesSufixList()
+
 def getKeywordsList(*args):
     """ need to build the keyword combobox on geocatLoginGUI """
     return ["BGDI Bundesgeodaten-Infrastruktur", "opendata.swiss"]

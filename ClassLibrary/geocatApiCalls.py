@@ -28,10 +28,16 @@ class geocatSession():
     def getCookies(self) -> dict:
         return self._session.cookies.get_dict()
 
-    def sendPostRequest(self, urlValue :str):
+    def sendPostRequest(self, urlValue :str, data=""):
         """ send post request to get the cookies and its token """
         url = self._urlPrefix + urlValue
-        self._session.post(url, proxies=self._proxyDict, verify=False, auth=HTTPBasicAuth(self._user, self._password))
+        if not data:
+            return self._session.post(url, proxies=self._proxyDict, verify=False, auth=HTTPBasicAuth(self._user, self._password))
+        else:
+            #jsonInput = {"file": data}
+            #payload = json.dumps(jsonInput)
+            files = {'file': open(data, 'rb')}
+            return self._session.post(url, files=files, proxies=self._proxyDict, verify=False, auth=HTTPBasicAuth(self._user, self._password), headers=self._headers, cookies=self._cookies)
 
     def sendGetRequest(self, urlValue :str) -> type:
         """ Get the response of an api get request
@@ -59,18 +65,31 @@ class geocatSession():
         Default value is json
         :appValue: possible values are: json or xml
         """
+        def setContentTypeInHeadersTo(contValue :str):
+            """ Set the accept and Content-Type to --application/json-- or --application/xml--
+            Default value is json
+            :appValue: possible values are: json or xml
+            """
+            if contValue == "json" or contValue == "xml":
+                value = appValue
+                self._headers['Content-Type'] = "application/" + value
+        
         if appValue == "json" or appValue == "xml":
             value = appValue
+            self._headers['accept'] = "application/" + value
+            setContentTypeInHeadersTo(appValue)
         else:
             value = "json"
-        self._headers['accept'] = "application/" + value
-        self._headers['Content-Type'] = "application/" + value
+            self._headers['accept'] = "application/" + value
+            setContentTypeInHeadersTo(value)
         self._headers['X-XSRF-TOKEN'] = self.token
+        
 
     def getToken(self) -> str:
         """ Get the token of the current cookie """
         return self._token
 
+    cookies = property(getCookies)
     token = property(getToken)
 
 
@@ -91,3 +110,4 @@ class geocatRequests():
         else:
             url = self._urlPrefix + urlValue
         return requests.get(url, proxies=const.proxyDict, verify=False, auth=HTTPBasicAuth(self._user, self._password))
+

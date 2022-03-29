@@ -319,6 +319,7 @@ def getValueAttribute(transferOptionsNumber :int, onLineNodeParameters :dict):
     resourceNameValueEn = onLineNodeParameters['resourceNameValueEn']
     resourceNameValueRm = onLineNodeParameters['resourceNameValueRm']
     protocol = onLineNodeParameters['protocol']
+    codeListValue = onLineNodeParameters['function']
     batchEditModeTag = "<gn_add>"
     batchEditModeCloseTag = "</gn_add>"
     if transferOptionsNumber > 0:
@@ -350,7 +351,11 @@ def getValueAttribute(transferOptionsNumber :int, onLineNodeParameters :dict):
         localisedUrlRm = ""
     localisedUrlBlock = "<che:PT_FreeURL>" + localisedUrlDe + localisedUrlFr + localisedUrlIt + localisedUrlEn + localisedUrlRm + "</che:PT_FreeURL>"
     linkageBlock = "<gmd:linkage xsi:type=\"che:PT_FreeURL_PropertyType\">" + defaultUrlBlock + localisedUrlBlock + "</gmd:linkage>"
-    onlineResourceBlock = "<gmd:CI_OnlineResource>" + linkageBlock + protocolBlock + resourceNameBlock + resourceDescriptionBlock + "</gmd:CI_OnlineResource>"
+    if codeListValue:
+        functionBlock = "<gmd:function><gmd:CI_OnLineFunctionCode codeList='http://standards.iso.org/ittf/PubliclyAvailableStandards/ISO_19139_Schemas/resources/codelist/ML_gmxCodelists.xml#CI_OnLineFunctionCode' codeListValue='" + codeListValue + "'/></gmd:function>"
+    else:
+        functionBlock = ""
+    onlineResourceBlock = "<gmd:CI_OnlineResource>" + linkageBlock + protocolBlock + resourceNameBlock + resourceDescriptionBlock + functionBlock + "</gmd:CI_OnlineResource>"
     buildedResourceType = resourceTypeTag + onlineResourceBlock + resourceTypeCloseTag
     if transferOptionsNumber > 0:
         return batchEditModeTag + buildedResourceType + batchEditModeCloseTag
@@ -435,6 +440,8 @@ def getUuidAndRelatedTechLayerPairs(uuidsList :list, dataSource :str, inputFilen
         for uuidTechLayer in bodExportFileAsList:
             resultLine = {}
             geocat_id, dataset_id = uuidTechLayer.split(";")
+            if "." in geocat_id:
+               dataset_id, geocat_id = uuidTechLayer.split(";")
             if len(geocat_id) == 36:
                 resultLine['uuid'] = geocat_id
                 resultLine['relatedValue'] = dataset_id
