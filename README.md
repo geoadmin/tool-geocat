@@ -56,6 +56,10 @@ Scripts and tools for the (meta)data management of geocat.ch. This does not cont
 
   Get all thesauriUrl from PROD, which has a link to INT
   
+* **ManageAdminBoundaries**
+
+  Inspect, Update and Delete admin boundaries in geocat.ch by comparing the extent subtemplates with a reference geojson file.
+  
 * **metadata-bacth-edit**
 
   Perform simple batch edits on a list of metadata (UUID).
