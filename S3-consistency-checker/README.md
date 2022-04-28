@@ -25,5 +25,5 @@ Attributes:
 group_id: str, the group ID corresponding to the S3 Bucket to check
 s3_path: str, the path of the Bucket from the root of the SFTP Server
 private_key: str, path to the SSH private Key (.rem, OpenSSH format)
-env: str, default="prod". Id set to "int", check the content of the Integration instance of geocat.ch
+env: str, default="prod". If set to "int", check the content of the Integration instance of geocat.ch
 ```
