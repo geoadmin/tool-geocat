@@ -81,6 +81,10 @@ Scripts and tools for the (meta)data management of geocat.ch. This does not cont
 
   Replace Http to Https in geocat.ch BGDI-MDs
   
+* **S3-consistency-checker**
+
+  Check the consistency of metadata between an AWS S3 Bucket (Harvesting partner) and geocat.ch
+  
 * **thesaurus**
 
   Manage thesaurus and keywords in the metadata.
