@@ -10,7 +10,9 @@ have been merged together to create a single file for municipalities.
 * FL taken from swissBOUNDARIES3D data (no generalization). `swissBOUNDARIES3D_1_3_TLM_LANDESGEBIET.shp` with selection of FL.
 
 ### LV95 -> WGS84
-Since the data from BFS and swisstopo are in LV95. The shapefile have been transformed with the georef app from swisstopo. The exit SRS must be in WGS84 in degrees.
+Since the data from BFS and swisstopo are in LV95. The shapefile have been transformed with the georef app from swisstopo. The exit SRS must be in WGS84 in degrees. 
+* The georef app doesn't save the `.cpg` file when exporting in shapefile. It must be manually copied and renamed to match the other files. This file contains the encoding info for the attributes table. It is used to read correctly the accents.
+* The georef app export the wrong `.prj` file when exporting in shapefile. It must be deleted and the projection must be explicitly given when importing the shapefile in GIS software.
 
 ### SHP -> Geojson
 Used the [FME WorkBench](./shp2geojson.fmw) to transform the different shapefiles into a geojson ready for the tool.
