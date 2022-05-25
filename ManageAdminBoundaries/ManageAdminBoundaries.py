@@ -280,75 +280,6 @@ class CheckMunicipalityBoundaries:
 
         print(f"Checking municipalities...{okgreen('Done')}")
 
-    def get_harvested_uuid(self) -> list:
-        """
-        Get all uuid from harvested metadata
-
-        Returns:
-            List of all UUIDs
-        """
-        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.api.token}
-        uuid = []
-        start = 1
-
-        while True:
-            parameters = {
-                "facet.q": "isHarvested/y",
-                "from": start,
-            }
-
-            response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/fre/q", proxies=self.api.proxies,
-                                            auth=self.api.auth, headers=headers, params=parameters)
-
-            xmlroot = ET.fromstring(response.content)
-            metadatas = xmlroot.findall("metadata")
-
-            if len(metadatas) == 0:
-                break
-
-            for metadata in metadatas:
-                if metadata.find("*/uuid").text not in uuid:
-                    uuid.append(metadata.find("*/uuid").text)
-
-            start += 1499
-
-        return uuid
-
-    def export_harvested_md(self) -> list:
-        """
-        Export all harvested metadata.
-
-        Export a MEF archive per metadata and extract the metadata XML from it. The list of UUID is taken by the
-        get_harvested_uuid method.
-
-        Returns:
-            List of metadata in byte string corresponding to XML
-        """
-
-        print("Export all harvested metadata :", end="\r")
-
-        # Get list of harvested metadata UUID
-        uuids = self.get_harvested_uuid()
-        headers = {"accept": "application/x-gn-mef-2-zip", "X-XSRF-TOKEN": self.api.token}
-
-        metadata = []
-
-        count = 0
-        for uuid in uuids:
-
-            response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/0.1/records/{uuid}/formatters/zip",
-                                            proxies=self.api.proxies, auth=self.api.auth, headers=headers)
-
-            with ZipFile(io.BytesIO(response.content)) as zip:
-                if f'{uuid}/metadata/metadata.xml' in zip.namelist():
-                    metadata.append(zip.read(f'{uuid}/metadata/metadata.xml'))
-
-            count += 1
-            print(f"Export all harvested metadata : {round((count / len(uuids)) * 100, 1)}%", end="\r")
-        print(f"Export all harvested metadata : {okgreen('Done')}")
-
-        return metadata
-
     def check_old_municipalities_md_link(self):
         """
         Check if the municipalities in geocat from the CSV list old_municipalities.csv are linked to metadata.
@@ -357,91 +288,57 @@ class CheckMunicipalityBoundaries:
         Updates the CSV list old_municipalities.csv with a attribute 'MD_linked' corresponding to the number of
         metadata records that use the municipality.
         """
+        print(f"Fetching all extent subtemplate UUID in MD : ", end="\r")
 
-        # 1)   Check if extent subtemplates are linked to not harvested metadata. Uses the catalogue MEF.
-        print("Export Catalogue as MEF...", end="\r")
-        headers = {"accept": "application/zip", "Content-Type": "application/zip", "X-XSRF-TOKEN": self.api.token}
-        response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/0.1/records/backups/latest",
-                                        proxies=self.api.proxies, auth=self.api.auth, headers=headers)
+        df_old_gmd = pd.read_csv(os.path.join(self.output_dir, "old_municipalities.csv"))
+        df_old_gmd_link = pd.DataFrame(columns=["GMDNR", "GMDNAME", "MD_Linked"])
 
-        with ZipFile(io.BytesIO(response.content)) as zip:
-            print(f"Export Catalogue as MEF {okgreen('Done')}")
+        uuids = self.api.get_uuids_all()
 
-            df_old_gmd = pd.read_csv(os.path.join(self.output_dir, "old_municipalities.csv"))
-            df_old_gmd_link = pd.DataFrame(columns=["GMDNR", "GMDNAME", "MD_Linked"])
+        headers = {"accept": "application/x-gn-mef-2-zip", "X-XSRF-TOKEN": self.api.token}
 
-            print(f"Fetching all UUID in MD : ", end="\r")
-            hrefs = []
-
-            total = len([i for i in zip.namelist() if i.split('/')[-1] == "metadata.xml"])
-            count = 0
-            for md in [i for i in zip.namelist() if i.split('/')[-1] == "metadata.xml"]:
-
-                xml_string = zip.open(md).read().decode('utf-8')
-                xmlroot = ET.fromstring(xml_string)
-
-                for href in xmlroot.findall('.//*[@{http://www.w3.org/1999/xlink}href]'):
-                    hrefs.append(href.attrib["{http://www.w3.org/1999/xlink}href"].split("registries/entries/")[-1].split(" ")[0].split("/")[0].split("?")[0])
-
-                count += 1
-                print(f"Fetching all UUID in MD : {round((count / total) * 100, 1)}%", end="\r")
-            print(f"Fetching all UUID in MD : {okgreen('Done')}")
-
-            print(f"Checking if municipalities are linked in MD : ", end="\r")
-            total = len(df_old_gmd)
-            count = 0
-
-            for index, row in df_old_gmd.iterrows():
-
-                uuid = f"geocatch-subtpl-extent-hoheitsgebiet-{row['GMDNR']}"
-
-                df_old_gmd_link = df_old_gmd_link.append({
-                    "GMDNR": row["GMDNR"],
-                    "GMDNAME": row["GMDNAME"],
-                    "MD_Linked": hrefs.count(uuid),
-                }, ignore_index=True)
-
-                count += 1
-                print(f"Checking if municipalities are linked in MD : {round((count / total) * 100, 1)}%", end="\r")
-
-            print(f"Checking if municipalities are linked in MD : {okgreen('Done')}")
-
-        # 2)    Check if extent subtemplates are linked to harvested metadata. Uses the xml exported by
-        #       the export_harvested_md method.
-        metadata = self.export_harvested_md()
-
-        total = len(metadata)
+        hrefs = list()
         count = 0
-        print(f"Fetching all UUID in harvested MD : ", end="\r")
+        for uuid in uuids:
+            response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/0.1/records/{uuid}/formatters/zip",
+                                            proxies=self.api.proxies, auth=self.api.auth, headers=headers)
 
-        hrefs = []
+            if response.status_code != 200:
+                print(f"{warningred('The following Metadata could not be exported in MEF : ') + uuid}")
+                continue
 
-        for md in metadata:
-            xmlroot = ET.fromstring(md.decode('utf-8'))
+            with ZipFile(io.BytesIO(response.content)) as zip:
+                if f'{uuid}/metadata/metadata.xml' in zip.namelist():
 
-            for href in xmlroot.findall('.//*[@{http://www.w3.org/1999/xlink}href]'):
-                hrefs.append(href.attrib["{http://www.w3.org/1999/xlink}href"].split("registries/entries/")[-1].split(" ")[0].split("/")[0].split("?")[0])
+                    xml_string = zip.open(f'{uuid}/metadata/metadata.xml').read().decode('utf-8')
+                    xmlroot = ET.fromstring(xml_string)
+
+                    for href in xmlroot.findall('.//*[@{http://www.w3.org/1999/xlink}href]'):
+                        hrefs.append(href.attrib["{http://www.w3.org/1999/xlink}href"].split("registries/entries/")[-1].split(" ")[0].split("/")[0].split("?")[0])
 
             count += 1
-            print(f"Fetching all UUID in harvested MD : {round((count / total) * 100, 1)}%", end="\r")
-        print(f"Fetching all UUID in harvested MD : {okgreen('Done')}")
+            print(f"Fetching all extent subtemplate UUID in MD : {round((count / len(uuids)) * 100, 1)}%", end="\r")
+        print(f"Fetching all extent subtemplate UUID in MD : {okgreen('Done')}")
 
-        print(f"Checking if municipalities are linked in harvested MD : ", end="\r")
-        total = len(df_old_gmd_link)
+        print(f"Checking if municipalities are linked in MD : ", end="\r")
+        total = len(df_old_gmd)
         count = 0
-        for index, row in df_old_gmd_link.iterrows():
 
-            gmd_link = row["MD_Linked"]
+        for index, row in df_old_gmd.iterrows():
+
             uuid = f"geocatch-subtpl-extent-hoheitsgebiet-{row['GMDNR']}"
-            gmd_link += hrefs.count(uuid)
 
-            df_old_gmd_link.at[index, "MD_Linked"] = gmd_link
+            df_old_gmd_link = df_old_gmd_link.append({
+                "GMDNR": row["GMDNR"],
+                "GMDNAME": row["GMDNAME"],
+                "MD_Linked": hrefs.count(uuid),
+            }, ignore_index=True)
 
             count += 1
-            print(f"Checking if municipalities are linked in harvested MD : {round((count / total) * 100, 1)}%", end="\r")
+            print(f"Checking if municipalities are linked in MD : {round((count / total) * 100, 1)}%", end="\r")
 
         df_old_gmd_link.to_csv(os.path.join(self.output_dir, "old_municipalities.csv"), index=False)
-        print(f"Checking if municipalities are linked in harvested MD : {okgreen('Done')}")
+        print(f"Checking if municipalities are linked in MD : {okgreen('Done')}")
 
 
 class CheckCantonBoundaries:
