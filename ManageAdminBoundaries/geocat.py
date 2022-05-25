@@ -44,6 +44,22 @@ PROXY = [
 ]
 
 
+def xpath_ns_url2code(path: str) -> str:
+    """Replace the namespace url by the namespace acronym in the given xpath"""
+    for key in NS:
+        path = path.replace("{" + NS[key] + "}", f"{key}:")
+
+    return path
+
+
+def xpath_ns_code2url(path: str) -> str:
+    """Replace the namespace url by the namespace acronym in the given xpath"""
+    for key in NS:
+        path = path.replace(f"{key}:", "{" + NS[key] + "}")
+
+    return path
+
+
 def setup_logger(name: str, log_file: str, level=logging.INFO) -> object:
     """Setup a logger for logging
     Args:
@@ -153,6 +169,176 @@ class GeocatAPI():
             return
 
         return response
+
+    def get_uuids_all(self) -> list:
+        """
+        Get a list of metadata uuid of all records (no templates).
+        If logged in with admin rights, unpublished (not public) and not valid metadata are also exported.
+        """
+
+        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
+
+        uuids = []
+        start = 1
+
+        while True:
+            parameters = {
+                "from": start,
+            }
+
+            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
+                                            auth=self.auth, headers=headers, params=parameters)
+
+            xmlroot = ET.fromstring(response.content)
+            metadatas = xmlroot.findall("metadata")
+
+            if len(metadatas) == 0:
+                break
+
+            for metadata in metadatas:
+                if metadata.find("*/uuid").text not in uuids:
+                    uuids.append(metadata.find("*/uuid").text)
+
+            start += 1499
+
+        return uuids
+
+    def get_uuids_by_group(self, group_id: str) -> list:
+        """
+        Get a list of metadata uuid belonging to a given group. If logged in with admin rights,
+        unpublished (not public) and not valid metadata are also exported.
+        """
+
+        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
+
+        uuids = []
+        start = 1
+
+        while True:
+            parameters = {
+                "_groupOwner": group_id,
+                "from": start,
+            }
+
+            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
+                                            auth=self.auth, headers=headers, params=parameters)
+
+            xmlroot = ET.fromstring(response.content)
+            metadatas = xmlroot.findall("metadata")
+
+            if len(metadatas) == 0:
+                break
+
+            for metadata in metadatas:
+                if metadata.find("*/uuid").text not in uuids:
+                    uuids.append(metadata.find("*/uuid").text)
+
+            start += 1499
+
+        return uuids
+
+    def get_uuids_valid_record(self) -> list:
+        """
+        Get a list of metadata uuid of all valid records (not harvested, no templates).
+        If logged in with admin rights, unpublished (not public) but valid metadata are also exported.
+        """
+
+        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
+
+        uuids = []
+        start = 1
+
+        while True:
+            parameters = {
+                "facet.q": "isHarvested/n",
+                "facet.q": "isValid/1",
+                "from": start,
+            }
+
+            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
+                                            auth=self.auth, headers=headers, params=parameters)
+
+            xmlroot = ET.fromstring(response.content)
+            metadatas = xmlroot.findall("metadata")
+
+            if len(metadatas) == 0:
+                break
+
+            for metadata in metadatas:
+                if metadata.find("*/uuid").text not in uuids:
+                    uuids.append(metadata.find("*/uuid").text)
+
+            start += 1499
+
+        return uuids
+
+    def get_uuids_harvested(self) -> list:
+        """
+        Get a list of metadata uuid of all harvested records (no templates). If logged in with admin rights,
+        unpublished (not public) metadata are also exported. Harvested records are not validated.
+        """
+
+        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
+
+        uuid = []
+        start = 1
+
+        while True:
+            parameters = {
+                "facet.q": "isHarvested/y",
+                "from": start,
+            }
+
+            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
+                                            auth=self.auth, headers=headers, params=parameters)
+
+            xmlroot = ET.fromstring(response.content)
+            metadatas = xmlroot.findall("metadata")
+
+            if len(metadatas) == 0:
+                break
+
+            for metadata in metadatas:
+                if metadata.find("*/uuid").text not in uuid:
+                    uuid.append(metadata.find("*/uuid").text)
+
+            start += 1499
+
+        return uuid
+
+    def get_uuids_notharvested(self) -> list:
+        """
+        Get a list of metadata uuid of all non harvested records (no templates). If logged in with admin rights,
+        unpublished (not public) metadata are also exported, even if not valid.
+        """
+
+        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
+
+        uuids = []
+        start = 1
+
+        while True:
+            parameters = {
+                "facet.q": "isHarvested/n",
+                "from": start,
+            }
+
+            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
+                                            auth=self.auth, headers=headers, params=parameters)
+
+            xmlroot = ET.fromstring(response.content)
+            metadatas = xmlroot.findall("metadata")
+
+            if len(metadatas) == 0:
+                break
+
+            for metadata in metadatas:
+                if metadata.find("*/uuid").text not in uuids:
+                    uuids.append(metadata.find("*/uuid").text)
+
+            start += 1499
+
+        return uuids
 
     def edit_metadata(self, uuid: str, body: list, updateDateStamp: str ='false') -> object:
         """
