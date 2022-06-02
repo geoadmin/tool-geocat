@@ -146,7 +146,8 @@ class GeocatBackup():
         print(f"Exporting all metadata in MEF : ", end="\r")
         count = 0
         for uuid in uuids:
-            
+
+            # While loop to handle connection Interruption of proxy (for large amount of requests)
             proxy_error = True
             while proxy_error:
                 try:
