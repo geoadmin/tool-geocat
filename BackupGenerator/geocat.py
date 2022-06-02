@@ -6,6 +6,7 @@ import sys
 import xml.etree.ElementTree as ET
 import json
 import colorama
+import logging
 
 colorama.init()
 
@@ -33,6 +34,10 @@ ENV = {
 
 PROXY = [
     {
+        "http": "prp01.adb.intra.admin.ch:8080",
+        "https": "prp01.adb.intra.admin.ch:8080",
+    },
+    {
         "http": "proxy-bvcol.admin.ch:8080",
         "https": "proxy-bvcol.admin.ch:8080",
     },
@@ -41,6 +46,43 @@ PROXY = [
         "https": "proxy.admin.ch:8080",
     }
 ]
+
+
+def xpath_ns_url2code(path: str) -> str:
+    """Replace the namespace url by the namespace acronym in the given xpath"""
+    for key in NS:
+        path = path.replace("{" + NS[key] + "}", f"{key}:")
+
+    return path
+
+
+def xpath_ns_code2url(path: str) -> str:
+    """Replace the namespace url by the namespace acronym in the given xpath"""
+    for key in NS:
+        path = path.replace(f"{key}:", "{" + NS[key] + "}")
+
+    return path
+
+
+def setup_logger(name: str, log_file: str, level=logging.INFO) -> object:
+    """Setup a logger for logging
+    Args:
+        name: required, the mane of the logger
+        log_file: required, the path where to write the logger
+        level: optional, the level to log
+
+    Returns:
+        Logger object
+    """
+    formatter = logging.Formatter("%(asctime)s - %(levelname)s - %(message)s", '%d-%m-%y %H:%M:%S')
+    handler = logging.FileHandler(log_file)
+    handler.setFormatter(formatter)
+
+    logger = logging.getLogger(name)
+    logger.setLevel(level)
+    logger.addHandler(handler)
+
+    return logger
 
 
 def okgreen(text):
@@ -53,13 +95,10 @@ def warningred(text):
 
 class GeocatAPI():
     """
-    Class to facilitate work with the geocat Restful API.
-
-    Connect to geocat.ch with your username and password.
+    Class to facilitate work with the geocat Restful API. Connect to geocat.ch with your username and password.
     Store request's session, XSRF Token, http authentication, proxies
-
-    Attributes :
-        env: str 'int' or 'prod' (default = 'int')
+    Parameters :
+    env -> str (default = 'int'), can be set to 'prod'
     """
 
     def __init__(self, env: str = 'int'):
@@ -79,12 +118,12 @@ class GeocatAPI():
         session = requests.Session()
         session.cookies.clear()
 
-        # TODO : Check what happen when no proxies are needed (outside of swisstopo)
         for proxies in PROXY:
             try:
                 session.post(url=self.env + '/geonetwork/srv/eng/info?type=me', proxies=proxies, auth=self.auth)
             except (requests.exceptions.ProxyError, OSError, urllib3.exceptions.MaxRetryError):
                 pass
+                print("proxy error")
             else:
                 break
 
@@ -136,15 +175,223 @@ class GeocatAPI():
 
         return response
 
-    def edit_metadata(self, uuid: str, body: list, updateDateStamp: str ='false'):
+    def get_uuids_all(self) -> list:
+        """
+        Get a list of metadata uuid of all records (no templates).
+        If logged in with admin rights, unpublished (not public) and not valid metadata are also exported.
+        """
+
+        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
+
+        uuids = []
+        start = 1
+
+        while True:
+            parameters = {
+                "from": start,
+            }
+
+            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
+                                            auth=self.auth, headers=headers, params=parameters)
+
+            xmlroot = ET.fromstring(response.content)
+            metadatas = xmlroot.findall("metadata")
+
+            if len(metadatas) == 0:
+                break
+
+            for metadata in metadatas:
+                if metadata.find("*/uuid").text not in uuids:
+                    uuids.append(metadata.find("*/uuid").text)
+
+            start += 1499
+
+        return uuids
+
+    def get_uuids_by_group(self, group_id: str) -> list:
+        """
+        Get a list of metadata uuid belonging to a given group. If logged in with admin rights,
+        unpublished (not public) and not valid metadata are also exported.
+        """
+
+        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
+
+        uuids = []
+        start = 1
+
+        while True:
+            parameters = {
+                "_groupOwner": group_id,
+                "from": start,
+            }
+
+            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
+                                            auth=self.auth, headers=headers, params=parameters)
+
+            xmlroot = ET.fromstring(response.content)
+            metadatas = xmlroot.findall("metadata")
+
+            if len(metadatas) == 0:
+                break
+
+            for metadata in metadatas:
+                if metadata.find("*/uuid").text not in uuids:
+                    uuids.append(metadata.find("*/uuid").text)
+
+            start += 1499
+
+        return uuids
+
+    def get_uuids_valid_record(self) -> list:
+        """
+        Get a list of metadata uuid of all valid records (not harvested, no templates).
+        If logged in with admin rights, unpublished (not public) but valid metadata are also exported.
+        """
+
+        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
+
+        uuids = []
+        start = 1
+
+        while True:
+            parameters = {
+                "facet.q": "isHarvested/n",
+                "facet.q": "isValid/1",
+                "from": start,
+            }
+
+            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
+                                            auth=self.auth, headers=headers, params=parameters)
+
+            xmlroot = ET.fromstring(response.content)
+            metadatas = xmlroot.findall("metadata")
+
+            if len(metadatas) == 0:
+                break
+
+            for metadata in metadatas:
+                if metadata.find("*/uuid").text not in uuids:
+                    uuids.append(metadata.find("*/uuid").text)
+
+            start += 1499
+
+        return uuids
+
+    def get_uuids_harvested(self) -> list:
+        """
+        Get a list of metadata uuid of all harvested records (no templates). If logged in with admin rights,
+        unpublished (not public) metadata are also exported. Harvested records are not validated.
+        """
+
+        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
+
+        uuid = []
+        start = 1
+
+        while True:
+            parameters = {
+                "facet.q": "isHarvested/y",
+                "from": start,
+            }
+
+            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
+                                            auth=self.auth, headers=headers, params=parameters)
+
+            xmlroot = ET.fromstring(response.content)
+            metadatas = xmlroot.findall("metadata")
+
+            if len(metadatas) == 0:
+                break
+
+            for metadata in metadatas:
+                if metadata.find("*/uuid").text not in uuid:
+                    uuid.append(metadata.find("*/uuid").text)
+
+            start += 1499
+
+        return uuid
+
+    def get_uuids_notharvested(self) -> list:
+        """
+        Get a list of metadata uuid of all non harvested records (no templates). If logged in with admin rights,
+        unpublished (not public) metadata are also exported, even if not valid.
+        """
+
+        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
+
+        uuids = []
+        start = 1
+
+        while True:
+            parameters = {
+                "facet.q": "isHarvested/n",
+                "from": start,
+            }
+
+            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
+                                            auth=self.auth, headers=headers, params=parameters)
+
+            xmlroot = ET.fromstring(response.content)
+            metadatas = xmlroot.findall("metadata")
+
+            if len(metadatas) == 0:
+                break
+
+            for metadata in metadatas:
+                if metadata.find("*/uuid").text not in uuids:
+                    uuids.append(metadata.find("*/uuid").text)
+
+            start += 1499
+
+        return uuids
+
+    def get_uuids_notharvested_with_template(self) -> list:
+        """
+        Get a list of metadata uuid of all non harvested records (including templates). If logged in with admin rights,
+        unpublished (not public) metadata are also exported, even if not valid.
+        """
+
+        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
+
+        uuids = []
+        start = 1
+
+        while True:
+            parameters = {
+                "facet.q": "isHarvested/n",
+                "from": start,
+                "_isTemplate": "y or n",
+            }
+
+            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
+                                            auth=self.auth, headers=headers, params=parameters)
+
+            xmlroot = ET.fromstring(response.content)
+            metadatas = xmlroot.findall("metadata")
+
+            if len(metadatas) == 0:
+                break
+
+            for metadata in metadatas:
+                if metadata.find("*/uuid").text not in uuids:
+                    uuids.append(metadata.find("*/uuid").text)
+
+            start += 1499
+
+        return uuids
+
+    def edit_metadata(self, uuid: str, body: list, updateDateStamp: str ='false') -> object:
         """
         Edit a metadata by giving sets of xpath and xml.
-        Parameters :
-        uuid : the uuid of the metadata to edit.
-        body : the edits you want to perform : [{"xpath": xpath, "value": xml}, {"xpath": xpath, "value": xml}, ...]
-        updateDateStamp : 'true' or 'false', default = 'false'. If 'true', the update date and time of the metadata is
-        updated
-        Return the response of the API request
+
+        Args:
+            uuid : the uuid of the metadata to edit.
+            body : the edits you want to perform : [{"xpath": xpath, "value": xml}, {"xpath": xpath, "value": xml}, ...]
+            updateDateStamp : 'true' or 'false', default = 'false'. If 'true', the update date and time of the metadata is
+            updated
+
+        Returns:
+            The response of the batchediting request
         """
         headers = {"accept": "application/json", "Content-Type": "application/json", "X-XSRF-TOKEN": self.token}
         params = {
@@ -158,4 +405,3 @@ class GeocatAPI():
                                     params=params, proxies=self.proxies, auth=self.auth, headers=headers, data=body)
 
         return response
-

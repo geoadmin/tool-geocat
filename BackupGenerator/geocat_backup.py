@@ -2,11 +2,14 @@ from geocat import GeocatAPI
 from geocat import okgreen
 from geocat import warningred
 import os
+import requests
+import shutil
 import sys
 import xml.etree.ElementTree as ET
 import json
 import pandas as pd
-from zipfile import ZipFile
+from zipfile import ZipFile, ZIP_DEFLATED
+import io
 from datetime import datetime
 import colorama
 
@@ -127,17 +130,65 @@ class GeocatBackup():
 
     def backup_catalogue_mef(self):
         """
-        Download the geocat MEF archive as zip file
+        Download all metadata (not harvested) including templates in MEF format. Unzip each zipfile metadata and
+        rezip them into a global single zipfile.
         """
-        print("Backup Catalogue as MEF...", end="\r")
-        headers = {"accept": "application/zip", "Content-Type": "application/zip", "X-XSRF-TOKEN": self.api.token}
-        response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/0.1/records/backups/latest",
-                                        proxies=self.api.proxies, auth=self.api.auth, headers=headers)
 
-        with open(os.path.join(self.backup_dir, f"backup_{datetime.today().strftime('%Y-%m-%d')}.zip"), 'wb') as file:
-            file.write(response.content)
+        # Creates an empty directory to store all metadatas before zipping them
+        if os.path.exists(os.path.join(self.backup_dir, "mef_temp")):
+            shutil.rmtree(os.path.join(self.backup_dir, "mef_temp"))
+        os.makedirs(os.path.join(self.backup_dir, "mef_temp"))
 
-        print(f"Backup Catalogue as MEF {okgreen('Done')}")
+        uuids = self.api.get_uuids_notharvested_with_template()
+
+        headers = {"accept": "application/x-gn-mef-2-zip", "X-XSRF-TOKEN": self.api.token}
+
+        print(f"Exporting all metadata in MEF : ", end="\r")
+        count = 0
+        for uuid in uuids:
+            
+            proxy_error = True
+            while proxy_error:
+                try:
+                    response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/0.1/records/{uuid}/formatters/zip",
+                                                    proxies=self.api.proxies, auth=self.api.auth, headers=headers)
+                except requests.exceptions.ProxyError:
+                    print("Proxy Error Occured, retry connection")
+                else:
+                    proxy_error = False
+
+            if response.status_code != 200:
+                print(f"{warningred('The following Metadata could not be exported in MEF : ') + uuid}")
+                continue
+
+            with ZipFile(io.BytesIO(response.content)) as zip:
+                for file in zip.namelist():
+                    if file.startswith(f'{uuid}/'):
+                        zip.extract(file, os.path.join(self.backup_dir, f"mef_temp"))
+
+                if f'{uuid}/' not in zip.namelist():
+                    print(f"{warningred('The following Metadata could not be exported in MEF : ') + uuid}")
+
+            count += 1
+            print(f"Exporting all metadata in MEF : {round((count / len(uuids)) * 100, 1)}%", end="\r")
+        print(f"Exporting all metadata in MEF : {okgreen('Done')}")
+
+        print(f"Zipping MEF metadata into a single file...", end="\r")
+        with ZipFile(os.path.join(self.backup_dir, f"backup_{datetime.today().strftime('%Y-%m-%d')}.zip"), 'w',
+                     ZIP_DEFLATED) as zip:
+
+            rootlen = len(os.path.join(self.backup_dir, f"mef_temp")) + 1
+
+            for base, dirs, files in os.walk(os.path.join(self.backup_dir, f"mef_temp")):
+                for file in files:
+                    fn = os.path.join(base, file)
+                    zip.write(fn, fn[rootlen:])
+
+        print(f"Zipping MEF metadata into a single file : {okgreen('Done')}")
+
+        print(f"Cleaning temporary files...", end="\r")
+        shutil.rmtree(os.path.join(self.backup_dir, "mef_temp"))
+        print(f"Cleaning temporary files : {okgreen('Done')}")
 
     def backup_users(self):
         """
@@ -354,9 +405,10 @@ class GeocatBackup():
 
         count = 0
         for ro_id in ro_ids:
-            response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/0.1/registries/entries/{ro_id}?lang=fre,ita,eng,ger,roh",
-                                            proxies=self.api.proxies, auth=self.api.auth, headers=headers,
-                                            params=parameters)
+            response = self.api.session.get(
+                url=self.api.env + f"/geonetwork/srv/api/0.1/registries/entries/{ro_id}?lang=fre,ita,eng,ger,roh",
+                proxies=self.api.proxies, auth=self.api.auth, headers=headers,
+                params=parameters)
 
             if response.status_code != 200:
                 with open(os.path.join(self.backup_dir, "RO_error.log"), "a") as logfile:
@@ -459,4 +511,3 @@ if __name__ == "__main__":
 
     GeocatBackup(backup_dir=backup_dir, env=env, catalogue=catalogue, users=users, groups=groups,
                  reusable_objects=reusable_objects, thesaurus=thesaurus)
-
