@@ -123,7 +123,6 @@ class GeocatAPI():
                 session.post(url=self.env + '/geonetwork/srv/eng/info?type=me', proxies=proxies, auth=self.auth)
             except (requests.exceptions.ProxyError, OSError, urllib3.exceptions.MaxRetryError):
                 pass
-                print("proxy error")
             else:
                 break
 
