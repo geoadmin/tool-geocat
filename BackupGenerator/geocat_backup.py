@@ -139,7 +139,7 @@ class GeocatBackup():
             shutil.rmtree(os.path.join(self.backup_dir, "mef_temp"))
         os.makedirs(os.path.join(self.backup_dir, "mef_temp"))
 
-        uuids = self.api.get_uuids_notharvested_with_template()
+        uuids = self.api.get_uuids_notharvested(with_templates=True)
 
         headers = {"accept": "application/x-gn-mef-2-zip", "X-XSRF-TOKEN": self.api.token}
 
