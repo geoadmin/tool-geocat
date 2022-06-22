@@ -174,10 +174,11 @@ class GeocatAPI():
 
         return response
 
-    def get_uuids_all(self) -> list:
+    def get_uuids_all(self, valid_only: bool = False, published_only: bool = False,
+                      with_templates: bool = False) -> list:
         """
-        Get a list of metadata uuid of all records (no templates).
-        If logged in with admin rights, unpublished (not public) and not valid metadata are also exported.
+        Get a list of metadata uuid of all records.
+        You can specify if you want only the valid and/or published records and the templates.
         """
 
         headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
@@ -186,9 +187,23 @@ class GeocatAPI():
         start = 1
 
         while True:
+
+            facetq = str()
+
+            if valid_only:
+                facetq += "&isValid/1"
+            if published_only:
+                facetq += "&isPublishedToAll/y"
+
             parameters = {
                 "from": start,
             }
+
+            if len(facetq) > 0:
+                parameters["facet.q"] = facetq[1:]
+
+            if with_templates:
+                parameters["_isTemplate"] = "y or n"
 
             response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
                                             auth=self.auth, headers=headers, params=parameters)
@@ -207,10 +222,11 @@ class GeocatAPI():
 
         return uuids
 
-    def get_uuids_by_group(self, group_id: str) -> list:
+    def get_uuids_by_group(self, group_id: str, valid_only: bool = False, published_only: bool = False,
+                      with_templates: bool = False) -> list:
         """
-        Get a list of metadata uuid belonging to a given group. If logged in with admin rights,
-        unpublished (not public) and not valid metadata are also exported.
+        Get a list of metadata uuid belonging to a given group.
+        You can specify if you want only the valid and/or published records and the templates.
         """
 
         headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
@@ -219,45 +235,24 @@ class GeocatAPI():
         start = 1
 
         while True:
+
+            facetq = str()
+
+            if valid_only:
+                facetq += "&isValid/1"
+            if published_only:
+                facetq += "&isPublishedToAll/y"
+
             parameters = {
                 "_groupOwner": group_id,
                 "from": start,
             }
 
-            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
-                                            auth=self.auth, headers=headers, params=parameters)
+            if len(facetq) > 0:
+                parameters["facet.q"] = facetq[1:]
 
-            xmlroot = ET.fromstring(response.content)
-            metadatas = xmlroot.findall("metadata")
-
-            if len(metadatas) == 0:
-                break
-
-            for metadata in metadatas:
-                if metadata.find("*/uuid").text not in uuids:
-                    uuids.append(metadata.find("*/uuid").text)
-
-            start += 1499
-
-        return uuids
-
-    def get_uuids_valid_record(self) -> list:
-        """
-        Get a list of metadata uuid of all valid records (not harvested, no templates).
-        If logged in with admin rights, unpublished (not public) but valid metadata are also exported.
-        """
-
-        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
-
-        uuids = []
-        start = 1
-
-        while True:
-            parameters = {
-                "facet.q": "isHarvested/n",
-                "facet.q": "isValid/1",
-                "from": start,
-            }
+            if with_templates:
+                parameters["_isTemplate"] = "y or n"
 
             response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
                                             auth=self.auth, headers=headers, params=parameters)
@@ -278,8 +273,7 @@ class GeocatAPI():
 
     def get_uuids_harvested(self) -> list:
         """
-        Get a list of metadata uuid of all harvested records (no templates). If logged in with admin rights,
-        unpublished (not public) metadata are also exported. Harvested records are not validated.
+        Get a list of metadata uuid of all harvested records (no templates).
         """
 
         headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
@@ -310,44 +304,11 @@ class GeocatAPI():
 
         return uuid
 
-    def get_uuids_notharvested(self) -> list:
+    def get_uuids_notharvested(self, valid_only: bool = False, published_only: bool = False,
+                      with_templates: bool = False) -> list:
         """
-        Get a list of metadata uuid of all non harvested records (no templates). If logged in with admin rights,
-        unpublished (not public) metadata are also exported, even if not valid.
-        """
-
-        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
-
-        uuids = []
-        start = 1
-
-        while True:
-            parameters = {
-                "facet.q": "isHarvested/n",
-                "from": start,
-            }
-
-            response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
-                                            auth=self.auth, headers=headers, params=parameters)
-
-            xmlroot = ET.fromstring(response.content)
-            metadatas = xmlroot.findall("metadata")
-
-            if len(metadatas) == 0:
-                break
-
-            for metadata in metadatas:
-                if metadata.find("*/uuid").text not in uuids:
-                    uuids.append(metadata.find("*/uuid").text)
-
-            start += 1499
-
-        return uuids
-
-    def get_uuids_notharvested_with_template(self) -> list:
-        """
-        Get a list of metadata uuid of all non harvested records (including templates). If logged in with admin rights,
-        unpublished (not public) metadata are also exported, even if not valid.
+        Get a list of metadata uuid of all non harvested records.
+        You can specify if you want only the valid and/or published records and the templates.
         """
 
         headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.token}
@@ -356,11 +317,24 @@ class GeocatAPI():
         start = 1
 
         while True:
+
+            facetq = str()
+
+            if valid_only:
+                facetq += "&isValid/1"
+            if published_only:
+                facetq += "&isPublishedToAll/y"
+
             parameters = {
                 "facet.q": "isHarvested/n",
                 "from": start,
-                "_isTemplate": "y or n",
             }
+
+            if len(facetq) > 0:
+                parameters["facet.q"] = facetq[1:]
+
+            if with_templates:
+                parameters["_isTemplate"] = "y or n"
 
             response = self.session.get(url=self.env + f"/geonetwork/srv/fre/q", proxies=self.proxies,
                                             auth=self.auth, headers=headers, params=parameters)
