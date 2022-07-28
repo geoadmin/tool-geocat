@@ -22,7 +22,10 @@ This script runs on python 3. Following packages are needed :
 * urllib3
 * lxml
 ---
+### Installation
+Clone the repo anywhere you like. At the root folder, import the `ods_constraint.py` python module.
 
+---
 ### Usage
 ```python
 import ods_constraint
