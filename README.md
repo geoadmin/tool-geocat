@@ -60,6 +60,14 @@ Scripts and tools for the (meta)data management of geocat.ch. This does not cont
 
   Inspect, Update and Delete admin boundaries in geocat.ch by comparing the extent subtemplates with a reference geojson file.
   
+* **ManageKeyword**
+
+  Add and delete Keyword.
+  
+* **Manage_ODS_LegalConstraints**
+
+  Add and delete legal constraints used for the mapping with the Opendata.swiss plateform.
+  
 * **metadata-bacth-edit**
 
   Perform simple batch edits on a list of metadata (UUID).
