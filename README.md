@@ -60,6 +60,10 @@ Scripts and tools for the (meta)data management of geocat.ch. This does not cont
 
   Inspect, Update and Delete admin boundaries in geocat.ch by comparing the extent subtemplates with a reference geojson file.
   
+* **ManageContacts**
+
+  Manage contacts as shared objects.
+  
 * **ManageKeyword**
 
   Add and delete Keyword.
