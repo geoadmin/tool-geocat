@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32407.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Remove BGDI Keyword from list", "Remove BGDI Keyword from list.pyproj", "{B266AEFC-A461-4684-8FD5-A33533389553}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ClassLibrary", "..\ClassLibrary\ClassLibrary.pyproj", "{5CFBEB1C-070A-47E7-84B6-95AAEEF86026}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B266AEFC-A461-4684-8FD5-A33533389553}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B266AEFC-A461-4684-8FD5-A33533389553}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CFBEB1C-070A-47E7-84B6-95AAEEF86026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CFBEB1C-070A-47E7-84B6-95AAEEF86026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FDF25EE9-F4E7-475C-9014-F1ECC7EB226C}
+	EndGlobalSection
+EndGlobal
