@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "check MD exist for basicGeoData", "check MD exist for basicGeoData.pyproj", "{DCC2DB3F-99A1-4C0E-96B9-E60C2092AA3B}"
+EndProject
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "ClassLibrary", "..\ClassLibrary\ClassLibrary.pyproj", "{5CFBEB1C-070A-47E7-84B6-95AAEEF86026}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCC2DB3F-99A1-4C0E-96B9-E60C2092AA3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC2DB3F-99A1-4C0E-96B9-E60C2092AA3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CFBEB1C-070A-47E7-84B6-95AAEEF86026}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CFBEB1C-070A-47E7-84B6-95AAEEF86026}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {03B0C8CA-A63E-404A-853B-D2C95036B003}
+	EndGlobalSection
+EndGlobal

@@ -1,150 +1,162 @@
-# -*-
-'''
-------------------------------------------------------------------------------------------------------------------------
-Autor:      Reithmeier Martin (rem) in 2022
-
-Purpose:    /che:CHE_MD_Metadata/gmd:identificationInfo/che:CHE_MD_DataIdentification/gmd:citation/gmd:CI_Citation 
-            add this path /gmd:identifier/gmd:MD_Identifier/gmd:code/gco:CharacterString
-
-Remarks:    
-			</gmd:date> :after
-			<gmd:identifier>
-				<gmd:MD_Identifier>
-					<gmd:code>
-						<gco:CharacterString>ch.swisstopo.lubis-luftbilder_farbe</gco:CharacterString>
-					</gmd:code>
-				</gmd:MD_Identifier>
-			</gmd:identifier> :before
-			<gmd:collectiveTitle xsi:type="gmd:PT_FreeText_PropertyType">
-
-------------------------------------------------------------------------------------------------------------------------
-'''
 
 import sys
 # sys.path.append("..\\ClassLibrary") # is needed when use outside from Visual Studio
 import urllib3
+import xml.etree.ElementTree as ElementTree
 from pathlib import Path
 from requests.auth import HTTPBasicAuth
-from geocatFunctionLib import *
-
-mainLanguage = ""
-secondLanguage = ""
+import geocatLoginGUI as GUI
+import geocatGroups as groupOwners
+import geocatLoginGUI as GUI
+import geocatApiCalls as API
+import geocatConstants as const
+import geocatFunctionLib as funcLib
 
 # desable the exceptions of InsecureRequestWarning
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-def getCitationNodeAsRoot(sessionCalls :API.geocatSession, uuid :str) -> ElementTree.Element:
-    """ get the xml_Citation-Node as root from the MD with the given uuid
+class AddLayerIdToGeocat():
+    '''
+    Autor:      Reithmeier Martin (rem) in 2022
 
-    :sessionCalls: current API session-object
-    :uuid: uuid from the MD
+    Purpose:    /che:CHE_MD_Metadata/gmd:identificationInfo/che:CHE_MD_DataIdentification/gmd:citation/gmd:CI_Citation 
+                add this path /gmd:identifier/gmd:MD_Identifier/gmd:code/gco:CharacterString
 
-    :return: the xml-gmd:CI_Citation-node as root
-    """
-    sessionCalls.setApplicationInHeadersTo("xml")
-    recordUrl = "api/0.1/records/" + uuid
-    respons = sessionCalls.sendGetRequest(recordUrl)
-    sessionCalls.setApplicationInHeadersTo("json")
-    return ElementTree.fromstring(respons.content).find(".//gmd:CI_Citation", const.ns)
+    Remarks:    
+                </gmd:date> :after
+                <gmd:identifier>
+                    <gmd:MD_Identifier>
+                        <gmd:code>
+                            <gco:CharacterString>ch.swisstopo.lubis-luftbilder_farbe</gco:CharacterString>
+                        </gmd:code>
+                    </gmd:MD_Identifier>
+                </gmd:identifier> :before
+                <gmd:collectiveTitle xsi:type="gmd:PT_FreeText_PropertyType">
 
-def isTechLayerNameExist(sessionCalls :API.geocatSession, uuid :str) -> bool:
-    """ 
-    :sessionCalls: current API session-object
-    :uuid: uuid from the MD
-    """
-    citationXpath = getCitationNodeAsRoot(sessionCalls, uuid)
-    identifierXpath = citationXpath.findall(".//gmd:MD_Identifier", const.ns)
-    if identifierXpath:
-        return True
-    else:
-        return False
+    '''
 
-def getUsedUuidsList(sessionCalls :API.geocatSession, uuidsList :ElementTree.Element):
-    """ 
-    :sessionCalls: current API session-object
-    :uuidsList: uuids from the MDs
-    """
-    countOfMDs = str(len(uuidsList))
-    resultList = []
-    for uuid in uuidsList:
-        writeLog(str(uuidsList.index(uuid) + 1) + "/" + countOfMDs + ") check if techLayerName exist on MD " + uuid)
-        if not isTechLayerNameExist(sessionCalls, uuid.text):
-            resultList.append(uuid)
-    return resultList
+    # Attributes
+    __funcLib = funcLib.FunctionLibrary()
+    __loginData = GUI.LoginGUI()
+    __batchName = Path(__file__).stem
+    __sessionCalls = None
+    __requestCalls = None
 
-def addXmlIdentifierNode(sessionCalls :API.geocatSession, uuidTechlayerPair :dict):
-    """ """
-    def getValueAttribute(techLayer :str):
-        """ build the value-attribute for the batchediting putRequest 
+    def __init__(self):
+        self.__mainLanguage = ""
+        self.__secondLanguage = ""
+        self.__mainLanguage, self.__secondLanguage = self.__funcLib.setMainLanguage("ger")
+        self.__loginData.mainloop()        # open the login window
+        self.__logFile = self.__funcLib.openLogFile(self.__loginData, self.__batchName)     # open the logFile
+        self.__funcLib.setLogFile(self.__logFile)         # make logFile visible in geocatFunctionLib
+
+    def closeLogFile(self):
+        self.__logFile.close()
+
+    def writeLog(self, logValue :str):
+        self.__funcLib.writeLog(logValue)
+
+    def __getCitationNodeAsRoot(self, uuid :str):
+        """ get the xml_Citation-Node as root from the MD with the given uuid
+    
+        :uuid: uuid from the MD
+    
+        :return: the xml-gmd:CI_Citation-node as root
         """
-        batchEditModeTag = "<gn_add>"
-        batchEditModeCloseTag = "</gn_add>"
-        identifierCodeTag = "<gmd:identifier " + const.namespaces + "><gmd:MD_Identifier><gmd:code>"
-        identifierCodeCloseTag = "</gmd:code></gmd:MD_Identifier></gmd:identifier>"
-        layerName = "<gco:CharacterString>" + techLayer + "</gco:CharacterString>"
-
-        return batchEditModeTag + identifierCodeTag + layerName + identifierCodeCloseTag + batchEditModeCloseTag
-
-    value = getValueAttribute(uuidTechlayerPair['relatedValue'])
-    # get the count of the transferoptions tag
-    xpath = "/che:CHE_MD_Metadata/gmd:identificationInfo/che:CHE_MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier[1]"
-    urlValue = "api/0.1/records/batchediting?uuids=" + uuidTechlayerPair['uuid'] + "&updateDateStamp=true"
-    writeLog("    urlValue: " + urlValue)
-    writeLog("    value: " + value)
-    writeLog("    xpath: " + xpath)
-    response = sessionCalls.sendPutRequest(urlValue, value, xpath)
-    responseMessage = formatResponse(response)
-    writeLog(responseMessage)
-    if "Info:" in responseMessage:
-        return 1
-    else:
-        return 0
-
-def main():
-    writeLog("Script: " + batchName + " has started on environment: " + loginData.environment.get())
-    global mainLanguage
-    global secondLanguage
-    mainLanguage, secondLanguage = setMainLanguage("ger")
-    sessionCalls = API.geocatSession(loginData.urlPrefix, "eng/info?type=me", loginData.username.get(), loginData.password.get())
-    requestCalls = API.geocatRequests(loginData.urlPrefix, loginData.username.get(), loginData.password.get())
-    #uuidsList = getResponseAsXmlTree(requestCalls, "&keyword=" + keyword, mainLanguage).findall(".//uuid")
-    #usedUuidsList = getUsedUuidsList(sessionCalls, uuidsList)
-    uuidAndTechLayerPairsList = getUuidAndRelatedTechLayerPairs(None, dataSource)
-    isBackup = loginData.isBackup.get()
-    if isBackup:
-        uuidsBakupList = []
-        for uuidTechLayer in uuidAndTechLayerPairsList:
-            uuidsBakupList.append(uuidTechLayer['uuid'])
-        doBackups(sessionCalls, uuidsBakupList, batchName)
-    if loginData.batchEditMode == "add":
-        addCounter = 0
-        countOfMDs = str(len(uuidAndTechLayerPairsList))
-        for uuidAndTechlayerPair in uuidAndTechLayerPairsList:
-            if not isTechLayerNameExist(sessionCalls, uuidAndTechlayerPair['uuid']):
-                writeLog(str(uuidAndTechLayerPairsList.index(uuidAndTechlayerPair) + 1) + "/" + countOfMDs + ") add identifier xml-Node in MD: " + uuidAndTechlayerPair['uuid'])
-                addCounter += addXmlIdentifierNode(sessionCalls, uuidAndTechlayerPair)
-            else:
-                writeLog(str(uuidAndTechLayerPairsList.index(uuidAndTechlayerPair) + 1) + "/" + countOfMDs + ") identifier xml-Node already exist in MD: " + uuidAndTechlayerPair['uuid'])
-        writeLog(str(addCounter) + " identifiers was added")
-    elif loginData.batchEditMode == "delete":
-        countOfMDs = str(len(uuidAndTechLayerPairsList))
-        for uuidAndTechlayerPair in uuidAndTechLayerPairsList:
-            if isTechLayerNameExist(sessionCalls, uuidAndTechlayerPair['uuid']):
-                writeLog(str(uuidAndTechLayerPairsList.index(uuidAndTechlayerPair) + 1) + "/" + countOfMDs + ") delete identifier xml-Node in MD: " + uuidAndTechlayerPair['uuid'])
-                deleteXpath(sessionCalls, ".//gmd:identifier", uuidAndTechlayerPair['uuid'])
-
+        self.__sessionCalls.setApplicationInHeadersTo("xml")
+        _recordUrl = "api/0.1/records/" + uuid
+        _respons = self.__sessionCalls.sendGetRequest(_recordUrl)
+        self.__sessionCalls.setApplicationInHeadersTo("json")
+        return ElementTree.fromstring(_respons.content).find(".//gmd:CI_Citation", const.ns)
+    
+    def __isTechLayerNameExist(self, uuid :str):
+        """ 
+        :sessionCalls: current API session-object
+        :uuid: uuid from the MD
+        """
+        _citationXpath = self.__getCitationNodeAsRoot(uuid)
+        _identifierXpath = _citationXpath.findall(".//gmd:MD_Identifier", const.ns)
+        if _identifierXpath:
+            return True
+        else:
+            return False
+    
+    def __getUsedUuidsList(self, uuidsList :ElementTree.Element):
+        """ 
+        :sessionCalls: current API session-object
+        :uuidsList: uuids from the MDs
+        """
+        _countOfMDs = str(len(uuidsList))
+        _resultList = []
+        for uuid in uuidsList:
+            self.writeLog(str(uuidsList.index(uuid) + 1) + "/" + _countOfMDs + ") check if techLayerName exist on MD " + uuid)
+            if not self.__isTechLayerNameExist(uuid.text):
+                _resultList.append(uuid)
+        return _resultList
+    
+    def __addXmlIdentifierNode(self, uuidTechlayerPair :dict):
+        """ """
+        def _getValueAttribute(techLayer :str):
+            """ build the value-attribute for the batchediting putRequest 
+            """
+            _batchEditModeTag = "<gn_add>"
+            _batchEditModeCloseTag = "</gn_add>"
+            _identifierCodeTag = "<gmd:identifier " + const.namespaces + "><gmd:MD_Identifier><gmd:code>"
+            _identifierCodeCloseTag = "</gmd:code></gmd:MD_Identifier></gmd:identifier>"
+            _layerName = "<gco:CharacterString>" + techLayer + "</gco:CharacterString>"
+    
+            return _batchEditModeTag + _identifierCodeTag + _layerName + _identifierCodeCloseTag + _batchEditModeCloseTag
+    
+        _value = _getValueAttribute(uuidTechlayerPair.get('relatedValue'))
+        # get the count of the transferoptions tag
+        _xpath = "/che:CHE_MD_Metadata/gmd:identificationInfo/che:CHE_MD_DataIdentification/gmd:citation/gmd:CI_Citation/gmd:identifier[1]"
+        _urlValue = "api/0.1/records/batchediting?uuids=" + uuidTechlayerPair['uuid'] + "&updateDateStamp=true"
+        self.writeLog("    urlValue: " + _urlValue)
+        self.writeLog("    value: " + _value)
+        self.writeLog("    xpath: " + _xpath)
+        _response = self.__sessionCalls.sendPutRequest(_urlValue, _value, _xpath)
+        _responseMessage = self.__funcLib.formatResponse(_response)
+        self.writeLog(_responseMessage)
+        if "Info:" in _responseMessage:
+            return 1
+        else:
+            return 0
+    
+    def main(self):
+        self.writeLog("Script: " + self.__batchName + " has started on environment: " + self.__loginData.environment.get())
+        self.__sessionCalls = API.GeocatSession(self.__loginData.urlPrefix, "eng/info?type=me", self.__loginData.username.get(), self.__loginData.password.get())
+        self.__requestCalls = API.GeocatRequests(self.__loginData.urlPrefix, self.__loginData.username.get(), self.__loginData.password.get())
+        self.__funcLib.setApiCalls(self.__sessionCalls, self.__requestCalls)
+        _uuidAndTechLayerPairsList = self.__funcLib.getUuidAndRelatedTechLayerPairs(None, self.__loginData.dataSource.get(), self.__loginData.inputFilename.get())
+        # todo dispatcher
+        if self.__loginData.backupMode.get() == "Restore":
+            self.__funcLib.doRestor(self.__batchName)
+        isBackup = self.__loginData.isBackup.get()
+        if isBackup:
+            _uuidsBakupList = []
+            for uuidTechLayer in _uuidAndTechLayerPairsList:
+                _uuidsBakupList.append(uuidTechLayer.get('uuid'))
+            self.__funcLib.doBackups(_uuidsBakupList, self.__batchName)
+        if self.__loginData.batchEditMode == "add":
+            _addCounter = 0
+            _countOfMDs = str(len(_uuidAndTechLayerPairsList))
+            for uuidAndTechlayerPair in _uuidAndTechLayerPairsList:
+                if not self.__isTechLayerNameExist(uuidAndTechlayerPair.get('uuid')):
+                    self.writeLog(str(_uuidAndTechLayerPairsList.index(uuidAndTechlayerPair) + 1) + "/" + _countOfMDs + ") add identifier xml-Node in MD: " + uuidAndTechlayerPair.get('uuid'))
+                    _addCounter += self.__addXmlIdentifierNode(uuidAndTechlayerPair)
+                else:
+                    self.writeLog(str(_uuidAndTechLayerPairsList.index(uuidAndTechlayerPair) + 1) + "/" + _countOfMDs + ") identifier xml-Node already exist in MD: " + uuidAndTechlayerPair.get('uuid'))
+            self.writeLog(str(_addCounter) + " identifiers was added")
+        elif self.__loginData.batchEditMode == "delete":
+            _countOfMDs = str(len(_uuidAndTechLayerPairsList))
+            for uuidAndTechlayerPair in _uuidAndTechLayerPairsList:
+                if self.__isTechLayerNameExist(uuidAndTechlayerPair.get('uuid')):
+                    self.writeLog(str(_uuidAndTechLayerPairsList.index(uuidAndTechlayerPair) + 1) + "/" + _countOfMDs + ") delete identifier xml-Node in MD: " + uuidAndTechlayerPair.get('uuid'))
+                    self.__funcLib.deleteXpath(".//gmd:identifier", uuidAndTechlayerPair.get('uuid'))
+    
 try:
-    batchName = Path(__file__).stem
-    loginData = GUI.loginGUI()
-    loginData.mainloop()        # open the login window
-
-    keyword = loginData.keyword.get()
-    protocol = loginData.protocol.get()
-    dataSource = loginData.dataSource.get()
-
-    logFile = openLogFile(loginData, batchName)     # open the logFile
-    setLogFile(logFile)         # make logFile visible in geocatFunctionLib
-    main()                      # call the function main
-    logFile.close()
+    aAddLayerIdToGeocat = AddLayerIdToGeocat()     # create the renameProtocolValue-object
+    aAddLayerIdToGeocat.main()                      # call the main-function 
+    aAddLayerIdToGeocat.closeLogFile()
 except Exception as error:
-    writeLog("Error: " + str(error.args))   
+    aAddLayerIdToGeocat.writeLog("Error: " + str(error.args))
