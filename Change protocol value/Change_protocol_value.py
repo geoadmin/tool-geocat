@@ -79,9 +79,9 @@ class ChangeProtocolValue:
                             _urlValue = onLineNode.find(".//gmd:linkage/gmd:URL", const.ns).text
                             if _urlValue.startswith("http") or _urlValue.startswith("https"):
                                 _urlList = _urlValue.split('//')
-                                _urlAddress = _urlList[1]
+                                _urlAddress = _urlList[1].rstrip('/')
                                 if _urlAddress in const.valuesToChange:
-                                    _oldProtocolValue = onLineNode.find(".//gmd:protocol/gco:CharacterString", const.ns)
+                                    _oldProtocolValue = onLineNode.find(".//gmd:protocol/gco:CharacterString", const.ns).text
                                     _newProtocolValue = const.valuesToChange[_urlAddress]
                                     if _oldProtocolValue != _newProtocolValue:
                                         _value = "<gn_replace><gco:CharacterString " + const.namespaces + ">" + _newProtocolValue + "</gco:CharacterString></gn_replace>"
