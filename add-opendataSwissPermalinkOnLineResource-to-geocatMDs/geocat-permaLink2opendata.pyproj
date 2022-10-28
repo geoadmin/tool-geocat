@@ -10,7 +10,7 @@
     <OutputPath>.</OutputPath>
     <Name>geocat-permaLink2opendata</Name>
     <RootNamespace>geocat-permaLink2opendata</RootNamespace>
-    <InterpreterId>Global|VisualStudio|ArcGIS Python 3.7 (64-bit)</InterpreterId>
+    <InterpreterId>Global|VisualStudio|ArcGIS 3.7 (64-bit)</InterpreterId>
     <IsWindowsApplication>True</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -23,6 +23,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="permaLink2opendata.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterpreterReference Include="Global|VisualStudio|ArcGIS 3.7 (64-bit)" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

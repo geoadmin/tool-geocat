@@ -111,26 +111,26 @@ class FunctionLibrary:
 
     def getDistributionNodeAsRoot(self, uuid :str):
         """ get the xml_Distribution-Node as root from the MD with the given uuid
-        :uuid: uuid from the MD-record
+        uuid: uuid from the MD-record
 
-        :return: the xml-gmd:MD_Distribution node as ElementTree.Element
+        return: the xml-gmd:MD_Distribution node as ElementTree.Element
         """
         #sessionCalls.setApplicationInHeadersTo("xml")
         #recordUrl = "api/0.1/records/" + uuid
         #respons = sessionCalls.sendGetRequest(recordUrl)
         #sessionCalls.setApplicationInHeadersTo("json")
-        xmlElementTree = ElementTree.fromstring(self.getMdRecordAsXml(uuid))
-        root = xmlElementTree.find(".//gmd:MD_Distribution", const.ns)
-        if not root:
-            root = xmlElementTree
-        return root
+        _xmlElementTree = ElementTree.fromstring(self.getMdRecordAsXml(uuid))
+        _root = _xmlElementTree.find(".//gmd:MD_Distribution", const.ns)
+        if not _root:
+            _root = _xmlElementTree
+        return _root
 
     def getMdRecordAsXml(self, uuid :str):
         """ get the MD record as xml from the given uuid
-        :sessionCalls: current API session-object
-        :uuid: uuid from the MD
+        sessionCalls: current API session-object
+        uuid: uuid from the MD
 
-        :return: the MD xml in binary format
+        return: the MD xml in binary format
         """
         self.__sessionCalls.setApplicationInHeadersTo("xml")
         _respons = self.__sessionCalls.sendGetRequest("api/0.1/records/" + uuid)
@@ -204,7 +204,7 @@ class FunctionLibrary:
                 self.writeLog("MD Record with uuid = " + uuid + " doesn't exist")
                 return _mdRecordDetails
 
-    def doBackups(self, uuidsList, batchName :str):
+    def doBackups(self, uuidsList :list, batchName :str):
         """ this methode create the backupfolder with the name batchName if it not exist
         write one backup-file in xml-format and one with additional information in json-format 
         for all MDs with the given uuids in uuidsList
@@ -250,7 +250,7 @@ class FunctionLibrary:
                 self.validatMdRecord( uuid)
             self.updateMdRecordSharingSettings(uuid, _mdRecordDetails, isRepair=False)
 
-    def addMdRecordFromXmlFragment(self, categories :list, isPublishToAll :str, value ):
+    def addMdRecordFromXmlFragment(self, categories :list, isPublishToAll :str, value :str):
         """"""
         _metadataType = "metadataType=METADATA"
         _recursiveSearch = "&recursiveSearch=false"
@@ -267,11 +267,11 @@ class FunctionLibrary:
         self.writeLog("      urlValue: " + urlValue)
         return self.__sessionCalls.sendPutRequest(urlValue, value, xpath="")
 
-    def updateOwnerShipData(self, uuid, mdRecordDetails):
+    def updateOwnerShipData(self, uuid :str, mdRecordDetails :dict):
         """
         """
         self.writeLog("    set mdRecords group and owner")
-        urlValue = "api/0.1/records/" + uuid + "/ownership?groupIdentifier=" + mdRecordDetails['groupId'] + "&userIdentifier=" + mdRecordDetails['ownerId'] + "&approved=true"
+        urlValue = "api/0.1/records/" + uuid + "/ownership?groupIdentifier=" + mdRecordDetails.get('groupId') + "&userIdentifier=" + mdRecordDetails.get('ownerId') + "&approved=true"
         self.writeLog("      urlValue: " + urlValue)
         response = self.__sessionCalls.sendPutRequest(urlValue, value="", xpath="")
         if response.status_code == 201:
@@ -279,7 +279,7 @@ class FunctionLibrary:
         else:
             self.writeLog("    !! group and owner from mdRecord " + uuid + " not updated")
 
-    def getMdRecordPrivilegeSetting(self, uuid, isRepair=False):
+    def getMdRecordPrivilegeSetting(self, uuid :str, isRepair=False):
         """"""
         self.writeLog("    get mdRecords privilege settings")
         if isRepair:
@@ -289,7 +289,7 @@ class FunctionLibrary:
         self.writeLog("      urlValue: " + urlValue)
         return self.__sessionCalls.sendGetRequest(urlValue)
 
-    def updateMdRecordSharingSettings(self, uuid, mdRecordDetails, isRepair):
+    def updateMdRecordSharingSettings(self, uuid :str, mdRecordDetails :dict, isRepair :bool):
         """"""
         def _setMdRecordPrivilege(uuid, groupId, operations):
             """"""
@@ -357,28 +357,28 @@ class FunctionLibrary:
         """ get the count of transferoptions-nodes, from the MD with the given uuid
         first, checks if there are empty transferoptions-nodes and remove it from MD
 
-        :uuid: uuid from the MD
+        uuid: uuid from the MD
 
-        :return: the number of xml-transferoptions nodes, which are not empty
+        return: the number of xml-transferoptions nodes, which are not empty
         """
-        distribution = self.getDistributionNodeAsRoot(uuid)
-        if distribution.tag == "{http://www.isotc211.org/2005/gmd}MD_Distribution":
-            xmlTransferOptionsNodes = distribution.findall(".//gmd:transferOptions", const.ns)
+        _distribution = self.getDistributionNodeAsRoot(uuid)
+        if _distribution.tag == "{http://www.isotc211.org/2005/gmd}MD_Distribution":
+            _xmlTransferOptionsNodes = _distribution.findall(".//gmd:transferOptions", const.ns)
             self.writeLog("    check if has empty tronsferOptions nodes and remove it if exist")
-            removed = 0
-            for transferOptions in reversed(xmlTransferOptionsNodes):
-                dto = transferOptions.find("./gmd:MD_DigitalTransferOptions", const.ns)
-                if not dto:
-                    self.writeLog("      remove empty transferOptionsNode[" + str(xmlTransferOptionsNodes.index(transferOptions) + 1) + "]/" + str(len(xmlTransferOptionsNodes)))
-                    xpath = ".//gmd:transferOptions[" + str(xmlTransferOptionsNodes.index(transferOptions) + 1) + "]"
-                    removed += self.removeEmptyTransferOptionsNode(uuid, xpath)
-            self.writeLog("      removed " + str(removed) + " empty transferOptionsNodes")
-            distribution = None
-            xmlTransferOptionsNodes = None
-            distribution = self.getDistributionNodeAsRoot(uuid)
-            xmlTransferOptionsNodes = distribution.findall(".//gmd:transferOptions", const.ns)
-            counter = len(xmlTransferOptionsNodes)
-            return str(counter)
+            _removed = 0
+            for transferOptions in reversed(_xmlTransferOptionsNodes):
+                _digiTransOptionsNode = transferOptions.find("./gmd:MD_DigitalTransferOptions", const.ns)
+                if not _digiTransOptionsNode:
+                    self.writeLog("      remove empty transferOptionsNode[" + str(_xmlTransferOptionsNodes.index(transferOptions) + 1) + "]/" + str(len(_xmlTransferOptionsNodes)))
+                    _xpath = ".//gmd:transferOptions[" + str(_xmlTransferOptionsNodes.index(transferOptions) + 1) + "]"
+                    _removed += self.removeEmptyTransferOptionsNode(uuid, _xpath)
+            self.writeLog("      removed " + str(_removed) + " empty transferOptionsNodes")
+            _distribution = None
+            _xmlTransferOptionsNodes = None
+            _distribution = self.getDistributionNodeAsRoot(uuid)
+            _xmlTransferOptionsNodes = _distribution.findall(".//gmd:transferOptions", const.ns)
+            _counter = len(_xmlTransferOptionsNodes)
+            return str(_counter)
         else:
             return str(-1)
 
@@ -406,73 +406,76 @@ class FunctionLibrary:
     def getResponseAsXmlTree(self, searchValue :str, mainLanguage :str, start="1", end="1500"):
         """ get the response of the corresponding search condition as xml tree 
 
-        :searchValue: the search condition eg. &keyword=keywordValue
-        :mainLanguage: the defined main language
-        :start: from which MD will be start the search request
-        :end: to which MD will be end the search request
+        searchValue (str): the search condition eg. &keyword=keywordValue
+        mainLanguage (str): the defined main language
+        start (str): from which MD will be start the search request
+        end (str): to which MD will be the end of the search request
 
-        :return: a element with all nodes whitch corresponding the search condition
+        return (ElementTree.Element): nodes whitch corresponding the search condition
         """
         self.writeLog("    get the response of the corresponding search condition: /q?from=" + start + "&to=" + end + searchValue)
-        urlValue = mainLanguage + "/q?from=" + start + "&to=" + end + searchValue
-        response = self.__requestCalls.sendGetRequest(urlValue)
-        while response.status_code != 200:
-            response = self.__requestCalls.sendGetRequest(urlValue)
-        countOfMDs = ElementTree.fromstring(response.content).find("./summary").attrib["count"]
-        self.writeLog("    Number of MDs corresponding to your search: " + countOfMDs)
-        xmlElementTree = ElementTree.fromstring(response.content)
-        return xmlElementTree
+        _urlValue = mainLanguage + "/q?from=" + start + "&to=" + end + searchValue
+        _response = self.__requestCalls.sendGetRequest(_urlValue)
+        while _response.status_code != 200:
+            _response = self.__requestCalls.sendGetRequest(_urlValue)
+        _countOfMDs = ElementTree.fromstring(_response.content).find("./summary").attrib["count"]
+        self.writeLog("    Number of MDs corresponding to your search: " + _countOfMDs)
+        _xmlElementTree = ElementTree.fromstring(_response.content)
+        return _xmlElementTree
 
     def removeUnusedUuids(self, uuidsList :ElementTree.Element, keyword :str, mainLanguage :str):
-        """ return a list with all uuids which use to add the opendata.swiss permalink to geocat MDs
-        if the keyword uuid not in the protocol uuid then add it to the result list
-        :uuidsList: a list with all MD uuids which have the given protocol
+        """ this function remove all entries in the searchResultList of the given keyword which has the same uuid in the given uuidsList
+        if the uuid from the keywordUuidsList not exist in the given uuidsList then add it to the resultList
 
-        :return: a list with all MD uuids which haven't the given protocol
+        uuidsList (Element): a list with all uuids from MDs which not use on this job
+        keyword (str): see the writLog-argument below
+        mainLanguage (str): the defined main language
+
+        return (Element): a list with all uuids from MDs which use on this job
         """
         self.writeLog("****************************************************************************************************************************")
         self.writeLog("create a list with all uuids from MDs, which have the keyword >" + keyword + "<")
         self.writeLog("****************************************************************************************************************************")
-        searchConditionValue = "&keyword=" + keyword + const.notHarvested + const.isMetadataType #+ const.isValid
-        keywordUuidsList =  self.getResponseAsXmlTree(searchConditionValue, mainLanguage).findall(".//uuid")
-        protocolUuidsList = uuidsList
-        isEqual = False
-        resultList = []
+        _searchConditionValue = "&keyword=" + keyword + const.searchFilter + const.notHarvested + const.plus + const.isMetadataType #+ const.isValid
+        _keywordUuidsList = self.getResponseAsXmlTree(_searchConditionValue, mainLanguage).findall(".//uuid")
+        _protocolUuidsList = uuidsList
+        _isEqual = False
+        _resultList = []
         self.writeLog("****************************************************************************************************************************")
         self.writeLog("remove all uuids from keywordList, which have the same uuid in protocolList")
         self.writeLog("****************************************************************************************************************************")
-        for keywordUuid in keywordUuidsList:
-            for porotocolUuid in protocolUuidsList:
+        for keywordUuid in _keywordUuidsList:
+            for porotocolUuid in _protocolUuidsList:
                 if keywordUuid.text == porotocolUuid.text:
-                    isEqual = True
+                    _isEqual = True
                     break
-            if not isEqual:
-                resultList.append(keywordUuid)
+            if not _isEqual:
+                _resultList.append(keywordUuid)
             else:
-                isEqual = False
-        self.writeLog("the list with all needed uuid-Elements was created and has " + str(len(resultList)) + " elements")
-        return resultList
+                _isEqual = False
+        self.writeLog("the list with all needed uuid-Elements was created and has " + str(len(_resultList)) + " elements")
+        return _resultList
 
     def getValueAttribute(self, transferOptionsNumber :int, onLineNodeParameters :dict):
         """ additional function to addXmlOnLineNode() to build the value-attribute for the batchediting putRequest 
 
-        :transferOptionsNumber: the number of the last transferOptions-node
-        :onLineNodeParameters: onLineNode values, which are different for each MD-record
+        transferOptionsNumber (int): the number of the last transferOptions-node
+        onLineNodeParameters (dict): onLineNode values, which are different for each MD-record
 
-        :return: the joined single line string
+        return (str): the joined single line string
         """
-        urlValueDe = onLineNodeParameters['urlValueDe']
-        urlValueFr = onLineNodeParameters['urlValueFr']
-        urlValueIt = onLineNodeParameters['urlValueIt']
-        urlValueEn = onLineNodeParameters['urlValueEn']
-        urlValueRm = onLineNodeParameters['urlValueRm']
-        resourceNameValueDe = onLineNodeParameters['resourceNameValueDe']
-        resourceNameValueFr = onLineNodeParameters['resourceNameValueFr']
-        resourceNameValueIt = onLineNodeParameters['resourceNameValueIt']
-        resourceNameValueEn = onLineNodeParameters['resourceNameValueEn']
-        resourceNameValueRm = onLineNodeParameters['resourceNameValueRm']
-        protocol = onLineNodeParameters['protocol']
-        codeListValue = onLineNodeParameters['function']
+        urlValueDe = onLineNodeParameters.get('urlValueDe')
+        urlValueFr = onLineNodeParameters.get('urlValueFr')
+        urlValueIt = onLineNodeParameters.get('urlValueIt')
+        urlValueEn = onLineNodeParameters.get('urlValueEn')
+        urlValueRm = onLineNodeParameters.get('urlValueRm')
+        resourceNameValueDe = onLineNodeParameters.get('resourceNameValueDe')
+        resourceNameValueFr = onLineNodeParameters.get('resourceNameValueFr')
+        resourceNameValueIt = onLineNodeParameters.get('resourceNameValueIt')
+        resourceNameValueEn = onLineNodeParameters.get('resourceNameValueEn')
+        resourceNameValueRm = onLineNodeParameters.get('resourceNameValueRm')
+        protocol = onLineNodeParameters.get('protocol')
+        codeListValue = onLineNodeParameters.get('function')
         batchEditModeTag = "<gn_add>"
         batchEditModeCloseTag = "</gn_add>"
         if transferOptionsNumber > 0:
@@ -518,116 +521,115 @@ class FunctionLibrary:
     def addXmlOnLineNode(self, relatedValues :dict, onLineNodeParameters :dict):
         """ main function to add <gmd:onLine> ... </gmd:onLine> 
 
-        :relatedValues: {"uuid" : "value", "relatedValue" : "value"} data pair: uuid with the related value 
-        :onLineNodeParameters: onLineNode values, which are different for each MD-record 
+        relatedValues: {"uuid" : "value", "relatedValue" : "value"} data pair: uuid with the related value 
+        onLineNodeParameters: onLineNode values, which are different for each MD-record 
 
-        :return:
+        return:
         """
-        transferOptionsNodeCount = self.getCountOfTransferOptionsNodes(relatedValues['uuid'])
+        _transferOptionsNodeCount = self.getCountOfTransferOptionsNodes(relatedValues.get('uuid'))
         # need if <gmd:distributionInfo> node not exist
-        if int(transferOptionsNodeCount) == -1:
-            value = "<gn_add><gmd:distributionFormat " + const.namespaces + " xlink:href='local://srv/api/registries/entries/388d711d-c1ea-49ea-a02d-5868b1174b55?lang=ger,fre,eng,ita&amp;schema=iso19139.che'><gmd:MD_Format><gmd:name><gco:CharacterString>autres formats sur demande / andere Formate auf Anfrage</gco:CharacterString></gmd:name><gmd:version gco:nilReason='missing'><gco:CharacterString/></gmd:version></gmd:MD_Format></gmd:distributionFormat></gn_add>"
-            xpath = "/che:CHE_MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
-            urlValue = "api/0.1/records/batchediting?uuids=" + relatedValues['uuid'] + "&updateDateStamp=true"
+        if int(_transferOptionsNodeCount) == -1:
+            _value = "<gn_add><gmd:distributionFormat " + const.namespaces + " xlink:href='local://srv/api/registries/entries/388d711d-c1ea-49ea-a02d-5868b1174b55?lang=ger,fre,eng,ita&amp;schema=iso19139.che'><gmd:MD_Format><gmd:name><gco:CharacterString>autres formats sur demande / andere Formate auf Anfrage</gco:CharacterString></gmd:name><gmd:version gco:nilReason='missing'><gco:CharacterString/></gmd:version></gmd:MD_Format></gmd:distributionFormat></gn_add>"
+            _xpath = "/che:CHE_MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution"
+            _urlValue = "api/0.1/records/batchediting?uuids=" + relatedValues['uuid'] + "&updateDateStamp=true"
             self.writeLog("    MD has no online resource, its need to add additional data")
-            self.writeLog("      urlValue: " + urlValue)
-            self.writeLog("      value: " + value)
-            self.writeLog("      xpath: " + xpath)
-            response = self.__sessionCalls.sendPutRequest(urlValue, value, xpath)
-            responseMessage = self.formatResponse(response)
-            self.writeLog(responseMessage)
-            value = "<gn_add><gmd:transferOptions " + const.namespaces + " ></gmd:transferOptions></gn_add>"
-            response = sessionCalls.sendPutRequest(urlValue, value, xpath)
-            transferOptionsNodeCount = "0"
-        value = self.getValueAttribute(int(transferOptionsNodeCount), onLineNodeParameters)
-        if int(transferOptionsNodeCount) > 0:
-            xpath = "/che:CHE_MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions[" + transferOptionsNodeCount + "]/gmd:MD_DigitalTransferOptions"
-        elif int(transferOptionsNodeCount) == 0:
-            xpath = "/che:CHE_MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions"
-        urlValue = "api/0.1/records/batchediting?uuids=" + relatedValues['uuid'] + "&updateDateStamp=true"
-        self.writeLog("    urlValue: " + urlValue)
-        self.writeLog("    value: " + value)
-        self.writeLog("    xpath: " + xpath)
-        response = self.__sessionCalls.sendPutRequest(urlValue, value, xpath)
-        responseMessage = self.formatResponse(response)
-        self.writeLog(responseMessage)
-        if "Info:" in responseMessage:
+            self.writeLog("      urlValue: " + _urlValue)
+            self.writeLog("      value: " + _value)
+            self.writeLog("      xpath: " + _xpath)
+            _response = self.__sessionCalls.sendPutRequest(_urlValue, _value, _xpath)
+            _responseMessage = self.formatResponse(_response)
+            self.writeLog(_responseMessage)
+            _value = "<gn_add><gmd:transferOptions " + const.namespaces + " ></gmd:transferOptions></gn_add>"
+            _response = sessionCalls.sendPutRequest(_urlValue, _value, _xpath)
+            _transferOptionsNodeCount = "0"
+        _value = self.getValueAttribute(int(_transferOptionsNodeCount), onLineNodeParameters)
+        if int(_transferOptionsNodeCount) > 0:
+            _xpath = "/che:CHE_MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions[" + _transferOptionsNodeCount + "]/gmd:MD_DigitalTransferOptions"
+        elif int(_transferOptionsNodeCount) == 0:
+            _xpath = "/che:CHE_MD_Metadata/gmd:distributionInfo/gmd:MD_Distribution/gmd:transferOptions"
+        _urlValue = "api/0.1/records/batchediting?uuids=" + relatedValues.get('uuid') + "&updateDateStamp=true"
+        self.writeLog("    urlValue: " + _urlValue)
+        self.writeLog("    value: " + _value)
+        self.writeLog("    xpath: " + _xpath)
+        _response = self.__sessionCalls.sendPutRequest(_urlValue, _value, _xpath)
+        _responseMessage = self.formatResponse(_response)
+        self.writeLog(_responseMessage)
+        if "Info:" in _responseMessage:
             return 1
         else:
             return 0
 
     def getUuidAndRelatedTechLayerPairs(self, uuidsList :list, dataSource :str, inputFilename=""):
-        """ return the list with all needed uuid and it's related techLayer pairs 
+        """ return the list with all needed pairs of uuid and it's related techLayer 
 
-        :uuidsList: list with all possible uuids
-        :dataSource:
+        uuidsList (list[Element]): list with all possible uuids
+        dataSource (str):
 
-        :return: list[dict{uuid:uuid, relatedValue:techlayer}]
+        return (list[dict{uuid:uuid, relatedValue:techlayer}]):
 
         responseData[12]['IDGEOCAT']
         responseData[12]['LAYERBODID']
         """
-        resultList = []
-        idGeoCat = 'idGeoCat'
-        layerBodId = 'layerBodId'
-        bodExportFilePath = inputFilename
-        bodExportFileAsList = []
+        _resultList = []
+        _idGeoCat = 'idGeoCat'
+        _layerBodId = 'layerBodId'
+        _bodExportFilePath = inputFilename
+        _bodExportFileAsList = []
         if dataSource == "API3":
-            url = const.api3RequestUrl
-            response = requests.get(url, proxies=const.proxyDict, verify=False)
-            responseLayers = response.json()['layers']
+            _url = const.api3RequestUrl
+            _response = requests.get(_url, proxies=const.proxyDict, verify=False)
+            _responseLayers = _response.json()['layers']
         elif dataSource == "BMD":
-            url = const.bmdRequestUrl
-            idGeoCat = idGeoCat.upper()
-            layerBodId = layerBodId.upper()
-            #response = requestCalls.sendGetRequest(url)
-            response = requests.get(url)
-            responseLayers = response.json()
+            _url = const.bmdRequestUrl
+            _idGeoCat = _idGeoCat.upper()
+            _layerBodId = _layerBodId.upper()
+            _response = requests.get(_url)
+            _responseLayers = _response.json()
         elif dataSource == "BOD":
-            with open(bodExportFilePath) as bodFp:
-                for line in bodFp:
-                    bodExportFileAsList.append(line.rstrip("\n"))
-            bodFp.close()
-            for uuidTechLayer in bodExportFileAsList:
-                resultLine = {}
-                geocat_id, dataset_id = uuidTechLayer.split(";")
-                if "." in geocat_id:
-                   dataset_id, geocat_id = uuidTechLayer.split(";")
-                if len(geocat_id) == 36:
-                    resultLine['uuid'] = geocat_id
-                    resultLine['relatedValue'] = dataset_id
-                    resultList.append(resultLine)
-            return resultList
+            with open(_bodExportFilePath) as _bodFp:
+                for line in _bodFp:
+                    _bodExportFileAsList.append(line.rstrip("\n"))
+            _bodFp.close()
+            for uuidTechLayer in _bodExportFileAsList:
+                _resultLine = {}
+                _geocat_id, _dataset_id = uuidTechLayer.split(";")
+                if "." in _geocat_id:
+                   _dataset_id, _geocat_id = uuidTechLayer.split(";")
+                if len(_geocat_id) == 36:
+                    _resultLine['uuid'] = _geocat_id
+                    _resultLine['relatedValue'] = _dataset_id
+                    _resultList.append(_resultLine)
+            return _resultList
 
         for uuid in uuidsList:
-            countOfMDs = str(len(uuidsList))
-            self.writeLog(str(uuidsList.index(uuid) + 1) + "/" + countOfMDs + ") search related techLayer from uuid: " + uuid.text)
-            for layer in responseLayers:
-                if uuid.text == layer[idGeoCat]:
-                    resultLine = {}
-                    resultLine['uuid'] = layer[idGeoCat]
-                    resultLine['relatedValue'] = layer[layerBodId]
-                    resultList.append(resultLine)
-        self.writeLog("the list with all uuid-techLayer pairs was created and has " + str(len(resultList)) + " dictionaries")
-        return resultList
+            _countOfMDs = str(len(uuidsList))
+            self.writeLog(str(uuidsList.index(uuid) + 1) + "/" + _countOfMDs + ") search related techLayer from uuid: " + uuid.text)
+            for layer in _responseLayers:
+                if uuid.text == layer[_idGeoCat]:
+                    _resultLine = {}
+                    _resultLine['uuid'] = layer[_idGeoCat]
+                    _resultLine['relatedValue'] = layer[_layerBodId]
+                    _resultList.append(_resultLine)
+        self.writeLog("the list with all uuid-techLayer pairs was created and has " + str(len(_resultList)) + " dictionaries")
+        return _resultList
 
     def deleteOnlineResourceWithGivenProtocol(self, protocol :str, **uuids):
         """ remove one or all online resource, which having the given protocol eg. ESRI:REST
 
-        :protocol: the name of the protocol
-        :**uuids:
-        :uuids['uuid']: only one uuid, use if only one MD record to remove the online resource
-        :uuids['uuidsList']: list of uuids, use if more than one MD record to remove the online resource
+        protocol: the name of the protocol
+        **uuids:
+          uuids['uuid']: only one uuid, use if only one MD record to remove the online resource
+          uuids['uuidsList']: list of uuids, use if more than one MD record to remove the online resource
         """
-        value = "<gn_delete></gn_delete>"
-        xpath = ".//gmd:onLine[*/gmd:protocol/*/text() = '" + protocol + "']"
-        self.writeLog("      value: " + value)
-        self.writeLog("      xpath: " + xpath)
+        _value = "<gn_delete></gn_delete>"
+        _xpath = ".//gmd:onLine[*/gmd:protocol/*/text() = '" + protocol + "']"
+        self.writeLog("      value: " + _value)
+        self.writeLog("      xpath: " + _xpath)
         def runTask(uuid :str):
             """ nested function to do the same things of both conditions"""
             urlValue = "api/0.1/records/batchediting?uuids=" + uuid + "&updateDateStamp=true"
             self.writeLog("      urlValue: " + urlValue)
-            response = self.__sessionCalls.sendPutRequest(urlValue, value, xpath)
+            response = self.__sessionCalls.sendPutRequest(urlValue, _value, _xpath)
             responseMessage = self.formatResponse(response)
             self.writeLog(responseMessage)
             if "Info:" in responseMessage:
@@ -635,16 +637,16 @@ class FunctionLibrary:
             else:
                 return 0
 
-        deleteCounter = 0
-        if uuids['uuid']:
-            deleteCounter += runTask(uuids['uuid'])
+        _deleteCounter = 0
+        if uuids.get('uuid'):
+            _deleteCounter += runTask(uuids['uuid'])
         else:
-            uuidsList = uuids['uuidsList']
-            for uuid in uuidsList:
-                countOfMDs = str(len(uuidsList))
-                self.writeLog(str(uuidsList.index(uuid) + 1) + "/" + countOfMDs + ") delete xml-Node onLine")
-                deleteCounter += runTask(uuid.text)
-        self.writeLog("      " + str(deleteCounter) + " online resources was deleted")
+            _uuidsList = uuids.get('uuidsList')
+            for uuid in _uuidsList:
+                _countOfMDs = str(len(_uuidsList))
+                self.writeLog(str(_uuidsList.index(uuid) + 1) + "/" + _countOfMDs + ") delete xml-Node onLine")
+                _deleteCounter += runTask(uuid.text)
+        self.writeLog("      " + str(_deleteCounter) + " online resources was deleted")
 
     def deleteXpath(self, xPath :str, uuid :str):
         value = "<gn_delete></gn_delete>"

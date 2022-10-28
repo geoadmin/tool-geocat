@@ -19,7 +19,7 @@ class Corporation(Corp):
 
     # Attributes
     __funcLib = None
-    __legislitiveEntriesList = []
+    __legislitiveEntriesList = [] # container for all legislativeEntryData
     __entryDataResultList = []
     __technicalEntryResultList = []
     __geocatMdRecordsResultList = []
@@ -30,12 +30,12 @@ class Corporation(Corp):
         self.__entryDataResultList.clear()
         self.__technicalEntryResultList.clear()
         self.__geocatMdRecordsResultList.clear()
-        self.__geocatArgs = geocatArgs
         self.__funcLib = geocatArgs.get('funcLib')
         self.__funcLib.writeLog("[]]in constructor of corporationItem-object")
-        geocatArgs["gbdCorpId"] = self.corporationID
+        geocatArgs["gbdCorpId"] = self.corporationID 
+        self.__geocatArgs = geocatArgs
         self.__legislitiveEntriesList = self.__loadLegislativeEntries()
-        self.__funcLib.writeLog("<<<<<<<<<<<<<<<<< return from constructor of corporationItem-object")
+        #self.__funcLib.writeLog("<<<<<<<<<<<<<<<<< return from constructor of corporationItem-object")
 
     def __loadLegislativeEntries(self):
         """  """

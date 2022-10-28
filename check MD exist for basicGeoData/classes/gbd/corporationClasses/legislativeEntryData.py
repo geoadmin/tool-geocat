@@ -8,25 +8,19 @@ from classes.gbd.corporationClasses.legislativeEntryClasses.authority import Aut
 class LegislativeEntryData():
     """legislative entry for the given corp
     Parameter:
-    ----------
-    
-    Attribute:
-    ----------
-    
-    Property:
-    ----------
-    
+      geocatArgs (dict):
+      legiEntryData (dict):
     """
 
     # Attributes
     __funcLib = None
     __executiveCorporation = None
     __legislativeCorporation = None
-    __catalogGroups = None
-    __executiveAuthoritiesList = []
-    __legislativeAuthoritiesList = []
-    __legalBasesList = []
-    __technicalEntriesList = []
+    __catalogGroups = [] # container for all geocat groupOwner
+    __executiveAuthoritiesList = [] # container for all executiveAuthority
+    __legislativeAuthoritiesList = [] # container for all legislativeAuthority
+    __legalBasesList = [] # container for all legalBase
+    __technicalEntriesList = [] # container for all technicalEntry
     __technicalEntryResultList = []
     __geocatMdRecordsResultList = []
 

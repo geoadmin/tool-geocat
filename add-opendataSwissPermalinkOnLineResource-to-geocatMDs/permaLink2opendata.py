@@ -20,7 +20,7 @@ class PermaLink2opendata():
     """
     Autor:      Martin Reithmeier in 2021
 
-    Purpose:    add the permalink from opendata.swiss (ods) in geocat MDs. 
+    Purpose:    add the permalink from opendata.swiss (ods) in geocat MDs, which has the keyword opendata.swiss
 
     Remarks:    
 
@@ -53,9 +53,9 @@ class PermaLink2opendata():
         which is composed of >the uuid from geocat MD< and >@< and >the organisation slug<
         it use the ods-api to find the ods-identifier
     
-        :uuid: the uuid from the geocat MD
+        uuid: the uuid from the geocat MD
         
-        :return: dict with uuid and identifier if uuid exist otherwise an empty dict
+        return: dict with uuid and identifier if uuid exist otherwise an empty dict
         """
         _odsRequestUrl = const.odsSearchIdentifierUrlPrefix + uuid + "*"
         _odsResponse = requests.get(_odsRequestUrl, proxies=const.proxyDict, verify=False)
@@ -67,23 +67,23 @@ class PermaLink2opendata():
             return {}
     
     def __getUuidAndIdentifierPairsList(self, uuidsList :ElementTree.Element):
-        """ create a list of dictionaries containing the MD uuid and the related opendata.swiss identifier
+        """ create a list of dictionaries containing the MD-uuid and the related opendata.swiss identifier
     
-        :uuidsList:
+        uuidsList (list[ElementTree.Element]):
     
-        :return: a list of dictionaries containing the MD uuid and the related opendata.swiss identifier
+        return: a list of dictionaries containing the MD uuid and the related opendata.swiss identifier
         """
         _uuidAndIdentifierPairsList = []
         _countOfMDs = str(len(uuidsList))
         for uuid in uuidsList:
             _index = str(uuidsList.index(uuid) + 1)
-            writeLog(_index + "/" + _countOfMDs + ") try to get uuid identifier pair")
+            self.writeLog(_index + "/" + _countOfMDs + ") try to get uuid identifier pair")
             _uuidIdentifierPair = self.__getGeocatUuidAndOdsIdentifierPair(uuid.text)
             if _uuidIdentifierPair:
-                writeLog("    uuid: " + _uuidIdentifierPair.get('uuid') + ", identifier: " + _uuidIdentifierPair.get('relatedValue'))
+                self.writeLog("    uuid: " + _uuidIdentifierPair.get('uuid') + ", identifier: " + _uuidIdentifierPair.get('relatedValue'))
                 _uuidAndIdentifierPairsList.append(_uuidIdentifierPair)
             else:
-                writeLog("    dataset with uuid: " + uuid.text + " not found on opendata.swiss")
+                self.writeLog("    dataset with uuid: " + uuid.text + " not found on opendata.swiss")
         return _uuidAndIdentifierPairsList
     
     def __getOnLineNodeParameters(self, relatedValue :str):
@@ -111,38 +111,38 @@ class PermaLink2opendata():
     def __updatingRecords(self, uuidsAndRelatedOdsIdentifiersList :list):
         """ updating all MDs with the given uuids from the list
     
-        :sessionCalls: current API session-object to send requests by using the GeoNetwork REST API
-        :uuidsAndRelatedIdentifiersList: list with dictionaries which have the keywords uuid and relatedValue
+        sessionCalls: current API session-object to send requests by using the GeoNetwork REST API
+        uuidsAndRelatedIdentifiersList: list with dictionaries which have the keywords uuid and relatedValue
     
-        :return: the number of updated MD-records as string
+        return: the number of updated MD-records as string
         """
         _addCounter = 0
-        writeLog("****************************************************************************************************************************")
-        writeLog("now, add onLineResources. at first time check if isUpdateToMui and an online resource with the given protocol exist ")
-        writeLog("****************************************************************************************************************************")
+        self.writeLog("****************************************************************************************************************************")
+        self.writeLog("now, add onLineResources. at first time check if isUpdateToMui and an online resource with the given protocol exist ")
+        self.writeLog("****************************************************************************************************************************")
         _countOfMDs = str(len(uuidsAndRelatedOdsIdentifiersList))
         for uuidAndRelatedOdsIdentifier in uuidsAndRelatedOdsIdentifiersList:
             _index = str(uuidsAndRelatedOdsIdentifiersList.index(uuidAndRelatedOdsIdentifier) + 1)
             if self.__isUpdateToMui:
-                writeLog(_index + "/" + _countOfMDs + ") check if isUpdateToMui and hasOnlineResource are true, than add xml-Node >onLine<")
+                self.writeLog(_index + "/" + _countOfMDs + ") check if isUpdateToMui and hasOnlineResource are true, than add xml-Node >onLine<")
             else:
-                writeLog(_index + "/" + _countOfMDs + ") add xml-Node >onLine<")
+                self.writeLog(_index + "/" + _countOfMDs + ") add xml-Node >onLine<")
             if self.__isUpdateToMui and self.__funcLib.hasOnlineResource(uuidAndRelatedOdsIdentifier.get('uuid'), self.__loginData.protocol.get()):
-                writeLog("     isUpdateToMui and hasOnlineResource are true, now try to delete it")
+                self.writeLog("     isUpdateToMui and hasOnlineResource are true, now try to delete it")
                 self.__funcLib.deleteOnlineResourceWithGivenProtocol(self.__loginData.protocol.get(), uuid=uuidAndRelatedOdsIdentifier.get('uuid'))
             _onLineNodeParameters = self.__getOnLineNodeParameters(uuidAndRelatedOdsIdentifier.get('relatedValue'))
             _addCounter += self.__funcLib.addXmlOnLineNode(uuidAndRelatedOdsIdentifier, _onLineNodeParameters)
         return str(_addCounter)
     
     def main(self):
-        writeLog("Script: " + batchName + " has started on environment: " + self.__loginData.environment.get())
+        self.writeLog("Script: " + self.__batchName + " has started on environment: " + self.__loginData.environment.get())
         self.__sessionCalls = API.GeocatSession(self.__loginData.urlPrefix, "eng/info?type=me", self.__loginData.username.get(), self.__loginData.password.get())
         self.__requestCalls = API.GeocatRequests(self.__loginData.urlPrefix, self.__loginData.username.get(), self.__loginData.password.get())
         self.__funcLib.setApiCalls(self.__sessionCalls, self.__requestCalls)
-        writeLog("****************************************************************************************************************************")
-        writeLog("create a list with all uuids from MDs, which have an onLine resource with the protocol >" + self.__loginData.protocol.get() + "<")
-        writeLog("****************************************************************************************************************************")
-        _mdRecordsAsXmlTree = getResponseAsXmlTree("&protocol=" + self.__loginData.protocol.get(), self.__mainLanguage)
+        self.writeLog("****************************************************************************************************************************")
+        self.writeLog("create a list with all uuids from MDs, which have an onLine resource with the protocol >" + self.__loginData.protocol.get() + "<")
+        self.writeLog("****************************************************************************************************************************")
+        _mdRecordsAsXmlTree = self.__funcLib.getResponseAsXmlTree("&protocol=" + self.__loginData.protocol.get(), self.__mainLanguage)
         _uuidsList = _mdRecordsAsXmlTree.findall(".//uuid")
         # todo dispatcher
         if self.__loginData.backupMode.get() == "Restore":
@@ -151,9 +151,10 @@ class PermaLink2opendata():
             self.__funcLib.deleteOnlineResourceWithGivenProtocol(self.__loginData.protocol.get(), uuidsList=_uuidsList, uuid="")
         elif self.__loginData.batchEditMode == "add":
             if not self.__isUpdateToMui:
-                _usedUuidsList = removeUnusedUuids(_uuidsList, self.__loginData.keyword.get(), self.__mainLanguage)
+                # uuids of MDs, which has allready a permalink is necessary to remove it from _uuidsList
+                _usedUuidsList = self.__funcLib.removeUnusedUuids(_uuidsList, self.__loginData.keyword.get(), self.__mainLanguage)
             else:
-                _searchConditionValue = "&keyword=" + self.__loginData.keyword.get() + const.isNotHarvested + const.isMetadataType
+                _searchConditionValue = "&keyword=" + self.__loginData.keyword.get() + const.searchFilter + const.plus + const.isNotHarvested + const.plus + const.isMetadataType
                 _usedUuidsList = self.__funcLib.getResponseAsXmlTree(_searchConditionValue, mainLanguage).findall(".//uuid")
             _uuidAndIdentifierPairsList = self.__getUuidAndIdentifierPairsList(_usedUuidsList)
             isBackup = self.__loginData.isBackup.get()
@@ -163,7 +164,7 @@ class PermaLink2opendata():
                     _uuidsBakupList.append(uuid['uuid'])
                 self.__funcLib.doBackups(_uuidsBakupList, self.__batchName)
             _updatedRecords = self.__updatingRecords(_uuidAndIdentifierPairsList)
-            writeLog(_updatedRecords + " online resources was added (MD records updated)")
+            self.writeLog(_updatedRecords + " online resources was added (MD records updated)")
     
 try:
     permaLink2opendata = PermaLink2opendata()     # create the permaLink2opendata-object

@@ -14,7 +14,7 @@ import geocatConstants as const
 root = tk.Tk()  
 
 class LoginGUI(tk.Frame):
-    """GUI to define somme attribute and the login"""
+    """GUI to define the start-condition and the login"""
     def __init__(self, master=root):
         super(LoginGUI, self).__init__(master)
 
@@ -33,7 +33,7 @@ class LoginGUI(tk.Frame):
         self.selectFrame.grid(row=0, column=0, padx=5, pady=5)
 
         self.rbEditFrame = tk.LabelFrame(self.selectFrame, text="Select Batchediting")
-        self.rbEditFrame.grid(row=0, column=0, padx=5, pady=5, sticky='w')
+        self.rbEditFrame.grid(row=0, column=0, padx=5, pady=5, sticky='nw')
 
         self.rbEnvFrame = tk.LabelFrame(self.selectFrame, text="Select Environment")
         self.rbEnvFrame.grid(row=0, column=1, padx=5, pady=5, sticky='nw')
@@ -125,7 +125,7 @@ class LoginGUI(tk.Frame):
         self.keywordCombo.grid(row=1, column=0, sticky='nw')
 
         # protocol 
-        self.protocolLabel = tk.Label(self.cbSearchArgFrame, text="Protocol 1:").grid(row=3, column=0, sticky='nw')
+        self.protocolLabel = tk.Label(self.cbSearchArgFrame, text="Protocol:").grid(row=3, column=0, sticky='nw')
         self.protocol = tk.StringVar()
         self.protocol.set(const.protocolsList[0])
         self.protocolCombo = ttk.Combobox(self.cbSearchArgFrame, values=const.protocolsList, textvariable=self.protocol, width=30)
