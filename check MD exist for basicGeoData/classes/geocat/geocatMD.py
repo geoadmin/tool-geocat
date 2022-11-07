@@ -2,26 +2,23 @@
 import geocatConstants as const
 
 class GeocatMD():
-    """description of class
+    """This class represents a mdRecord
     Parameter:
-    ----------
-    :techEntryId:
-    :uuid:
-    :metaData:
+      techEntryId:
+      uuid:
+      metaData:
 
     Attribute:
-    ----------
-    :_techEntryId:
-    :_uuid:
-    :_permaLink:
-    :_titel:
-    :_basicGeodataId:
-    :_basicGeodataType:
-    :_extentDescriptionList:
+      _techEntryId:
+      _uuid:
+      _permaLink:
+      _titel:
+      _basicGeodataId:
+      _basicGeodataType:
+      _extentDescriptionList:
     
-    Property:
-    ----------
-    <gmd:collectiveTitle>
+    remark:
+      <gmd:collectiveTitle>
         <gco:CharacterString>
     """
 
@@ -30,7 +27,7 @@ class GeocatMD():
 
     def __init__(self, techEntryId, uuid, mdRecord, funcLib):
         self.__funcLib = funcLib
-        self.__funcLib.writeLog("[]][][][][][][]in constructor of geocatMD-object")
+        #self.__funcLib.writeLog("[]][][][][][][]in constructor of geocatMD-object")
         self.__techEntryId = techEntryId
         self.__uuid = uuid
         self.__permaLink = "https://www.geocat.ch/geonetwork/srv/ger/catalog.search#/metadata/" + uuid
@@ -41,15 +38,15 @@ class GeocatMD():
         self.__extentDescriptionList = []
         self.__setPropertyValues(mdRecord)
         self.__printValues()
-        self.__funcLib.writeLog("<<<<<<<<<<<<<<<<< return from constructor of geocatMD-object")
-
+        #self.__funcLib.writeLog("<<<<<<<<<<<<<<<<< return from constructor of geocatMD-object")
+        
     def __setPropertyValues(self, metaData):
         """ get the information from the md-record (metaData) to set the corresponding property values """
-        _identificationAsRoot = metaData.find(".//gmd:identificationInfo", const.ns)
-        if _identificationAsRoot:
-            self.__gcCollectiveTitle = _identificationAsRoot.find(".//gmd:collectiveTitle/gco:CharacterString", const.ns).text
-            _CHE_MD_dataIdentificationAsRoot = _identificationAsRoot.find(".//che:CHE_MD_DataIdentification", const.ns)
-            _MD_DataIdentificationAsRoot = _identificationAsRoot.find(".//gmd:MD_DataIdentification", const.ns)
+        _identificationInfoAsRoot = metaData.find(".//gmd:identificationInfo", const.ns)
+        if _identificationInfoAsRoot:
+            self.__gcCollectiveTitle = _identificationInfoAsRoot.find(".//gmd:collectiveTitle/gco:CharacterString", const.ns).text
+            _CHE_MD_dataIdentificationAsRoot = _identificationInfoAsRoot.find(".//che:CHE_MD_DataIdentification", const.ns)
+            _MD_DataIdentificationAsRoot = _identificationInfoAsRoot.find(".//gmd:MD_DataIdentification", const.ns)
             if _CHE_MD_dataIdentificationAsRoot or _MD_DataIdentificationAsRoot:
                 if _CHE_MD_dataIdentificationAsRoot:
                     _CI_CitationAsRoot = _CHE_MD_dataIdentificationAsRoot.find(".//gmd:CI_Citation", const.ns)
@@ -57,16 +54,30 @@ class GeocatMD():
                     _basicGeodataIdAsRoot = _CHE_MD_dataIdentificationAsRoot.find(".//che:basicGeodataID", const.ns)
                     if _basicGeodataIdAsRoot:
                         self.__basicGeodataId = _basicGeodataIdAsRoot.find(".//gco:CharacterString", const.ns).text
+                    else:
+                        self.__funcLib.writeLog(">>>>>>>>>>>>>>> Value of <<_basicGeodataIdAsRoot>> is None (False)")
                     _basicGeodataIdTypeAsRoot = _CHE_MD_dataIdentificationAsRoot.find(".//che:basicGeodataIDType", const.ns)
                     if _basicGeodataIdTypeAsRoot:
                         _basicGeodataIDTypeCode = _basicGeodataIdTypeAsRoot.find(".//che:basicGeodataIDTypeCode", const.ns)
                         self.__basicGeodataType = _basicGeodataIDTypeCode.attrib['codeListValue']
+                    else:
+                        self.__funcLib.writeLog(">>>>>>>>>>>>>>> Value of <<_basicGeodataIdTypeAsRoot>> is None (False)")
+                else:
+                    self.__funcLib.writeLog(">>>>>>>>>>>>>>> Value of <<_CHE_MD_dataIdentificationAsRoot>> is None (False)")
                 if _MD_DataIdentificationAsRoot:
                     _CHE_MD_dataIdentificationAsRoot = _MD_DataIdentificationAsRoot
+                else:
+                    self.__funcLib.writeLog(">>>>>>>>>>>>>>> Value of <<_MD_DataIdentificationAsRoot>> is None (False)")
                 _extentDescriptionList = _CHE_MD_dataIdentificationAsRoot.findall(".//gmd:extent/gmd:EX_Extent/gmd:description/gco:CharacterString", const.ns)
                 for extentDescription in _extentDescriptionList:
                     if extentDescription.text:
                         self.__extentDescriptionList.append(extentDescription.text)
+                    else:
+                        self.__funcLib.writeLog(">>>>>>>>>>>>>>> Value of <<extentDescription.text>> is None (False)")
+            else:
+                self.__funcLib.writeLog(">>>>>>>>>>>>>>> Value of <<_CHE_MD_dataIdentificationAsRoot and _MD_DataIdentificationAsRoot>> are None (False)")
+        else:
+            self.__funcLib.writeLog(">>>>>>>>>>>>>>> Value of <<_identificationInfoAsRoot>> is None (False)")
 
     def __printValues(self):
         self.__funcLib.writeLog("[]][][][][][][]geocatMD.permaLink = https://www.geocat.ch/geonetwork/srv/ger/catalog.search#/metadata/" + self.__uuid)
@@ -93,7 +104,7 @@ class GeocatMD():
         for extText in self.__extentDescriptionList:
             _extDescription += extText + ", "
         _mdResultLine.append(_extDescription)
-        self.__funcLib.writeLog("<<<<<<<<<<<<<<<<< return from geocatMdResultLine")
+        #self.__funcLib.writeLog("<<<<<<<<<<<<<<<<< return from geocatMdResultLine")
         return _mdResultLine
     mdRecordResultLine = property(__getResultLine)
 

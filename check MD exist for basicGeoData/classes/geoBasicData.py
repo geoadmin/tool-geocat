@@ -8,22 +8,18 @@ import geocatConstants as const
 from classes.gbd.corporation import Corporation
 
 class GeoBasicData():
-    """ This class is the entrypoint for the geo-basic-data catalog 
-    Parameter:
-    ----------
-    :geocatArgs: [dict]
-    :corpName: [str]
+    """ This class is the main-class of the geo-basic-data catalog 
 
-    Attribute:
-    ----------
-    :_catalog: [Corporations]
-    :_catalogByName: [Corporations]
+    Parameter:
+      geocatArgs (dict):
+      corporationName (str): 
+
         
     """
 
     # Attributes
     __funcLib = None
-    __geoBasicDataCorporationsList = []
+    __geoBasicDataCorporationsList = [] # container for all corporations
     __corporationsResultList = []
     __entryDataResultList = []
     __technicalEntryResultList = []
@@ -35,7 +31,7 @@ class GeoBasicData():
         self.__funcLib.writeLog("-> in constructor of geoBasicData-object")
         self.__geocatArgs = geocatArgs
         self.__geoBasicDataCorporationsList = self.__loadCorporationsList(corporationName)
-        self.__funcLib.writeLog("<<<<<<<<<<<<<<<<< return from constructor of geoBasicData-object")
+        #self.__funcLib.writeLog("<<<<<<<<<<<<<<<<< return from constructor of geoBasicData-object")
 
     def __loadCorporationsList(self, corporationName=""):
         """  """
@@ -45,7 +41,8 @@ class GeoBasicData():
         _corporationsResponseList = _response.json()
         if not corporationName:
             for corp in _corporationsResponseList:
-                _corporationsDataList.append(Corporation(self.__geocatArgs, corp))
+                _corporationObject = Corporation(self.__geocatArgs, corp)
+                _corporationsDataList.append(_corporationObject)
             return _corporationsDataList
         else:
             for corp in _corporationsResponseList:

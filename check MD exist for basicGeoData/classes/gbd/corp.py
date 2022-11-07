@@ -8,30 +8,30 @@ class Corp():
     """ Basic corporation class for inheritence
         
     Parameter:
-    corporation (dict): the data of corporation 
+      corporation (dict): the data of corporation 
     
     Attribute:
-    _id: ID of corp as int
-    _parent: ID of Parent corp as int (Nullable)
+      _id: ID of corp as int
+      _parent: ID of Parent corp as int (Nullable)
                 The ID of the parent of the given corp. The only corp without parent is the federal government.
 
-    _level: "federal" "canton" "community" "region" "county" "corp" (enum)
+      _level: "federal" "canton" "community" "region" "county" "corp" (enum)
                 This is used to represent the federalism.
-    _bfsNumber: 
+      _bfsNumber: 
 
-    _parentBfsNumber:
+      _parentBfsNumber:
 
-    _filterDisplay: The name of the corp as it is shown on the geobasisdaten website.
+      _filterDisplay: The name of the corp as it is shown on the geobasisdaten website.
                         This is normally the name of the corp prefixed with the level. 
                         This is always returned in the requested language.
                         Example: Request for de: Kanton Bern, request for fr: Canton Berne
 
-    _abbr:  The abbreviation of the corp. This is a short form for the name and used as prefix for corp specific catalogs.
-    _name:  The default name of the given corp.
-    _nameDe: The name of the given corp in de.
-    _nameFr: The name of the given corp in fr.
-    _nameIt: The name of the given corp in it.
-    _nameRm: The name of the given corp in rm.
+      _abbr:  The abbreviation of the corp. This is a short form for the name and used as prefix for corp specific catalogs.
+      _name:  The default name of the given corp.
+      _nameDe: The name of the given corp in de.
+      _nameFr: The name of the given corp in fr.
+      _nameIt: The name of the given corp in it.
+      _nameRm: The name of the given corp in rm.
     """
 
     def __init__(self, corporation :dict):

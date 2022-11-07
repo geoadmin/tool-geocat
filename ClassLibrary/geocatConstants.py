@@ -146,5 +146,5 @@ bmdRequestUrl = "https://ltbmd.adr.admin.ch/BmdService/Read/SqlInDataBase?statem
 # Kt. BS only
 
 def __getValuesToChange(*args):
-    return {"shop.geo.bs.ch": "DOWNLOAD-APP", "map.geo.bs.ch": "CHTOPO:specialised-geoportal"}
+    return {"shop.geo.bs.ch": "WWW:DOWNLOAD-APP", "map.geo.bs.ch": "CHTOPO:specialised-geoportal"}
 valuesToChange = __getValuesToChange()

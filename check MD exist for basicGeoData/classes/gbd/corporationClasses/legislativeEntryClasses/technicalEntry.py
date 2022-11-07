@@ -9,22 +9,15 @@ from classes.geocat.geocatMD import GeocatMD
 class TechnicalEntry():
     """TechnicalEntryData
     Parameter:
-    ----------
-    geocatArgs:
-    techEntry:
-    
-    Attribute:
-    ----------
-    
-    Property:
-    ----------
-    
+      geocatArgs:
+      technicalEntry:
+      
     """
 
     # Attributes
     __funcLib = None
     __geoCategory = None
-    __geocatMdRecordsList = []
+    __geocatMdRecordsList = [] # container for all geocatMD
     __geocatMdRecordsResultList = []
 
     def __init__(self, geocatArgs :dict, technicalEntry :dict):
@@ -32,7 +25,7 @@ class TechnicalEntry():
         self.__geocatMdRecordsResultList.clear()
         self.__geocatArgs = geocatArgs
         self.__funcLib = geocatArgs.get('funcLib')
-        self.__funcLib.writeLog("[]][][][][]in constructor of technicalEntry-object")
+        #self.__funcLib.writeLog("[]][][][][]in constructor of technicalEntry-object")
         self.__id = technicalEntry.get('id')
         self.__label = technicalEntry.get('label')
         self.__labelNumber = technicalEntry.get('labelNumber')
@@ -79,7 +72,7 @@ class TechnicalEntry():
         self.__gbdEntryId =  geocatArgs.get('gbdEntryId')
         self.__printValues()
         self.__geocatMdRecordsList = self.__loadGeocatMdRecordsList()
-        self.__funcLib.writeLog("<<<<<<<<<<<<<<<<< return from constructor of technicalEntry-object")
+        #self.__funcLib.writeLog("<<<<<<<<<<<<<<<<< return from constructor of technicalEntry-object")
 
 
     def __loadGeocatMdRecordsList(self):
