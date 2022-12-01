@@ -1,4 +1,4 @@
-# Admin Boundaries Update of november 2022
+# Admin Districts boundaries
 Following the need of a partner, we decided to add the districts geometries as subtemplate in geocat.ch 
 
 ### Geojson reference file source
