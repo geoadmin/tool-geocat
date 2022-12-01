@@ -4,9 +4,10 @@
 Admin boundaries are saved as extent subtemplates in geocat. Any user with write access can create an extent subtemplate but cannot validate them.  
 
 The admin bounadries are managed by the geocat team and have a special **UUID structure** :
-* **Municipalities** : `gecatch-subtpl-extent-hoheitsgebiet-{gmdnr}` where `gmdnr` corresponds to the BFS municipality number
-* **Cantons** : `gecatch-subtpl-extent-kantonsgebiet-{ktnr}` where `ktnr` corresponds to the BFS canton number
-* **Countries** : `gecatch-subtpl-extent-landesgebiet-{code_iso}` where `code_iso` corresponds to the country ISO code (CH, FL)
+* **Municipalities** : `geocatch-subtpl-extent-hoheitsgebiet-{gmdnr}` where `gmdnr` corresponds to the BFS municipality number
+* **Districts** : `geocatch-subtpl-extent-bezirk-{bznr}` where `bznr` corresponds to the BFS district number
+* **Cantons** : `geocatch-subtpl-extent-kantonsgebiet-{ktnr}` where `ktnr` corresponds to the BFS canton number
+* **Countries** : `geocatch-subtpl-extent-landesgebiet-{code_iso}` where `code_iso` corresponds to the country ISO code (CH, FL)
 
 For now, there is no discrict boundaries in geocat.
 
@@ -35,7 +36,8 @@ If you have a shapefile in WGS84 (if in LV95 or LV03, transform it with the geor
 you can use [this FME WorkBench](shp2geojson.fmw) to transform it into a geojson ready for the tool.
 
 ---
-### Usage - Inspect
+### Usage - Inspect (not available for districts).
+
 You can compare the admin boundaries in geocat with the geojson reference file. This creates 5 csv lists :
 * `correct_{municipalities}{cantons}{countries}.csv` : ID and Name correct in geocat and reference
 * `name_incorrect_{municipalities}{cantons}{countries}.csv` : ID is found but Name is different in geocat
@@ -104,7 +106,7 @@ Args:
   ref_geojson: The geojson reference file
   number: The attribute name of the admin boundaries ID in the geojson reference file
   name: The attribute name of the admin boundaries Name in the geojson reference file
-  type: The type of admin units. "g" for municipality, "k" for canton, "l" for country
+  type: The type of admin units. "g" for municipality, "b" for districts "k" for canton, "l" for country
   update_name: Optional. Default=True. If set to False, the name of admin boundaries are not updated. 
                 With False, impossible to create a new non-exisiting admin units.
   env: The environment of geocat, optional, 'int' or 'prod', default = 'int'
