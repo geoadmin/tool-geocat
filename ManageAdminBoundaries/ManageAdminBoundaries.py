@@ -666,7 +666,7 @@ class UpdateSubtemplatesExtent:
         name:
             str, required ! The attribute name in the reference file corresponding to the municipalities name
         type:
-            str, required ! "g" for municipalities, "k" for cantons, "l" for country
+            str, required ! "g" for municipalities, "b" for district, "k" for cantons, "l" for country
         env:
             str, indicating the geocat's environment to work with, 'int' or 'prod', default = 'int'.
         output_dir:
@@ -688,6 +688,8 @@ class UpdateSubtemplatesExtent:
 
         if type == "g":
             self.type = "hoheitsgebiet"
+        elif type == "b":
+            self.type = "bezirk"
         elif type == "k":
             self.type = "kantonsgebiet"
         elif type == "l":
