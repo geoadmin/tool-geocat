@@ -26,8 +26,8 @@ class BGDIMapping(geocat):
 
         # initiate rows in mapping df
         for i, row in self.bgdi_inventory.iterrows():
-            new_row = {"Geocat UUID": row[2], "Layer ID": row[1].strip()}
-            self.mapping = self.mapping.append(new_row, ignore_index=True)
+            new_row = pd.DataFrame({"Geocat UUID": row[2], "Layer ID": row[1].strip()}, index=[0])
+            self.mapping = pd.concat([new_row,self.mapping.loc[:]]).reset_index(drop=True)
 
         # get metadata index
         print("Get Metadata Index : ", end="\r")
@@ -53,7 +53,7 @@ class BGDIMapping(geocat):
         self.check_mappreview()
 
     def get_bgdi_inventory(self):
-        """
+        """f
         Get BGDI inventory from google BMD.
         Improve the latter with geoadmin API3 and Google Drive Sheet
 
@@ -92,7 +92,8 @@ class BGDIMapping(geocat):
                     elif row["INGESTSTATE"] == "NotProductive":
                         new_row["Layer on prod?"] = 0
 
-                    df = df.append(new_row, ignore_index=True)
+                    new_row = pd.DataFrame(new_row, index=[0])
+                    df = pd.concat([new_row,df.loc[:]]).reset_index(drop=True)
                     print(f"{row['TECHPUBLAYERNAME']} : record added by BMD")
 
         # Fix missing geocat UUID and missing records with the geoadmin API3
@@ -115,7 +116,8 @@ class BGDIMapping(geocat):
         for key, value in layerid_geocatuuid.items():
             if key not in df["Layername (according to naming convention FSDI)"].unique():
                 new_row = {'Layername (according to naming convention FSDI)': key, 'Geocat ID': value, "INGESTSTATE": "Productive"}
-                df = df.append(new_row, ignore_index=True)
+                new_row = pd.DataFrame(new_row, index=[0])
+                df = pd.concat([new_row,df.loc[:]]).reset_index(drop=True)
                 print(f"{key} : record added by API")
         
         df=df.dropna(subset=['Geocat ID']).reset_index(drop=True)
@@ -154,8 +156,12 @@ class BGDIMapping(geocat):
                                 not_in_groups=settings.BGDI_GROUP_ID)
         for uuid in uuids:
             if uuid not in self.mapping["Geocat UUID"].unique():
-                new_row = {"Geocat UUID": uuid, "Keyword": "Remove BGDI"}
-                self.mapping = self.mapping.append(new_row, ignore_index=True)
+                new_row = pd.DataFrame({"Geocat UUID": uuid, "Keyword": "Remove BGDI"}, index=[0])
+                self.mapping = pd.concat([self.mapping, new_row]).reset_index(drop=True)
+        
+        cols = ["Geocat UUID", "Layer ID", "Published", "Geocat Status", "Keyword", "Identifier",
+                "WMS Link", "WMTS Link", "API3 Link", "Map Preview Link"]
+        self.mapping = self.mapping[cols]
 
     def check_status(self):
         """
