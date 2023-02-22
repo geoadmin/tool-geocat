@@ -1,5 +1,4 @@
 import io
-import json
 import re
 import requests
 import pandas as pd
@@ -27,7 +26,7 @@ class BGDIMapping(geocat):
 
         # initiate rows in mapping df
         for i, row in self.bgdi_inventory.iterrows():
-            new_row = {"Geocat UUID": row[2], "Layer ID": row[1]}
+            new_row = {"Geocat UUID": row[2], "Layer ID": row[1].strip()}
             self.mapping = self.mapping.append(new_row, ignore_index=True)
 
         # get metadata index
@@ -61,9 +60,42 @@ class BGDIMapping(geocat):
         Returns a pandas df filtered with existing geocat UUID
         """
 
+        geocat_uuids = self.get_uuids()
+
+        # Get the google sheet and clean it
         response = requests.get(url=settings.GD_SHEET, proxies=self.session.proxies)
         df = pd.read_csv(io.StringIO(response.content.decode('utf-8')))
 
+        for i, row in df.iterrows():
+            if not pd.isnull(row["Layername (according to naming convention FSDI)"]):
+                df.at[i, "Layername (according to naming convention FSDI)"] = \
+                row["Layername (according to naming convention FSDI)"].strip()
+
+        df=df.dropna(subset=['Layername (according to naming convention FSDI)']).reset_index(drop=True)
+
+        # Fix missing geocat UUID and missing records with the BMD
+        bmd = pd.read_csv("report.csv")
+
+        for i, row in bmd.iterrows():
+            if row["GEOCATUUID"] in geocat_uuids:
+                indexes = df.index[df['Layername (according to naming convention FSDI)'] == row["TECHPUBLAYERNAME"]].tolist()
+                if len(indexes) > 0:
+                    if pd.isnull(df["Geocat ID"][indexes[0]]):
+                        df.at[indexes[0], "Geocat ID"] = row["GEOCATUUID"]
+                        print(f"{row['TECHPUBLAYERNAME']} : Geocat UUID fixed by BMD")
+
+                else:
+                    new_row = {'Layername (according to naming convention FSDI)': row["TECHPUBLAYERNAME"], "Geocat ID": row["GEOCATUUID"]}
+
+                    if row["INGESTSTATE"] == "Productive":
+                        new_row["Layer on prod?"] = 1
+                    elif row["INGESTSTATE"] == "NotProductive":
+                        new_row["Layer on prod?"] = 0
+
+                    df = df.append(new_row, ignore_index=True)
+                    print(f"{row['TECHPUBLAYERNAME']} : record added by BMD")
+
+        # Fix missing geocat UUID and missing records with the geoadmin API3
         # Create a dictionnary {layerid: geocat uuid} from geoadmin API3
         layerid_geocatuuid = dict()
         response = requests.get("https://api3.geo.admin.ch/rest/services/api/MapServer",
@@ -72,42 +104,24 @@ class BGDIMapping(geocat):
         for i in response.json()["layers"]:
             layerid_geocatuuid[i["layerBodId"]] = i["idGeoCat"]
 
-        bmd = pd.read_csv("Report.csv")
-
         # fix wrong geocat UUID with the API
-        for i in range(len(bmd)):
-            if bmd["TECHPUBLAYERNAME"][i] in layerid_geocatuuid:
-                if layerid_geocatuuid[bmd["TECHPUBLAYERNAME"][i]] != bmd["GEOCATUUID"][i]:
-                    bmd._set_value(i, "GEOCATUUID", layerid_geocatuuid[bmd["TECHPUBLAYERNAME"][i]])
-                    print(f"{bmd['TECHPUBLAYERNAME'][i]} : geocat uuid fixed by API")
+        for i, row in df.iterrows():
+            if row["Layername (according to naming convention FSDI)"] in layerid_geocatuuid:
+                if layerid_geocatuuid[row["Layername (according to naming convention FSDI)"]] != row["Geocat ID"]:
+                    df.at[i, "Geocat ID"] = layerid_geocatuuid[row["Layername (according to naming convention FSDI)"]]
+                    print(f"{row['Layername (according to naming convention FSDI)']} : geocat uuid fixed by API")
 
         # Fix missing record with the API
         for key, value in layerid_geocatuuid.items():
-            if key not in bmd['TECHPUBLAYERNAME'].unique():
-                new_row = {'TECHPUBLAYERNAME': key, 'GEOCATUUID': value, "INGESTSTATE": "Productive"}
-                bmd = bmd.append(new_row, ignore_index=True)
+            if key not in df["Layername (according to naming convention FSDI)"].unique():
+                new_row = {'Layername (according to naming convention FSDI)': key, 'Geocat ID': value, "INGESTSTATE": "Productive"}
+                df = df.append(new_row, ignore_index=True)
                 print(f"{key} : record added by API")
+        
+        df=df.dropna(subset=['Geocat ID']).reset_index(drop=True)
+        df = df[df["Geocat ID"].isin(geocat_uuids)]
 
-        # Fix missing record with the Google Sheet
-        for i in range(len(df)):
-            if not pd.isna(df.iloc[i, 1]) and df.iloc[i, 0].strip() not in bmd["TECHPUBLAYERNAME"].unique():
-
-                new_row = {'TECHPUBLAYERNAME': df.iloc[i, 0].strip(), 'GEOCATUUID': df.iloc[i, 1].strip()}
-
-                if df["Layer on prod?"][i] == 1:
-                    new_row["INGESTSTATE"] = "Productive"
-                elif df["Layer on prod?"][i] == 0:
-                    new_row["INGESTSTATE"] = "NotProductive"
-                else:
-                    new_row["INGESTSTATE"] = "Decommissioned"
-
-                bmd = bmd.append(new_row, ignore_index=True)
-                print(f"{df.iloc[i, 0].strip()} : record added by Google Sheet")
-
-        uuids = self.get_uuids()
-        bmd = bmd[bmd["GEOCATUUID"].isin(uuids)]
-
-        return bmd
+        return df
 
     def check_publish_status(self):
         """
@@ -115,13 +129,13 @@ class BGDIMapping(geocat):
         """
 
         for i, row in self.bgdi_inventory.iterrows():
-            if self.md_index[row[2]]["isPublishedToAll"] and row[3] in ["Productive", "NotProductive"]:
+            if self.md_index[row[2]]["isPublishedToAll"] and row["Layer on prod?"] in [1, 0]:
                 self.mapping.at[i, "Published"] = "Published"
-            elif not self.md_index[row[2]]["isPublishedToAll"] and row[3] != "Productive":
+            elif not self.md_index[row[2]]["isPublishedToAll"] and row["Layer on prod?"] != 1:
                 self.mapping.at[i, "Published"] = "Unpublished"
-            elif self.md_index[row[2]]["isPublishedToAll"] and row[3] not in ["Productive", "NotProductive"]:
+            elif self.md_index[row[2]]["isPublishedToAll"] and row["Layer on prod?"] not in [1, 0]:
                 self.mapping.at[i, "Published"] = "To unpublish"
-            elif not self.md_index[row[2]]["isPublishedToAll"] and row[3] == "Productive":
+            elif not self.md_index[row[2]]["isPublishedToAll"] and row["Layer on prod?"] == 1:
                 self.mapping.at[i, "Published"] = "To publish"
 
     def check_keyword(self):
@@ -331,11 +345,3 @@ class BGDIMapping(geocat):
                         self.mapping.at[i, "Map Preview Link"] = "No map preview"
                     else:
                         self.mapping.at[i, "Map Preview Link"] = "No map preview"
-
-
-t = BGDIMapping(env="prod")
-t.mapping
-
-# dump index into json file
-# with open("md_index.json", "w") as out:
-#     json.dump(t.md_index, out)
