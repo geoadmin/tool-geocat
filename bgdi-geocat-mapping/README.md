@@ -11,8 +11,8 @@ from bmd.publayer PUB, bmd.timestand ZS
 where PUB.reftimestand = ZS.timestandid AND PUB.gdstechname = ZS.gdstechname;  
 ```
 * Process the table to have only unique Layer ID and geocat UUID. Keep the most recent according to TimestandDate and for duplicated with same timestand, apply the following priority "Productive" -> "NotProductive" -> "Decommissioned" -> "Deleted".
-* Export a csv file with the following columns :
+* Export a csv file with minimum the following columns :
 
-  |TECHPUBLAYERNAME| GEOCATUUID|STATUS (ZS)|INGESTSTATE|TIMESTANDDATE|
-  |---|---|---|---|---|
-  |ch.blw.erosion|02210bb3-1c51-4c2c-a665-a696286b945c|InProgress|Productive|2022-05-03 00:00:00|
+  |TECHPUBLAYERNAME|GEOCATUUID|INGESTSTATE|
+  |---|---|---|
+  |ch.blw.erosion|02210bb3-1c51-4c2c-a665-a696286b945c|Productive|
