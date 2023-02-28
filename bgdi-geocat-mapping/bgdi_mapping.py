@@ -4,18 +4,17 @@ import requests
 import pandas as pd
 import settings
 from lxml import etree as ET
-from geopycat import geocat
-from geopycat import utils
+import geopycat
 
 
-class BGDIMapping(geocat):
+class BGDIMapping(geopycat.geocat):
 
     def __init__(self, **kwargs):
 
         super().__init__(**kwargs)
 
         if not self.check_admin():
-            print(utils.warningred("You must be logged-in as Admin to generate a backup !"))
+            print(geopycat.utils.warningred("You must be logged-in as Admin to generate a backup !"))
             return
 
         self.bgdi_inventory = self.get_bgdi_inventory().reset_index()
@@ -37,7 +36,7 @@ class BGDIMapping(geocat):
             self.md_index[row[0]] = self.get_metadata_index(uuid=row[0])
             print(f"Get Metadata Index : {round((count / len(self.mapping)) * 100, 1)}%", end="\r")
             count += 1
-        print(f"Get Metadata Index : {utils.okgreen('Done')}")
+        print(f"Get Metadata Index : {geopycat.utils.okgreen('Done')}")
 
         # TODO - ONLY FOR TESTING
         # with open('md_index.json') as input:
@@ -351,3 +350,6 @@ class BGDIMapping(geocat):
                         self.mapping.at[i, "Map Preview Link"] = "No map preview"
                     else:
                         self.mapping.at[i, "Map Preview Link"] = "No map preview"
+
+t = BGDIMapping(env="prod")
+t.mapping
