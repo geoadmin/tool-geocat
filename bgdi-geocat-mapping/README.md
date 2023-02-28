@@ -13,6 +13,6 @@ where PUB.reftimestand = ZS.timestandid AND PUB.gdstechname = ZS.gdstechname;
 * Process the table to have only unique Layer ID and geocat UUID. Keep the most recent according to TimestandDate and for duplicated with same timestand, apply the following priority "Productive" -> "NotProductive" -> "Decommissioned" -> "Deleted".
 * Export a csv file with the following columns :
 
-  | Tables        | Are           | Cool  |
-  | ------------- |:-------------:| -----:|
-  | col 3 is      | right-aligned | $1600 |
+  |TECHPUBLAYERNAME| GEOCATUUID|STATUS (ZS)|INGESTSTATE|TIMESTANDDATE|
+  |---|---|---|---|---|
+  |ch.blw.erosion|02210bb3-1c51-4c2c-a665-a696286b945c|InProgress|Productive|2022-05-03 00:00:00|
