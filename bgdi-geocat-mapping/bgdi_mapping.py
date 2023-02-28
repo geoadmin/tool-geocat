@@ -351,5 +351,96 @@ class BGDIMapping(geopycat.geocat):
                     else:
                         self.mapping.at[i, "Map Preview Link"] = "No map preview"
 
-t = BGDIMapping(env="prod")
-t.mapping
+    def get_wms_layer(self) -> dict:
+        """
+        Get layer id and title in 4 languages from swisstopo WMS
+        """
+        out = dict()
+
+        response = self.session.get(f"{settings.WMS_URL}&lang=de")
+        root = ET.fromstring(response.content)
+
+        for i in root.xpath(".//wms:Layer[1]//wms:Layer",
+                                namespaces=settings.NS):
+
+            out[i.find("wms:Name", namespaces=settings.NS).text] = {
+                "de": i.find("wms:Title", namespaces=settings.NS).text
+                }
+
+        response = self.session.get(f"{settings.WMS_URL}&lang=fr")
+        root = ET.fromstring(response.content)
+
+        for i in root.xpath(".//wms:Layer[1]//wms:Layer",
+                                namespaces=settings.NS):
+
+            out[i.find("wms:Name", namespaces=settings.NS).text]["fr"] = \
+                i.find("wms:Title", namespaces=settings.NS).text
+
+        response = self.session.get(f"{settings.WMS_URL}&lang=it")
+        root = ET.fromstring(response.content)
+
+        for i in root.xpath(".//wms:Layer[1]//wms:Layer",
+                                namespaces=settings.NS):
+
+            out[i.find("wms:Name", namespaces=settings.NS).text]["it"] = \
+                i.find("wms:Title", namespaces=settings.NS).text 
+
+        response = self.session.get(f"{settings.WMS_URL}&lang=en")
+        root = ET.fromstring(response.content)
+
+        for i in root.xpath(".//wms:Layer[1]//wms:Layer",
+                                namespaces=settings.NS):
+
+            out[i.find("wms:Name", namespaces=settings.NS).text]["en"] = \
+                i.find("wms:Title", namespaces=settings.NS).text  
+    
+        return out
+
+    def get_wmts_layer(self) -> dict:
+        """
+        Get layer id and title in 4 languages from swisstopo WMTS
+        """
+        out = dict()
+
+        response = self.session.get(f"{settings.WMTS_URL[0]}?lang=de")
+        root = ET.fromstring(response.content)
+
+        for i in root.xpath(".//wmts:Contents//wmts:Layer",
+                                namespaces=settings.NS):
+
+            out[i.find("ows:Identifier", namespaces=settings.NS).text] = {
+                "de": i.find("ows:Title", namespaces=settings.NS).text
+                }
+
+        response = self.session.get(f"{settings.WMTS_URL[0]}?lang=fr")
+        root = ET.fromstring(response.content)
+
+        for i in root.xpath(".//wmts:Contents//wmts:Layer",
+                                namespaces=settings.NS):
+
+            out[i.find("ows:Identifier", namespaces=settings.NS).text]["fr"] = \
+                i.find("ows:Title", namespaces=settings.NS).text
+
+        response = self.session.get(f"{settings.WMTS_URL[0]}?lang=it")
+        root = ET.fromstring(response.content)
+
+        for i in root.xpath(".//wmts:Contents//wmts:Layer",
+                                namespaces=settings.NS):
+
+            out[i.find("ows:Identifier", namespaces=settings.NS).text]["it"] = \
+                i.find("ows:Title", namespaces=settings.NS).text
+
+        response = self.session.get(f"{settings.WMTS_URL[0]}?lang=en")
+        root = ET.fromstring(response.content)
+
+        for i in root.xpath(".//wmts:Contents//wmts:Layer",
+                                namespaces=settings.NS):
+
+            out[i.find("ows:Identifier", namespaces=settings.NS).text]["en"] = \
+                i.find("ows:Title", namespaces=settings.NS).text 
+    
+        return out
+
+
+# t = BGDIMapping(env="prod")
+# t.mapping
