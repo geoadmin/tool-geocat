@@ -38,9 +38,8 @@ class BGDIMapping(geopycat.geocat):
             count += 1
         print(f"Get Metadata Index : {geopycat.utils.okgreen('Done')}")
 
-        # TODO - ONLY FOR TESTING
-        # with open('md_index.json') as input:
-        #     self.md_index = json.load(input)
+        self.wms = self.get_wms_layer()
+        self.wmts = self.get_wmts_layer()
 
         self.check_publish_status()
         self.check_keyword()
@@ -130,14 +129,17 @@ class BGDIMapping(geopycat.geocat):
         """
 
         for i, row in self.bgdi_inventory.iterrows():
+
+            index = self.mapping.index[self.mapping["Geocat UUID"] == row[2]].tolist()[0]
+
             if self.md_index[row[2]]["isPublishedToAll"] and row["Layer on prod?"] in [1, 0]:
-                self.mapping.at[i, "Published"] = "Published"
+                self.mapping.at[index, "Published"] = "Published"
             elif not self.md_index[row[2]]["isPublishedToAll"] and row["Layer on prod?"] != 1:
-                self.mapping.at[i, "Published"] = "Unpublished"
+                self.mapping.at[index, "Published"] = "Unpublished"
             elif self.md_index[row[2]]["isPublishedToAll"] and row["Layer on prod?"] not in [1, 0]:
-                self.mapping.at[i, "Published"] = "To unpublish"
+                self.mapping.at[index, "Published"] = "To unpublish"
             elif not self.md_index[row[2]]["isPublishedToAll"] and row["Layer on prod?"] == 1:
-                self.mapping.at[i, "Published"] = "To publish"
+                self.mapping.at[index, "Published"] = "To publish"
 
     def check_keyword(self):
         """
@@ -199,12 +201,6 @@ class BGDIMapping(geopycat.geocat):
         Fills the mapping data frame with WMS Link info
         """
 
-        response = self.session.get(settings.WMS_URL)
-        root = ET.fromstring(response.content)
-
-        wms_layer_ids = root.xpath(".//wms:Layer[1]//wms:Layer/wms:Name/text()", 
-                                    namespaces=settings.NS)
-
         for i, row in self.mapping.iterrows():
 
             if row["Published"] in ["Published", "To publish"]:
@@ -219,7 +215,7 @@ class BGDIMapping(geopycat.geocat):
                         elif link["protocol"] == "OGC:WMS" and "wms.geo.admin.ch" in link["url"]:
                             wms_tofix = True
 
-                if row[1] in wms_layer_ids:
+                if row[1] in self.wms:
                     if wms_ok and not wms_tofix:
                         self.mapping.at[i, "WMS Link"] = "WMS"
                     elif wms_ok and wms_tofix:
@@ -240,12 +236,6 @@ class BGDIMapping(geopycat.geocat):
         Fills the mapping data frame with WMTS Link info
         """
 
-        response = self.session.get(settings.WMTS_URL[0])
-        root = ET.fromstring(response.content)
-
-        wmts_layer_ids = root.xpath(".//wmts:Contents//wmts:Layer/ows:Identifier/text()", 
-                                    namespaces=settings.NS)
-
         for i, row in self.mapping.iterrows():
             if row["Published"] in ["Published", "To publish"]:
 
@@ -259,7 +249,7 @@ class BGDIMapping(geopycat.geocat):
                         elif link["protocol"] == "OGC:WMTS" and "wmts.geo.admin.ch" in link["url"]:
                             wmts_tofix = True
 
-                if row[1] in wmts_layer_ids:
+                if row[1] in self.wmts:
                     if wmts_ok and not wmts_tofix:
                         self.mapping.at[i, "WMTS Link"] = "WMTS"
                     elif wmts_ok and wmts_tofix:
@@ -441,6 +431,27 @@ class BGDIMapping(geopycat.geocat):
     
         return out
 
+    def repair_metadata(self, uuid: str):
 
-# t = BGDIMapping(env="prod")
-# t.mapping
+        if uuid not in self.mapping["Geocat UUID"].unique():
+            raise Exception(f"{uuid} not in BGDI !")
+
+        metadata = self.get_metadata_from_mef(uuid=uuid)
+        if metadata is None:
+            return
+
+        row = self.mapping.loc[self.mapping['Geocat UUID']==uuid]
+
+        # Publish
+        if row["Published"].iloc[0] == "To publish":
+
+            response = self.session.put(f"{self.env}/geonetwork/srv/api/records/{uuid}/publish")
+
+            if response.status_code != 204:
+                raise Exception(f"{uuid} could not be published !")
+
+
+
+
+
+t = BGDIMapping(env="prod")
