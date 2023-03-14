@@ -1,7 +1,6 @@
 from lxml import etree as ET
 import geopycat
 import settings
-import json
 from urllib.parse import unquote
 
 
@@ -70,7 +69,7 @@ def add_bgdi_keyword(metadata: bytes) -> list:
                     namespaces=geopycat.settings.NS)[0]
 
         xlink = unquote(tag.attrib["{http://www.w3.org/1999/xlink}href"])
-        ids = xlink.split("?")[-1].split("id=")[-1].split("&")[0] + "," + settings.BGDI_KW_ID
+        ids = xlink.split("?")[-1].split("id=")[-1].split("&")[0] + "," + settings.BGDI_KW_ID[0]
 
         body.append(
             {
@@ -92,7 +91,7 @@ def add_bgdi_keyword(metadata: bytes) -> list:
         body.append(
             {
                 "xpath": "./gmd:identificationInfo[1]/*",
-                "value": f"<gn_add>{settings.XML['keyword'].replace('keyword_id', settings.BGDI_KW_ID)}</gn_add>"
+                "value": f"<gn_add>{settings.XML['keyword'].replace('keyword_id', settings.BGDI_KW_ID[0])}</gn_add>"
             }
         )
 
@@ -107,7 +106,7 @@ def remove_bgdi_keyword(metadata: bytes) -> list:
     root = ET.fromstring(metadata)
 
     # Delete all descriptiveKeywords that have only one keyword = BGDI
-    xpath = "./gmd:identificationInfo//gmd:descriptiveKeywords[(.//gmd:keyword/gco:CharacterString = 'BGDI Bundesgeodaten-Infrastruktur' or .//gmd:keyword/gmd:PT_FreeText//gmd:LocalisedCharacterString = 'BGDI Bundesgeodaten-Infrastruktur') and count(.//gmd:keyword)=1]"
+    xpath = f"./gmd:identificationInfo//gmd:descriptiveKeywords[((.//gmd:keyword/gco:CharacterString = 'BGDI Bundesgeodaten-Infrastruktur' or .//gmd:keyword/gmd:PT_FreeText//gmd:LocalisedCharacterString = 'BGDI Bundesgeodaten-Infrastruktur') and count(.//gmd:keyword)=1) or contains(@xlink:href, 'id={settings.BGDI_KW_ID[0]}&') or contains(@xlink:href, 'id={settings.BGDI_KW_ID[1]}&')]"
     if len(root.xpath(xpath, namespaces=geopycat.settings.NS)) > 0:
         body.append({
             "xpath": xpath,
@@ -125,7 +124,7 @@ def remove_bgdi_keyword(metadata: bytes) -> list:
     # Get all keyword id of descriptiveKeywords with xlink:href containing BGDI keyword id
     # Delete all descriptiveKeywords with xlink:href containing BGDI keyword id
     # Add one descriptiveKeywords with all ids
-    xpath = f"./gmd:identificationInfo//gmd:descriptiveKeywords[contains(@xlink:href, '{settings.BGDI_KW_ID}')]"
+    xpath = f"./gmd:identificationInfo//gmd:descriptiveKeywords[contains(@xlink:href, '{settings.BGDI_KW_ID[0]}') or contains(@xlink:href, '{settings.BGDI_KW_ID[1]}')]"
     all_ids = list()
     for i in root.xpath(xpath, namespaces=geopycat.settings.NS):
 
@@ -133,7 +132,7 @@ def remove_bgdi_keyword(metadata: bytes) -> list:
         ids = xlink.split("?")[-1].split("id=")[-1].split("&")[0].split(",")
         all_ids += ids
 
-    all_ids = [i for i in all_ids if i != settings.BGDI_KW_ID]
+    all_ids = [i for i in all_ids if i not in settings.BGDI_KW_ID]
 
     if len(all_ids) > 0:
         body.append({
@@ -180,16 +179,19 @@ def add_wms(metadata: bytes, layer_id: str, layer_title: dict) -> list:
     body = []
     root = ET.fromstring(metadata)
 
-    url = "https://wms.geo.admin.ch/?SERVICE=WMS&amp;VERSION=1.3.0&amp;REQUEST=GetCapabilities"
-
-    value = settings.XML["resource"].replace("resource-url-de", url).replace("resource-url-fr", url).replace("resource-url-it", url).replace("resource-url-en", url).replace("resource-url-rm", url)
+    value = settings.XML["resource"]
+    value = value.replace("resource-url-de", settings.WMS_URL + "&lang=de")
+    value = value.replace("resource-url-fr", settings.WMS_URL + "&lang=fr")
+    value = value.replace("resource-url-it", settings.WMS_URL + "&lang=it")
+    value = value.replace("resource-url-en", settings.WMS_URL + "&lang=en")
+    value = value.replace("resource-url-rm", settings.WMS_URL + "&lang=de")
     value = value.replace("resource-protocol", "OGC:WMS")
     value = value.replace("resource-name-de", layer_id).replace("resource-name-fr", layer_id).replace("resource-name-it", layer_id).replace("resource-name-en", layer_id).replace("resource-name-rm", layer_id)
-    value = value.replace("resource-desc-de", layer_title["de"])
-    value = value.replace("resource-desc-fr", layer_title["fr"])
-    value = value.replace("resource-desc-it", layer_title["it"])
-    value = value.replace("resource-desc-en", layer_title["en"])
-    value = value.replace("resource-desc-rm", layer_title["de"])
+    value = value.replace("resource-desc-de", geopycat.utils.xmlify(layer_title["de"]))
+    value = value.replace("resource-desc-fr", geopycat.utils.xmlify(layer_title["fr"]))
+    value = value.replace("resource-desc-it", geopycat.utils.xmlify(layer_title["it"]))
+    value = value.replace("resource-desc-en", geopycat.utils.xmlify(layer_title["en"]))
+    value = value.replace("resource-desc-rm", geopycat.utils.xmlify(layer_title["de"]))
 
     # If no distribution section, we don't add WMS
     if len(root.xpath("./gmd:distributionInfo", namespaces=geopycat.settings.NS)) == 0:
@@ -305,16 +307,19 @@ def add_wmts(metadata: bytes, layer_id: str, layer_title: dict) -> list:
     body = []
     root = ET.fromstring(metadata)
 
-    url = "https://wmts.geo.admin.ch/EPSG/21781/1.0.0/WMTSCapabilities.xml"
-
-    value = settings.XML["resource"].replace("resource-url-de", url).replace("resource-url-fr", url).replace("resource-url-it", url).replace("resource-url-en", url).replace("resource-url-rm", url)
+    value = settings.XML["resource"]
+    value = value.replace("resource-url-de", settings.WMTS_URL + "?lang=de")
+    value = value.replace("resource-url-fr", settings.WMTS_URL + "?lang=fr")
+    value = value.replace("resource-url-it", settings.WMTS_URL + "?lang=it")
+    value = value.replace("resource-url-en", settings.WMTS_URL + "?lang=en")
+    value = value.replace("resource-url-rm", settings.WMTS_URL + "?lang=de")
     value = value.replace("resource-protocol", "OGC:WMTS")
     value = value.replace("resource-name-de", layer_id).replace("resource-name-fr", layer_id).replace("resource-name-it", layer_id).replace("resource-name-en", layer_id).replace("resource-name-rm", layer_id)
-    value = value.replace("resource-desc-de", layer_title["de"])
-    value = value.replace("resource-desc-fr", layer_title["fr"])
-    value = value.replace("resource-desc-it", layer_title["it"])
-    value = value.replace("resource-desc-en", layer_title["en"])
-    value = value.replace("resource-desc-rm", layer_title["de"])
+    value = value.replace("resource-desc-de", geopycat.utils.xmlify(layer_title["de"]))
+    value = value.replace("resource-desc-fr", geopycat.utils.xmlify(layer_title["fr"]))
+    value = value.replace("resource-desc-it", geopycat.utils.xmlify(layer_title["it"]))
+    value = value.replace("resource-desc-en", geopycat.utils.xmlify(layer_title["en"]))
+    value = value.replace("resource-desc-rm", geopycat.utils.xmlify(layer_title["de"]))
 
     # If no distribution section, we don't add WMTS
     if len(root.xpath("./gmd:distributionInfo", namespaces=geopycat.settings.NS)) == 0:
@@ -439,6 +444,8 @@ def add_api3(metadata: bytes, layer_id: str) -> list:
     value = value.replace("resource-name-it", "RESTful API da geo.admin.ch")
     value = value.replace("resource-name-en", "RESTful API from geo.admin.ch")
     value = value.replace("resource-name-rm", "RESTful API dad geo.admin.ch")
+
+    # remove description
     value = value[:value.index("<gmd:description")] + value[value.index("</gmd:description>")+len("</gmd:description>"):]
 
 
@@ -594,21 +601,3 @@ def add_mappreview(metadata: bytes, layer_id: str) -> list:
     })
 
     return body
-
-
-# TESTING
-geocat = geopycat.geocat(env='prod')
-md = geocat.get_metadata_from_mef(uuid="5d8ccc02-21c5-4757-b723-588f6a09fffe")
-layer_id = "ch.swisstopo.swissboundaries3d-gemeinde-flaeche.fill"
-layer_title = {
-    "de": "Layer title de",
-    "fr": "Layer title fr",
-    "it": "Layer title it",
-    "en": "Layer title en"
-}
-# print(json.dumps(add_wms(md, layer_id, layer_title)))
-# print(json.dumps(add_wmts(md, layer_id, layer_title)))
-# print(json.dumps(remove_wmts(md)))
-# print(json.dumps(add_api3(md, layer_id)))
-# print(json.dumps(remove_api3(md)))
-print(json.dumps(add_mappreview(md, layer_id)))

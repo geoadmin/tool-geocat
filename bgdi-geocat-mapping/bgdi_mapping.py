@@ -3,15 +3,18 @@ import re
 import requests
 import pandas as pd
 import settings
+import utils
 from lxml import etree as ET
 import geopycat
 
 
 class BGDIMapping(geopycat.geocat):
 
-    def __init__(self, **kwargs):
+    def __init__(self, bmd: str, **kwargs):
 
         super().__init__(**kwargs)
+
+        self.bmd = bmd
 
         if not self.check_admin():
             print(geopycat.utils.warningred("You must be logged-in as Admin to generate a backup !"))
@@ -72,7 +75,7 @@ class BGDIMapping(geopycat.geocat):
         df=df.dropna(subset=['Layername (according to naming convention FSDI)']).reset_index(drop=True)
 
         # Fix missing geocat UUID and missing records with the BMD
-        bmd = pd.read_csv("report.csv")
+        bmd = pd.read_csv(self.bmd)
 
         for i, row in bmd.iterrows():
             if row["GEOCATUUID"] in geocat_uuids:
@@ -145,7 +148,13 @@ class BGDIMapping(geopycat.geocat):
         """
         Fills the mapping data frame with BGDI Keyword status
         """
-        uuids_keyword = self.get_uuids(keywords=["BGDI Bundesgeodaten-Infrastruktur"])
+
+        keywords = ["BGDI Bundesgeodaten-Infrastruktur",
+                        "IFDG l’Infrastructure Fédérale de données géographiques",
+                        "FSDI Federal Spatial Data Infrastructure",
+                        "IFDG Infrastruttura federale dei dati geografici"]
+
+        uuids_keyword = self.get_uuids(keywords=keywords)
 
         for i, row in self.mapping.iterrows():
             if row[0] in uuids_keyword:
@@ -153,7 +162,7 @@ class BGDIMapping(geopycat.geocat):
             else:
                 self.mapping.at[i, "Keyword"] = "Add BGDI"
 
-        uuids = self.get_uuids(keywords=["BGDI Bundesgeodaten-Infrastruktur"], 
+        uuids = self.get_uuids(keywords=keywords, 
                                 not_in_groups=settings.BGDI_GROUP_ID)
         for uuid in uuids:
             if uuid not in self.mapping["Geocat UUID"].unique():
@@ -177,7 +186,7 @@ class BGDIMapping(geopycat.geocat):
                 self.mapping.at[i, "Geocat Status"] = "Ok"
             elif row[0] in uuids_obsolete and row["Published"] in ["Published", "To publish"]:
                 self.mapping.at[i, "Geocat Status"] = "Remove obsolete"
-            elif row[0] not in uuids_obsolete and row["Published"] in ["Unpublished", "To unpublish"]:
+            elif row[0] not in uuids_obsolete and row["Published"] == "Unpublished":
                 self.mapping.at[i, "Geocat Status"] = "Add obsolete"
 
     def check_identifier(self):
@@ -210,7 +219,7 @@ class BGDIMapping(geopycat.geocat):
 
                 if "link" in self.md_index[row[0]]["_source"]:
                     for link in self.md_index[row[0]]["_source"]["link"]:
-                        if link["protocol"] == "OGC:WMS" and link["url"] == settings.WMS_URL and link["name"] == row[1]:
+                        if link["protocol"] == "OGC:WMS" and re.search("^https:\/\/wms\.geo\.admin\.ch\/\?SERVICE=WMS&VERSION=1\.3\.0&REQUEST=GetCapabilities(&lang=(fr|de|it|en))?$", link["url"]) and link["name"] == row[1]:
                             wms_ok = True
                         elif link["protocol"] == "OGC:WMS" and "wms.geo.admin.ch" in link["url"]:
                             wms_tofix = True
@@ -244,7 +253,7 @@ class BGDIMapping(geopycat.geocat):
 
                 if "link" in self.md_index[row[0]]["_source"]:
                     for link in self.md_index[row[0]]["_source"]["link"]:
-                        if link["protocol"] == "OGC:WMTS" and link["url"] in settings.WMTS_URL and link["name"] == row[1]:
+                        if link["protocol"] == "OGC:WMTS" and re.search("^https:\/\/wmts\.geo\.admin\.ch(\/EPSG\/(3857|21781|4326))?\/1\.0\.0\/WMTSCapabilities\.xml(\?lang=(de|fr|it|en))?$", link["url"]) and link["name"] == row[1]:
                             wmts_ok = True
                         elif link["protocol"] == "OGC:WMTS" and "wmts.geo.admin.ch" in link["url"]:
                             wmts_tofix = True
@@ -392,7 +401,7 @@ class BGDIMapping(geopycat.geocat):
         """
         out = dict()
 
-        response = self.session.get(f"{settings.WMTS_URL[0]}?lang=de")
+        response = self.session.get(f"{settings.WMTS_URL}?lang=de")
         root = ET.fromstring(response.content)
 
         for i in root.xpath(".//wmts:Contents//wmts:Layer",
@@ -402,7 +411,7 @@ class BGDIMapping(geopycat.geocat):
                 "de": i.find("ows:Title", namespaces=settings.NS).text
                 }
 
-        response = self.session.get(f"{settings.WMTS_URL[0]}?lang=fr")
+        response = self.session.get(f"{settings.WMTS_URL}?lang=fr")
         root = ET.fromstring(response.content)
 
         for i in root.xpath(".//wmts:Contents//wmts:Layer",
@@ -411,7 +420,7 @@ class BGDIMapping(geopycat.geocat):
             out[i.find("ows:Identifier", namespaces=settings.NS).text]["fr"] = \
                 i.find("ows:Title", namespaces=settings.NS).text
 
-        response = self.session.get(f"{settings.WMTS_URL[0]}?lang=it")
+        response = self.session.get(f"{settings.WMTS_URL}?lang=it")
         root = ET.fromstring(response.content)
 
         for i in root.xpath(".//wmts:Contents//wmts:Layer",
@@ -420,7 +429,7 @@ class BGDIMapping(geopycat.geocat):
             out[i.find("ows:Identifier", namespaces=settings.NS).text]["it"] = \
                 i.find("ows:Title", namespaces=settings.NS).text
 
-        response = self.session.get(f"{settings.WMTS_URL[0]}?lang=en")
+        response = self.session.get(f"{settings.WMTS_URL}?lang=en")
         root = ET.fromstring(response.content)
 
         for i in root.xpath(".//wmts:Contents//wmts:Layer",
@@ -432,6 +441,9 @@ class BGDIMapping(geopycat.geocat):
         return out
 
     def repair_metadata(self, uuid: str):
+        """
+        Repair the given metadata to match the BGDI
+        """
 
         if uuid not in self.mapping["Geocat UUID"].unique():
             raise Exception(f"{uuid} not in BGDI !")
@@ -440,6 +452,7 @@ class BGDIMapping(geopycat.geocat):
         if metadata is None:
             return
 
+        body = list()
         row = self.mapping.loc[self.mapping['Geocat UUID']==uuid]
 
         # Publish
@@ -450,8 +463,58 @@ class BGDIMapping(geopycat.geocat):
             if response.status_code != 204:
                 raise Exception(f"{uuid} could not be published !")
 
+        # Status
+        if row["Geocat Status"].iloc[0] == "Add obsolete":
+            body += utils.add_status_obsolete(metadata)
+
+        if row["Geocat Status"].iloc[0] == "Remove obsolete":
+            body += utils.remove_status_obsolete(metadata)
+
+        # Keyword
+        if row["Keyword"].iloc[0] == "Add BGDI":
+            body += utils.add_bgdi_keyword(metadata)
+
+        if row["Keyword"].iloc[0] == "Remove BGDI":
+            body += utils.remove_bgdi_keyword(metadata)
+
+        # Identifier
+        if row["Identifier"].iloc[0] in ["Add identifier", "Fix identifier"]:
+            body += utils.add_identifier(metadata, row["Layer ID"].iloc[0])
+
+        # WMS
+        if row["WMS Link"].iloc[0] in ["Add WMS", "Fix WMS"]:
+            body += utils.add_wms(metadata, row["Layer ID"].iloc[0], self.wms[row["Layer ID"].iloc[0]])
+
+        if row["WMS Link"].iloc[0] == "Remove WMS":
+            body += utils.remove_wms(metadata)
+
+        # WMTS
+        if row["WMTS Link"].iloc[0] in ["Add WMTS", "Fix WMTS"]:
+            body += utils.add_wmts(metadata, row["Layer ID"].iloc[0], self.wms[row["Layer ID"].iloc[0]])
+
+        if row["WMTS Link"].iloc[0] == "Remove WMTS":
+            body += utils.remove_wmts(metadata)
+
+        # API3
+        if row["API3 Link"].iloc[0] in ["Add API3", "Fix API3"]:
+            body += utils.add_api3(metadata, row["Layer ID"].iloc[0])
+
+        if row["API3 Link"].iloc[0] == "Remove API3":
+            body += utils.remove_api3(metadata)
+
+        # Map preview
+        if row["Map Preview Link"].iloc[0] == "Add map preview":
+            body += utils.add_mappreview(metadata, row["Layer ID"].iloc[0])
+
+        # Editing
+        print(body)
+        if len(body) > 0:
+            response = self.edit_metadata(uuid=uuid, body=body, updateDateStamp="false")
+
+        if geopycat.utils.process_ok(response):
+            print(geopycat.utils.okgreen(f"{uuid} successfully repaired"))
+        else:
+            raise Exception(f"{uuid} could not be repaired")
 
 
-
-
-t = BGDIMapping(env="prod")
+t = BGDIMapping(bmd="report.csv", env="int")

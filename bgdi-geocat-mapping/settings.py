@@ -10,12 +10,7 @@ BGDI_GROUP_ID = [
 
 WMS_URL = "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities"
 
-WMTS_URL = [
-    "https://wmts.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml",
-    "https://wmts.geo.admin.ch/1.0.0/WMTSCapabilities.xml",
-    "https://wmts.geo.admin.ch/EPSG/21781/1.0.0/WMTSCapabilities.xml",
-    "https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml"
-]
+WMTS_URL = "https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml"
 
 API3_URL = "https://api3.geo.admin.ch/rest/services/api/MapServer"
 
@@ -33,7 +28,7 @@ XML = {
                     "xmlns:xlink='http://www.w3.org/1999/xlink' " \
                     "xlink:href='local://srv/api/registries/vocabularies/keyword?" \
                     "skipdescriptivekeywords=true&amp;thesaurus=local.theme.geocat.ch&amp;" \
-                    "id=keyword_id&amp;lang=fre,ita,eng,ger'></gmd:descriptiveKeywords>",
+                    "id=keyword_id&amp;lang=ger,fre,ita,eng,roh'></gmd:descriptiveKeywords>",
     "identifier": "<gmd:identifier xmlns:gmd='http://www.isotc211.org/2005/gmd' xmlns:gco='http://www.isotc211.org/2005/gco'>" \
                     "<gmd:MD_Identifier>" \
                         "<gmd:code>" \
@@ -111,4 +106,7 @@ XML = {
                     "</gmd:transferOptions>"
 }
 
-BGDI_KW_ID = "http://custom.shared.obj.ch/concept#ae677a16-f81a-4533-9243-a87831115079"
+BGDI_KW_ID = [
+   "http%3A%2F%2Fcustom.shared.obj.ch%2Fconcept%23ae677a16-f81a-4533-9243-a87831115079",
+   "http://custom.shared.obj.ch/concept#ae677a16-f81a-4533-9243-a87831115079"
+]
