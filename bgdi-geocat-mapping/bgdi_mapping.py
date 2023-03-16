@@ -1,6 +1,7 @@
 import io
 import re
 import requests
+from datetime import datetime
 import pandas as pd
 import settings
 import utils
@@ -81,11 +82,13 @@ class BGDIMapping(geopycat.geocat):
             if row["GEOCATUUID"] in geocat_uuids:
                 indexes = df.index[df['Layername (according to naming convention FSDI)'] == row["TECHPUBLAYERNAME"]].tolist()
                 if len(indexes) > 0:
-                    if pd.isnull(df["Geocat ID"][indexes[0]]):
+                    if pd.isnull(df["Geocat ID"][indexes[0]]) and row["GEOCATUUID"] not in df['Geocat ID'].unique():
                         df.at[indexes[0], "Geocat ID"] = row["GEOCATUUID"]
                         print(f"{row['TECHPUBLAYERNAME']} : Geocat UUID fixed by BMD")
 
-                else:
+                if row["TECHPUBLAYERNAME"] not in df['Layername (according to naming convention FSDI)'].unique() and \
+                        row["GEOCATUUID"] not in df['Geocat ID'].unique():
+
                     new_row = {'Layername (according to naming convention FSDI)': row["TECHPUBLAYERNAME"], "Geocat ID": row["GEOCATUUID"]}
 
                     if row["INGESTSTATE"] == "Productive":
@@ -109,13 +112,14 @@ class BGDIMapping(geopycat.geocat):
         # fix wrong geocat UUID with the API
         for i, row in df.iterrows():
             if row["Layername (according to naming convention FSDI)"] in layerid_geocatuuid:
-                if layerid_geocatuuid[row["Layername (according to naming convention FSDI)"]] != row["Geocat ID"]:
+                if layerid_geocatuuid[row["Layername (according to naming convention FSDI)"]] != row["Geocat ID"] \
+                and layerid_geocatuuid[row["Layername (according to naming convention FSDI)"]] not in df['Geocat ID'].unique():
                     df.at[i, "Geocat ID"] = layerid_geocatuuid[row["Layername (according to naming convention FSDI)"]]
                     print(f"{row['Layername (according to naming convention FSDI)']} : geocat uuid fixed by API")
 
         # Fix missing record with the API
         for key, value in layerid_geocatuuid.items():
-            if key not in df["Layername (according to naming convention FSDI)"].unique():
+            if key not in df["Layername (according to naming convention FSDI)"].unique() and value not in df['Geocat ID'].unique():
                 new_row = {'Layername (according to naming convention FSDI)': key, 'Geocat ID': value, "INGESTSTATE": "Productive"}
                 new_row = pd.DataFrame(new_row, index=[0])
                 df = pd.concat([new_row,df.loc[:]]).reset_index(drop=True)
@@ -279,13 +283,6 @@ class BGDIMapping(geopycat.geocat):
         Fills the mapping data frame with geoadmin API3 Link info
         """
 
-        api3_layer_ids = list()
-        response = self.session.get(url=settings.API3_URL)
-        for layer in response.json()["layers"]:
-            if "layerBodId" in layer:
-                api3_layer_ids.append(layer["layerBodId"])
-
-
         for i, row in self.mapping.iterrows():
             if row["Published"] in ["Published", "To publish"]:
 
@@ -300,7 +297,7 @@ class BGDIMapping(geopycat.geocat):
                             api3_tofix = True
 
                 response = self.session.get(url=f"{settings.API3_URL}/{row[1]}")
-                if row[1] in api3_layer_ids and response.status_code == 200:
+                if response.status_code == 200:
                     if api3_tofix:
                         self.mapping.at[i, "API3 Link"] = "Fix API3"
                         continue
@@ -450,18 +447,18 @@ class BGDIMapping(geopycat.geocat):
 
         metadata = self.get_metadata_from_mef(uuid=uuid)
         if metadata is None:
-            return
+            raise Exception(f"{uuid} could not be fetch from geocat.ch !")
 
         body = list()
         row = self.mapping.loc[self.mapping['Geocat UUID']==uuid]
 
-        # Publish
-        if row["Published"].iloc[0] == "To publish":
+        # # Publish
+        # if row["Published"].iloc[0] == "To publish":
 
-            response = self.session.put(f"{self.env}/geonetwork/srv/api/records/{uuid}/publish")
+        #     response = self.session.put(f"{self.env}/geonetwork/srv/api/records/{uuid}/publish")
 
-            if response.status_code != 204:
-                raise Exception(f"{uuid} could not be published !")
+        #     if response.status_code != 204:
+        #         raise Exception(f"{uuid} could not be published !")
 
         # Status
         if row["Geocat Status"].iloc[0] == "Add obsolete":
@@ -490,7 +487,7 @@ class BGDIMapping(geopycat.geocat):
 
         # WMTS
         if row["WMTS Link"].iloc[0] in ["Add WMTS", "Fix WMTS"]:
-            body += utils.add_wmts(metadata, row["Layer ID"].iloc[0], self.wms[row["Layer ID"].iloc[0]])
+            body += utils.add_wmts(metadata, row["Layer ID"].iloc[0], self.wmts[row["Layer ID"].iloc[0]])
 
         if row["WMTS Link"].iloc[0] == "Remove WMTS":
             body += utils.remove_wmts(metadata)
@@ -507,14 +504,38 @@ class BGDIMapping(geopycat.geocat):
             body += utils.add_mappreview(metadata, row["Layer ID"].iloc[0])
 
         # Editing
-        print(body)
         if len(body) > 0:
             response = self.edit_metadata(uuid=uuid, body=body, updateDateStamp="false")
 
-        if geopycat.utils.process_ok(response):
-            print(geopycat.utils.okgreen(f"{uuid} successfully repaired"))
+            if geopycat.utils.process_ok(response):
+                print(geopycat.utils.okgreen(f"{uuid} successfully repaired"))
+            else:
+                raise Exception(f"{uuid} could not be repaired")
+
         else:
-            raise Exception(f"{uuid} could not be repaired")
+            print(geopycat.utils.warningred(f"{uuid} nothing to repair"))
 
+    def repair_all(self):
+        """
+        Repair all metadata to match the BGDI
+        """
 
-t = BGDIMapping(bmd="report.csv", env="int")
+        logger = geopycat.utils.setup_logger(f"BGDI-Mapping_{datetime.now().strftime('%Y%m%d-%H%M%S')}")
+
+        print("Repair all : ", end="\r")
+        count = 0
+
+        for i, row in self.mapping.iterrows():
+
+            count += 1
+
+            try:
+                self.repair_metadata(row["Geocat UUID"])
+            except Exception as e:
+                print(geopycat.utils.warningred(f"{row['Geocat UUID']} unsuccessfully repaired"))
+                logger.error(f"{row['Geocat UUID']} - {e}")
+            else:
+                logger.info(f"{row['Geocat UUID']} - successfully repaired")
+            
+            print(f"Repair all : {round((count / len(self.mapping.index)) * 100, 1)}%", end="\r")
+        print(f"Repair all : {geopycat.utils.okgreen('Done')}")

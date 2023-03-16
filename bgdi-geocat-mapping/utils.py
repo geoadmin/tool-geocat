@@ -178,13 +178,14 @@ def add_wms(metadata: bytes, layer_id: str, layer_title: dict) -> list:
 
     body = []
     root = ET.fromstring(metadata)
+    url = geopycat.utils.xmlify(settings.WMS_URL + "&lang=")
 
     value = settings.XML["resource"]
-    value = value.replace("resource-url-de", settings.WMS_URL + "&lang=de")
-    value = value.replace("resource-url-fr", settings.WMS_URL + "&lang=fr")
-    value = value.replace("resource-url-it", settings.WMS_URL + "&lang=it")
-    value = value.replace("resource-url-en", settings.WMS_URL + "&lang=en")
-    value = value.replace("resource-url-rm", settings.WMS_URL + "&lang=de")
+    value = value.replace("resource-url-de", url + "de")
+    value = value.replace("resource-url-fr", url + "fr")
+    value = value.replace("resource-url-it", url + "it")
+    value = value.replace("resource-url-en", url + "en")
+    value = value.replace("resource-url-rm", url + "de")
     value = value.replace("resource-protocol", "OGC:WMS")
     value = value.replace("resource-name-de", layer_id).replace("resource-name-fr", layer_id).replace("resource-name-it", layer_id).replace("resource-name-en", layer_id).replace("resource-name-rm", layer_id)
     value = value.replace("resource-desc-de", geopycat.utils.xmlify(layer_title["de"]))
@@ -306,13 +307,14 @@ def add_wmts(metadata: bytes, layer_id: str, layer_title: dict) -> list:
 
     body = []
     root = ET.fromstring(metadata)
+    url = geopycat.utils.xmlify(settings.WMTS_URL + "?lang=")
 
     value = settings.XML["resource"]
-    value = value.replace("resource-url-de", settings.WMTS_URL + "?lang=de")
-    value = value.replace("resource-url-fr", settings.WMTS_URL + "?lang=fr")
-    value = value.replace("resource-url-it", settings.WMTS_URL + "?lang=it")
-    value = value.replace("resource-url-en", settings.WMTS_URL + "?lang=en")
-    value = value.replace("resource-url-rm", settings.WMTS_URL + "?lang=de")
+    value = value.replace("resource-url-de", url + "de")
+    value = value.replace("resource-url-fr", url + "fr")
+    value = value.replace("resource-url-it", url + "it")
+    value = value.replace("resource-url-en", url + "en")
+    value = value.replace("resource-url-rm", url + "de")
     value = value.replace("resource-protocol", "OGC:WMTS")
     value = value.replace("resource-name-de", layer_id).replace("resource-name-fr", layer_id).replace("resource-name-it", layer_id).replace("resource-name-en", layer_id).replace("resource-name-rm", layer_id)
     value = value.replace("resource-desc-de", geopycat.utils.xmlify(layer_title["de"]))

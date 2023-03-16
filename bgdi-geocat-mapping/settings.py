@@ -10,7 +10,7 @@ BGDI_GROUP_ID = [
 
 WMS_URL = "https://wms.geo.admin.ch/?SERVICE=WMS&VERSION=1.3.0&REQUEST=GetCapabilities"
 
-WMTS_URL = "https://wmts.geo.admin.ch/EPSG/4326/1.0.0/WMTSCapabilities.xml"
+WMTS_URL = "https://wmts.geo.admin.ch/EPSG/3857/1.0.0/WMTSCapabilities.xml"
 
 API3_URL = "https://api3.geo.admin.ch/rest/services/api/MapServer"
 
