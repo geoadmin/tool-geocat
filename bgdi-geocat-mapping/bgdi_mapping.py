@@ -532,7 +532,6 @@ class BGDIMapping(geopycat.geocat):
             try:
                 self.repair_metadata(row["Geocat UUID"])
             except Exception as e:
-                print(geopycat.utils.warningred(f"{row['Geocat UUID']} unsuccessfully repaired"))
                 logger.error(f"{row['Geocat UUID']} - {e}")
             else:
                 logger.info(f"{row['Geocat UUID']} - successfully repaired")
