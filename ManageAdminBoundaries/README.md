@@ -9,8 +9,6 @@ The admin bounadries are managed by the geocat team and have a special **UUID st
 * **Cantons** : `geocatch-subtpl-extent-kantonsgebiet-{ktnr}` where `ktnr` corresponds to the BFS canton number
 * **Countries** : `geocatch-subtpl-extent-landesgebiet-{code_iso}` where `code_iso` corresponds to the country ISO code (CH, FL)
 
-For now, there is no discrict boundaries in geocat.
-
 ---
 ### Requirements
 This script runs on python 3. Following packages are needed :
