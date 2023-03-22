@@ -443,22 +443,26 @@ class BGDIMapping(geopycat.geocat):
         """
 
         if uuid not in self.mapping["Geocat UUID"].unique():
-            raise Exception(f"{uuid} not in BGDI !")
+            raise Exception("Metadata not in BGDI !")
 
         metadata = self.get_metadata_from_mef(uuid=uuid)
         if metadata is None:
-            raise Exception(f"{uuid} could not be fetch from geocat.ch !")
+            raise Exception("Metadata could not be fetch from geocat.ch !")
 
         body = list()
         row = self.mapping.loc[self.mapping['Geocat UUID']==uuid]
 
-        # # Publish
-        # if row["Published"].iloc[0] == "To publish":
+        # Publish
+        if row["Published"].iloc[0] == "To publish" and \
+            (row["WMS Link"].iloc[0] in ["WMS", "Add WMS", "Fix WMS"] or \
+            row["WMTS Link"].iloc[0] in ["WMTS", "Add WMTS", "Fix WMTS"] or \
+            row["API3 Link"].iloc[0] in ["API3", "Add API3", "Fix API3"] or \
+            row["Map Preview Link"].iloc[0] in ["Map Preview", "Add map preview"]):
 
-        #     response = self.session.put(f"{self.env}/geonetwork/srv/api/records/{uuid}/publish")
+            response = self.session.put(f"{self.env}/geonetwork/srv/api/records/{uuid}/publish")
 
-        #     if response.status_code != 204:
-        #         raise Exception(f"{uuid} could not be published !")
+            if response.status_code != 204:
+                raise Exception("Metadata could not be published !")
 
         # Status
         if row["Geocat Status"].iloc[0] == "Add obsolete":
@@ -475,7 +479,7 @@ class BGDIMapping(geopycat.geocat):
             body += utils.remove_bgdi_keyword(metadata)
 
         # Identifier
-        if row["Identifier"].iloc[0] in ["Add identifier", "Fix identifier"]:
+        if row["Identifier"].iloc[0] == "Add identifier":
             body += utils.add_identifier(metadata, row["Layer ID"].iloc[0])
 
         # WMS
@@ -508,12 +512,12 @@ class BGDIMapping(geopycat.geocat):
             response = self.edit_metadata(uuid=uuid, body=body, updateDateStamp="false")
 
             if geopycat.utils.process_ok(response):
-                print(geopycat.utils.okgreen(f"{uuid} successfully repaired"))
+                print(geopycat.utils.okgreen("Metadata successfully repaired"))
             else:
-                raise Exception(f"{uuid} could not be repaired")
+                raise Exception("Metadata could not be repaired")
 
         else:
-            print(geopycat.utils.warningred(f"{uuid} nothing to repair"))
+            print(geopycat.utils.warningred("Metadata has nothing to repair"))
 
     def repair_all(self):
         """
