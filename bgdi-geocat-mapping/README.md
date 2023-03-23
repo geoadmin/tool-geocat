@@ -1,5 +1,5 @@
 ## Mapping BGDI - geocat.ch
-Consistency between the BGDI and geocat.ch (for records belonging to the BGDI). For more info, check 
+Consistency between the BGDI and geocat.ch (for records belonging to the BGDI). For more info, check https://jira.swisstopo.ch/browse/METADATA_SB-167
 
 
 ### Get the BGDI source
