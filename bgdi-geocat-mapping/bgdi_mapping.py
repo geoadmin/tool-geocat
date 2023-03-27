@@ -190,7 +190,7 @@ class BGDIMapping(geopycat.geocat):
                 self.mapping.at[i, "Geocat Status"] = "Ok"
             elif row[0] in uuids_obsolete and row["Published"] in ["Published", "To publish"]:
                 self.mapping.at[i, "Geocat Status"] = "Remove obsolete"
-            elif row[0] not in uuids_obsolete and row["Published"] == "Unpublished":
+            elif row[0] not in uuids_obsolete and row["Published"] in ["Unpublished", "To unpublish"]:
                 self.mapping.at[i, "Geocat Status"] = "Add obsolete"
 
     def check_identifier(self):
@@ -216,33 +216,34 @@ class BGDIMapping(geopycat.geocat):
 
         for i, row in self.mapping.iterrows():
 
-            if row["Published"] in ["Published", "To publish"]:
+            if row["Keyword"] == "Remove BGDI":
+                continue
 
-                wms_ok = False
-                wms_tofix = False
+            wms_ok = False
+            wms_tofix = False
 
-                if "link" in self.md_index[row[0]]["_source"]:
-                    for link in self.md_index[row[0]]["_source"]["link"]:
-                        if link["protocol"] == "OGC:WMS" and re.search("^https:\/\/wms\.geo\.admin\.ch\/\?SERVICE=WMS&VERSION=1\.3\.0&REQUEST=GetCapabilities(&lang=(fr|de|it|en))?$", link["url"]) and link["name"] == row[1]:
-                            wms_ok = True
-                        elif link["protocol"] == "OGC:WMS" and "wms.geo.admin.ch" in link["url"]:
-                            wms_tofix = True
+            if "link" in self.md_index[row[0]]["_source"]:
+                for link in self.md_index[row[0]]["_source"]["link"]:
+                    if link["protocol"] == "OGC:WMS" and re.search("^https:\/\/wms\.geo\.admin\.ch\/\?SERVICE=WMS&VERSION=1\.3\.0&REQUEST=GetCapabilities(&lang=(fr|de|it|en))?$", link["url"]) and link["name"] == row[1]:
+                        wms_ok = True
+                    elif link["protocol"] == "OGC:WMS" and "wms.geo.admin.ch" in link["url"]:
+                        wms_tofix = True
 
-                if row[1] in self.wms:
-                    if wms_ok and not wms_tofix:
-                        self.mapping.at[i, "WMS Link"] = "WMS"
-                    elif wms_ok and wms_tofix:
-                        self.mapping.at[i, "WMS Link"] = "Fix WMS"
-                    elif not wms_ok and wms_tofix:
-                        self.mapping.at[i, "WMS Link"] = "Fix WMS"
-                    else:
-                        self.mapping.at[i, "WMS Link"] = "Add WMS"
-
+            if row[1] in self.wms:
+                if wms_ok and not wms_tofix:
+                    self.mapping.at[i, "WMS Link"] = "WMS"
+                elif wms_ok and wms_tofix:
+                    self.mapping.at[i, "WMS Link"] = "Fix WMS"
+                elif not wms_ok and wms_tofix:
+                    self.mapping.at[i, "WMS Link"] = "Fix WMS"
                 else:
-                    if wms_ok or wms_tofix:
-                        self.mapping.at[i, "WMS Link"] = "Remove WMS"
-                    else:
-                        self.mapping.at[i, "WMS Link"] = "No WMS"
+                    self.mapping.at[i, "WMS Link"] = "Add WMS"
+
+            else:
+                if wms_ok or wms_tofix:
+                    self.mapping.at[i, "WMS Link"] = "Remove WMS"
+                else:
+                    self.mapping.at[i, "WMS Link"] = "No WMS"
 
     def check_wmts(self):
         """
@@ -250,33 +251,35 @@ class BGDIMapping(geopycat.geocat):
         """
 
         for i, row in self.mapping.iterrows():
-            if row["Published"] in ["Published", "To publish"]:
 
-                wmts_ok = False
-                wmts_tofix = False
+            if row["Keyword"] == "Remove BGDI":
+                continue
 
-                if "link" in self.md_index[row[0]]["_source"]:
-                    for link in self.md_index[row[0]]["_source"]["link"]:
-                        if link["protocol"] == "OGC:WMTS" and re.search("^https:\/\/wmts\.geo\.admin\.ch(\/EPSG\/(3857|21781|4326))?\/1\.0\.0\/WMTSCapabilities\.xml(\?lang=(de|fr|it|en))?$", link["url"]) and link["name"] == row[1]:
-                            wmts_ok = True
-                        elif link["protocol"] == "OGC:WMTS" and "wmts.geo.admin.ch" in link["url"]:
-                            wmts_tofix = True
+            wmts_ok = False
+            wmts_tofix = False
 
-                if row[1] in self.wmts:
-                    if wmts_ok and not wmts_tofix:
-                        self.mapping.at[i, "WMTS Link"] = "WMTS"
-                    elif wmts_ok and wmts_tofix:
-                        self.mapping.at[i, "WMTS Link"] = "Fix WMTS"
-                    elif not wmts_ok and wmts_tofix:
-                        self.mapping.at[i, "WMTS Link"] = "Fix WMTS"
-                    else:
-                        self.mapping.at[i, "WMTS Link"] = "Add WMTS"
+            if "link" in self.md_index[row[0]]["_source"]:
+                for link in self.md_index[row[0]]["_source"]["link"]:
+                    if link["protocol"] == "OGC:WMTS" and re.search("^https:\/\/wmts\.geo\.admin\.ch(\/EPSG\/(3857|21781|4326))?\/1\.0\.0\/WMTSCapabilities\.xml(\?lang=(de|fr|it|en))?$", link["url"]) and link["name"] == row[1]:
+                        wmts_ok = True
+                    elif link["protocol"] == "OGC:WMTS" and "wmts.geo.admin.ch" in link["url"]:
+                        wmts_tofix = True
 
+            if row[1] in self.wmts:
+                if wmts_ok and not wmts_tofix:
+                    self.mapping.at[i, "WMTS Link"] = "WMTS"
+                elif wmts_ok and wmts_tofix:
+                    self.mapping.at[i, "WMTS Link"] = "Fix WMTS"
+                elif not wmts_ok and wmts_tofix:
+                    self.mapping.at[i, "WMTS Link"] = "Fix WMTS"
                 else:
-                    if wmts_ok or wmts_tofix:
-                        self.mapping.at[i, "WMTS Link"] = "Remove WMTS"
-                    else:
-                        self.mapping.at[i, "WMTS Link"] = "No WMTS"       
+                    self.mapping.at[i, "WMTS Link"] = "Add WMTS"
+
+            else:
+                if wmts_ok or wmts_tofix:
+                    self.mapping.at[i, "WMTS Link"] = "Remove WMTS"
+                else:
+                    self.mapping.at[i, "WMTS Link"] = "No WMTS"       
 
     def check_api(self):
         """
@@ -284,33 +287,35 @@ class BGDIMapping(geopycat.geocat):
         """
 
         for i, row in self.mapping.iterrows():
-            if row["Published"] in ["Published", "To publish"]:
 
-                api3_ok = False
-                api3_tofix = False
+            if row["Keyword"] == "Remove BGDI":
+                continue
 
-                if "link" in self.md_index[row[0]]["_source"]:
-                    for link in self.md_index[row[0]]["_source"]["link"]:
-                        if link["protocol"] == "ESRI:REST" and link["url"] == f"{settings.API3_URL}/{row[1]}":
-                            api3_ok = True
-                        elif link["protocol"] == "ESRI:REST" and "api3.geo.admin.ch" in link["url"]:
-                            api3_tofix = True
+            api3_ok = False
+            api3_tofix = False
 
-                response = self.session.get(url=f"{settings.API3_URL}/{row[1]}")
-                if response.status_code == 200:
-                    if api3_tofix:
-                        self.mapping.at[i, "API3 Link"] = "Fix API3"
-                        continue
+            if "link" in self.md_index[row[0]]["_source"]:
+                for link in self.md_index[row[0]]["_source"]["link"]:
+                    if link["protocol"] == "ESRI:REST" and link["url"] == f"{settings.API3_URL}/{row[1]}":
+                        api3_ok = True
+                    elif link["protocol"] == "ESRI:REST" and "api3.geo.admin.ch" in link["url"]:
+                        api3_tofix = True
 
-                    if api3_ok:
-                        self.mapping.at[i, "API3 Link"] = "API3"
-                    else:
-                        self.mapping.at[i, "API3 Link"] = "Add API3"
+            response = self.session.get(url=f"{settings.API3_URL}/{row[1]}")
+            if response.status_code == 200:
+                if api3_tofix:
+                    self.mapping.at[i, "API3 Link"] = "Fix API3"
+                    continue
+
+                if api3_ok:
+                    self.mapping.at[i, "API3 Link"] = "API3"
                 else:
-                    if api3_ok or api3_tofix:
-                        self.mapping.at[i, "API3 Link"] = "Remove API3"
-                    else:
-                        self.mapping.at[i, "API3 Link"] = "No API3"
+                    self.mapping.at[i, "API3 Link"] = "Add API3"
+            else:
+                if api3_ok or api3_tofix:
+                    self.mapping.at[i, "API3 Link"] = "Remove API3"
+                else:
+                    self.mapping.at[i, "API3 Link"] = "No API3"
 
     def check_mappreview(self):
         """
@@ -324,28 +329,30 @@ class BGDIMapping(geopycat.geocat):
                 map_layer_ids.append(layer)
 
         for i, row in self.mapping.iterrows():
-            if row["Published"] in ["Published", "To publish"]:
 
-                map_preview = False
+            if row["Keyword"] == "Remove BGDI":
+                continue
 
-                if "link" in self.md_index[row[0]]["_source"]:
-                    for link in self.md_index[row[0]]["_source"]["link"]:
+            map_preview = False
 
-                        # Check if metadata has link to map portal
-                        if re.search(f"map\..*\.admin\.ch.*layers=.*{row[1]}($|[&,/])", link["url"]):
-                            map_preview = True
+            if "link" in self.md_index[row[0]]["_source"]:
+                for link in self.md_index[row[0]]["_source"]["link"]:
 
-                if row[1] in map_layer_ids:
-                    if map_preview:
-                        self.mapping.at[i, "Map Preview Link"] = "Map preview"
-                    else:
-                        self.mapping.at[i, "Map Preview Link"] = "Add map preview"
+                    # Check if metadata has link to map portal
+                    if re.search(f"map\..*\.admin\.ch.*layers=.*{row[1]}($|[&,/])", link["url"]):
+                        map_preview = True
+
+            if row[1] in map_layer_ids:
+                if map_preview:
+                    self.mapping.at[i, "Map Preview Link"] = "Map preview"
                 else:
-                    if map_preview:
-                        # Do not remove preview since it can have other valid layers
-                        self.mapping.at[i, "Map Preview Link"] = "No map preview"
-                    else:
-                        self.mapping.at[i, "Map Preview Link"] = "No map preview"
+                    self.mapping.at[i, "Map Preview Link"] = "Add map preview"
+            else:
+                if map_preview:
+                    # Do not remove preview since it can have other valid layers
+                    self.mapping.at[i, "Map Preview Link"] = "No map preview"
+                else:
+                    self.mapping.at[i, "Map Preview Link"] = "No map preview"
 
     def get_wms_layer(self) -> dict:
         """
@@ -464,6 +471,12 @@ class BGDIMapping(geopycat.geocat):
             if response.status_code != 204:
                 raise Exception("Metadata could not be published !")
 
+        elif row["Published"].iloc[0] == "To unpublish":
+            response = self.session.put(f"{self.env}/geonetwork/srv/api/records/{uuid}/unpublish")
+
+            if response.status_code != 204:
+                raise Exception("Metadata could not be unpublished !")          
+
         # Status
         if row["Geocat Status"].iloc[0] == "Add obsolete":
             body += utils.add_status_obsolete(metadata)
@@ -483,28 +496,28 @@ class BGDIMapping(geopycat.geocat):
             body += utils.add_identifier(metadata, row["Layer ID"].iloc[0])
 
         # WMS
-        if row["WMS Link"].iloc[0] in ["Add WMS", "Fix WMS"]:
+        if row["WMS Link"].iloc[0] in ["Add WMS", "Fix WMS"] and row["Published"] not in ["Unpublished", "To unpublish"]:
             body += utils.add_wms(metadata, row["Layer ID"].iloc[0], self.wms[row["Layer ID"].iloc[0]])
 
         if row["WMS Link"].iloc[0] == "Remove WMS":
             body += utils.remove_wms(metadata)
 
         # WMTS
-        if row["WMTS Link"].iloc[0] in ["Add WMTS", "Fix WMTS"]:
+        if row["WMTS Link"].iloc[0] in ["Add WMTS", "Fix WMTS"] and row["Published"] not in ["Unpublished", "To unpublish"]:
             body += utils.add_wmts(metadata, row["Layer ID"].iloc[0], self.wmts[row["Layer ID"].iloc[0]])
 
         if row["WMTS Link"].iloc[0] == "Remove WMTS":
             body += utils.remove_wmts(metadata)
 
         # API3
-        if row["API3 Link"].iloc[0] in ["Add API3", "Fix API3"]:
+        if row["API3 Link"].iloc[0] in ["Add API3", "Fix API3"] and row["Published"] not in ["Unpublished", "To unpublish"]:
             body += utils.add_api3(metadata, row["Layer ID"].iloc[0])
 
         if row["API3 Link"].iloc[0] == "Remove API3":
             body += utils.remove_api3(metadata)
 
         # Map preview
-        if row["Map Preview Link"].iloc[0] == "Add map preview":
+        if row["Map Preview Link"].iloc[0] == "Add map preview" and row["Published"] not in ["Unpublished", "To unpublish"]:
             body += utils.add_mappreview(metadata, row["Layer ID"].iloc[0])
 
         # Editing
@@ -519,7 +532,7 @@ class BGDIMapping(geopycat.geocat):
         else:
             print(geopycat.utils.warningred("Metadata has nothing to repair"))
 
-    def repair_all(self):
+    def repair_all(self, tounpub: bool = False):
         """
         Repair all metadata to match the BGDI
         """
@@ -533,12 +546,14 @@ class BGDIMapping(geopycat.geocat):
 
             count += 1
 
-            try:
-                self.repair_metadata(row["Geocat UUID"])
-            except Exception as e:
-                logger.error(f"{row['Geocat UUID']} - {e}")
-            else:
-                logger.info(f"{row['Geocat UUID']} - successfully repaired")
+            if row["Published"] != "To unpublished" or tounpub:
+
+                try:
+                    self.repair_metadata(row["Geocat UUID"])
+                except Exception as e:
+                    logger.error(f"{row['Geocat UUID']} - {e}")
+                else:
+                    logger.info(f"{row['Geocat UUID']} - successfully repaired")
             
             print(f"Repair all : {round((count / len(self.mapping.index)) * 100, 1)}%", end="\r")
         print(f"Repair all : {geopycat.utils.okgreen('Done')}")
