@@ -360,6 +360,7 @@ class BGDIMapping(geopycat.geocat):
         """
         out = dict()
 
+        # DE
         response = self.session.get(f"{settings.WMS_URL}&lang=de")
         root = ET.fromstring(response.content)
 
@@ -367,9 +368,10 @@ class BGDIMapping(geopycat.geocat):
                                 namespaces=settings.NS):
 
             out[i.find("wms:Name", namespaces=settings.NS).text] = {
-                "de": i.find("wms:Title", namespaces=settings.NS).text
+                "de": f'WMS-BGDI Dienst, Layer "{i.find("wms:Title", namespaces=settings.NS).text}"'
                 }
 
+        # FR
         response = self.session.get(f"{settings.WMS_URL}&lang=fr")
         root = ET.fromstring(response.content)
 
@@ -377,8 +379,9 @@ class BGDIMapping(geopycat.geocat):
                                 namespaces=settings.NS):
 
             out[i.find("wms:Name", namespaces=settings.NS).text]["fr"] = \
-                i.find("wms:Title", namespaces=settings.NS).text
+                f'Service WMS-IFDG, couche "{i.find("wms:Title", namespaces=settings.NS).text}"'
 
+        # IT
         response = self.session.get(f"{settings.WMS_URL}&lang=it")
         root = ET.fromstring(response.content)
 
@@ -386,8 +389,9 @@ class BGDIMapping(geopycat.geocat):
                                 namespaces=settings.NS):
 
             out[i.find("wms:Name", namespaces=settings.NS).text]["it"] = \
-                i.find("wms:Title", namespaces=settings.NS).text 
+                f'Servizio WMS-IFDG, strato "{i.find("wms:Title", namespaces=settings.NS).text}"'
 
+        # FR
         response = self.session.get(f"{settings.WMS_URL}&lang=en")
         root = ET.fromstring(response.content)
 
@@ -395,7 +399,7 @@ class BGDIMapping(geopycat.geocat):
                                 namespaces=settings.NS):
 
             out[i.find("wms:Name", namespaces=settings.NS).text]["en"] = \
-                i.find("wms:Title", namespaces=settings.NS).text  
+                f'WMS-FSDI service, layer "{i.find("wms:Title", namespaces=settings.NS).text}"' 
     
         return out
 
@@ -412,7 +416,7 @@ class BGDIMapping(geopycat.geocat):
                                 namespaces=settings.NS):
 
             out[i.find("ows:Identifier", namespaces=settings.NS).text] = {
-                "de": i.find("ows:Title", namespaces=settings.NS).text
+                "de": f'WMTS-BGDI Dienst, Layer "{i.find("ows:Title", namespaces=settings.NS).text}"'
                 }
 
         response = self.session.get(f"{settings.WMTS_URL}?lang=fr")
@@ -422,7 +426,7 @@ class BGDIMapping(geopycat.geocat):
                                 namespaces=settings.NS):
 
             out[i.find("ows:Identifier", namespaces=settings.NS).text]["fr"] = \
-                i.find("ows:Title", namespaces=settings.NS).text
+                f'Service WMTS-IFDG, couche , Layer "{i.find("ows:Title", namespaces=settings.NS).text}"'
 
         response = self.session.get(f"{settings.WMTS_URL}?lang=it")
         root = ET.fromstring(response.content)
@@ -431,7 +435,7 @@ class BGDIMapping(geopycat.geocat):
                                 namespaces=settings.NS):
 
             out[i.find("ows:Identifier", namespaces=settings.NS).text]["it"] = \
-                i.find("ows:Title", namespaces=settings.NS).text
+                f'Servizio WMTS-IFDG, strato "{i.find("ows:Title", namespaces=settings.NS).text}"'
 
         response = self.session.get(f"{settings.WMTS_URL}?lang=en")
         root = ET.fromstring(response.content)
@@ -440,7 +444,7 @@ class BGDIMapping(geopycat.geocat):
                                 namespaces=settings.NS):
 
             out[i.find("ows:Identifier", namespaces=settings.NS).text]["en"] = \
-                i.find("ows:Title", namespaces=settings.NS).text 
+                f'WMTS-FSDI service, layer "{i.find("ows:Title", namespaces=settings.NS).text}"'
     
         return out
 
@@ -496,28 +500,28 @@ class BGDIMapping(geopycat.geocat):
             body += utils.add_identifier(metadata, row["Layer ID"].iloc[0])
 
         # WMS
-        if row["WMS Link"].iloc[0] in ["Add WMS", "Fix WMS"] and row["Published"] not in ["Unpublished", "To unpublish"]:
+        if row["WMS Link"].iloc[0] in ["Add WMS", "Fix WMS"] and row["Published"].iloc[0] not in ["Unpublished", "To unpublish"]:
             body += utils.add_wms(metadata, row["Layer ID"].iloc[0], self.wms[row["Layer ID"].iloc[0]])
 
         if row["WMS Link"].iloc[0] == "Remove WMS":
             body += utils.remove_wms(metadata)
 
         # WMTS
-        if row["WMTS Link"].iloc[0] in ["Add WMTS", "Fix WMTS"] and row["Published"] not in ["Unpublished", "To unpublish"]:
+        if row["WMTS Link"].iloc[0] in ["Add WMTS", "Fix WMTS"] and row["Published"].iloc[0] not in ["Unpublished", "To unpublish"]:
             body += utils.add_wmts(metadata, row["Layer ID"].iloc[0], self.wmts[row["Layer ID"].iloc[0]])
 
         if row["WMTS Link"].iloc[0] == "Remove WMTS":
             body += utils.remove_wmts(metadata)
 
         # API3
-        if row["API3 Link"].iloc[0] in ["Add API3", "Fix API3"] and row["Published"] not in ["Unpublished", "To unpublish"]:
+        if row["API3 Link"].iloc[0] in ["Add API3", "Fix API3"] and row["Published"].iloc[0] not in ["Unpublished", "To unpublish"]:
             body += utils.add_api3(metadata, row["Layer ID"].iloc[0])
 
         if row["API3 Link"].iloc[0] == "Remove API3":
             body += utils.remove_api3(metadata)
 
         # Map preview
-        if row["Map Preview Link"].iloc[0] == "Add map preview" and row["Published"] not in ["Unpublished", "To unpublish"]:
+        if row["Map Preview Link"].iloc[0] == "Add map preview" and row["Published"].iloc[0] not in ["Unpublished", "To unpublish"]:
             body += utils.add_mappreview(metadata, row["Layer ID"].iloc[0])
 
         # Editing
