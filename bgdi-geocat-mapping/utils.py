@@ -597,6 +597,49 @@ def add_mappreview(metadata: bytes, layer_id: str) -> list:
 
         return body
 
+    # transferOption with only one child and admin.ch
+    xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)=1"\
+            " and .//gmd:protocol/gco:CharacterString = 'MAP:Preview'"\
+            " and (.//gmd:URL[contains(text(), 'admin.ch')]"\
+            " or .//che:LocalisedURL[contains(text(), 'admin.ch')])]"
+
+    number_tags = len(root.xpath("./gmd:distributionInfo//gmd:transferOptions",
+                    namespaces=geopycat.settings.NS))
+
+    if len(root.xpath(xpath, namespaces=geopycat.settings.NS)) > 0:
+
+        body.append({
+            "xpath": xpath,
+            "value": "<gn_delete></gn_delete>"
+        })
+
+        if number_tags == len(root.xpath(xpath, namespaces=geopycat.settings.NS)):
+
+            body.append({
+                "xpath": "./gmd:distributionInfo[1]/gmd:MD_Distribution",
+                "value": f"<gn_add>{settings.XML['transferOption']}</gn_add>"
+            })
+
+            body.append({
+                "xpath": "./gmd:distributionInfo[1]/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions",
+                "value": f"<gn_add>{value}</gn_add>"
+            })
+
+            return body
+
+    # transferOption with multiple childs
+    xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)>1]//gmd:onLine["\
+            " .//gmd:protocol/gco:CharacterString = 'MAP:Preview'"\
+            " and (.//gmd:URL[contains(text(), 'admin.ch')]"\
+            " or .//che:LocalisedURL[contains(text(), 'admin.ch')])]"
+
+    if len(root.xpath(xpath, namespaces=geopycat.settings.NS)) > 0:
+
+        body.append({
+            "xpath": xpath,
+            "value": "<gn_delete></gn_delete>"
+        })
+
     body.append({
         "xpath": "./gmd:distributionInfo[1]/gmd:MD_Distribution/gmd:transferOptions[1]/gmd:MD_DigitalTransferOptions",
         "value": f"<gn_add>{value}</gn_add>"
