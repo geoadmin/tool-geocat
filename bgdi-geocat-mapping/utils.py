@@ -216,7 +216,7 @@ def add_wms(metadata: bytes, layer_id: str, layer_title: dict) -> list:
 
     # transferOption with only one child and WMS
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)=1"\
-            " and .//gmd:protocol/gco:CharacterString = 'OGC:WMS'"\
+            " and .//gmd:protocol/gco:CharacterString[contains(text(), 'OGC:WMS')]"\
             " and (.//gmd:URL[contains(text(), 'wms.geo.admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'wms.geo.admin.ch')])]"
 
@@ -246,7 +246,7 @@ def add_wms(metadata: bytes, layer_id: str, layer_title: dict) -> list:
 
     # transferOption with multiple childs
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)>1]//gmd:onLine["\
-            " .//gmd:protocol/gco:CharacterString = 'OGC:WMS'"\
+            " .//gmd:protocol/gco:CharacterString[contains(text(), 'OGC:WMS')]"\
             " and (.//gmd:URL[contains(text(), 'wms.geo.admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'wms.geo.admin.ch')])]"
 
@@ -274,7 +274,7 @@ def remove_wms(metadata: bytes) -> list:
 
     # transferOption with only one child and WMS
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)=1"\
-            " and .//gmd:protocol/gco:CharacterString = 'OGC:WMS'"\
+            " and .//gmd:protocol/gco:CharacterString[contains(text(), 'OGC:WMS')]"\
             " and (.//gmd:URL[contains(text(), 'wms.geo.admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'wms.geo.admin.ch')])]"
 
@@ -287,7 +287,7 @@ def remove_wms(metadata: bytes) -> list:
 
     # transferOption with multiple childs
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)>1]//gmd:onLine["\
-            " .//gmd:protocol/gco:CharacterString = 'OGC:WMS'"\
+            " .//gmd:protocol/gco:CharacterString[contains(text(), 'OGC:WMS')]"\
             " and (.//gmd:URL[contains(text(), 'wms.geo.admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'wms.geo.admin.ch')])]"
 
@@ -345,7 +345,7 @@ def add_wmts(metadata: bytes, layer_id: str, layer_title: dict) -> list:
 
     # transferOption with only one child and WMTS
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)=1"\
-            " and .//gmd:protocol/gco:CharacterString = 'OGC:WMTS'"\
+            " and .//gmd:protocol/gco:CharacterString[contains(text(), 'OGC:WMTS')]"\
             " and (.//gmd:URL[contains(text(), 'wmts.geo.admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'wmts.geo.admin.ch')])]"
 
@@ -375,7 +375,7 @@ def add_wmts(metadata: bytes, layer_id: str, layer_title: dict) -> list:
 
     # transferOption with multiple childs
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)>1]//gmd:onLine["\
-            " .//gmd:protocol/gco:CharacterString = 'OGC:WMTS'"\
+            " .//gmd:protocol/gco:CharacterString[contains(text(), 'OGC:WMTS')]"\
             " and (.//gmd:URL[contains(text(), 'wmts.geo.admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'wmts.geo.admin.ch')])]"
 
@@ -403,7 +403,7 @@ def remove_wmts(metadata: bytes) -> list:
 
     # transferOption with only one child and WMTS
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)=1"\
-            " and .//gmd:protocol/gco:CharacterString = 'OGC:WMTS'"\
+            " and .//gmd:protocol/gco:CharacterString[contains(text(), 'OGC:WMTS')]"\
             " and (.//gmd:URL[contains(text(), 'wmts.geo.admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'wmts.geo.admin.ch')])]"
 
@@ -416,7 +416,7 @@ def remove_wmts(metadata: bytes) -> list:
 
     # transferOption with multiple childs
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)>1]//gmd:onLine["\
-            " .//gmd:protocol/gco:CharacterString = 'OGC:WMTS'"\
+            " .//gmd:protocol/gco:CharacterString[contains(text(), 'OGC:WMTS')]"\
             " and (.//gmd:URL[contains(text(), 'wmts.geo.admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'wmts.geo.admin.ch')])]"
 
@@ -473,7 +473,7 @@ def add_api3(metadata: bytes, layer_id: str) -> list:
 
     # transferOption with only one child and API3
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)=1"\
-            " and .//gmd:protocol/gco:CharacterString = 'ESRI:REST'"\
+            " and .//gmd:protocol/gco:CharacterString[contains(text(), 'ESRI:REST')]"\
             " and (.//gmd:URL[contains(text(), 'api3.geo.admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'api3.geo.admin.ch')])]"
 
@@ -503,7 +503,7 @@ def add_api3(metadata: bytes, layer_id: str) -> list:
 
     # transferOption with multiple childs
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)>1]//gmd:onLine["\
-            " .//gmd:protocol/gco:CharacterString = 'ESRI:REST'"\
+            " .//gmd:protocol/gco:CharacterString[contains(text(), 'ESRI:REST')]"\
             " and (.//gmd:URL[contains(text(), 'api3.geo.admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'api3.geo.admin.ch')])]"
 
@@ -531,7 +531,7 @@ def remove_api3(metadata: bytes) -> list:
 
     # transferOption with only one child and API3
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)=1"\
-            " and .//gmd:protocol/gco:CharacterString = 'ESRI:REST'"\
+            " and .//gmd:protocol/gco:CharacterString[contains(text(), 'ESRI:REST')]"\
             " and (.//gmd:URL[contains(text(), 'api3.geo.admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'api3.geo.admin.ch')])]"
 
@@ -544,7 +544,7 @@ def remove_api3(metadata: bytes) -> list:
 
     # transferOption with multiple childs
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)>1]//gmd:onLine["\
-            " .//gmd:protocol/gco:CharacterString = 'ESRI:REST'"\
+            " .//gmd:protocol/gco:CharacterString[contains(text(), 'ESRI:REST')]"\
             " and (.//gmd:URL[contains(text(), 'api3.geo.admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'api3.geo.admin.ch')])]"
 
@@ -599,7 +599,7 @@ def add_mappreview(metadata: bytes, layer_id: str) -> list:
 
     # transferOption with only one child and admin.ch
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)=1"\
-            " and .//gmd:protocol/gco:CharacterString = 'MAP:Preview'"\
+            " and .//gmd:protocol/gco:CharacterString[contains(text(), 'MAP:Preview')]"\
             " and (.//gmd:URL[contains(text(), 'admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'admin.ch')])]"
 
@@ -629,7 +629,7 @@ def add_mappreview(metadata: bytes, layer_id: str) -> list:
 
     # transferOption with multiple childs
     xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)>1]//gmd:onLine["\
-            " .//gmd:protocol/gco:CharacterString = 'MAP:Preview'"\
+            " .//gmd:protocol/gco:CharacterString[contains(text(), 'MAP:Preview')]"\
             " and (.//gmd:URL[contains(text(), 'admin.ch')]"\
             " or .//che:LocalisedURL[contains(text(), 'admin.ch')])]"
 

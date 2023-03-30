@@ -224,9 +224,9 @@ class BGDIMapping(geopycat.geocat):
 
             if "link" in self.md_index[row[0]]["_source"]:
                 for link in self.md_index[row[0]]["_source"]["link"]:
-                    if link["protocol"] == "OGC:WMS" and re.search("^https:\/\/wms\.geo\.admin\.ch\/\?SERVICE=WMS&VERSION=1\.3\.0&REQUEST=GetCapabilities(&lang=(fr|de|it|en))?$", link["url"]) and link["name"] == row[1]:
+                    if "OGC:WMS" in link["protocol"] and re.search("^https:\/\/wms\.geo\.admin\.ch\/\?SERVICE=WMS&VERSION=1\.3\.0&REQUEST=GetCapabilities(&lang=(fr|de|it|en))?$", link["url"]) and link["name"] == row[1]:
                         wms_ok = True
-                    elif link["protocol"] == "OGC:WMS" and "wms.geo.admin.ch" in link["url"]:
+                    elif "OGC:WMS" in link["protocol"] and "wms.geo.admin.ch" in link["url"]:
                         wms_tofix = True
 
             if row[1] in self.wms:
@@ -260,9 +260,9 @@ class BGDIMapping(geopycat.geocat):
 
             if "link" in self.md_index[row[0]]["_source"]:
                 for link in self.md_index[row[0]]["_source"]["link"]:
-                    if link["protocol"] == "OGC:WMTS" and re.search("^https:\/\/wmts\.geo\.admin\.ch(\/EPSG\/(3857|21781|4326))?\/1\.0\.0\/WMTSCapabilities\.xml(\?lang=(de|fr|it|en))?$", link["url"]) and link["name"] == row[1]:
+                    if "OGC:WMTS" in link["protocol"] and re.search("^https:\/\/wmts\.geo\.admin\.ch(\/EPSG\/(3857|21781|4326))?\/1\.0\.0\/WMTSCapabilities\.xml(\?lang=(de|fr|it|en))?$", link["url"]) and link["name"] == row[1]:
                         wmts_ok = True
-                    elif link["protocol"] == "OGC:WMTS" and "wmts.geo.admin.ch" in link["url"]:
+                    elif "OGC:WMTS" in link["protocol"] and "wmts.geo.admin.ch" in link["url"]:
                         wmts_tofix = True
 
             if row[1] in self.wmts:
@@ -296,9 +296,9 @@ class BGDIMapping(geopycat.geocat):
 
             if "link" in self.md_index[row[0]]["_source"]:
                 for link in self.md_index[row[0]]["_source"]["link"]:
-                    if link["protocol"] == "ESRI:REST" and link["url"] == f"{settings.API3_URL}/{row[1]}":
+                    if "ESRI:REST" in link["protocol"] and link["url"] == f"{settings.API3_URL}/{row[1]}":
                         api3_ok = True
-                    elif link["protocol"] == "ESRI:REST" and "api3.geo.admin.ch" in link["url"]:
+                    elif "ESRI:REST" in link["protocol"] and "api3.geo.admin.ch" in link["url"]:
                         api3_tofix = True
 
             response = self.session.get(url=f"{settings.API3_URL}/{row[1]}")
@@ -448,6 +448,81 @@ class BGDIMapping(geopycat.geocat):
     
         return out
 
+    def repair_wmts(self, uuid: str):
+        """
+        Repair WMTS Link in the given metadata to match the BGDI
+        """
+
+        if uuid not in self.mapping["Geocat UUID"].unique():
+            raise Exception("Metadata not in BGDI !")
+
+        metadata = self.get_metadata_from_mef(uuid=uuid)
+        if metadata is None:
+            raise Exception("Metadata could not be fetch from geocat.ch !")
+
+        body = list()
+        row = self.mapping.loc[self.mapping['Geocat UUID']==uuid]
+
+        if row["WMTS Link"].iloc[0] in ["Add WMTS", "Fix WMTS"] and row["Published"].iloc[0] not in ["Unpublished", "To unpublish"]:
+            body += utils.add_wmts(metadata, row["Layer ID"].iloc[0], self.wmts[row["Layer ID"].iloc[0]])
+
+        if row["WMTS Link"].iloc[0] == "Remove WMTS":
+            body += utils.remove_wmts(metadata)
+
+        if len(body) > 0:
+            response = self.edit_metadata(uuid=uuid, body=body, updateDateStamp="false")
+
+            return response
+
+    def repair_api3(self, uuid: str):
+        """
+        Repair API3 Link in the given metadata to match the BGDI
+        """
+
+        if uuid not in self.mapping["Geocat UUID"].unique():
+            raise Exception("Metadata not in BGDI !")
+
+        metadata = self.get_metadata_from_mef(uuid=uuid)
+        if metadata is None:
+            raise Exception("Metadata could not be fetch from geocat.ch !")
+
+        body = list()
+        row = self.mapping.loc[self.mapping['Geocat UUID']==uuid]
+
+        if row["API3 Link"].iloc[0] in ["Add API3", "Fix API3"] and row["Published"].iloc[0] not in ["Unpublished", "To unpublish"]:
+            body += utils.add_api3(metadata, row["Layer ID"].iloc[0])
+
+        if row["API3 Link"].iloc[0] == "Remove API3":
+            body += utils.remove_api3(metadata)
+
+        if len(body) > 0:
+            response = self.edit_metadata(uuid=uuid, body=body, updateDateStamp="false")
+
+            return response
+
+    def repair_mappreview(self, uuid: str):
+        """
+        Repair Map preview Link in the given metadata to match the BGDI
+        """
+
+        if uuid not in self.mapping["Geocat UUID"].unique():
+            raise Exception("Metadata not in BGDI !")
+
+        metadata = self.get_metadata_from_mef(uuid=uuid)
+        if metadata is None:
+            raise Exception("Metadata could not be fetch from geocat.ch !")
+
+        body = list()
+        row = self.mapping.loc[self.mapping['Geocat UUID']==uuid]
+
+        if row["Map Preview Link"].iloc[0] == "Add map preview" and row["Published"].iloc[0] not in ["Unpublished", "To unpublish"]:
+            body += utils.add_mappreview(metadata, row["Layer ID"].iloc[0])
+
+        if len(body) > 0:
+            response = self.edit_metadata(uuid=uuid, body=body, updateDateStamp="false")
+
+            return response
+
     def repair_metadata(self, uuid: str):
         """
         Repair the given metadata to match the BGDI
@@ -462,6 +537,8 @@ class BGDIMapping(geopycat.geocat):
 
         body = list()
         row = self.mapping.loc[self.mapping['Geocat UUID']==uuid]
+
+        md_updated = False
 
         # Publish
         if row["Published"].iloc[0] == "To publish" and \
@@ -506,33 +583,47 @@ class BGDIMapping(geopycat.geocat):
         if row["WMS Link"].iloc[0] == "Remove WMS":
             body += utils.remove_wms(metadata)
 
-        # WMTS
-        if row["WMTS Link"].iloc[0] in ["Add WMTS", "Fix WMTS"] and row["Published"].iloc[0] not in ["Unpublished", "To unpublish"]:
-            body += utils.add_wmts(metadata, row["Layer ID"].iloc[0], self.wmts[row["Layer ID"].iloc[0]])
-
-        if row["WMTS Link"].iloc[0] == "Remove WMTS":
-            body += utils.remove_wmts(metadata)
-
-        # API3
-        if row["API3 Link"].iloc[0] in ["Add API3", "Fix API3"] and row["Published"].iloc[0] not in ["Unpublished", "To unpublish"]:
-            body += utils.add_api3(metadata, row["Layer ID"].iloc[0])
-
-        if row["API3 Link"].iloc[0] == "Remove API3":
-            body += utils.remove_api3(metadata)
-
-        # Map preview
-        if row["Map Preview Link"].iloc[0] == "Add map preview" and row["Published"].iloc[0] not in ["Unpublished", "To unpublish"]:
-            body += utils.add_mappreview(metadata, row["Layer ID"].iloc[0])
-
-        # Editing
         if len(body) > 0:
             response = self.edit_metadata(uuid=uuid, body=body, updateDateStamp="false")
 
-            if geopycat.utils.process_ok(response):
-                print(geopycat.utils.okgreen("Metadata successfully repaired"))
-            else:
-                raise Exception("Metadata could not be repaired")
+            if not geopycat.utils.process_ok(response):
+                raise Exception("Keyword or Identifier or WMS could not be repaired")
+            
+            md_updated = True
+        
+        # WMTS
+        if row["WMTS Link"].iloc[0] not in ["WMTS", "No WMTS"]:
+            response = self.repair_wmts(uuid)
+            if  response is not None:
 
+                if not geopycat.utils.process_ok(response):
+                    raise Exception("WMTS could not be repaired")
+                
+                md_updated = True
+
+        # API3
+        if row["API3 Link"].iloc[0] not in ["API3", "No API3"]:
+            response = self.repair_api3(uuid)
+            if  response is not None:
+
+                if not geopycat.utils.process_ok(response):
+                    raise Exception("API3 could not be repaired")
+                
+                md_updated = True
+
+        # Map preview
+        if row["Map Preview Link"].iloc[0] not in ["Map preview", "No map preview"]:
+            response = self.repair_mappreview(uuid)
+            if  response is not None:
+
+                if not geopycat.utils.process_ok(response):
+                    raise Exception("Map Preview could not be repaired")
+                
+                md_updated = True
+
+        # Logging
+        if md_updated:
+            print(geopycat.utils.okgreen("Metadata successfully repaired"))
         else:
             print(geopycat.utils.warningred("Metadata has nothing to repair"))
 
@@ -550,7 +641,7 @@ class BGDIMapping(geopycat.geocat):
 
             count += 1
 
-            if row["Published"] != "To unpublished" or tounpub:
+            if row["Published"] != "To unpublish" or tounpub:
 
                 try:
                     self.repair_metadata(row["Geocat UUID"])
