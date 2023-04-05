@@ -111,6 +111,7 @@ ab.CheckCountryBoundaries(ref_geojson, landdnr, landname, output_dir, env)
 ### Usage - Update
 * Creates new admin boundaries if they don't exist
 * Update the geometry and name (if option is selected) of exisiting admin boundaries
+* :warning: **You must uncheck the option "Generate UUID" in geocat to be able to generate custom subtemplate UUID**
 ```python
 import ManageAdminBoundaries as ab
 
