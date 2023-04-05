@@ -16,9 +16,7 @@ Usage examples :
         foo.delete_subtemplates(uuids=uuids)
 """
 
-from geocat import GeocatAPI
-from geocat import okgreen, warningred
-from geocat import setup_logger
+import geopycat
 import os
 import colorama
 import pandas as pd
@@ -98,34 +96,6 @@ def geojson_to_geocatgml(geojson_feature: dict):
     return gml_start + gml_core + gml_end
 
 
-def process_ok(response):
-    """
-    Process the response of the geocat API requests.
-
-    Works for following requests :
-     - /{portal}/api/0.1/records/batchediting
-     - /{portal}/api/0.1/records/validate
-     - /{portal}/api/0.1/records/{metadataUuid}/ownership
-
-    Args:
-        response:
-            object, required, the response object of the API request
-
-    Returns:
-        boolean: True if the process was successful, False if not
-    """
-    if response.status_code == 201:
-        r_json = json.loads(response.text)
-        if len(r_json["errors"]) == 0 and r_json["numberOfRecordNotFound"] == 0 \
-                and r_json["numberOfRecordsNotEditable"] == 0 and r_json["numberOfNullRecords"] == 0 \
-                and r_json["numberOfRecordsWithErrors"] == 0 and r_json["numberOfRecordsProcessed"] == 1:
-            return True
-        else:
-            return False
-    else:
-        return False
-
-
 class CheckMunicipalityBoundaries:
     """
     Check the municipalities admin boundaries from geocat by comparing them to a reference geojson file.
@@ -153,7 +123,7 @@ class CheckMunicipalityBoundaries:
 
     def __init__(self, ref_geojson, gmdnr, gmdname, env: str = 'int', output_dir: str = os.path.dirname(__file__)):
 
-        self.api = GeocatAPI(env)
+        self.api = geopycat.geocat(env)
         self.output_dir = output_dir
         self.ref_geojson = ref_geojson
         self.gmdnr = gmdnr
@@ -161,7 +131,6 @@ class CheckMunicipalityBoundaries:
 
         self.export_municipalities()
         self.check_gmd()
-        self.check_old_municipalities_md_link()
 
     def export_municipalities(self):
         """
@@ -172,15 +141,15 @@ class CheckMunicipalityBoundaries:
         the folder given at the class level.
         """
         print("Exporting all municipalities from geocat : ", end="\r")
-        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.api.token}
+        headers = {"accept": "application/xml", "Content-Type": "application/xml"}
         df = pd.DataFrame(columns=["GMDNR", "GMDNAME"])
 
         count = 0
         for i in range(1, 10000):
 
             uuid = f"geocatch-subtpl-extent-hoheitsgebiet-{i}"
-            response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/0.1/registries/entries/{uuid}",
-                                            proxies=self.api.proxies, auth=self.api.auth, headers=headers)
+            response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/registries/entries/{uuid}",
+                                            headers=headers)
 
             xmlroot = ET.fromstring(response.content)
 
@@ -194,7 +163,7 @@ class CheckMunicipalityBoundaries:
             print(f"Exporting all municipalities from geocat : {round((count / 10000) * 100, 1)}%", end="\r")
 
         df.to_csv(os.path.join(self.output_dir, "geocat_municipalities.csv"), index=False)
-        print(f"Exporting all municipalities from geocat : {okgreen('Done')}")
+        print(f"Exporting all municipalities from geocat : {geopycat.utils.okgreen('Done')}")
 
     def check_gmd(self):
         """
@@ -278,67 +247,161 @@ class CheckMunicipalityBoundaries:
         if len(df_correct) > 0:
             df_correct.to_csv(os.path.join(self.output_dir, "correct_municipalities.csv"), index=False)
 
-        print(f"Checking municipalities...{okgreen('Done')}")
+        print(f"Checking municipalities...{geopycat.utils.okgreen('Done')}")
 
-    def check_old_municipalities_md_link(self):
+
+class CheckDistrictBoundaries:
+    """
+    Check the districts admin boundaries from geocat by comparing them to a reference geojson file.
+    The geojson file must be encoded in utf-8 to support special characters (accents).
+
+    Args:
+        ref_geojson:
+            str, required ! The path to the reference geojson file.
+        bznr:
+            str, required ! The attribute name in the reference file corresponding to the municipalities BFS number
+        bzname:
+            str, required ! The attribute name in the reference file corresponding to the municipalities name
+        env:
+            str, indicating the geocat's environment to work with, 'int' or 'prod', default = 'int'.
+        output_dir:
+            str, the directory path where to save the results, default = current directory.
+
+    It saves 5 csv lists (if not empty):
+            correct_districts.csv : ID and Name correct in geocat and reference
+            name_incorrect_districts.csv : ID is found but Name is different in geocat
+            id_incorrect_districts.csv : Name is found but ID is different in geocat
+            new_districts.csv : ID and Name not found in geocat
+            old_districts.csv : ID and Name not found in reference
+    """
+
+    def __init__(self, ref_geojson, bznr, bzname, env: str = 'int', output_dir: str = os.path.dirname(__file__)):
+
+        self.api = geopycat.geocat(env)
+        self.output_dir = output_dir
+        self.ref_geojson = ref_geojson
+        self.bznr = bznr
+        self.bzname = bzname
+
+        self.export_districts()
+        self.check_bz()
+
+    def export_districts(self):
         """
-        Check if the municipalities in geocat from the CSV list old_municipalities.csv are linked to metadata.
+        Export all districts from geocat. I.e. subtemplates with UUID matching
+        'geocatch-subtpl-extent-bezirk-[1:3000].
 
-        Check both the normal metadata and the harvested ones (even if they normally don't contain subtemplates).
-        Updates the CSV list old_municipalities.csv with a attribute 'MD_linked' corresponding to the number of
-        metadata records that use the municipality.
+        It saves a csv list named 'geocat_districts.csv' with the attributes BZNR and BZNAME at the root of
+        the folder given at the class level.
         """
-        print(f"Fetching all extent subtemplate UUID in MD : ", end="\r")
+        print("Exporting all districts from geocat : ", end="\r")
+        headers = {"accept": "application/xml", "Content-Type": "application/xml"}
+        df = pd.DataFrame(columns=["BZNR", "BZNAME"])
 
-        df_old_gmd = pd.read_csv(os.path.join(self.output_dir, "old_municipalities.csv"))
-        df_old_gmd_link = pd.DataFrame(columns=["GMDNR", "GMDNAME", "MD_Linked"])
-
-        uuids = self.api.get_uuids_all()
-
-        headers = {"accept": "application/x-gn-mef-2-zip", "X-XSRF-TOKEN": self.api.token}
-
-        hrefs = list()
         count = 0
-        for uuid in uuids:
-            response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/0.1/records/{uuid}/formatters/zip",
-                                            proxies=self.api.proxies, auth=self.api.auth, headers=headers)
+        for i in range(1, 3000):
 
-            if response.status_code != 200:
-                print(f"{warningred('The following Metadata could not be exported in MEF : ') + uuid}")
-                continue
+            uuid = f"geocatch-subtpl-extent-bezirk-{i}"
+            response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/registries/entries/{uuid}",
+                                            headers=headers)
 
-            with ZipFile(io.BytesIO(response.content)) as zip:
-                if f'{uuid}/metadata/metadata.xml' in zip.namelist():
+            xmlroot = ET.fromstring(response.content)
 
-                    xml_string = zip.open(f'{uuid}/metadata/metadata.xml').read().decode('utf-8')
-                    xmlroot = ET.fromstring(xml_string)
+            if xmlroot.tag != "apiError":
+                bz_name = xmlroot.find("{http://www.isotc211.org/2005/gmd}description").find(
+                    "{http://www.isotc211.org/2005/gco}CharacterString").text
 
-                    for href in xmlroot.findall('.//*[@{http://www.w3.org/1999/xlink}href]'):
-                        hrefs.append(href.attrib["{http://www.w3.org/1999/xlink}href"].split("registries/entries/")[-1].split(" ")[0].split("/")[0].split("?")[0])
+                df = df.append({"BZNR": i, "BZNAME": bz_name}, ignore_index=True)
 
             count += 1
-            print(f"Fetching all extent subtemplate UUID in MD : {round((count / len(uuids)) * 100, 1)}%", end="\r")
-        print(f"Fetching all extent subtemplate UUID in MD : {okgreen('Done')}")
+            print(f"Exporting all districts from geocat : {round((count / 3000) * 100, 1)}%", end="\r")
 
-        print(f"Checking if municipalities are linked in MD : ", end="\r")
-        total = len(df_old_gmd)
-        count = 0
+        df.to_csv(os.path.join(self.output_dir, "geocat_districts.csv"), index=False)
+        print(f"Exporting all districts from geocat : {geopycat.utils.okgreen('Done')}")
 
-        for index, row in df_old_gmd.iterrows():
+    def check_bz(self):
+        """
+        Compare the districcts (names and id) from geocat (i.e. from the csv list created by the
+        export_districts function) with the districts from the reference geojson file.
 
-            uuid = f"geocatch-subtpl-extent-hoheitsgebiet-{row['GMDNR']}"
+        It saves 5 csv lists at the root of the folder given at the class level :
+                correct_districts.csv : ID and Name correct in geocat and reference
+                name_incorrect_districts.csv : ID is found but Name is different in geocat
+                id_incorrect_districts.csv : Name is found but ID is different in geocat
+                new_districts.csv : ID and Name not found in geocat
+                old_districts.csv : ID and Name not found in reference
+        """
+        print("Checking districts...", end="\r")
 
-            df_old_gmd_link = df_old_gmd_link.append({
-                "GMDNR": row["GMDNR"],
-                "GMDNAME": row["GMDNAME"],
-                "MD_Linked": hrefs.count(uuid),
-            }, ignore_index=True)
+        with open(self.ref_geojson, "rb") as file:
+            geojson_ref_file = json.load(file)
 
-            count += 1
-            print(f"Checking if municipalities are linked in MD : {round((count / total) * 100, 1)}%", end="\r")
+        df_geocat = pd.read_csv(os.path.join(self.output_dir, "geocat_districts.csv"))
 
-        df_old_gmd_link.to_csv(os.path.join(self.output_dir, "old_municipalities.csv"), index=False)
-        print(f"Checking if municipalities are linked in MD : {okgreen('Done')}")
+        df_name_change = pd.DataFrame(columns=["BZNR", "BZNAME_new", "BZNAME_old"])
+        df_id_change = pd.DataFrame(columns=["BZNAME", "BZNR_new", "BZNR_old"])
+        df_new = pd.DataFrame(columns=["BZNR", "BZNAME"])
+        df_old = pd.DataFrame(columns=["BZNR", "BZNAME"])
+        df_correct = pd.DataFrame(columns=["BZNR", "BZNAME"])
+
+        # 1 - Testing new districts against geocat
+        for feature in geojson_ref_file[0]["features"]:
+            bznr = feature["properties"][self.bznr]
+            bzname = feature["properties"][self.bzname]
+
+            # Case where id exists but name is different
+            if bznr in df_geocat.values:
+                if bzname != df_geocat.loc[df_geocat["BZNR"] == bznr].iloc[0]["BZNAME"]:
+                    df_name_change = df_name_change.append({
+                        "BZNR": bznr,
+                        "BZNAME_new": bzname,
+                        "BZNAME_old": df_geocat.loc[df_geocat["BZNR"] == bznr].iloc[0]["BZNAME"],
+                    }, ignore_index=True)
+                else:
+                    df_correct = df_correct.append({
+                        "BZNR": bznr,
+                        "BZNAME": bzname,
+                    }, ignore_index=True)
+            # Case where id is different for a given name
+            else:
+                if bzname in df_geocat.values:
+                    df_id_change = df_id_change.append({
+                        "BZNAME": bzname,
+                        "BZNR_new": bznr,
+                        "BZNR_old": df_geocat.loc[df_geocat["BZNAME"] == bzname].iloc[0]["BZNR"],
+                    }, ignore_index=True)
+                # Case where id and name doesn't exist. New district to add to geocat.
+                else:
+                    df_new = df_new.append({
+                        "BZNAME": bzname,
+                        "BZNR": bznr,
+                    }, ignore_index=True)
+
+        # 2 - Testing geocat against new districts
+        ref_bznrs = [feature["properties"][self.bznr] for feature in geojson_ref_file[0]["features"]]
+        ref_bznames = [feature["properties"][self.bzname] for feature in geojson_ref_file[0]["features"]]
+
+        for index, row in df_geocat.iterrows():
+
+            # Case where districts in geocat doesn't exist at all (no id, no name) in the new ones
+            if (row["BZNR"] not in ref_bznrs) and (row["BZNAME"] not in ref_bznames):
+                df_old = df_old.append({
+                    "BZNAME": row["BZNAME"],
+                    "BZNR": row["BZNR"],
+                }, ignore_index=True)
+
+        if len(df_name_change) > 0:
+            df_name_change.to_csv(os.path.join(self.output_dir, "name_incorrect_districts.csv"), index=False)
+        if len(df_id_change) > 0:
+            df_id_change.to_csv(os.path.join(self.output_dir, "id_incorrect_districts.csv"), index=False)
+        if len(df_new) > 0:
+            df_new.to_csv(os.path.join(self.output_dir, "new_districts.csv"), index=False)
+        if len(df_old) > 0:
+            df_old.to_csv(os.path.join(self.output_dir, "old_districts.csv"), index=False)
+        if len(df_correct) > 0:
+            df_correct.to_csv(os.path.join(self.output_dir, "correct_districts.csv"), index=False)
+
+        print(f"Checking districts...{geopycat.utils.okgreen('Done')}")
 
 
 class CheckCantonBoundaries:
@@ -368,7 +431,7 @@ class CheckCantonBoundaries:
 
     def __init__(self, ref_geojson, ktnr, ktname, env: str = 'int', output_dir: str = os.path.dirname(__file__)):
 
-        self.api = GeocatAPI(env)
+        self.api = geopycat.geocat(env)
         self.output_dir = output_dir
         self.ref_geojson = ref_geojson
         self.ktnr = ktnr
@@ -386,15 +449,15 @@ class CheckCantonBoundaries:
         the folder given at the class level.
         """
         print("Exporting all cantons from geocat : ", end="\r")
-        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.api.token}
+        headers = {"accept": "application/xml", "Content-Type": "application/xml"}
         df = pd.DataFrame(columns=["KTNR", "KTNAME"])
 
         count = 0
         for i in range(1, 100):
 
             uuid = f"geocatch-subtpl-extent-kantonsgebiet-{i}"
-            response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/0.1/registries/entries/{uuid}",
-                                            proxies=self.api.proxies, auth=self.api.auth, headers=headers)
+            response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/registries/entries/{uuid}",
+                                            headers=headers)
 
             xmlroot = ET.fromstring(response.content)
 
@@ -408,7 +471,7 @@ class CheckCantonBoundaries:
             print(f"Exporting all cantons from geocat : {round((count / 100) * 100, 1)}%", end="\r")
 
         df.to_csv(os.path.join(self.output_dir, "geocat_cantons.csv"), index=False)
-        print(f"Exporting all cantons from geocat : {okgreen('Done')}")
+        print(f"Exporting all cantons from geocat : {geopycat.utils.okgreen('Done')}")
 
     def check_kt(self):
         """
@@ -492,7 +555,7 @@ class CheckCantonBoundaries:
         if len(df_correct) > 0:
             df_correct.to_csv(os.path.join(self.output_dir, "correct_cantons.csv"), index=False)
 
-        print(f"Checking cantons...{okgreen('Done')}")
+        print(f"Checking cantons...{geopycat.utils.okgreen('Done')}")
 
 
 class CheckCountryBoundaries:
@@ -522,7 +585,7 @@ class CheckCountryBoundaries:
 
     def __init__(self, ref_geojson, landnr, landname, env: str = 'int', output_dir: str = os.path.dirname(__file__)):
 
-        self.api = GeocatAPI(env)
+        self.api = geopycat.geocat(env)
         self.output_dir = output_dir
         self.ref_geojson = ref_geojson
         self.landnr =landnr
@@ -540,7 +603,7 @@ class CheckCountryBoundaries:
         the folder given at the class level.
         """
         print("Exporting all countries from geocat : ", end="\r")
-        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.api.token}
+        headers = {"accept": "application/xml", "Content-Type": "application/xml"}
         df = pd.DataFrame(columns=["LANDNR", "LANDNAME"])
 
         count = 0
@@ -548,8 +611,8 @@ class CheckCountryBoundaries:
             for second in ascii_uppercase:
                 uuid = f"geocatch-subtpl-extent-landesgebiet-{first}{second}"
 
-                response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/0.1/registries/entries/{uuid}",
-                                                proxies=self.api.proxies, auth=self.api.auth, headers=headers)
+                response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/registries/entries/{uuid}",
+                                                headers=headers)
 
                 xmlroot = ET.fromstring(response.content)
 
@@ -563,7 +626,7 @@ class CheckCountryBoundaries:
                 print(f"Exporting all countries from geocat : {round((count / (26*26)) * 100, 1)}%", end="\r")
 
         df.to_csv(os.path.join(self.output_dir, "geocat_countries.csv"), index=False)
-        print(f"Exporting all countries from geocat : {okgreen('Done')}")
+        print(f"Exporting all countries from geocat : {geopycat.utils.okgreen('Done')}")
 
     def check_land(self):
         """
@@ -647,7 +710,7 @@ class CheckCountryBoundaries:
         if len(df_correct) > 0:
             df_correct.to_csv(os.path.join(self.output_dir, "correct_countries.csv"), index=False)
 
-        print(f"Checking countries...{okgreen('Done')}")
+        print(f"Checking countries...{geopycat.utils.okgreen('Done')}")
 
 
 class UpdateSubtemplatesExtent:
@@ -676,7 +739,7 @@ class UpdateSubtemplatesExtent:
     def __init__(self, ref_geojson, number, name, type, update_name: bool = True, env: str = 'int',
                  output_dir: str = os.path.dirname(__file__)):
 
-        self.api = GeocatAPI(env)
+        self.api = geopycat.geocat(env)
 
         with open(ref_geojson, "rb") as file:
             self.ref_geojson = json.load(file)
@@ -696,10 +759,10 @@ class UpdateSubtemplatesExtent:
             self.type = "landesgebiet"
 
         if not update_name:
-            print(f"{warningred('The update_name option is set to False ! Creation of new extent not possible !')}")
+            print(f"{geopycat.utils.warningred('The update_name option is set to False ! Creation of new extent not possible !')}")
 
-        if not GeocatAPI.check_admin(self.api):
-            print(f"{warningred('You must be admin to run this tool !')}")
+        if not geopycat.geocat.check_admin(self.api):
+            print(f"{geopycat.utils.warningred('You must be admin to run this tool !')}")
             sys.exit()
 
     def extent_to_geojson(self, uuids: list) -> list:
@@ -723,14 +786,14 @@ class UpdateSubtemplatesExtent:
         now = datetime.now().strftime("%Y%m%d%H%M%S")
         geojson = [{"type": "FeatureCollection", "name": f"GeocatExtent_{now}", "features": []}]
 
-        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.api.token}
+        headers = {"accept": "application/xml", "Content-Type": "application/xml"}
 
         count = 0
         for uuid in uuids:
 
             response = self.api.session.get(
-                url=self.api.env + f"/geonetwork/srv/api/0.1/registries/entries/{uuid}?lang=fre,ger,ita,eng,roh",
-                proxies=self.api.proxies, auth=self.api.auth, headers=headers)
+                url=self.api.env + f"/geonetwork/srv/api/registries/entries/{uuid}?lang=fre,ger,ita,eng,roh",
+                headers=headers)
 
             if response.status_code == 200:
 
@@ -815,7 +878,7 @@ class UpdateSubtemplatesExtent:
 
             count += 1
             print(f"Convert extent subtemplates to geojson : {round((count / len(uuids)) * 100, 1)}%", end="\r")
-        print(f"Convert extent subtemplates to geojson : {okgreen('Done')}")
+        print(f"Convert extent subtemplates to geojson : {geopycat.utils.okgreen('Done')}")
 
         return geojson
 
@@ -844,7 +907,7 @@ class UpdateSubtemplatesExtent:
         with open(os.path.join(output_dir_backup, f"Backup_{now}.json"), "w", encoding="utf-8") as f:
             json.dump(geojson, f, ensure_ascii=False)
 
-        print(f"Backup subtemplates...{okgreen('Done')}")
+        print(f"Backup subtemplates...{geopycat.utils.okgreen('Done')}")
 
     def create_extent(self, uuid: str) -> object:
         """
@@ -862,20 +925,20 @@ class UpdateSubtemplatesExtent:
         # Creates a new subtemplate only if the name should be updated.
         # Otherwise, the name will be from the copied subtemplate
         if self.update_name:
-            headers = {"Content-Type": "application/json", "Accept": "application/json", "X-XSRF-TOKEN": self.api.token}
+            headers = {"Content-Type": "application/json", "Accept": "application/json"}
             parameters = {
                 "metadataType": "SUB_TEMPLATE",
                 "sourceUuid": f"geocatch-subtpl-extent-hoheitsgebiet-1",
                 "targetUuid": uuid,
                 "group": "1",
-                "isVisibleByAllGroupMembers": "false",
+                "allowEditGroupMembers": "false",
                 "hasCategoryOfSource": "false",
                 "isChildOfSource": "false",
+                "hasAttachmentsOfSource": "false"
             }
 
-            response = self.api.session.put(url=self.api.env + "/geonetwork/srv/api/0.1/records/duplicate",
-                                            proxies=self.api.proxies, auth=self.api.auth, headers=headers,
-                                            params=parameters)
+            response = self.api.session.put(url=self.api.env + "/geonetwork/srv/api/records/duplicate",
+                                            headers=headers, params=parameters)
             return response
 
         else:
@@ -938,14 +1001,13 @@ class UpdateSubtemplatesExtent:
         Returns:
             response of the validate API request.
         """
-        headers = {"Content-Type": "application/json", "Accept": "application/json", "X-XSRF-TOKEN": self.api.token}
+        headers = {"Content-Type": "application/json", "Accept": "application/json"}
         parameters = {
             "uuids": [uuid],
         }
 
-        response = self.api.session.put(url=self.api.env + "/geonetwork/srv/api/0.1/records/validate",
-                                        proxies=self.api.proxies, auth=self.api.auth, headers=headers,
-                                        params=parameters)
+        response = self.api.session.put(url=self.api.env + "/geonetwork/srv/api/records/validate",
+                                        headers=headers, params=parameters)
         return response
 
     def set_extent_permissions(self, uuid: str) -> object:
@@ -959,7 +1021,7 @@ class UpdateSubtemplatesExtent:
         Returns:
             response of the sharing API request.
         """
-        headers = {"Content-Type": "application/json", "Accept": "application/json", "X-XSRF-TOKEN": self.api.token}
+        headers = {"Content-Type": "application/json", "Accept": "application/json"}
 
         body = {
             "clear": True,
@@ -980,8 +1042,8 @@ class UpdateSubtemplatesExtent:
 
         body = json.dumps(body)
 
-        response = self.api.session.put(url=self.api.env + f"/geonetwork/srv/api/0.1/records/{uuid}/sharing",
-                                        proxies=self.api.proxies, auth=self.api.auth, headers=headers, data=body)
+        response = self.api.session.put(url=self.api.env + f"/geonetwork/srv/api/records/{uuid}/sharing",
+                                        headers=headers, data=body)
         return response
 
     def set_extent_owner(self, uuid: str) -> object:
@@ -995,16 +1057,15 @@ class UpdateSubtemplatesExtent:
         Returns:
             /{portal}/api/0.1/records/{metadataUuid}/ownership
         """
-        headers = {"Content-Type": "application/json", "Accept": "application/json", "X-XSRF-TOKEN": self.api.token}
+        headers = {"Content-Type": "application/json", "Accept": "application/json"}
 
         parameters = {
             "groupIdentifier": 1,
             "userIdentifier": 1,
         }
 
-        response = self.api.session.put(url=self.api.env + f"/geonetwork/srv/api/0.1/records/{uuid}/ownership",
-                                        proxies=self.api.proxies, auth=self.api.auth, headers=headers,
-                                        params=parameters)
+        response = self.api.session.put(url=self.api.env + f"/geonetwork/srv/api/records/{uuid}/ownership",
+                                        headers=headers, params=parameters)
         return response
 
     def update_single_subtemplate(self, uuid: str):
@@ -1027,50 +1088,50 @@ class UpdateSubtemplatesExtent:
             print("The given uuid doesn't match any feature in the geojon reference file !")
             sys.exit()
 
-        headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.api.token}
-        response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/0.1/registries/entries/{uuid}",
-                                        proxies=self.api.proxies, auth=self.api.auth, headers=headers)
+        headers = {"accept": "application/xml", "Content-Type": "application/xml"}
+        response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/registries/entries/{uuid}",
+                                        headers=headers)
 
         # If subtemplate doesn't already exist, creates it
         if response.status_code == 404:
             response = self.create_extent(uuid=uuid)
             if response.status_code == 201:
-                print(f"{uuid} : {okgreen('creation successful')}")
+                print(f"{uuid} : {geopycat.utils.okgreen('creation successful')}")
             else:
-                print(f"{uuid} : {warningred('creation unsuccessful')}")
+                print(f"{uuid} : {geopycat.utils.warningred('creation unsuccessful')}")
                 sys.exit()
         else:
-            print(f"{uuid} : {okgreen('already exists')}")
+            print(f"{uuid} : {geopycat.utils.okgreen('already exists')}")
 
         # Update extent
         name = feature["properties"][self.name]
         gml = geojson_to_geocatgml(feature)
         response = self.update_extent(uuid=uuid, name=name, gml=gml)
-        if process_ok(response=response):
-            print(f"{uuid} : {okgreen('update successful')}")
+        if geopycat.utils.process_ok(response=response):
+            print(f"{uuid} : {geopycat.utils.okgreen('update successful')}")
         else:
-            print(f"{uuid} : {warningred('update unsuccessful')}")
+            print(f"{uuid} : {geopycat.utils.warningred('update unsuccessful')}")
 
         # Validate extent
         response = self.validate_extent(uuid=uuid)
-        if process_ok(response=response):
-            print(f"{uuid} : {okgreen('validation successful')}")
+        if geopycat.utils.process_ok(response=response):
+            print(f"{uuid} : {geopycat.utils.okgreen('validation successful')}")
         else:
-            print(f"{uuid} : {warningred('validation unsuccessful')}")
+            print(f"{uuid} : {geopycat.utils.warningred('validation unsuccessful')}")
 
         # Set permission, good response= 204, no message
         response = self.set_extent_permissions(uuid=uuid)
         if response.status_code == 204:
-            print(f"{uuid} : {okgreen('set permission successful')}")
+            print(f"{uuid} : {geopycat.utils.okgreen('set permission successful')}")
         else:
-            print(f"{uuid} : {warningred('set permission unsuccessful')}")
+            print(f"{uuid} : {geopycat.utils.warningred('set permission unsuccessful')}")
 
         # Set ownership
         response = self.set_extent_owner(uuid=uuid)
-        if process_ok(response=response):
-            print(f"{uuid} : {okgreen('set ownership successful')}")
+        if geopycat.utils.process_ok(response=response):
+            print(f"{uuid} : {geopycat.utils.okgreen('set ownership successful')}")
         else:
-            print(f"{uuid} : {warningred('set ownership unsuccessful')}")
+            print(f"{uuid} : {geopycat.utils.warningred('set ownership unsuccessful')}")
 
     def update_all_subtemplates(self, with_backup: bool = True):
         """
@@ -1093,8 +1154,7 @@ class UpdateSubtemplatesExtent:
 
         print("Update all subtemplates : ", end="\r")
 
-        logfile = os.path.join(self.output_dir, f"UpdateAllSubtemplates_{datetime.now().strftime('%Y%m%d-%H%M%S')}.log")
-        logger = setup_logger(f"UpdateAllSubtemplates_{datetime.now().strftime('%Y%m%d-%H%M%S')}", logfile)
+        logger = geopycat.utils.setup_logger(f"UpdateAllSubtemplates_{datetime.now().strftime('%Y%m%d-%H%M%S')}")
 
         subtemplate_created = 0
         subtemplate_updated = 0
@@ -1112,9 +1172,9 @@ class UpdateSubtemplatesExtent:
 
             uuid = f'geocatch-subtpl-extent-{self.type}-{feature["properties"][self.number]}'
 
-            headers = {"accept": "application/xml", "Content-Type": "application/xml", "X-XSRF-TOKEN": self.api.token}
-            response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/0.1/registries/entries/{uuid}",
-                                            proxies=self.api.proxies, auth=self.api.auth, headers=headers)
+            headers = {"accept": "application/xml", "Content-Type": "application/xml"}
+            response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/registries/entries/{uuid}",
+                                            headers=headers)
 
             # If subtemplate doesn't already exist, creates it
             if response.status_code == 404:
@@ -1128,13 +1188,13 @@ class UpdateSubtemplatesExtent:
                     subtemplate_creation_failed += 1
                     continue  # If creation failed, stop the process and pass to next subtemplate !
             else:
-                logger.info(f"{count}/{total}- {uuid}- subtemplate already exists")
+                logger.info(f"{count}/{total} - {uuid} - subtemplate already exists")
 
             # Update extent
             name = feature["properties"][self.name]
             gml = geojson_to_geocatgml(feature)
             response = self.update_extent(uuid=uuid, name=name, gml=gml)
-            if process_ok(response=response):
+            if geopycat.utils.process_ok(response=response):
                 logger.info(f"{count}/{total} - {uuid} - update successful")
             else:
                 logger.error(f"{count}/{total} - {uuid} - update unsuccessful")
@@ -1143,7 +1203,7 @@ class UpdateSubtemplatesExtent:
 
             # Validate extent
             response = self.validate_extent(uuid=uuid)
-            if process_ok(response=response):
+            if geopycat.utils.process_ok(response=response):
                 logger.info(f"{count}/{total} - {uuid} - validation successful")
             else:
                 logger.error(f"{count}/{total} - {uuid} - validation unsuccessful")
@@ -1161,7 +1221,7 @@ class UpdateSubtemplatesExtent:
 
             # Set ownership
             response = self.set_extent_owner(uuid=uuid)
-            if process_ok(response=response):
+            if geopycat.utils.process_ok(response=response):
                 logger.info(f"{count}/{total} - {uuid} - set ownership successful")
                 if new_subtemplate:
                     subtemplate_created += 1
@@ -1172,11 +1232,11 @@ class UpdateSubtemplatesExtent:
                 subtemplate_update_failed += 1  # If ownership failed, stop the process and pass to next subtemplate !
                 continue
 
-        print(f"Update all subtemplates : {okgreen('Done')}")
-        print(f"Subtemplates successfully created : {okgreen(subtemplate_created)}")
-        print(f"Subtemplates successfully updated : {okgreen(subtemplate_updated)}")
-        print(f"Subtemplates unsuccessfully created : {warningred(subtemplate_creation_failed)}")
-        print(f"Subtemplates unsuccessfully updated : {warningred(subtemplate_update_failed)}")
+        print(f"Update all subtemplates : {geopycat.utils.okgreen('Done')}")
+        print(f"Subtemplates successfully created : {geopycat.utils.okgreen(subtemplate_created)}")
+        print(f"Subtemplates successfully updated : {geopycat.utils.okgreen(subtemplate_updated)}")
+        print(f"Subtemplates unsuccessfully created : {geopycat.utils.warningred(subtemplate_creation_failed)}")
+        print(f"Subtemplates unsuccessfully updated : {geopycat.utils.warningred(subtemplate_update_failed)}")
 
     def delete_subtemplates(self, uuids: list, with_backup: bool = True):
         """
@@ -1211,17 +1271,16 @@ class UpdateSubtemplatesExtent:
         subtemplates_deleted = 0
         subtemplates_delete_failed = 0
 
-        logfile = os.path.join(self.output_dir, f"DeleteSubtemplates_{datetime.now().strftime('%Y%m%d-%H%M%S')}.log")
-        logger = setup_logger(f"DeleteSubtemplates_{datetime.now().strftime('%Y%m%d-%H%M%S')}", logfile)
+        logger = geopycat.utils.setup_logger(f"DeleteSubtemplates_{datetime.now().strftime('%Y%m%d-%H%M%S')}")
 
         count = 0
         for uuid in uuids:
             count += 1
 
-            headers = {"Content-Type": "application/json", "Accept": "application/json", "X-XSRF-TOKEN": self.api.token}
+            headers = {"Content-Type": "application/json", "Accept": "application/json"}
 
-            response = self.api.session.delete(url=self.api.env + f"/geonetwork/srv/api/0.1/records/{uuid}",
-                                            proxies=self.api.proxies, auth=self.api.auth, headers=headers)
+            response = self.api.session.delete(url=self.api.env + f"/geonetwork/srv/api/records/{uuid}",
+                                                headers=headers)
 
             if response.status_code == 204:
                 logger.info(f"{count}/{len(uuids)} - {uuid} - successfully deleted")
@@ -1231,6 +1290,6 @@ class UpdateSubtemplatesExtent:
                 subtemplates_delete_failed += 1
 
             print(f"Delete subtemplates : {round((count / len(uuids)) * 100, 1)}%", end="\r")
-        print(f"Delete subtemplates : {okgreen('Done')}")
-        print(f"Subtemplates successfully deleted : {okgreen(subtemplates_deleted)}")
-        print(f"Subtemplates unsuccessfully deleted : {warningred(subtemplates_delete_failed)}")
+        print(f"Delete subtemplates : {geopycat.utils.okgreen('Done')}")
+        print(f"Subtemplates successfully deleted : {geopycat.utils.okgreen(subtemplates_deleted)}")
+        print(f"Subtemplates unsuccessfully deleted : {geopycat.utils.warningred(subtemplates_delete_failed)}")

@@ -16,6 +16,7 @@ This script runs on python 3. Following packages are needed :
 * urllib3
 * pandas
 * colorama
+* geopycat
 ---
 
 ### Data preparation - geojson reference file
@@ -34,15 +35,14 @@ If you have a shapefile in WGS84 (if in LV95 or LV03, transform it with the geor
 you can use [this FME WorkBench](shp2geojson.fmw) to transform it into a geojson ready for the tool.
 
 ---
-### Usage - Inspect (not available for districts).
+### Usage - Inspect
 
 You can compare the admin boundaries in geocat with the geojson reference file. This creates 5 csv lists :
-* `correct_{municipalities}{cantons}{countries}.csv` : ID and Name correct in geocat and reference
-* `name_incorrect_{municipalities}{cantons}{countries}.csv` : ID is found but Name is different in geocat
-* `id_incorrect_municipalities{municipalities}{cantons}{countries}.csv` : Name is found but ID is different in geocat
-* `new_{municipalities}{cantons}{countries}.csv` : ID and Name not found in geocat
-* `old_{municipalities}{cantons}{countries}.csv` : ID and Name not found in reference. 
-For municipalities, there is also the information if the extent subtemplate is still used by metadata and how many.
+* `correct_{municipalities}{districts}{cantons}{countries}.csv` : ID and Name correct in geocat and reference
+* `name_incorrect_{municipalities}{districts}{cantons}{countries}.csv` : ID is found but Name is different in geocat
+* `id_incorrect_municipalities{municipalities}{districts}{cantons}{countries}.csv` : Name is found but ID is different in geocat
+* `new_{municipalities}{districts}{cantons}{countries}.csv` : ID and Name not found in geocat
+* `old_{municipalities}{districts}{cantons}{countries}.csv` : ID and Name not found in reference. 
 
 **Municipalities**
 ```python
@@ -58,6 +58,22 @@ Args:
 """
 
 ab.CheckMunicipalityBoundaries(ref_geojson, gmdnr, gmdname, output_dir, env)
+```
+
+**Districts**
+```python
+import ManageAdminBoundaries as ab
+
+"""
+Args: 
+  output_dir: The directory where to save the csv lists. Optional. Default=root folder. Must exist
+  ref_geojson: The geojson reference file
+  bznr: The attribute name of the districts ID in the geojson reference file
+  bzname: The attribute name of the districts Name in the geojson reference file
+  env: The environment of geocat. Optional. 'int' or 'prod'. Default = 'int'
+"""
+
+ab.CheckMunicipalityBoundaries(ref_geojson, bznr, bzname, output_dir, env)
 ```
 
 **Cantons**
