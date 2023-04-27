@@ -985,6 +985,10 @@ class UpdateSubtemplatesExtent:
                     "xpath": "/gmd:EX_Extent/gmd:description/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString",
                     "value": f'<gn_replace>{name}</gn_replace>',
                 })
+            body.insert(0, {
+                    "xpath": "/gmd:EX_Extent/gmd:description/gco:CharacterString",
+                    "value": f'<gn_replace>{name}</gn_replace>',
+                })
 
         response = self.api.edit_metadata(uuid=uuid, body=body, updateDateStamp="true")
 
