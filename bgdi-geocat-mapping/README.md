@@ -40,7 +40,7 @@ mapping.repair_metadata(uuid="metadata-uuid")
 ```
 Repair all metadata in the mapping dataframe
 ```python
-mapping.repair_all(tounpub: bool = False)
+mapping.repair_all(tounpub=False)
 
 # tounpub argument ensures that the metadata "To unpublish" are not processed by default.
 # Can be set to True to process these metadata
