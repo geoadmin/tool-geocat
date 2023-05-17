@@ -409,7 +409,7 @@ class BGDIMapping(geopycat.geocat):
         """
         out = dict()
 
-        response = self.session.get(f"{settings.WMTS_URL}?lang=de")
+        response = self.session.get("https://wmts.geo.admin.ch/EPSG/2056/1.0.0/WMTSCapabilities.xml?lang=de")
         root = ET.fromstring(response.content)
 
         for i in root.xpath(".//wmts:Contents//wmts:Layer",
@@ -549,11 +549,15 @@ class BGDIMapping(geopycat.geocat):
 
             response = self.session.put(f"{self.env}/geonetwork/srv/api/records/{uuid}/publish")
 
+            md_updated = True
+
             if response.status_code != 204:
                 raise Exception("Metadata could not be published !")
 
         elif row["Published"].iloc[0] == "To unpublish":
             response = self.session.put(f"{self.env}/geonetwork/srv/api/records/{uuid}/unpublish")
+
+            md_updated = True
 
             if response.status_code != 204:
                 raise Exception("Metadata could not be unpublished !")          
