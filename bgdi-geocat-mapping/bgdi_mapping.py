@@ -224,9 +224,9 @@ class BGDIMapping(geopycat.geocat):
 
             if "link" in self.md_index[row[0]]["_source"]:
                 for link in self.md_index[row[0]]["_source"]["link"]:
-                    if "OGC:WMS" in link["protocol"] and re.search("^https:\/\/wms\.geo\.admin\.ch\/\?SERVICE=WMS&VERSION=1\.3\.0&REQUEST=GetCapabilities(&lang=(fr|de|it|en))?$", link["url"]) and link["name"] == row[1]:
+                    if "OGC:WMS" in link["protocol"] and re.search("^https:\/\/wms\.geo\.admin\.ch\/\?SERVICE=WMS&VERSION=1\.3\.0&REQUEST=GetCapabilities(&lang=(fr|de|it|en))?$", link["urlObject"]["default"]) and link["nameObject"]["default"] == row[1]:
                         wms_ok = True
-                    elif "OGC:WMS" in link["protocol"] and "wms.geo.admin.ch" in link["url"]:
+                    elif "OGC:WMS" in link["protocol"] and "wms.geo.admin.ch" in link["urlObject"]["default"]:
                         wms_tofix = True
 
             if row[1] in self.wms:
@@ -260,9 +260,9 @@ class BGDIMapping(geopycat.geocat):
 
             if "link" in self.md_index[row[0]]["_source"]:
                 for link in self.md_index[row[0]]["_source"]["link"]:
-                    if "OGC:WMTS" in link["protocol"] and re.search("^https:\/\/wmts\.geo\.admin\.ch(\/EPSG\/(3857|21781|4326))?\/1\.0\.0\/WMTSCapabilities\.xml(\?lang=(de|fr|it|en))?$", link["url"]) and link["name"] == row[1]:
+                    if "OGC:WMTS" in link["protocol"] and re.search("^https:\/\/wmts\.geo\.admin\.ch(\/EPSG\/(3857|21781|4326))?\/1\.0\.0\/WMTSCapabilities\.xml(\?lang=(de|fr|it|en))?$", link["urlObject"]["default"]) and link["nameObject"]["default"] == row[1]:
                         wmts_ok = True
-                    elif "OGC:WMTS" in link["protocol"] and "wmts.geo.admin.ch" in link["url"]:
+                    elif "OGC:WMTS" in link["protocol"] and "wmts.geo.admin.ch" in link["urlObject"]["default"]:
                         wmts_tofix = True
 
             if row[1] in self.wmts:
@@ -296,9 +296,9 @@ class BGDIMapping(geopycat.geocat):
 
             if "link" in self.md_index[row[0]]["_source"]:
                 for link in self.md_index[row[0]]["_source"]["link"]:
-                    if "ESRI:REST" in link["protocol"] and link["url"] == f"{settings.API3_URL}/{row[1]}":
+                    if "ESRI:REST" in link["protocol"] and link["urlObject"]["default"] == f"{settings.API3_URL}/{row[1]}":
                         api3_ok = True
-                    elif "ESRI:REST" in link["protocol"] and "api3.geo.admin.ch" in link["url"]:
+                    elif "ESRI:REST" in link["protocol"] and "api3.geo.admin.ch" in link["urlObject"]["default"]:
                         api3_tofix = True
 
             response = self.session.get(url=f"{settings.API3_URL}/{row[1]}")
@@ -339,7 +339,7 @@ class BGDIMapping(geopycat.geocat):
                 for link in self.md_index[row[0]]["_source"]["link"]:
 
                     # Check if metadata has link to map portal
-                    if re.search(f"map\..*\.admin\.ch.*layers=.*{row[1]}($|[&,/])", link["url"]):
+                    if re.search(f"map\..*\.admin\.ch.*layers=.*{row[1]}($|[&,/])", link["urlObject"]["default"]):
                         map_preview = True
 
             if row[1] in map_layer_ids:
@@ -541,11 +541,7 @@ class BGDIMapping(geopycat.geocat):
         md_updated = False
 
         # Publish
-        if row["Published"].iloc[0] == "To publish" and \
-            (row["WMS Link"].iloc[0] in ["WMS", "Add WMS", "Fix WMS"] or \
-            row["WMTS Link"].iloc[0] in ["WMTS", "Add WMTS", "Fix WMTS"] or \
-            row["API3 Link"].iloc[0] in ["API3", "Add API3", "Fix API3"] or \
-            row["Map Preview Link"].iloc[0] in ["Map Preview", "Add map preview"]):
+        if row["Published"].iloc[0] == "To publish":
 
             response = self.session.put(f"{self.env}/geonetwork/srv/api/records/{uuid}/publish")
 
