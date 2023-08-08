@@ -13,7 +13,7 @@ select PUB.techpublayername, PUB.geocatuuid, ZS.ingeststate as "Status (ZS)", PU
 from bmd.publayer PUB, bmd.timestand ZS
 where PUB.reftimestand = ZS.timestandid AND PUB.gdstechname = ZS.gdstechname;  
 ```
-* Process the table to have only unique Layer ID and geocat UUID. Keep the most recent according to TimestandDate and for duplicated with same timestand, apply the following priority "Productive" -> "NotProductive" -> "Decommissioned" -> "Deleted".
+* Process the table to have only unique Layer ID and geocat UUID. Delete rows that have emtpy Layer ID or geocat UUID. Keep the most recent according to TimestandDate and for duplicated with same timestand, apply the following priority "Productive" -> "NotProductive" -> "Decommissioned" -> "Deleted".
 * Export a `.csv` file with at least the following columns :
 
   |TECHPUBLAYERNAME|GEOCATUUID|INGESTSTATE|
