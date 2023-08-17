@@ -139,15 +139,15 @@ gmd:identificationInfo/*/gmd:topicCategory/gmd:MD_TopicCategoryCode
 ### Dates
 **Creation Date**
 ```
-gmd:identificationInfo/*/gmd:citation/*/gmd:date/*[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = "creation"]/gmd:date
+gmd:identificationInfo/*/gmd:citation/*/gmd:date/*/gmd:dateType/gmd:CI_DateTypeCode[@codeListValue = "creation"]/../../gmd:date/gco:Date
 ```
 **Revision Date**
 ```
-gmd:identificationInfo/*/gmd:citation/*/gmd:date/*[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = "revision"]/gmd:date
+gmd:identificationInfo/*/gmd:citation/*/gmd:date/*/gmd:dateType/gmd:CI_DateTypeCode[@codeListValue = "revision"]/../../gmd:date/gco:Date
 ```
 **Publication Date**
 ```
-gmd:identificationInfo/*/gmd:citation/*/gmd:date/*[gmd:dateType/gmd:CI_DateTypeCode/@codeListValue = "publication"]/gmd:date
+gmd:identificationInfo/*/gmd:citation/*/gmd:date/*/gmd:dateType/gmd:CI_DateTypeCode[@codeListValue = "publication"]/../../gmd:date/gco:Date
 ```
 
 # 
