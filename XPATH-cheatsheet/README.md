@@ -12,7 +12,10 @@ For example, the following given XPATH `gmd:fileIdentifier/gco:CharacterString` 
   <gmd:language>
 </che:CHE_MD_Metadata>
 ```
+
+#### Attributes
 [Title](#title)
+[Alternate Title](#alternate-title)
 
 # 
 ### Title
