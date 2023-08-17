@@ -14,11 +14,30 @@ For example, the following given XPATH `gmd:fileIdentifier/gco:CharacterString` 
 ```
 # 
 ### Title
-In all localized languages
+**In all localized languages**
 ```
 gmd:identificationInfo/*/gmd:citation/*/gmd:title//gmd:LocalisedCharacterString
 ```
-In the default language
+**In the default language**
 ```
 gmd:identificationInfo/*/gmd:citation/*/gmd:title/gco:CharacterString
+```
+**In a specific language (e.g. english)**
+```
+gmd:identificationInfo/*/gmd:citation/*/gmd:title//gmd:LocalisedCharacterString[locale = "#EN"]
+```
+
+# 
+### Alternate Title
+**In all localized languages**
+```
+gmd:identificationInfo/*/gmd:citation/*/gmd:alternateTitle//gmd:LocalisedCharacterString
+```
+**In the default language**
+```
+gmd:identificationInfo/*/gmd:citation/*/gmd:alternateTitle/gco:CharacterString
+```
+**In a specific language (e.g. english)**
+```
+gmd:identificationInfo/*/gmd:citation/*/gmd:alternateTitle//gmd:LocalisedCharacterString[locale = "#EN"]
 ```
