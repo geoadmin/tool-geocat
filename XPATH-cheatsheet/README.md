@@ -31,6 +31,7 @@ For example, the following given XPATH `gmd:fileIdentifier/gco:CharacterString` 
 * [Coordinates Reference System](#coordinates-reference-system)
 * [Spatial Resolution](#spatial-resolution)
 * [Localized Languages](#localized-languages)
+* [Distribution Format](#distribution-format)
 
 # 
 ### Title
@@ -224,4 +225,15 @@ gmd:identificationInfo/*/gmd:spatialResolution/*/gmd:distance/gco:Distance/@uom
 ### Graphic Overview
 ```
 gmd:identificationInfo/*/gmd:graphicOverview/gmd:MD_BrowseGraphic/gmd:fileName/gco:CharacterString
+```
+
+# 
+### Distribution Format
+**Name**
+```
+gmd:distributionInfo/*/gmd:distributionFormat/gmd:MD_Format/gmd:name/gco:CharacterString
+```
+**Version**
+```
+gmd:distributionInfo/*/gmd:distributionFormat/gmd:MD_Format/gmd:version/gco:CharacterString
 ```
