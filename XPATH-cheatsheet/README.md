@@ -194,9 +194,13 @@ gmd:identificationInfo/*/che:basicGeodataIDType/che:basicGeodataIDTypeCode/@code
 
 # 
 ### Coordinates Reference System
-**Only if entered from the proposed list**
+**If entered from the proposed list**
 ```
 gmd:referenceSystemInfo/*/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gmx:Anchor/@xlink:title
+```
+**If entered manually**
+```
+gmd:referenceSystemInfo/*/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gmx:Anchor/gco:CharacterString
 ```
 
 # 
