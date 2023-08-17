@@ -32,6 +32,7 @@ For example, the following given XPATH `gmd:fileIdentifier/gco:CharacterString` 
 * [Spatial Resolution](#spatial-resolution)
 * [Localized Languages](#localized-languages)
 * [Distribution Format](#distribution-format)
+* [Online Resource](#online-resource)
 
 # 
 ### Title
@@ -236,4 +237,23 @@ gmd:distributionInfo/*/gmd:distributionFormat/gmd:MD_Format/gmd:name/gco:Charact
 **Version**
 ```
 gmd:distributionInfo/*/gmd:distributionFormat/gmd:MD_Format/gmd:version/gco:CharacterString
+```
+
+# 
+### Online Resource
+**Name only in default language**
+```
+gmd:distributionInfo/*/gmd:transferOptions/*/gmd:onLine/*/gmd:name/gco:CharacterString
+```
+**Description only in default language**
+```
+gmd:distributionInfo/*/gmd:transferOptions/*/gmd:onLine/*/gmd:description/gco:CharacterString
+```
+**URL only in default language**
+```
+gmd:distributionInfo/*/gmd:transferOptions/*/gmd:onLine/*/gmd:linkage/gmd:URL
+```
+**Protocol**
+```
+gmd:distributionInfo/*/gmd:transferOptions/*/gmd:onLine/*/gmd:protocol/gco:CharacterString
 ```
