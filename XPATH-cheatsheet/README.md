@@ -200,7 +200,7 @@ gmd:referenceSystemInfo/*/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:co
 ```
 **If entered manually**
 ```
-gmd:referenceSystemInfo/*/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gmx:Anchor/gco:CharacterString
+gmd:referenceSystemInfo/*/gmd:referenceSystemIdentifier/gmd:RS_Identifier/gmd:code/gco:CharacterString
 ```
 
 # 
