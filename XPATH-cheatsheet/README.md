@@ -62,3 +62,9 @@ gmd:identificationInfo/*/gmd:citation/*/gmd:collectiveTitle/gco:CharacterString
 ```
 gmd:identificationInfo/*/gmd:citation/*/gmd:collectiveTitle//gmd:LocalisedCharacterString[locale = "#EN"]
 ```
+
+# 
+### Status (code value)
+```
+gmd:identificationInfo/*/gmd:status/gmd:MD_ProgressCode/@codeListValue
+```
