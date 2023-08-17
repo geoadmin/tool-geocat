@@ -14,8 +14,9 @@ For example, the following given XPATH `gmd:fileIdentifier/gco:CharacterString` 
 ```
 
 #### Attributes
-[Title](#title)
-[Alternate Title](#alternate-title)
+* [Title](#title)
+* [Alternate Title](#alternate-title)
+* [Collective Title](#collective-title)
 
 # 
 ### Title
@@ -45,4 +46,19 @@ gmd:identificationInfo/*/gmd:citation/*/gmd:alternateTitle/gco:CharacterString
 **In a specific language (e.g. english)**
 ```
 gmd:identificationInfo/*/gmd:citation/*/gmd:alternateTitle//gmd:LocalisedCharacterString[locale = "#EN"]
+```
+
+# 
+### Collective Title
+**In all localized languages**
+```
+gmd:identificationInfo/*/gmd:citation/*/gmd:collectiveTitle//gmd:LocalisedCharacterString
+```
+**In the default language**
+```
+gmd:identificationInfo/*/gmd:citation/*/gmd:collectiveTitle/gco:CharacterString
+```
+**In a specific language (e.g. english)**
+```
+gmd:identificationInfo/*/gmd:citation/*/gmd:collectiveTitle//gmd:LocalisedCharacterString[locale = "#EN"]
 ```
