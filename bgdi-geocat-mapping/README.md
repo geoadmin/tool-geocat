@@ -37,11 +37,11 @@ With pandas :
 ```python
 mapping = mapping.mapping
 
-mapping[mapping["Layer ID"].duplicated()]
-mapping[mapping["Geocat UUID"].duplicated()]
+mapping.mapping[mapping.mapping["Layer ID"].duplicated()]
+mapping.mapping[mapping.mapping["Geocat UUID"].duplicated()]
 
 # Delete a row by index
-mapping = mapping.drop([719])
+mapping.mapping = mapping.mapping.drop([719])
 ```
 
 ### Repair Metadata
