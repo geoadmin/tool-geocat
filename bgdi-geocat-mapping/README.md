@@ -33,6 +33,16 @@ mapping = BGDIMapping(bmd="report.csv", env="int")
 The resulting mapping (dataframe) is stored in the variable `mapping.mapping`. You can either analyse it in a IDE or export it as a csv file `mapping.mapping.to_csv("file.csv")`
 
 Make sure there is no duplicated in the mapping dataframe in the field `Geocat UUID` and `Layer ID`.
+With pandas :
+```python
+mapping = mapping.mapping
+
+mapping[mapping["Layer ID"].duplicated()]
+mapping[mapping["Geocat UUID"].duplicated()]
+
+# Delete a row by index
+mapping = mapping.drop([719])
+```
 
 ### Repair Metadata
 Repair a single metadata
