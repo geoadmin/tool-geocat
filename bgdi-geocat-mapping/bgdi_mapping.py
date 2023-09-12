@@ -18,7 +18,7 @@ class BGDIMapping(geopycat.geocat):
         self.bmd = bmd
 
         if not self.check_admin():
-            print(geopycat.utils.warningred("You must be logged-in as Admin to generate a backup !"))
+            print(geopycat.utils.warningred("You must be logged-in as Admin to use this tool !"))
             return
 
         self.bgdi_inventory = self.get_bgdi_inventory().reset_index()
@@ -426,7 +426,7 @@ class BGDIMapping(geopycat.geocat):
                                 namespaces=settings.NS):
 
             out[i.find("ows:Identifier", namespaces=settings.NS).text]["fr"] = \
-                f'Service WMTS-IFDG, couche , Layer "{i.find("ows:Title", namespaces=settings.NS).text}"'
+                f'Service WMTS-IFDG, couche "{i.find("ows:Title", namespaces=settings.NS).text}"'
 
         response = self.session.get(f"{settings.WMTS_URL}?lang=it")
         root = ET.fromstring(response.content)
@@ -623,9 +623,9 @@ class BGDIMapping(geopycat.geocat):
 
         # Logging
         if md_updated:
-            print(geopycat.utils.okgreen("Metadata successfully repaired"))
+            print(geopycat.utils.okgreen(f"{uuid} - Metadata successfully repaired"))
         else:
-            print(geopycat.utils.warningred("Metadata has nothing to repair"))
+            print(geopycat.utils.warningred(f"{uuid} - Metadata has nothing to repair"))
 
     def repair_all(self, tounpub: bool = False):
         """
