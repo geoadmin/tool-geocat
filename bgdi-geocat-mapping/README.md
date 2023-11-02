@@ -35,8 +35,6 @@ The resulting mapping (dataframe) is stored in the variable `mapping.mapping`. Y
 Make sure there is no duplicated in the mapping dataframe in the field `Geocat UUID` and `Layer ID`.
 With pandas :
 ```python
-mapping = mapping.mapping
-
 mapping.mapping[mapping.mapping["Layer ID"].duplicated()]
 mapping.mapping[mapping.mapping["Geocat UUID"].duplicated()]
 

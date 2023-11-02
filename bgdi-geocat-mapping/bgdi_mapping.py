@@ -3,11 +3,16 @@ import re
 import requests
 from datetime import datetime
 import pandas as pd
+import logging
+import logging.config
 import settings
 import utils
 from lxml import etree as ET
 import geopycat
 
+# Corresponds to the column name in the google doc
+TechLayerNameInGDoc = "h."
+GeocatIdInGDoc = "geocat ID"
 
 class BGDIMapping(geopycat.geocat):
 
@@ -69,27 +74,27 @@ class BGDIMapping(geopycat.geocat):
         df = pd.read_csv(io.StringIO(response.content.decode('utf-8')))
 
         for i, row in df.iterrows():
-            if not pd.isnull(row["Layername (according to naming convention FSDI)"]):
-                df.at[i, "Layername (according to naming convention FSDI)"] = \
-                row["Layername (according to naming convention FSDI)"].strip()
+            if not pd.isnull(row[TechLayerNameInGDoc]):
+                df.at[i, TechLayerNameInGDoc] = \
+                row[TechLayerNameInGDoc].strip()
 
-        df=df.dropna(subset=['Layername (according to naming convention FSDI)']).reset_index(drop=True)
+        df=df.dropna(subset=[TechLayerNameInGDoc]).reset_index(drop=True)
 
         # Fix missing geocat UUID and missing records with the BMD
         bmd = pd.read_csv(self.bmd)
 
         for i, row in bmd.iterrows():
             if row["GEOCATUUID"] in geocat_uuids:
-                indexes = df.index[df['Layername (according to naming convention FSDI)'] == row["TECHPUBLAYERNAME"]].tolist()
+                indexes = df.index[df[TechLayerNameInGDoc] == row["TECHPUBLAYERNAME"]].tolist()
                 if len(indexes) > 0:
-                    if pd.isnull(df["Geocat ID"][indexes[0]]) and row["GEOCATUUID"] not in df['Geocat ID'].unique():
-                        df.at[indexes[0], "Geocat ID"] = row["GEOCATUUID"]
+                    if pd.isnull(df[GeocatIdInGDoc][indexes[0]]) and row["GEOCATUUID"] not in df[GeocatIdInGDoc].unique():
+                        df.at[indexes[0], GeocatIdInGDoc] = row["GEOCATUUID"]
                         print(f"{row['TECHPUBLAYERNAME']} : Geocat UUID fixed by BMD")
 
-                if row["TECHPUBLAYERNAME"] not in df['Layername (according to naming convention FSDI)'].unique() and \
-                        row["GEOCATUUID"] not in df['Geocat ID'].unique():
+                if row["TECHPUBLAYERNAME"] not in df[TechLayerNameInGDoc].unique() and \
+                        row["GEOCATUUID"] not in df[GeocatIdInGDoc].unique():
 
-                    new_row = {'Layername (according to naming convention FSDI)': row["TECHPUBLAYERNAME"], "Geocat ID": row["GEOCATUUID"]}
+                    new_row = {TechLayerNameInGDoc: row["TECHPUBLAYERNAME"], GeocatIdInGDoc: row["GEOCATUUID"]}
 
                     if row["INGESTSTATE"] == "Productive":
                         new_row["Layer on prod?"] = 1
@@ -111,22 +116,22 @@ class BGDIMapping(geopycat.geocat):
 
         # fix wrong geocat UUID with the API
         for i, row in df.iterrows():
-            if row["Layername (according to naming convention FSDI)"] in layerid_geocatuuid:
-                if layerid_geocatuuid[row["Layername (according to naming convention FSDI)"]] != row["Geocat ID"] \
-                and layerid_geocatuuid[row["Layername (according to naming convention FSDI)"]] not in df['Geocat ID'].unique():
-                    df.at[i, "Geocat ID"] = layerid_geocatuuid[row["Layername (according to naming convention FSDI)"]]
-                    print(f"{row['Layername (according to naming convention FSDI)']} : geocat uuid fixed by API")
+            if row[TechLayerNameInGDoc] in layerid_geocatuuid:
+                if layerid_geocatuuid[row[TechLayerNameInGDoc]] != row[GeocatIdInGDoc] \
+                and layerid_geocatuuid[row[TechLayerNameInGDoc]] not in df[GeocatIdInGDoc].unique():
+                    df.at[i, GeocatIdInGDoc] = layerid_geocatuuid[row[TechLayerNameInGDoc]]
+                    print(f"{row[TechLayerNameInGDoc]} : geocat uuid fixed by API")
 
         # Fix missing record with the API
         for key, value in layerid_geocatuuid.items():
-            if key not in df["Layername (according to naming convention FSDI)"].unique() and value not in df['Geocat ID'].unique():
-                new_row = {'Layername (according to naming convention FSDI)': key, 'Geocat ID': value, "INGESTSTATE": "Productive"}
+            if key not in df[TechLayerNameInGDoc].unique() and value not in df[GeocatIdInGDoc].unique():
+                new_row = {TechLayerNameInGDoc: key, GeocatIdInGDoc: value, "INGESTSTATE": "Productive"}
                 new_row = pd.DataFrame(new_row, index=[0])
                 df = pd.concat([new_row,df.loc[:]]).reset_index(drop=True)
                 print(f"{key} : record added by API")
         
-        df=df.dropna(subset=['Geocat ID']).reset_index(drop=True)
-        df = df[df["Geocat ID"].isin(geocat_uuids)]
+        df=df.dropna(subset=[GeocatIdInGDoc]).reset_index(drop=True)
+        df = df[df[GeocatIdInGDoc].isin(geocat_uuids)]
 
         return df
 
@@ -632,7 +637,12 @@ class BGDIMapping(geopycat.geocat):
         Repair all metadata to match the BGDI
         """
 
-        logger = geopycat.utils.setup_logger(f"BGDI-Mapping_{datetime.now().strftime('%Y%m%d-%H%M%S')}")
+        logfile = f"BGDI-Mapping_{datetime.now().strftime('%Y%m%d-%H%M%S')}.log"
+
+        log_config = geopycat.utils.get_log_config(logfile, log2stdout = False)
+        logging.config.dictConfig(log_config)
+        
+        logger = logging.getLogger(__name__)
 
         print("Repair all : ", end="\r")
         count = 0
