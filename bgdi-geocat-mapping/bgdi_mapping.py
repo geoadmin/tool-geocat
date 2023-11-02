@@ -12,7 +12,7 @@ import geopycat
 
 # Corresponds to the column name in the google doc
 TechLayerNameInGDoc = "h."
-GeocatIdInGDoc = "geocat ID"
+GeocatIdInGDoc = "Geocat ID"
 
 class BGDIMapping(geopycat.geocat):
 
