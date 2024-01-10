@@ -60,6 +60,10 @@ def cleanup_format(df: pd.DataFrame):
                 search=f'xlink:href="local://srv/api/registries/entries/{row[4]}',
                 replace=f'xlink:href="local://srv/api/registries/entries/{row[5]}')
 
+            geocat.search_and_replace(
+                search=f'uuidref="{row[4]}"',
+                replace=f'uuidref="{row[5]}"')           
+
 
 def revert_cleanup(df: pd.DataFrame):
     for index, row in df.iterrows():
