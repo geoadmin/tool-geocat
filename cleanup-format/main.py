@@ -55,6 +55,12 @@ def cleanup_format(df: pd.DataFrame):
             print(geopycat.utils.warningred(f"Format UUID : {row[4]} could not be updated"))
             continue
 
+        # Change online transfer option protocol
+        geocat.search_and_replace(
+            search=f'<gco:CharacterString>WWW:DOWNLOAD:{row[6]}</gco:CharacterString>',
+            replace=f'<gco:CharacterString>WWW:DOWNLOAD:{row[2]}</gco:CharacterString>')
+
+        # Replace duplicated format subtemplate by correct one in metadata
         if not pd.isnull(row[5]):
             geocat.search_and_replace(
                 search=f'xlink:href="local://srv/api/registries/entries/{row[4]}',
