@@ -7,13 +7,21 @@ The firste source is the google sheet : https://docs.google.com/spreadsheets/d/1
 
 But we rely also on the BMD to add missing records and to fix missing geocat UUID from the latter.
 Therefore, the script takes `.csv` file with the BMD records as argument. Hier is how to generate this file :
-* From https://ltbmd.adr.admin.ch/BmdPortal/Reporting extract the following table
+* From https://ltbmd.adr.admin.ch/BmdPortal/Reporting extract the following table as excel table.
 ```sql
 select PUB.techpublayername, PUB.geocatuuid, ZS.ingeststate as "Status (ZS)", PUB.ingeststate as "INGESTSTATE", ZS.TimestandDate
 from bmd.publayer PUB, bmd.timestand ZS
 where PUB.reftimestand = ZS.timestandid AND PUB.gdstechname = ZS.gdstechname;  
 ```
-* Process the table to have only unique Layer ID and geocat UUID. Delete rows that have emtpy Layer ID or geocat UUID. Keep the most recent according to TimestandDate and for duplicated with same timestand, apply the following priority "Productive" -> "NotProductive" -> "Decommissioned" -> "Deleted".
+* In excel, Process the table to have only unique Layer ID and geocat UUID : 
+  * Delete rows that have emtpy Layer ID or geocat UUID. 
+  * Keep the most recent according to `TimestandDate` and for duplicated with same `TimestandDate`, apply the following priority for `Ingestate` "Productive" -> "NotProductive" -> "Decommissioned" -> "Deleted". For that, you can create a new column `order` in excel with the following formula :
+    
+    ```
+    =SI(D2="Productive";1;SI(D2="NotProductive";2;SI(D2="Decommissioned";3;4)))
+    ```
+    Then sort the table first by `TimestandDate` (from Z to A to have the most actual ones first) and second by `order` (from smallest to largest). Select all rows and delete duplicated in colomn `TECHPUBLAYERNAME` and `GEOCATUUID`. Thanks to the ordering applied, it will delete duplicated ones that are oldest and/or with deprecated `Ingestate`.
+    
 * Export a `.csv` file with at least the following columns :
 
   |TECHPUBLAYERNAME|GEOCATUUID|INGESTSTATE|
@@ -41,6 +49,37 @@ mapping.mapping[mapping.mapping["Geocat UUID"].duplicated()]
 # Delete a row by index
 mapping.mapping = mapping.mapping.drop([719])
 ```
+
+### Get list of metadata to be repaired and backup them
+```python
+# Get List
+
+uuids = mapping.mapping.loc[
+    ((mapping.mapping['Published'] == "To publish") | 
+    (mapping.mapping['Geocat Status'].isin(["Add obsolete", "Remove obsolete"])) | 
+    (mapping.mapping['Keyword'].isin(["Add BGDI", "Remove BGDI"])) | 
+    (mapping.mapping['Identifier'] == "Add identifier") | 
+    ((mapping.mapping['WMS Link'].isin(["Add WMS", "Fix WMS", "Remove WMS"])) & (mapping.mapping['Published'].isin(["To publish", "Published"]))) | 
+    ((mapping.mapping['WMTS Link'].isin(["Add WMTS", "Fix WMTS", "Remove WMTS"])) & (mapping.mapping['Published'].isin(["To publish", "Published"])))| 
+    ((mapping.mapping['API3 Link'].isin(["Add API3", "Fix API3", "Remove API3"])) & (mapping.mapping['Published'].isin(["To publish", "Published"])))| 
+    ((mapping.mapping['Map Preview Link'] == "Add map preview") & (mapping.mapping['Published'].isin(["To publish", "Published"]))))
+     & 
+     (mapping.mapping['Published'] != "To unpublish")
+]["Geocat UUID"].tolist()
+
+# Backup Metadata in MEF
+
+mapping.backup_metadata(uuids=uuids, with_related=False)
+```
+
+### Check Validity before and after reparation
+Get a query for geocat.ch to select the metadata from the list above.
+```python
+" OR ".join(uuids)
+```
+Copy the printed output and paste it in the search bar of the edit board of `geocat.ch`. Check the number of valid and not valid metadata. 
+
+After reparing all metadata, with the selected metadata from above, run a validation and check that the number of valid and invalid metadata are still the same.
 
 ### Repair Metadata
 Repair a single metadata
