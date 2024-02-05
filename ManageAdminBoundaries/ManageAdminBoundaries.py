@@ -17,6 +17,7 @@ Usage examples :
 """
 
 import geopycat
+import logging
 import os
 import colorama
 import pandas as pd
@@ -157,7 +158,8 @@ class CheckMunicipalityBoundaries:
                 gmd_name = xmlroot.find("{http://www.isotc211.org/2005/gmd}description").find(
                     "{http://www.isotc211.org/2005/gco}CharacterString").text
 
-                df = df.append({"GMDNR": i, "GMDNAME": gmd_name}, ignore_index=True)
+                row = pd.Series({"GMDNR": i, "GMDNAME": gmd_name})
+                df = pd.concat([df, row.to_frame().T], ignore_index=True)
 
             count += 1
             print(f"Exporting all municipalities from geocat : {round((count / 10000) * 100, 1)}%", end="\r")
@@ -198,30 +200,45 @@ class CheckMunicipalityBoundaries:
             # Case where id exists but name is different
             if gmdnr in df_geocat.values:
                 if gmdname != df_geocat.loc[df_geocat["GMDNR"] == gmdnr].iloc[0]["GMDNAME"]:
-                    df_name_change = df_name_change.append({
+                    
+                    new_row = pd.Series({
                         "GMDNR": gmdnr,
                         "GMDNAME_new": gmdname,
                         "GMDNAME_old": df_geocat.loc[df_geocat["GMDNR"] == gmdnr].iloc[0]["GMDNAME"],
-                    }, ignore_index=True)
+                    })
+
+                    df_name_change = pd.concat([df_name_change, new_row.to_frame().T], ignore_index=True)
+
                 else:
-                    df_correct = df_correct.append({
+
+                    new_row = pd.Series({
                         "GMDNR": gmdnr,
                         "GMDNAME": gmdname,
-                    }, ignore_index=True)
+                    })
+
+                    df_correct = pd.concat([df_correct, new_row.to_frame().T], ignore_index=True)
+
             # Case where id is different for a given name
             else:
                 if gmdname in df_geocat.values:
-                    df_id_change = df_id_change.append({
+
+                    new_row = pd.Series({
                         "GMDNAME": gmdname,
                         "GMDNR_new": gmdnr,
                         "GMDNR_old": df_geocat.loc[df_geocat["GMDNAME"] == gmdname].iloc[0]["GMDNR"],
-                    }, ignore_index=True)
+                    })
+
+                    df_id_change = pd.concat([df_id_change, new_row.to_frame().T], ignore_index=True)
+
                 # Case where id and name doesn't exist. New municipality to add to geocat.
                 else:
-                    df_new = df_new.append({
+
+                    new_row = pd.Series({
                         "GMDNAME": gmdname,
                         "GMDNR": gmdnr,
-                    }, ignore_index=True)
+                    })
+
+                    df_new = pd.concat([df_new, new_row.to_frame().T], ignore_index=True)
 
         # 2 - Testing geocat against new municipalities
         ref_gmdnrs = [feature["properties"][self.gmdnr] for feature in geojson_ref_file[0]["features"]]
@@ -231,10 +248,13 @@ class CheckMunicipalityBoundaries:
 
             # Case where municipalities in geocat doesn't exist at all (no id, no name) in the new ones
             if (row["GMDNR"] not in ref_gmdnrs) and (row["GMDNAME"] not in ref_gmdnames):
-                df_old = df_old.append({
+
+                new_row = pd.Series({
                     "GMDNAME": row["GMDNAME"],
                     "GMDNR": row["GMDNR"],
-                }, ignore_index=True)
+                })
+
+                df_old = pd.concat([df_old, new_row.to_frame().T], ignore_index=True)
 
         if len(df_name_change) > 0:
             df_name_change.to_csv(os.path.join(self.output_dir, "name_incorrect_municipalities.csv"), index=False)
@@ -311,7 +331,8 @@ class CheckDistrictBoundaries:
                 bz_name = xmlroot.find("{http://www.isotc211.org/2005/gmd}description").find(
                     "{http://www.isotc211.org/2005/gco}CharacterString").text
 
-                df = df.append({"BZNR": i, "BZNAME": bz_name}, ignore_index=True)
+                row = pd.Series({"BZNR": i, "BZNAME": bz_name})
+                df = pd.concat([df, row.to_frame().T], ignore_index=True)
 
             count += 1
             print(f"Exporting all districts from geocat : {round((count / 3000) * 100, 1)}%", end="\r")
@@ -352,30 +373,46 @@ class CheckDistrictBoundaries:
             # Case where id exists but name is different
             if bznr in df_geocat.values:
                 if bzname != df_geocat.loc[df_geocat["BZNR"] == bznr].iloc[0]["BZNAME"]:
-                    df_name_change = df_name_change.append({
+
+                    new_row = pd.Series({
                         "BZNR": bznr,
                         "BZNAME_new": bzname,
                         "BZNAME_old": df_geocat.loc[df_geocat["BZNR"] == bznr].iloc[0]["BZNAME"],
-                    }, ignore_index=True)
+                    })
+
+                    df_name_change = pd.concat([df_name_change, new_row.to_frame().T], ignore_index=True)
+
                 else:
-                    df_correct = df_correct.append({
+
+                    new_row = pd.Series({
                         "BZNR": bznr,
                         "BZNAME": bzname,
-                    }, ignore_index=True)
+                    })
+
+                    df_correct = pd.concat([df_correct, new_row.to_frame().T], ignore_index=True)
+
             # Case where id is different for a given name
             else:
                 if bzname in df_geocat.values:
-                    df_id_change = df_id_change.append({
+
+                    new_row = pd.Series({
                         "BZNAME": bzname,
                         "BZNR_new": bznr,
                         "BZNR_old": df_geocat.loc[df_geocat["BZNAME"] == bzname].iloc[0]["BZNR"],
-                    }, ignore_index=True)
+                    })
+
+                    df_id_change = pd.concat([df_id_change, new_row.to_frame().T], ignore_index=True)
+
                 # Case where id and name doesn't exist. New district to add to geocat.
                 else:
-                    df_new = df_new.append({
+
+                    new_row = pd.Series({
                         "BZNAME": bzname,
                         "BZNR": bznr,
-                    }, ignore_index=True)
+                    })
+
+                    df_new = pd.concat([df_new, new_row.to_frame().T], ignore_index=True)
+
 
         # 2 - Testing geocat against new districts
         ref_bznrs = [feature["properties"][self.bznr] for feature in geojson_ref_file[0]["features"]]
@@ -385,10 +422,13 @@ class CheckDistrictBoundaries:
 
             # Case where districts in geocat doesn't exist at all (no id, no name) in the new ones
             if (row["BZNR"] not in ref_bznrs) and (row["BZNAME"] not in ref_bznames):
-                df_old = df_old.append({
+
+                new_row = pd.Series({
                     "BZNAME": row["BZNAME"],
                     "BZNR": row["BZNR"],
-                }, ignore_index=True)
+                })
+
+                df_old = pd.concat([df_old, new_row.to_frame().T], ignore_index=True)
 
         if len(df_name_change) > 0:
             df_name_change.to_csv(os.path.join(self.output_dir, "name_incorrect_districts.csv"), index=False)
@@ -465,7 +505,8 @@ class CheckCantonBoundaries:
                 kt_name = xmlroot.find("{http://www.isotc211.org/2005/gmd}description").find(
                     "{http://www.isotc211.org/2005/gco}CharacterString").text
 
-                df = df.append({"KTNR": i, "KTNAME": kt_name}, ignore_index=True)
+                new_row = pd.Series({"KTNR": i, "KTNAME": kt_name})
+                df = pd.concat([df, new_row.to_frame().T], ignore_index=True)
 
             count += 1
             print(f"Exporting all cantons from geocat : {round((count / 100) * 100, 1)}%", end="\r")
@@ -506,30 +547,45 @@ class CheckCantonBoundaries:
             # Case where id exists but name is different
             if ktnr in df_geocat.values:
                 if ktname != df_geocat.loc[df_geocat["KTNR"] == ktnr].iloc[0]["KTNAME"]:
-                    df_name_change = df_name_change.append({
+
+                    new_row = pd.Series({
                         "KTNR": ktnr,
                         "KTNAME_new": ktname,
                         "KTNAME_old": df_geocat.loc[df_geocat["KTNR"] == ktnr].iloc[0]["KTNAME"],
-                    }, ignore_index=True)
+                    })
+
+                    df_name_change = pd.concat([df_name_change, new_row.to_frame().T], ignore_index=True)
+
                 else:
-                    df_correct = df_correct.append({
+
+                    new_row = pd.Series({
                         "KTNR": ktnr,
                         "KTNAME": ktname,
-                    }, ignore_index=True)
+                    })
+
+                    df_correct = pd.concat([df_correct, new_row.to_frame().T], ignore_index=True)
+
             # Case where id is different for a given name
             else:
                 if ktname in df_geocat.values:
-                    df_id_change = df_id_change.append({
+
+                    new_row = pd.Series({
                         "KTNAME": ktname,
                         "KTNR_new": ktnr,
                         "KTNR_old": df_geocat.loc[df_geocat["KTNAME"] == ktname].iloc[0]["KTNR"],
-                    }, ignore_index=True)
+                    })
+
+                    df_id_change = pd.concat([df_id_change, new_row.to_frame().T], ignore_index=True)
+
                 # Case where id and name doesn't exist. New canton to add to geocat.
                 else:
-                    df_new = df_new.append({
+
+                    new_row = pd.Series({
                         "KTNAME": ktname,
                         "KTNR": ktnr,
-                    }, ignore_index=True)
+                    })
+
+                    df_new = pd.concat([df_new, new_row.to_frame().T], ignore_index=True)
 
         # 2 - Testing geocat against new cantons
         ref_ktnrs = [feature["properties"][self.ktnr] for feature in geojson_ref_file[0]["features"]]
@@ -539,10 +595,13 @@ class CheckCantonBoundaries:
 
             # Case where cantons in geocat doesn't exist at all (no id, no name) in the new ones
             if (row["KTNR"] not in ref_ktnrs) and (row["KTNAME"] not in ref_ktnames):
-                df_old = df_old.append({
+
+                new_row = pd.Series({
                     "KTNAME": row["KTNAME"],
                     "KTNR": row["KTNR"],
-                }, ignore_index=True)
+                })
+
+                df_old = pd.concat([df_old, new_row.to_frame().T], ignore_index=True)
 
         if len(df_name_change) > 0:
             df_name_change.to_csv(os.path.join(self.output_dir, "name_incorrect_cantons.csv"), index=False)
@@ -620,7 +679,8 @@ class CheckCountryBoundaries:
                     land_name = xmlroot.find("{http://www.isotc211.org/2005/gmd}description").find(
                         "{http://www.isotc211.org/2005/gco}CharacterString").text
 
-                    df = df.append({"LANDNR": first + second, "LANDNAME": land_name}, ignore_index=True)
+                    new_row = pd.Series({"LANDNR": first + second, "LANDNAME": land_name})
+                    df = pd.concat([df, new_row.to_frame().T], ignore_index=True)
 
                 count += 1
                 print(f"Exporting all countries from geocat : {round((count / (26*26)) * 100, 1)}%", end="\r")
@@ -661,30 +721,45 @@ class CheckCountryBoundaries:
             # Case where id exists but name is different
             if landnr in df_geocat.values:
                 if landname != df_geocat.loc[df_geocat["LANDNR"] == landnr].iloc[0]["LANDNAME"]:
-                    df_name_change = df_name_change.append({
+
+                    new_row = pd.Series({
                         "LANDNR": landnr,
                         "LANDNAME_new": landname,
                         "LANDNAME_old": df_geocat.loc[df_geocat["LANDNR"] == landnr].iloc[0]["LANDNAME"],
-                    }, ignore_index=True)
+                    })
+
+                    df_name_change = pd.concat([df_name_change, new_row.to_frame().T], ignore_index=True)
+
                 else:
-                    df_correct = df_correct.append({
+
+                    new_row = pd.Series({
                         "LANDNR": landnr,
                         "LANDNAME": landname,
-                    }, ignore_index=True)
+                    })
+
+                    df_correct = pd.concat([df_correct, new_row.to_frame().T], ignore_index=True)
+
             # Case where id is different for a given name
             else:
                 if landname in df_geocat.values:
-                    df_id_change = df_id_change.append({
+
+                    new_row = pd.Series({
                         "LANDNAME": landname,
                         "LANDNR_new": landnr,
                         "LANDNR_old": df_geocat.loc[df_geocat["LANDNAME"] == landname].iloc[0]["LANDNR"],
-                    }, ignore_index=True)
+                    })
+
+                    df_id_change = pd.concat([df_id_change, new_row.to_frame().T], ignore_index=True)
+
                 # Case where id and name doesn't exist. New country to add to geocat.
                 else:
-                    df_new = df_new.append({
+
+                    new_row = pd.Series({
                         "LANDNAME": landname,
                         "LANDNR": landnr,
-                    }, ignore_index=True)
+                    })
+
+                    df_new = pd.concat([df_new, new_row.to_frame().T], ignore_index=True)
 
         # 2 - Testing geocat against new countries
         ref_landnrs = [feature["properties"][self.landnr] for feature in geojson_ref_file[0]["features"]]
@@ -694,10 +769,13 @@ class CheckCountryBoundaries:
 
             # Case where countries in geocat doesn't exist at all (no id, no name) in the new ones
             if (row["LANDNR"] not in ref_landnrs) and (row["LANDNAME"] not in ref_landnames):
-                df_old = df_old.append({
+
+                new_row = pd.Series({
                     "LANDNAME": row["LANDNAME"],
                     "LANDNR": row["LANDNR"],
-                }, ignore_index=True)
+                })
+
+                df_old = pd.concat([df_old, new_row.to_frame().T], ignore_index=True)
 
         if len(df_name_change) > 0:
             df_name_change.to_csv(os.path.join(self.output_dir, "name_incorrect_countries.csv"), index=False)
@@ -1158,7 +1236,12 @@ class UpdateSubtemplatesExtent:
 
         print("Update all subtemplates : ", end="\r")
 
-        logger = geopycat.utils.setup_logger(f"UpdateAllSubtemplates_{datetime.now().strftime('%Y%m%d-%H%M%S')}")
+        logfile = f"UpdateAllSubtemplates_{datetime.now().strftime('%Y%m%d-%H%M%S')}.log"
+
+        log_config = geopycat.utils.get_log_config(logfile, log2stdout = False)
+        logging.config.dictConfig(log_config)
+        
+        logger = logging.getLogger(__name__)
 
         subtemplate_created = 0
         subtemplate_updated = 0
@@ -1275,7 +1358,12 @@ class UpdateSubtemplatesExtent:
         subtemplates_deleted = 0
         subtemplates_delete_failed = 0
 
-        logger = geopycat.utils.setup_logger(f"DeleteSubtemplates_{datetime.now().strftime('%Y%m%d-%H%M%S')}")
+        logfile = f"DeleteSubtemplates_{datetime.now().strftime('%Y%m%d-%H%M%S')}.log"
+
+        log_config = geopycat.utils.get_log_config(logfile, log2stdout = False)
+        logging.config.dictConfig(log_config)
+        
+        logger = logging.getLogger(__name__)
 
         count = 0
         for uuid in uuids:
