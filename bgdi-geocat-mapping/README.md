@@ -1,8 +1,33 @@
-## Mapping BGDI - geocat.ch
+# Mapping BGDI - geocat.ch
+![Static Badge](https://img.shields.io/badge/Python-3.9%2B-%2334eb77)
+
 Consistency between the BGDI and geocat.ch (for records belonging to the BGDI). For more info, check https://jira.swisstopo.ch/browse/METADATA_SB-167
 
+---
+## Installation
+Clone the repo and install dependencies in a python virtual environment (recommended)
+```
+git clone https://github.com/geoadmin/tool-geocat.git
 
-### Get the BGDI source
+cd tool-geocat/bgdi-geocat-mapping
+
+python -m venv .venv
+source .venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+### at swisstopo (using powershell)
+```
+git clone https://github.com/geoadmin/tool-geocat.git
+
+cd tool-geocat/bgdi-geocat-mapping
+
+& "C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\Scripts\pip3" install --trusted-host github.com --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --proxy=proxy-bvcol.admin.ch:8080 -r requirements.txt
+```
+---
+
+## Get the BGDI source
 The firste source is the google sheet : https://docs.google.com/spreadsheets/d/1to10g8bIhVv0GxMQZk00Yc-kIk9FpMzQJp6veFXgN6s/edit#gid=1731531890<br>
 
 But we rely also on the BMD to add missing records and to fix missing geocat UUID from the latter.
@@ -28,8 +53,8 @@ where PUB.reftimestand = ZS.timestandid AND PUB.gdstechname = ZS.gdstechname;
   |---|---|---|
   |ch.blw.erosion|02210bb3-1c51-4c2c-a665-a696286b945c|Productive|
 
-
-### Initiate Mapping
+---
+## Initiate Mapping
 By initiating the `BGDIMapping` class, it will compute the mapping between the BGDI and geocat.ch.
 ```python
 from bgdi_mapping import BGDIMapping
@@ -50,7 +75,8 @@ mapping.mapping[mapping.mapping["Geocat UUID"].duplicated()]
 mapping.mapping = mapping.mapping.drop([719])
 ```
 
-### Get list of metadata to be repaired and backup them
+---
+## Get list of metadata to be repaired and backup them
 ```python
 # Get List
 
@@ -72,7 +98,8 @@ uuids = mapping.mapping.loc[
 mapping.backup_metadata(uuids=uuids, with_related=False)
 ```
 
-### Check Validity before and after reparation
+---
+## Check Validity before and after reparation
 Get a query for geocat.ch to select the metadata from the list above.
 ```python
 " OR ".join(uuids)
@@ -81,7 +108,8 @@ Copy the printed output and paste it in the search bar of the edit board of `geo
 
 After reparing all metadata, with the selected metadata from above, run a validation and check that the number of valid and invalid metadata are still the same.
 
-### Repair Metadata
+---
+## Repair Metadata
 Repair a single metadata
 ```python
 mapping.repair_metadata(uuid="metadata-uuid")
