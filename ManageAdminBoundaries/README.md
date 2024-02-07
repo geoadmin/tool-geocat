@@ -1,4 +1,6 @@
 # Manage Admin Boundaries
+![Static Badge](https://img.shields.io/badge/Python-3.9%2B-%2334eb77)
+
 **Inspect**, **update** and **delete** admin boundaries in geocat by comparing them with a geojon reference file.
 
 Admin boundaries are saved as extent subtemplates in geocat. Any user with write access can create an extent subtemplate but cannot validate them.  
@@ -10,13 +12,27 @@ The admin bounadries are managed by the geocat team and have a special **UUID st
 * **Countries** : `geocatch-subtpl-extent-landesgebiet-{code_iso}` where `code_iso` corresponds to the country ISO code (CH, FL)
 
 ---
-### Requirements
-This script runs on python 3. Following packages are needed :
-* requests
-* urllib3
-* pandas
-* colorama
-* geopycat
+## Installation
+Clone the repo and install dependencies in a python virtual environment (recommended)
+```
+git clone https://github.com/geoadmin/tool-geocat.git
+
+cd tool-geocat/ManageAdminBoundaries
+
+python -m venv .venv
+source .venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+### at swisstopo (using powershell)
+```
+git clone https://github.com/geoadmin/tool-geocat.git
+
+cd tool-geocat/ManageAdminBoundaries
+
+& "C:\Program Files\ArcGIS\Pro\bin\Python\envs\arcgispro-py3\Scripts\pip3" install --trusted-host github.com --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --proxy=proxy-bvcol.admin.ch:8080 -r requirements.txt
+```
 ---
 
 ### Data preparation - geojson reference file
