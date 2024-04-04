@@ -46,7 +46,7 @@ gmd:identificationInfo/*/gmd:citation/*/gmd:title/gco:CharacterString
 ```
 **In a specific language (e.g. english)**
 ```
-gmd:identificationInfo/*/gmd:citation/*/gmd:title//gmd:LocalisedCharacterString[locale = "#EN"]
+gmd:identificationInfo/*/gmd:citation/*/gmd:title//gmd:LocalisedCharacterString[@locale = "#EN"]
 ```
 
 # 
@@ -61,7 +61,7 @@ gmd:identificationInfo/*/gmd:citation/*/gmd:alternateTitle/gco:CharacterString
 ```
 **In a specific language (e.g. english)**
 ```
-gmd:identificationInfo/*/gmd:citation/*/gmd:alternateTitle//gmd:LocalisedCharacterString[locale = "#EN"]
+gmd:identificationInfo/*/gmd:citation/*/gmd:alternateTitle//gmd:LocalisedCharacterString[@locale = "#EN"]
 ```
 
 # 
@@ -76,7 +76,7 @@ gmd:identificationInfo/*/gmd:citation/*/gmd:collectiveTitle/gco:CharacterString
 ```
 **In a specific language (e.g. english)**
 ```
-gmd:identificationInfo/*/gmd:citation/*/gmd:collectiveTitle//gmd:LocalisedCharacterString[locale = "#EN"]
+gmd:identificationInfo/*/gmd:citation/*/gmd:collectiveTitle//gmd:LocalisedCharacterString[@locale = "#EN"]
 ```
 
 # 
