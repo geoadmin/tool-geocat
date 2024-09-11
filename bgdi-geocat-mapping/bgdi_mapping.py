@@ -11,7 +11,7 @@ from lxml import etree as ET
 import geopycat
 
 # Corresponds to the column name in the google doc
-TechLayerNameInGDoc = "h."
+TechLayerNameInGDoc = "Layer/collection ID (technical layer name BGDI)"
 GeocatIdInGDoc = "Geocat ID"
 
 class BGDIMapping(geopycat.geocat):
@@ -359,6 +359,27 @@ class BGDIMapping(geopycat.geocat):
                 else:
                     self.mapping.at[i, "Map Preview Link"] = "No map preview"
 
+    def check_ods_permalink(self):
+        """
+        Fills the mapping dataframe with ods permalink status. If the record has the opendata.swiss keyword,
+        it must have a correct ods premalink.
+        """
+
+        # Check if record has ods keyword
+        for i, row in self.mapping.iterrows():
+
+            has_keyword = False
+
+            try:
+                for tag in self.md_index[row[0]]["_source"]["tag"]:
+                    if tag["default"] == "opendata.swiss":
+                        has_keyword = True
+                        break
+
+            except IndexError:
+                pass
+
+
     def get_wms_layer(self) -> dict:
         """
         Get layer id and title in 4 languages from swisstopo WMS
@@ -662,3 +683,5 @@ class BGDIMapping(geopycat.geocat):
             
             print(f"Repair all : {round((count / len(self.mapping.index)) * 100, 1)}%", end="\r")
         print(f"Repair all : {geopycat.utils.okgreen('Done')}")
+
+mapping = BGDIMapping(bmd="PROD_20240911/report.csv", env="prod")
