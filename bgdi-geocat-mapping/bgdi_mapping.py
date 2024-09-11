@@ -11,7 +11,7 @@ from lxml import etree as ET
 import geopycat
 
 # Corresponds to the column name in the google doc
-TechLayerNameInGDoc = "h."
+TechLayerNameInGDoc = "Layer/collection ID (technical layer name BGDI)"
 GeocatIdInGDoc = "Geocat ID"
 
 class BGDIMapping(geopycat.geocat):
