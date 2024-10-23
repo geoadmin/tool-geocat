@@ -646,3 +646,35 @@ def add_mappreview(metadata: bytes, layer_id: str) -> list:
     })
 
     return body
+
+def remove_ods_permalink(metadata: bytes) -> list:
+    """
+    Returns list of edits for the batch editing API request to remove ODS permalink.
+    """
+
+    body = []
+    root = ET.fromstring(metadata)
+
+    # transferOption with only one child and ODS permalink
+    xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)=1"\
+            " and .//gmd:protocol/gco:CharacterString[text()='OPENDATA:SWISS']]"
+
+    if len(root.xpath(xpath, namespaces=geopycat.settings.NS)) > 0:
+
+        body.append({
+            "xpath": xpath,
+            "value": "<gn_delete></gn_delete>"
+        })
+
+    # transferOption with multiple childs
+    xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)>1]//gmd:onLine["\
+            " .//gmd:protocol/gco:CharacterString[text()='OPENDATA:SWISS']]"
+
+    if len(root.xpath(xpath, namespaces=geopycat.settings.NS)) > 0:
+
+        body.append({
+            "xpath": xpath,
+            "value": "<gn_delete></gn_delete>"
+        })
+
+    return body
