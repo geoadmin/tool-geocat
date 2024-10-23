@@ -30,7 +30,7 @@ class BGDIMapping(geopycat.geocat):
         self.mapping = pd.DataFrame(columns=["Geocat UUID", "Layer ID", "Published",
                                             "Geocat Status", "Keyword", "Identifier",
                                             "WMS Link", "WMTS Link", "API3 Link", 
-                                            "Map Preview Link"])
+                                            "Map Preview Link", "ODS Permalink"])
 
         # initiate rows in mapping df
         for i, row in self.bgdi_inventory.iterrows():
@@ -49,6 +49,7 @@ class BGDIMapping(geopycat.geocat):
 
         self.wms = self.get_wms_layer()
         self.wmts = self.get_wmts_layer()
+        self.ods_id_mapping = self.get_ods_permalink()
 
         self.check_publish_status()
         self.check_keyword()
@@ -58,6 +59,7 @@ class BGDIMapping(geopycat.geocat):
         self.check_wmts()
         self.check_api()
         self.check_mappreview()
+        self.check_ods_permalink()
 
     def get_bgdi_inventory(self):
         """f
@@ -361,24 +363,90 @@ class BGDIMapping(geopycat.geocat):
 
     def check_ods_permalink(self):
         """
-        Fills the mapping dataframe with ods permalink status. If the record has the opendata.swiss keyword,
-        it must have a correct ods premalink.
+        Fills the mapping dataframe with ods permalink status. If the record is in ODS,
+        it must have a correct ODS premalink.
         """
 
-        # Check if record has ods keyword
+        # Check if record is in ODS
         for i, row in self.mapping.iterrows():
 
-            has_keyword = False
+            has_ods_permalink = False
 
-            try:
-                for tag in self.md_index[row[0]]["_source"]["tag"]:
-                    if tag["default"] == "opendata.swiss":
-                        has_keyword = True
+            if "link" in self.md_index[row[0]]["_source"]:
+                for link in self.md_index[row[0]]["_source"]["link"]:
+                    if link["protocol"] == "OPENDATA:SWISS":
+                        has_ods_permalink = True
                         break
 
-            except IndexError:
-                pass
+            # Case where geocat record not in ODS
+            if row[0] not in self.ods_id_mapping:
+                
+                # Not in ODS but ODS permalink
+                if has_ods_permalink:
+                    self.mapping.at[i, "ODS Permalink"] = "Remove ODS Permalink"
+                
+                # Not in ODS and no ODS permalink
+                else:
+                    self.mapping.at[i, "ODS Permalink"] = "No ODS Permalink"
 
+            # Case where geocat record in ODS
+            else:
+
+                has_correct_ods_permalink = False
+
+                if "link" in self.md_index[row[0]]["_source"]:
+                    for link in self.md_index[row[0]]["_source"]["link"]:
+                        if re.search(f"^https:\/\/opendata\.swiss\/.*\/perma\/{self.ods_id_mapping[row[0]]}$", link["urlObject"]["default"]):
+                           has_correct_ods_permalink = True
+                           break
+                
+                if has_correct_ods_permalink:
+                    self.mapping.at[i, "ODS Permalink"] = "ODS Permalink"
+                else:
+                    if has_ods_permalink:
+                        self.mapping.at[i, "ODS Permalink"] = "Fix ODS Permalink"
+                    else:
+                        self.mapping.at[i, "ODS Permalink"] = "Add ODS Permalink"
+
+    def get_ods_permalink(self):
+        """
+        Get a mapping between geocat UUID and ODS permalink ID for every metadata in ODS
+        """
+
+        output = dict()
+
+        start = 0
+
+        while True:
+
+            params = {
+                "fq": "political_level:confederation",
+                "rows": 1000,
+                "start": start
+            }
+
+            response = self.session.get(
+                "https://ckan.opendata.swiss/api/3/action/package_search",
+                params=params,
+                timeout=10
+            ).json()
+
+            if len(response["result"]["results"]) == 0:
+                break
+
+            else:
+                for md in response["result"]["results"]:
+                    if "relations" in md:
+                        for relation in md["relations"]:
+                            if relation["label"] == "geocat.ch permalink":
+                                geocat_uuid = relation["url"].split("/")[-1]
+                                ods_uuid = f"{geocat_uuid}@{md['organization']['name']}"
+                                output[geocat_uuid] = ods_uuid
+                                break
+
+            start += 1000
+
+        return output
 
     def get_wms_layer(self) -> dict:
         """
@@ -683,5 +751,3 @@ class BGDIMapping(geopycat.geocat):
             
             print(f"Repair all : {round((count / len(self.mapping.index)) * 100, 1)}%", end="\r")
         print(f"Repair all : {geopycat.utils.okgreen('Done')}")
-
-mapping = BGDIMapping(bmd="PROD_20240911/report.csv", env="prod")
