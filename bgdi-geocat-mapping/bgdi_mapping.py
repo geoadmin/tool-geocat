@@ -370,6 +370,9 @@ class BGDIMapping(geopycat.geocat):
         # Check if record is in ODS
         for i, row in self.mapping.iterrows():
 
+            if row["Keyword"] == "Remove BGDI":
+                continue
+
             has_ods_permalink = False
 
             if "link" in self.md_index[row[0]]["_source"]:
@@ -617,6 +620,32 @@ class BGDIMapping(geopycat.geocat):
 
             return response
 
+    def repair_ods_permalink(self, uuid: str):
+        """
+        Repair ODS permalink in the given metadata to match the BGDI
+        """
+
+        if uuid not in self.mapping["Geocat UUID"].unique():
+            raise Exception("Metadata not in BGDI !")
+
+        metadata = self.get_metadata_from_mef(uuid=uuid)
+        if metadata is None:
+            raise Exception("Metadata could not be fetch from geocat.ch !")
+
+        body = list()
+        row = self.mapping.loc[self.mapping['Geocat UUID']==uuid]
+
+        if row["ODS Permalink"].iloc[0] in ["Add ODS Permalink", "Fix ODS Permalink"] and row["Published"].iloc[0] not in ["Unpublished", "To unpublish"]:
+            body += utils.add_ods_permalink(metadata, self.ods_id_mapping[uuid])
+
+        if row["ODS Permalink"].iloc[0] == "Remove ODS Permalink":
+            body += utils.remove_ods_permalink(metadata)
+
+        if len(body) > 0:
+            response = self.edit_metadata(uuid=uuid, body=body, updateDateStamp="false")
+
+            return response
+
     def repair_metadata(self, uuid: str):
         """
         Repair the given metadata to match the BGDI
@@ -712,6 +741,16 @@ class BGDIMapping(geopycat.geocat):
 
                 if not geopycat.utils.process_ok(response):
                     raise Exception("Map Preview could not be repaired")
+                
+                md_updated = True
+
+        # ODS Permalink
+        if row["ODS Permalink"].iloc[0] not in ["ODS Permalink", "No ODS Permalink"]:
+            response = self.repair_ods_permalink(uuid)
+            if  response is not None:
+
+                if not geopycat.utils.process_ok(response):
+                    raise Exception("ODS Permalink could not be repaired")
                 
                 md_updated = True
 
