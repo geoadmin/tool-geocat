@@ -646,3 +646,132 @@ def add_mappreview(metadata: bytes, layer_id: str) -> list:
     })
 
     return body
+
+def remove_ods_permalink(metadata: bytes) -> list:
+    """
+    Returns list of edits for the batch editing API request to remove ODS permalink.
+    """
+
+    body = []
+    root = ET.fromstring(metadata)
+
+    # transferOption with only one child and ODS permalink
+    xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)=1"\
+            " and .//gmd:protocol/gco:CharacterString[text()='OPENDATA:SWISS']]"
+
+    if len(root.xpath(xpath, namespaces=geopycat.settings.NS)) > 0:
+
+        body.append({
+            "xpath": xpath,
+            "value": "<gn_delete></gn_delete>"
+        })
+
+    # transferOption with multiple childs
+    xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)>1]//gmd:onLine["\
+            " .//gmd:protocol/gco:CharacterString[text()='OPENDATA:SWISS']]"
+
+    if len(root.xpath(xpath, namespaces=geopycat.settings.NS)) > 0:
+
+        body.append({
+            "xpath": xpath,
+            "value": "<gn_delete></gn_delete>"
+        })
+
+    return body
+
+def add_ods_permalink(metadata: bytes, ods_uuid: str) -> list:
+    """
+    Returns list of edits for the batch editing API request to add ODS permalink.
+    It first delete all existing ODS permalink. Hence used to add or fix ODS permalink
+    """
+
+    body = []
+    root = ET.fromstring(metadata)
+
+    value = settings.XML["resource"]
+    value = value.replace("resource-url-de", f"https://opendata.swiss/de/perma/{ods_uuid}")
+    value = value.replace("resource-url-fr", f"https://opendata.swiss/fr/perma/{ods_uuid}")
+    value = value.replace("resource-url-it", f"https://opendata.swiss/it/perma/{ods_uuid}")
+    value = value.replace("resource-url-en", f"https://opendata.swiss/en/perma/{ods_uuid}")
+    value = value.replace("resource-url-rm", f"https://opendata.swiss/de/perma/{ods_uuid}")
+    value = value.replace("resource-protocol", "OPENDATA:SWISS")
+    value = value.replace("resource-name-de", "Permalink opendata.swiss")
+    value = value.replace("resource-name-fr", "Permalink opendata.swiss")
+    value = value.replace("resource-name-it", "Permalink opendata.swiss")
+    value = value.replace("resource-name-en", "Permalink opendata.swiss")
+    value = value.replace("resource-name-rm", "Permalink opendata.swiss")
+    value = value.replace("resource-desc-de", "Permalink opendata.swiss")
+    value = value.replace("resource-desc-fr", "Permalink opendata.swiss")
+    value = value.replace("resource-desc-it", "Permalink opendata.swiss")
+    value = value.replace("resource-desc-en", "Permalink opendata.swiss")
+    value = value.replace("resource-desc-rm", "Permalink opendata.swiss")
+
+
+    # If no distribution section, we don't add map preview
+    if len(root.xpath("./gmd:distributionInfo", namespaces=geopycat.settings.NS)) == 0:
+        return body
+
+    # No transferOption
+    if len(root.xpath("./gmd:distributionInfo//gmd:transferOptions", 
+                        namespaces=geopycat.settings.NS)) == 0:
+
+        body.append({
+            "xpath": "./gmd:distributionInfo[1]/gmd:MD_Distribution",
+            "value": f"<gn_add>{settings.XML['transferOption']}</gn_add>"
+        })
+
+        body.append({
+            "xpath": "./gmd:distributionInfo[1]/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions",
+            "value": f"<gn_add>{value}</gn_add>"
+        })
+
+        return body
+
+    # transferOption with only one child and admin.ch
+    xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)=1" \
+            " and .//gmd:protocol/gco:CharacterString[text()='OPENDATA:SWISS']]"
+
+    number_tags = len(root.xpath("./gmd:distributionInfo//gmd:transferOptions",
+                    namespaces=geopycat.settings.NS))
+
+    if len(root.xpath(xpath, namespaces=geopycat.settings.NS)) > 0:
+
+        body.append({
+            "xpath": xpath,
+            "value": "<gn_delete></gn_delete>"
+        })
+
+        if number_tags == len(root.xpath(xpath, namespaces=geopycat.settings.NS)):
+
+            body.append({
+                "xpath": "./gmd:distributionInfo[1]/gmd:MD_Distribution",
+                "value": f"<gn_add>{settings.XML['transferOption']}</gn_add>"
+            })
+
+            body.append({
+                "xpath": "./gmd:distributionInfo[1]/gmd:MD_Distribution/gmd:transferOptions/gmd:MD_DigitalTransferOptions",
+                "value": f"<gn_add>{value}</gn_add>"
+            })
+
+            return body
+
+    # transferOption with multiple childs
+    xpath = "./gmd:distributionInfo//gmd:transferOptions[count(./*/*)>1]//gmd:onLine["\
+            " .//gmd:protocol/gco:CharacterString[text()='OPENDATA:SWISS']]"
+
+    if len(root.xpath(xpath, namespaces=geopycat.settings.NS)) > 0:
+
+        body.append({
+            "xpath": xpath,
+            "value": "<gn_delete></gn_delete>"
+        })
+
+    body.append({
+        "xpath": "./gmd:distributionInfo[1]/gmd:MD_Distribution/gmd:transferOptions[1]/gmd:MD_DigitalTransferOptions",
+        "value": f"<gn_add>{value}</gn_add>"
+    })
+
+    return body
+
+
+

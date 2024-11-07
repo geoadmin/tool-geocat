@@ -85,9 +85,14 @@ uuids = mapping.mapping.loc[
     (mapping.mapping['Geocat Status'].isin(["Add obsolete", "Remove obsolete"])) | 
     (mapping.mapping['Keyword'].isin(["Add BGDI", "Remove BGDI"])) | 
     (mapping.mapping['Identifier'] == "Add identifier") | 
-    ((mapping.mapping['WMS Link'].isin(["Add WMS", "Fix WMS", "Remove WMS"])) & (mapping.mapping['Published'].isin(["To publish", "Published"]))) | 
-    ((mapping.mapping['WMTS Link'].isin(["Add WMTS", "Fix WMTS", "Remove WMTS"])) & (mapping.mapping['Published'].isin(["To publish", "Published"])))| 
-    ((mapping.mapping['API3 Link'].isin(["Add API3", "Fix API3", "Remove API3"])) & (mapping.mapping['Published'].isin(["To publish", "Published"])))| 
+    ((mapping.mapping['WMS Link'].isin(["Add WMS", "Fix WMS"])) & (mapping.mapping['Published'].isin(["To publish", "Published"]))) | 
+    ((mapping.mapping['WMTS Link'].isin(["Add WMTS", "Fix WMTS"])) & (mapping.mapping['Published'].isin(["To publish", "Published"])))| 
+    ((mapping.mapping['API3 Link'].isin(["Add API3", "Fix API3"])) & (mapping.mapping['Published'].isin(["To publish", "Published"])))| 
+    ((mapping.mapping['ODS Permalink'].isin(["Add ODS Permalink", "Fix ODS Permalink"])) & (mapping.mapping['Published'].isin(["To publish", "Published"])))| 
+    (mapping.mapping['ODS Permalink'] == "Remove ODS Permalink") |
+    (mapping.mapping['WMS Link'] == "Remove WMS") |
+    (mapping.mapping['WMTS Link'] == "Remove WMTS") |
+    (mapping.mapping['API3 Link'] == "Remove API3") |
     ((mapping.mapping['Map Preview Link'] == "Add map preview") & (mapping.mapping['Published'].isin(["To publish", "Published"]))))
      & 
      (mapping.mapping['Published'] != "To unpublish")
