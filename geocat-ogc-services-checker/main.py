@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 import geopycat
 import config
 import ogc_services_checker
+import check_services_url
 from datetime import datetime
 import csv
 
@@ -15,16 +16,11 @@ if not os.path.exists(logs_dir):
     os.makedirs(logs_dir)
 
 timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-logfile = os.path.join(logs_dir, f"ogc_urls_{timestamp}.log")
-
-logging.basicConfig(
-    level=logging.ERROR,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[logging.FileHandler(logfile)]
-)
 
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.DEBUG)
 
+# Initialisation Geocat
 geocat = geopycat.geocat(env="prod")
 os.environ["HTTP_PROXY"] = geocat.session.proxies.get("http", "")
 os.environ["HTTPS_PROXY"] = geocat.session.proxies.get("https", "")
@@ -33,8 +29,8 @@ os.environ["HTTPS_PROXY"] = geocat.session.proxies.get("https", "")
 valid_csv_file = os.path.join(logs_dir, f"valid_ogc_urls_{timestamp}.csv")
 invalid_csv_file = os.path.join(logs_dir, f"invalid_ogc_urls_{timestamp}.csv")
 
-valid_csv_columns = ['UUID', 'Title', 'Email', 'Valid URL']
-invalid_csv_columns = ['UUID', 'Title', 'Email', 'Error Message', 'Invalid URL', 'Missing Layer Name']
+valid_csv_columns = ['UUID', 'Title', 'Organization', 'Email', 'Valid URL']
+invalid_csv_columns = ['UUID', 'Title', 'Organization', 'Email', 'Error Message', 'Invalid URL']
 
 def initialize_csv(file_path, columns):
     """Initialize a CSV file with headers."""
@@ -79,15 +75,17 @@ def main():
     valid_urls = []
 
     for record in metadata_records:
-        logger.info(f"Processing metadata UUID: {record['_source']['uuid']}")
-        result, new_valid_urls = ogc_services_checker.check_metadata_service_url(record, valid_urls)
+        uuid = record['_source'].get('uuid', 'No UUID')
+        logger.info(f"Processing metadata UUID: {uuid}")
+        result, new_valid_urls = check_services_url.check_metadata_service_url(record, valid_urls)
         valid_urls.extend(new_valid_urls)
 
         # Process valid URLs
         for url in new_valid_urls:
             valid_data = {
-                'UUID': record['_source']['uuid'],
+                'UUID': result['uuid'],
                 'Title': result['title'],
+                'Organization': result['organization'],
                 'Email': result['email'],
                 'Valid URL': url
             }
@@ -96,12 +94,12 @@ def main():
         # Process errors
         for error in result["errors"]:
             error_data = {
-                'UUID': record['_source']['uuid'],
-                'Title': result['title'],
-                'Email': result['email'],
+                'UUID': error['uuid'],
+                'Title': error['title'],
+                'Organization': error['organization'],
+                'Email': error['email'],
                 'Error Message': error['error_message'],
                 'Invalid URL': error['invalid_url'],
-                'Missing Layer Name': error.get('missing_layer_name', '')
             }
             append_to_csv(invalid_csv_file, error_data, invalid_csv_columns)
 
