@@ -181,7 +181,7 @@ class BGDIMapping(geopycat.geocat):
                 self.mapping = pd.concat([self.mapping, new_row]).reset_index(drop=True)
         
         cols = ["Geocat UUID", "Layer ID", "Published", "Geocat Status", "Keyword", "Identifier",
-                "WMS Link", "WMTS Link", "API3 Link", "Map Preview Link"]
+                "WMS Link", "WMTS Link", "API3 Link", "Map Preview Link", "ODS Permalink"]
         self.mapping = self.mapping[cols]
 
     def check_status(self):
@@ -330,10 +330,15 @@ class BGDIMapping(geopycat.geocat):
         """
 
         map_layer_ids = list()
-        response = self.session.get("https://map.geo.admin.ch/configs/en/layersConfig.json")
-        for layer in response.json():
-            if "parentLayerId" not in response.json()[layer]:
-                map_layer_ids.append(layer)
+
+        response = self.session.get("https://api3.geo.admin.ch/rest/services/api/MapServer", proxies=self.session.proxies, verify=False)
+
+        if response.status_code == 200:
+            for layer in response.json()["layers"]:
+                map_layer_ids.append(layer["layerBodId"])
+        else:
+            print(f"Erreur lors de la récupération des layers: {response.status_code}")
+            return
 
         for i, row in self.mapping.iterrows():
 
