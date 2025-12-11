@@ -24,53 +24,111 @@ import pandas as pd
 import xml.etree.ElementTree as ET
 import json
 import sys
-from zipfile import ZipFile
-import io
 from datetime import datetime
 from string import ascii_uppercase
 
 colorama.init()
 
+CANTON_NAMES = {
+    "ZH": {"DE": "Kanton Zürich (ZH)", "FR": "Canton de Zurich (ZH)", "IT": "Cantone di Zurigo (ZH)", 
+           "EN": "Canton of Zurich (ZH)", "RM": "Chantun Turitg (ZH)"},
+    "BE": {"DE": "Kanton Bern (BE)", "FR": "Canton de Berne (BE)", "IT": "Cantone di Berna (BE)", 
+           "EN": "Canton of Bern (BE)", "RM": "Chantun Berna (BE)"},
+    "LU": {"DE": "Kanton Luzern (LU)", "FR": "Canton de Lucerne (LU)", "IT": "Cantone di Lucerna (LU)", 
+           "EN": "Canton of Lucerne (LU)", "RM": "Chantun Lucerna (LU)"},
+    "UR": {"DE": "Kanton Uri (UR)", "FR": "Canton d'Uri (UR)", "IT": "Cantone di Uri (UR)", 
+           "EN": "Canton of Uri (UR)", "RM": "Chantun Uri (UR)"},
+    "SZ": {"DE": "Kanton Schwyz (SZ)", "FR": "Canton de Schwytz (SZ)", "IT": "Cantone di Svitto (SZ)", 
+           "EN": "Canton of Schwyz (SZ)", "RM": "Chantun Sviz (SZ)"},
+    "OW": {"DE": "Kanton Obwalden (OW)", "FR": "Canton d'Obwald (OW)", "IT": "Cantone di Obvaldo (OW)", 
+           "EN": "Canton of Obwalden (OW)", "RM": "Chantun Sursilvania (OW)"},
+    "NW": {"DE": "Kanton Nidwalden (NW)", "FR": "Canton de Nidwald (NW)", "IT": "Cantone di Nidvaldo (NW)", 
+           "EN": "Canton of Nidwalden (NW)", "RM": "Chantun Sutsilvania (NW)"},
+    "GL": {"DE": "Kanton Glarus (GL)", "FR": "Canton de Glaris (GL)", "IT": "Cantone di Glarona (GL)", 
+           "EN": "Canton of Glarus (GL)", "RM": "Chantun Glaruna (GL)"},
+    "ZG": {"DE": "Kanton Zug (ZG)", "FR": "Canton de Zoug (ZG)", "IT": "Cantone di Zugo (ZG)", 
+           "EN": "Canton of Zug (ZG)", "RM": "Chantun Zug (ZG)"},
+    "FR": {"DE": "Kanton Freiburg (FR)", "FR": "Canton de Fribourg (FR)", "IT": "Cantone di Friborgo (FR)", 
+           "EN": "Canton of Fribourg (FR)", "RM": "Chantun Friburg (FR)"},
+    "SO": {"DE": "Kanton Solothurn (SO)", "FR": "Canton de Soleure (SO)", "IT": "Cantone di Soletta (SO)", 
+           "EN": "Canton of Solothurn (SO)", "RM": "Chantun Soloturn (SO)"},
+    "BS": {"DE": "Kanton Basel-Stadt (BS)", "FR": "Canton de Bâle-Ville (BS)", "IT": "Cantone di Basilea Città (BS)", 
+           "EN": "Canton of Basel-Stadt (BS)", "RM": "Chantun Basilea-Citad (BS)"},
+    "BL": {"DE": "Kanton Basel-Landschaft (BL)", "FR": "Canton de Bâle-Campagne (BL)", "IT": "Cantone di Basilea Campagna (BL)", 
+           "EN": "Canton of Basel-Landschaft (BL)", "RM": "Chantun Basilea-Champagna (BL)"},
+    "SH": {"DE": "Kanton Schaffhausen (SH)", "FR": "Canton de Schaffhouse (SH)", "IT": "Cantone di Sciaffusa (SH)", 
+           "EN": "Canton of Schaffhausen (SH)", "RM": "Chantun Schaffusa (SH)"},
+    "AR": {"DE": "Kanton Appenzell Ausserrhoden (AR)", "FR": "Canton d'Appenzell Rhodes-Extérieures (AR)", "IT": "Cantone di Appenzello Esterno (AR)", 
+           "EN": "Canton of Appenzell Ausserrhoden (AR)", "RM": "Chantun Appenzell dadora Rodens (AR)"},
+    "AI": {"DE": "Kanton Appenzell Innerrhoden (AI)", "FR": "Canton d'Appenzell Rhodes-Intérieures (AI)", "IT": "Cantone di Appenzello Interno (AI)", 
+           "EN": "Canton of Appenzell Innerrhoden (AI)", "RM": "Chantun Appenzell davent Rodens (AI)"},
+    "SG": {"DE": "Kanton St. Gallen (SG)", "FR": "Canton de Saint-Gall (SG)", "IT": "Cantone di San Gallo (SG)", 
+           "EN": "Canton of St. Gallen (SG)", "RM": "Chantun Son Gagl (SG)"},
+    "GR": {"DE": "Kanton Graubünden (GR)", "FR": "Canton des Grisons (GR)", "IT": "Cantone dei Grigioni (GR)", 
+           "EN": "Canton of Grisons (GR)", "RM": "Chantun Grischun (GR)"},
+    "AG": {"DE": "Kanton Aargau (AG)", "FR": "Canton d'Argovie (AG)", "IT": "Cantone di Argovia (AG)", 
+           "EN": "Canton of Aargau (AG)", "RM": "Chantun Argovia (AG)"},
+    "TG": {"DE": "Kanton Thurgau (TG)", "FR": "Canton de Thurgovie (TG)", "IT": "Cantone di Turgovia (TG)", 
+           "EN": "Canton of Thurgau (TG)", "RM": "Chantun Turgovia (TG)"},
+    "TI": {"DE": "Kanton Tessin (TI)", "FR": "Canton du Tessin (TI)", "IT": "Cantone Ticino (TI)", 
+           "EN": "Canton of Ticino (TI)", "RM": "Chantun Tessin (TI)"},
+    "VD": {"DE": "Kanton Waadt (VD)", "FR": "Canton de Vaud (VD)", "IT": "Cantone di Vaud (VD)", 
+           "EN": "Canton of Vaud (VD)", "RM": "Chantun Vad (VD)"},
+    "VS": {"DE": "Kanton Wallis (VS)", "FR": "Canton du Valais (VS)", "IT": "Cantone Vallese (VS)", 
+           "EN": "Canton of Valais (VS)", "RM": "Chantun Vallais (VS)"},
+    "NE": {"DE": "Kanton Neuenburg (NE)", "FR": "Canton de Neuchâtel (NE)", "IT": "Cantone di Neuchâtel (NE)", 
+           "EN": "Canton of Neuchâtel (NE)", "RM": "Chantun Neuchâtel (NE)"},
+    "GE": {"DE": "Kanton Genf (GE)", "FR": "Canton de Genève (GE)", "IT": "Cantone di Ginevra (GE)", 
+           "EN": "Canton of Geneva (GE)", "RM": "Chantun Genevra (GE)"},
+    "JU": {"DE": "Kanton Jura (JU)", "FR": "Canton du Jura (JU)", "IT": "Cantone del Giura (JU)", 
+           "EN": "Canton of Jura (JU)", "RM": "Chantun Giura (JU)"},
+}
 
 def geojson_to_geocatgml(geojson_feature: dict):
     """
-    Transform a single geojson feature (type=Feature) into a GML ready for extent subtemplate of geocat.
+    Transform a single geojson feature (type=Feature) into a GML ready for extent subtemplate of geocat (ISO 19115-3).
 
     The geojson feature must be in WGS84. Coordinates of exterior polygons must be in the clock-wise order.
     Coordinates of interior polygons must be in the counter-clock-wise order.
-    The returned GML starts at the tag <gmd:Polygon>.
+    The returned GML starts at the tag <gex:polygon>.
 
     Args:
         geojson_feature:
             dict, required, geojson feature
 
     Returns:
-        GML snippet at the tag level <gmd:Polygon> ready for extent subtemplate in geocat.
+        GML snippet at the tag level <gex:polygon> ready for extent subtemplate in geocat (ISO 19115-3).
     """
-    gml_start = "<gmd:polygon xmlns:gmd='http://www.isotc211.org/2005/gmd'>" \
-                "<gml:MultiSurface xmlns='http://www.opengis.net/gml/3.2' xmlns:gml='http://www.opengis.net/gml/3.2' srsDimension='2'>"
+    import uuid as uuid_module
+    
+    # Generate unique IDs for GML elements
+    multisurface_id = f"ms-{uuid_module.uuid4().hex[:8]}"
+    
+    gml_start = f"<gex:polygon xmlns:gex='http://standards.iso.org/iso/19115/-3/gex/1.0'>" \
+                f"<gml:MultiSurface xmlns:gml='http://www.opengis.net/gml/3.2' gml:id='{multisurface_id}' srsDimension='2'>"
 
-    gml_end = "</gml:MultiSurface></gmd:polygon>"
+    gml_end = "</gml:MultiSurface></gex:polygon>"
 
     gml_core = ""
 
     # Exterior polygons
-
     if "coordinates" in geojson_feature["geometry"]:
         exteriors = geojson_feature["geometry"]["coordinates"]
     else:
         exteriors = geojson_feature["geometry"]["geometries"][0]["coordinates"]
 
     for exterior in exteriors:
+        polygon_id = f"poly-{uuid_module.uuid4().hex[:8]}"
+        
         gml_core += "<gml:surfaceMember>" \
-                    "<gml:Polygon>" \
+                    f"<gml:Polygon gml:id='{polygon_id}'>" \
                     "<gml:exterior>" \
                     "<gml:LinearRing>" \
                     "<gml:posList>"
 
         for coordinates in exterior[0]:
             gml_core += f"{coordinates[0]} {coordinates[1]} "
-        gml_core = gml_core[:-1]  # remove the space once all coordinates are written
+        gml_core = gml_core[:-1]
 
         gml_core += "</gml:posList>" \
                     "</gml:LinearRing>" \
@@ -85,7 +143,7 @@ def geojson_to_geocatgml(geojson_feature: dict):
 
                 for coordinates in interior:
                     gml_core += f"{coordinates[0]} {coordinates[1]} "
-                gml_core = gml_core[:-1]  # remove the space once all coordinates are written
+                gml_core = gml_core[:-1]
 
                 gml_core += "</gml:posList>" \
                             "</gml:LinearRing>" \
@@ -145,6 +203,12 @@ class CheckMunicipalityBoundaries:
         headers = {"accept": "application/xml", "Content-Type": "application/xml"}
         df = pd.DataFrame(columns=["GMDNR", "GMDNAME"])
 
+        # Namespaces ISO 19115-3
+        ns = {
+            'gex': 'http://standards.iso.org/iso/19115/-3/gex/1.0',
+            'gco': 'http://standards.iso.org/iso/19115/-3/gco/1.0'
+        }
+
         count = 0
         for i in range(1, 10000):
 
@@ -152,14 +216,16 @@ class CheckMunicipalityBoundaries:
             response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/registries/entries/{uuid}",
                                             headers=headers)
 
-            xmlroot = ET.fromstring(response.content)
+            if response.status_code == 200:
+                xmlroot = ET.fromstring(response.content)
+                
+                # Nouveau chemin ISO 19115-3
+                gmd_name_elem = xmlroot.find('.//gex:description/gco:CharacterString', ns)
+                if gmd_name_elem is not None:
+                    gmd_name = gmd_name_elem.text
 
-            if xmlroot.tag != "apiError":
-                gmd_name = xmlroot.find("{http://www.isotc211.org/2005/gmd}description").find(
-                    "{http://www.isotc211.org/2005/gco}CharacterString").text
-
-                row = pd.Series({"GMDNR": i, "GMDNAME": gmd_name})
-                df = pd.concat([df, row.to_frame().T], ignore_index=True)
+                    row = pd.Series({"GMDNR": i, "GMDNAME": gmd_name})
+                    df = pd.concat([df, row.to_frame().T], ignore_index=True)
 
             count += 1
             print(f"Exporting all municipalities from geocat : {round((count / 10000) * 100, 1)}%", end="\r")
@@ -193,7 +259,7 @@ class CheckMunicipalityBoundaries:
         df_correct = pd.DataFrame(columns=["GMDNR", "GMDNAME"])
 
         # 1 - Testing new municipalities against geocat
-        for feature in geojson_ref_file[0]["features"]:
+        for feature in geojson_ref_file["features"]:
             gmdnr = feature["properties"][self.gmdnr]
             gmdname = feature["properties"][self.gmdname]
 
@@ -241,10 +307,11 @@ class CheckMunicipalityBoundaries:
                     df_new = pd.concat([df_new, new_row.to_frame().T], ignore_index=True)
 
         # 2 - Testing geocat against new municipalities
-        ref_gmdnrs = [feature["properties"][self.gmdnr] for feature in geojson_ref_file[0]["features"]]
-        ref_gmdnames = [feature["properties"][self.gmdname] for feature in geojson_ref_file[0]["features"]]
+        # 2 - Testing geocat against new municipalities
+        ref_gmdnrs = [feature["properties"][self.gmdnr] for feature in geojson_ref_file["features"]]  # ← CORRIGÉ
+        ref_gmdnames = [feature["properties"][self.gmdname] for feature in geojson_ref_file["features"]]  # ← CORRIGÉ
 
-        for index, row in df_geocat.iterrows():
+        for _, row in df_geocat.iterrows():
 
             # Case where municipalities in geocat doesn't exist at all (no id, no name) in the new ones
             if (row["GMDNR"] not in ref_gmdnrs) and (row["GMDNAME"] not in ref_gmdnames):
@@ -318,6 +385,11 @@ class CheckDistrictBoundaries:
         headers = {"accept": "application/xml", "Content-Type": "application/xml"}
         df = pd.DataFrame(columns=["BZNR", "BZNAME"])
 
+        ns = {
+            'gex': 'http://standards.iso.org/iso/19115/-3/gex/1.0',
+            'gco': 'http://standards.iso.org/iso/19115/-3/gco/1.0'
+        }
+
         count = 0
         for i in range(1, 3000):
 
@@ -325,14 +397,16 @@ class CheckDistrictBoundaries:
             response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/registries/entries/{uuid}",
                                             headers=headers)
 
-            xmlroot = ET.fromstring(response.content)
+            if response.status_code == 200:
+                xmlroot = ET.fromstring(response.content)
+                
+                # Nouveau chemin ISO 19115-3
+                bz_name_elem = xmlroot.find('.//gex:description/gco:CharacterString', ns)
+                if bz_name_elem is not None:
+                    bz_name = bz_name_elem.text
 
-            if xmlroot.tag != "apiError":
-                bz_name = xmlroot.find("{http://www.isotc211.org/2005/gmd}description").find(
-                    "{http://www.isotc211.org/2005/gco}CharacterString").text
-
-                row = pd.Series({"BZNR": i, "BZNAME": bz_name})
-                df = pd.concat([df, row.to_frame().T], ignore_index=True)
+                    row = pd.Series({"BZNR": i, "BZNAME": bz_name})
+                    df = pd.concat([df, row.to_frame().T], ignore_index=True)
 
             count += 1
             print(f"Exporting all districts from geocat : {round((count / 3000) * 100, 1)}%", end="\r")
@@ -366,7 +440,7 @@ class CheckDistrictBoundaries:
         df_correct = pd.DataFrame(columns=["BZNR", "BZNAME"])
 
         # 1 - Testing new districts against geocat
-        for feature in geojson_ref_file[0]["features"]:
+        for feature in geojson_ref_file["features"]:
             bznr = feature["properties"][self.bznr]
             bzname = feature["properties"][self.bzname]
 
@@ -415,10 +489,10 @@ class CheckDistrictBoundaries:
 
 
         # 2 - Testing geocat against new districts
-        ref_bznrs = [feature["properties"][self.bznr] for feature in geojson_ref_file[0]["features"]]
-        ref_bznames = [feature["properties"][self.bzname] for feature in geojson_ref_file[0]["features"]]
+        ref_bznrs = [feature["properties"][self.bznr] for feature in geojson_ref_file["features"]]  # ← CORRIGÉ
+        ref_bznames = [feature["properties"][self.bzname] for feature in geojson_ref_file["features"]]  # ← CORRIGÉ
 
-        for index, row in df_geocat.iterrows():
+        for _, row in df_geocat.iterrows():
 
             # Case where districts in geocat doesn't exist at all (no id, no name) in the new ones
             if (row["BZNR"] not in ref_bznrs) and (row["BZNAME"] not in ref_bznames):
@@ -492,6 +566,12 @@ class CheckCantonBoundaries:
         headers = {"accept": "application/xml", "Content-Type": "application/xml"}
         df = pd.DataFrame(columns=["KTNR", "KTNAME"])
 
+        # Namespaces ISO 19115-3
+        ns = {
+            'gex': 'http://standards.iso.org/iso/19115/-3/gex/1.0',
+            'gco': 'http://standards.iso.org/iso/19115/-3/gco/1.0'
+        }
+
         count = 0
         for i in range(1, 100):
 
@@ -499,14 +579,20 @@ class CheckCantonBoundaries:
             response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/registries/entries/{uuid}",
                                             headers=headers)
 
-            xmlroot = ET.fromstring(response.content)
-
-            if xmlroot.tag != "apiError":
-                kt_name = xmlroot.find("{http://www.isotc211.org/2005/gmd}description").find(
-                    "{http://www.isotc211.org/2005/gco}CharacterString").text
-
-                new_row = pd.Series({"KTNR": i, "KTNAME": kt_name})
-                df = pd.concat([df, new_row.to_frame().T], ignore_index=True)
+            if response.status_code == 200:
+                xmlroot = ET.fromstring(response.content)
+                
+                kt_name_elem = xmlroot.find('.//gex:description/gco:CharacterString', ns)
+                if kt_name_elem is not None:
+                    kt_name_full = kt_name_elem.text
+                    
+                    import re
+                    match = re.search(r'\(([A-Z]{2})\)', kt_name_full)
+                    if match:
+                        kt_code = match.group(1)
+                        
+                        new_row = pd.Series({"KTNR": i, "KTNAME": kt_code})
+                        df = pd.concat([df, new_row.to_frame().T], ignore_index=True)
 
             count += 1
             print(f"Exporting all cantons from geocat : {round((count / 100) * 100, 1)}%", end="\r")
@@ -540,7 +626,7 @@ class CheckCantonBoundaries:
         df_correct = pd.DataFrame(columns=["KTNR", "KTNAME"])
 
         # 1 - Testing new cantons against geocat
-        for feature in geojson_ref_file[0]["features"]:
+        for feature in geojson_ref_file["features"]:
             ktnr = feature["properties"][self.ktnr]
             ktname = feature["properties"][self.ktname]
 
@@ -588,10 +674,10 @@ class CheckCantonBoundaries:
                     df_new = pd.concat([df_new, new_row.to_frame().T], ignore_index=True)
 
         # 2 - Testing geocat against new cantons
-        ref_ktnrs = [feature["properties"][self.ktnr] for feature in geojson_ref_file[0]["features"]]
-        ref_ktnames = [feature["properties"][self.ktname] for feature in geojson_ref_file[0]["features"]]
+        ref_ktnrs = [feature["properties"][self.ktnr] for feature in geojson_ref_file["features"]]  # ← CORRIGÉ
+        ref_ktnames = [feature["properties"][self.ktname] for feature in geojson_ref_file["features"]]  # ← CORRIGÉ
 
-        for index, row in df_geocat.iterrows():
+        for _, row in df_geocat.iterrows():
 
             # Case where cantons in geocat doesn't exist at all (no id, no name) in the new ones
             if (row["KTNR"] not in ref_ktnrs) and (row["KTNAME"] not in ref_ktnames):
@@ -665,6 +751,12 @@ class CheckCountryBoundaries:
         headers = {"accept": "application/xml", "Content-Type": "application/xml"}
         df = pd.DataFrame(columns=["LANDNR", "LANDNAME"])
 
+        # Namespaces ISO 19115-3
+        ns = {
+            'gex': 'http://standards.iso.org/iso/19115/-3/gex/1.0',
+            'gco': 'http://standards.iso.org/iso/19115/-3/gco/1.0'
+        }
+
         count = 0
         for first in ascii_uppercase:
             for second in ascii_uppercase:
@@ -673,14 +765,16 @@ class CheckCountryBoundaries:
                 response = self.api.session.get(url=self.api.env + f"/geonetwork/srv/api/registries/entries/{uuid}",
                                                 headers=headers)
 
-                xmlroot = ET.fromstring(response.content)
+                if response.status_code == 200:
+                    xmlroot = ET.fromstring(response.content)
+                    
+                    # Nouveau chemin ISO 19115-3
+                    land_name_elem = xmlroot.find('.//gex:description/gco:CharacterString', ns)
+                    if land_name_elem is not None:
+                        land_name = land_name_elem.text
 
-                if xmlroot.tag != "apiError":
-                    land_name = xmlroot.find("{http://www.isotc211.org/2005/gmd}description").find(
-                        "{http://www.isotc211.org/2005/gco}CharacterString").text
-
-                    new_row = pd.Series({"LANDNR": first + second, "LANDNAME": land_name})
-                    df = pd.concat([df, new_row.to_frame().T], ignore_index=True)
+                        new_row = pd.Series({"LANDNR": first + second, "LANDNAME": land_name})
+                        df = pd.concat([df, new_row.to_frame().T], ignore_index=True)
 
                 count += 1
                 print(f"Exporting all countries from geocat : {round((count / (26*26)) * 100, 1)}%", end="\r")
@@ -714,7 +808,7 @@ class CheckCountryBoundaries:
         df_correct = pd.DataFrame(columns=["LANDNR", "LANDNAME"])
 
         # 1 - Testing new countries against geocat
-        for feature in geojson_ref_file[0]["features"]:
+        for feature in geojson_ref_file["features"]:
             landnr = feature["properties"][self.landnr]
             landname = feature["properties"][self.landname]
 
@@ -762,10 +856,10 @@ class CheckCountryBoundaries:
                     df_new = pd.concat([df_new, new_row.to_frame().T], ignore_index=True)
 
         # 2 - Testing geocat against new countries
-        ref_landnrs = [feature["properties"][self.landnr] for feature in geojson_ref_file[0]["features"]]
-        ref_landnames = [feature["properties"][self.landname] for feature in geojson_ref_file[0]["features"]]
+        ref_landnrs = [feature["properties"][self.landnr] for feature in geojson_ref_file["features"]]  # ← CORRIGÉ
+        ref_landnames = [feature["properties"][self.landname] for feature in geojson_ref_file["features"]]  # ← CORRIGÉ
 
-        for index, row in df_geocat.iterrows():
+        for _, row in df_geocat.iterrows():
 
             # Case where countries in geocat doesn't exist at all (no id, no name) in the new ones
             if (row["LANDNR"] not in ref_landnrs) and (row["LANDNAME"] not in ref_landnames):
@@ -845,20 +939,8 @@ class UpdateSubtemplatesExtent:
 
     def extent_to_geojson(self, uuids: list) -> list:
         """
-        Convert geocat extent subtemplates into geojson.
-
-        Takes several extent subtemplates and convert them into a single json string (geojson). The geojson is a
-        features collection with one feature per extent. The geojson structure corresponds to the geojson given as input
-        at the class level.
-
-        Args:
-            uuids : required, list of extent subtemplates uuid to convert into a single geojson
-
-        Returns:
-            A list in geojson format
+        Convert geocat extent subtemplates (ISO 19115-3) into geojson.
         """
-
-        # Initialize the geojson
         print("Convert extent subtemplates to geojson : ", end="\r")
 
         now = datetime.now().strftime("%Y%m%d%H%M%S")
@@ -866,35 +948,34 @@ class UpdateSubtemplatesExtent:
 
         headers = {"accept": "application/xml", "Content-Type": "application/xml"}
 
+        # Namespaces ISO 19115-3
+        ns = {
+            'gex': 'http://standards.iso.org/iso/19115/-3/gex/1.0',
+            'gml': 'http://www.opengis.net/gml/3.2',
+            'lan': 'http://standards.iso.org/iso/19115/-3/lan/1.0',
+            'gco': 'http://standards.iso.org/iso/19115/-3/gco/1.0'
+        }
+
         count = 0
         for uuid in uuids:
-
             response = self.api.session.get(
                 url=self.api.env + f"/geonetwork/srv/api/registries/entries/{uuid}?lang=fre,ger,ita,eng,roh",
                 headers=headers)
 
             if response.status_code == 200:
-
-                # Initialize a new feature with geometry type MultiPolygon inside the geojson (features collection)
                 geojson[0]["features"].append({"type": "Feature",
                                                "geometry": {"type": "MultiPolygon", "coordinates": []},
                                                "properties": {}})
 
                 xmlroot = ET.fromstring(response.content)
 
-                # Extract principal name and multilingual names and store them into the geojson
-                name = xmlroot.find('{http://www.isotc211.org/2005/gmd}description/{'
-                                    'http://www.isotc211.org/2005/gco}CharacterString').text
-                name_de = xmlroot.find('{http://www.isotc211.org/2005/gmd}description').find(
-                          './/{http://www.isotc211.org/2005/gmd}LocalisedCharacterString[@locale="#DE"]').text
-                name_fr = xmlroot.find('{http://www.isotc211.org/2005/gmd}description').find(
-                          './/{http://www.isotc211.org/2005/gmd}LocalisedCharacterString[@locale="#FR"]').text
-                name_it = xmlroot.find('{http://www.isotc211.org/2005/gmd}description').find(
-                          './/{http://www.isotc211.org/2005/gmd}LocalisedCharacterString[@locale="#IT"]').text
-                name_en = xmlroot.find('{http://www.isotc211.org/2005/gmd}description').find(
-                          './/{http://www.isotc211.org/2005/gmd}LocalisedCharacterString[@locale="#EN"]').text
-                name_rm = xmlroot.find('{http://www.isotc211.org/2005/gmd}description').find(
-                          './/{http://www.isotc211.org/2005/gmd}LocalisedCharacterString[@locale="#RM"]').text
+                # Extract names (ISO 19115-3 paths)
+                name = xmlroot.find('.//gex:description/gco:CharacterString', ns).text
+                name_de = xmlroot.find('.//lan:LocalisedCharacterString[@locale="#DE"]', ns).text
+                name_fr = xmlroot.find('.//lan:LocalisedCharacterString[@locale="#FR"]', ns).text
+                name_it = xmlroot.find('.//lan:LocalisedCharacterString[@locale="#IT"]', ns).text
+                name_en = xmlroot.find('.//lan:LocalisedCharacterString[@locale="#EN"]', ns).text
+                name_rm = xmlroot.find('.//lan:LocalisedCharacterString[@locale="#RM"]', ns).text
 
                 geojson[0]["features"][-1]["properties"][self.name] = name
                 geojson[0]["features"][-1]["properties"][f"{self.name}_DE"] = name_de
@@ -903,61 +984,38 @@ class UpdateSubtemplatesExtent:
                 geojson[0]["features"][-1]["properties"][f"{self.name}_EN"] = name_en
                 geojson[0]["features"][-1]["properties"][f"{self.name}_RM"] = name_rm
 
-                # Add the BFS number to the geojson. If type=landesgebiet, the number is not an integer
+                # Extract number
                 if self.type == "landesgebiet":
                     geojson[0]["features"][-1]["properties"][self.number] = uuid.split('-')[-1]
                 else:
                     geojson[0]["features"][-1]["properties"][self.number] = int(uuid.split('-')[-1])
 
-                # Extract geometry and store it into the geojson
-                for exterior in xmlroot.findall(".//{http://www.opengis.net/gml/3.2}surfaceMember"):
-
-                    # Initialize an exterior polygon
+                # Extract geometry
+                for exterior in xmlroot.findall(".//gml:surfaceMember", ns):
                     geojson[0]["features"][-1]["geometry"]["coordinates"].append([[]])
 
-                    exterior_poly = exterior.find(".//{http://www.opengis.net/gml/3.2}exterior").find(
-                        ".//{http://www.opengis.net/gml/3.2}posList")
-
+                    exterior_poly = exterior.find(".//gml:exterior//gml:posList", ns)
                     coordinates = exterior_poly.text.split(" ")
 
-                    # Coordinates order is normal (lng-lat)
-                    if "srsDimension" not in exterior_poly.attrib:
+                    # Coordinates order (lon-lat)
+                    for i in range(0, len(coordinates), 2):
+                        geojson[0]["features"][-1]["geometry"]["coordinates"][-1][-1].append(
+                            [float(coordinates[i]), float(coordinates[i + 1])])
+
+                    # Interior polygons
+                    for interior in exterior.findall(".//gml:interior", ns):
+                        geojson[0]["features"][-1]["geometry"]["coordinates"][-1].append([])
+                        interior_poly = interior.find(".//gml:posList", ns)
+                        coordinates = interior_poly.text.split(" ")
+
                         for i in range(0, len(coordinates), 2):
                             geojson[0]["features"][-1]["geometry"]["coordinates"][-1][-1].append(
                                 [float(coordinates[i]), float(coordinates[i + 1])])
 
-                    # Coordinates order is inverted (lat-lng)
-                    else:
-                        for i in range(0, len(coordinates), 2):
-                            geojson[0]["features"][-1]["geometry"]["coordinates"][-1][-1].append(
-                                [float(coordinates[i + 1]), float(coordinates[i])])
-
-                    # Go through all potential interior polygons (holes) of the exterior polygon
-                    for interior in exterior.findall(".//{http://www.opengis.net/gml/3.2}interior"):
-
-                        # Initialize an interior polygon
-                        geojson[0]["features"][-1]["geometry"]["coordinates"][-1].append([])
-
-                        interior_poly = interior.find(".//{http://www.opengis.net/gml/3.2}posList")
-
-                        coordinates = interior_poly.text.split(" ")
-
-                        # Coordinates order is normal (lng-lat)
-                        if "srsDimension" not in interior_poly.attrib:
-                            for i in range(0, len(coordinates), 2):
-                                geojson[0]["features"][-1]["geometry"]["coordinates"][-1][-1].append(
-                                    [float(coordinates[i]), float(coordinates[i + 1])])
-
-                        # Coordinates order is inverted (lat-lng)
-                        else:
-                            for i in range(0, len(coordinates), 2):
-                                geojson[0]["features"][-1]["geometry"]["coordinates"][-1][-1].append(
-                                    [float(coordinates[i + 1]), float(coordinates[i])])
-
             count += 1
             print(f"Convert extent subtemplates to geojson : {round((count / len(uuids)) * 100, 1)}%", end="\r")
+        
         print(f"Convert extent subtemplates to geojson : {geopycat.utils.okgreen('Done')}")
-
         return geojson
 
     def backup_subtemplates(self):
@@ -975,7 +1033,7 @@ class UpdateSubtemplatesExtent:
             os.mkdir(output_dir_backup)
 
         uuids = []
-        for feature in self.ref_geojson[0]["features"]:
+        for feature in self.ref_geojson["features"]:
             uuid = f"geocatch-subtpl-extent-{self.type}-{feature['properties'][self.number]}"
             uuids.append(uuid)
 
@@ -989,88 +1047,250 @@ class UpdateSubtemplatesExtent:
 
     def create_extent(self, uuid: str) -> object:
         """
-        Create a new extent subtemplate with the given uuid. It duplicates an existing
-        subtemplate : geocatch-subtpl-extent-{type}-1.
+        Create a new extent subtemplate with the given uuid by uploading a complete XML template.
 
         Args:
             uuid:
                 string, required, uuid for the subtemplate to be created.
 
         Returns:
-            response of the duplicate API request.
+            response of the PUT records API request (or dummy 404 if update_name=False).
         """
 
-        # Creates a new subtemplate only if the name should be updated.
-        # Otherwise, the name will be from the copied subtemplate
         if self.update_name:
-            headers = {"Content-Type": "application/json", "Accept": "application/json"}
-            parameters = {
-                "metadataType": "SUB_TEMPLATE",
-                "sourceUuid": f"geocatch-subtpl-extent-hoheitsgebiet-1",
-                "targetUuid": uuid,
-                "group": "1",
-                "allowEditGroupMembers": "false",
-                "hasCategoryOfSource": "false",
-                "isChildOfSource": "false",
-                "hasAttachmentsOfSource": "false"
+            # Load the reference XML template
+            template_path = os.path.join(os.path.dirname(__file__), "templates", "reference.xml")
+            
+            if not os.path.exists(template_path):
+                print(f"❌ Template file not found: {template_path}")
+                class ErrorResponse:
+                    def __init__(self):
+                        self.status_code = 500
+                        self.text = f"Template file not found: {template_path}"
+                return ErrorResponse()
+            
+            # Read the template
+            with open(template_path, 'r', encoding='utf-8') as f:
+                xml_content = f.read()
+            
+            # Parse and modify the UUID
+            root = ET.fromstring(xml_content)
+            root.set('uuid', uuid)
+            
+            # Convert back to string
+            xml_with_uuid = ET.tostring(root, encoding='unicode')
+            
+            # Upload with the new UUID
+            headers = {
+                "Content-Type": "application/xml",
+                "Accept": "application/json"
             }
-
-            response = self.api.session.put(url=self.api.env + "/geonetwork/srv/api/records/duplicate",
-                                            headers=headers, params=parameters)
+            
+            params = {
+                "metadataType": "SUB_TEMPLATE",
+                "uuidProcessing": "OVERWRITE",  # Force l'UUID du XML
+                "transformWith": "_none_",
+                "group": "6"
+            }
+            
+            response = self.api.session.put(
+                url=self.api.env + "/geonetwork/srv/api/records",
+                headers=headers,
+                params=params,
+                data=xml_with_uuid.encode('utf-8')
+            )
+            
+            if response.status_code == 201:
+                print(f"✅ Subtemplate created with UUID {uuid}")
+            else:
+                print(f"❌ Failed to create subtemplate: {response.status_code}")
+                if hasattr(response, 'text'):
+                    print(f"Error details: {response.text[:500]}")
+            
             return response
 
         else:
-            # Create a dummy class to return an object with the variable "status_code" = 404. Hence, when the option
-            # update_name is set to false, no new subtemplate is created and the response returned has an unvalid code.
+            # Create a dummy class to return an object with the variable "status_code" = 404
             class Response:
                 def __init__(self):
                     self.status_code = 404
 
             response = Response()
-            return response
+            return response  
 
     def update_extent(self, uuid: str, name: str, gml: str) -> object:
         """
-        Update the name and geometry of the given extent subtemplate.
+        Update the name and geometry of the given extent subtemplate (ISO 19115-3).
+        
+        For cantons, if 'name' is a 2-letter code (e.g., "VD") and exists in CANTON_NAMES,
+        the full multilingual names will be used automatically.
 
         Args:
-            uuid:
-                string, required, the extent subtemplate uuid
-            name:
-                string, required, the new name
-            gml:
-                string, required, the new geometry (GML)
+            uuid: string, required, the extent subtemplate uuid
+            name: string, required, the new name (for cantons: 2-letter code like "VD")
+            gml: string, required, the new geometry (GML with gex: namespace)
 
         Returns:
-            response of the batch editing API request.
+            response of the PUT records API request.
         """
-        body = [
-            # Delete surfaceMember section
-            {
-                "xpath": "/gmd:EX_Extent/gmd:geographicElement/gmd:EX_BoundingPolygon/gmd:polygon",
-                "value": '<gn_delete></gn_delete>',
-            },
-            # add new surfaceMember section
-            {
-                "xpath": "/gmd:EX_Extent/gmd:geographicElement/gmd:EX_BoundingPolygon",
-                "value": f"<gn_add>{gml}</gn_add>",
-            },
-        ]
-
-        # If update name is choosen
+        
+        # Load the reference XML template
+        template_path = os.path.join(os.path.dirname(__file__), "templates", "reference.xml")
+        
+        if not os.path.exists(template_path):
+            print(f"❌ Template file not found: {template_path}")
+            class ErrorResponse:
+                def __init__(self):
+                    self.status_code = 500
+                    self.text = f"Template file not found: {template_path}"
+            return ErrorResponse()
+        
+        # Read and parse the template
+        with open(template_path, 'r', encoding='utf-8') as f:
+            xml_content = f.read()
+        
+        # Namespaces
+        namespaces = {
+            'gex': 'http://standards.iso.org/iso/19115/-3/gex/1.0',
+            'gml': 'http://www.opengis.net/gml/3.2',
+            'lan': 'http://standards.iso.org/iso/19115/-3/lan/1.0',
+            'gco': 'http://standards.iso.org/iso/19115/-3/gco/1.0',
+            'xsi': 'http://www.w3.org/2001/XMLSchema-instance'
+        }
+        
+        # Register namespaces to preserve prefixes
+        for prefix, uri in namespaces.items():
+            ET.register_namespace(prefix, uri)
+        
+        root = ET.fromstring(xml_content)
+        
+        # 1. Update UUID
+        root.set('uuid', uuid)
+        
+        # 2. Update name (if requested)
         if self.update_name:
-            body.insert(0, {
-                    "xpath": "/gmd:EX_Extent/gmd:description/gmd:PT_FreeText/gmd:textGroup/gmd:LocalisedCharacterString",
-                    "value": f'<gn_replace>{name}</gn_replace>',
-                })
-            body.insert(0, {
-                    "xpath": "/gmd:EX_Extent/gmd:description/gco:CharacterString",
-                    "value": f'<gn_replace>{name}</gn_replace>',
-                })
-
-        response = self.api.edit_metadata(uuid=uuid, body=body, updateDateStamp="true")
-
+            # Check if this is a canton (2-letter code in CANTON_NAMES)
+            is_canton = (len(name) == 2 and name.upper() in CANTON_NAMES)
+            
+            if is_canton:
+                # Use multilingual canton names
+                canton_names = CANTON_NAMES[name.upper()]
+                
+                # Update CharacterString (German by default)
+                char_string = root.find('.//gco:CharacterString', namespaces)
+                if char_string is not None:
+                    char_string.text = canton_names["DE"]
+                
+                # Update LocalisedCharacterString for each language
+                for locale_elem in root.findall('.//lan:LocalisedCharacterString', namespaces):
+                    locale = locale_elem.get('locale')
+                    if locale == "#DE":
+                        locale_elem.text = canton_names["DE"]
+                    elif locale == "#FR":
+                        locale_elem.text = canton_names["FR"]
+                    elif locale == "#IT":
+                        locale_elem.text = canton_names["IT"]
+                    elif locale == "#EN":
+                        locale_elem.text = canton_names["EN"]
+                    elif locale == "#RM":
+                        locale_elem.text = canton_names["RM"]
+            else:
+                # Use single name for municipalities, districts, countries
+                # Update CharacterString
+                char_string = root.find('.//gco:CharacterString', namespaces)
+                if char_string is not None:
+                    char_string.text = name
+                
+                # Update all LocalisedCharacterString
+                for locale_elem in root.findall('.//lan:LocalisedCharacterString', namespaces):
+                    locale_elem.text = name
+        
+        # 3. Update geometry - parse the GML string and replace the polygon element
+        # Remove the old polygon
+        old_polygon = root.find('.//gex:polygon', namespaces)
+        if old_polygon is not None:
+            parent = root.find('.//gex:EX_BoundingPolygon', namespaces)
+            parent.remove(old_polygon)
+            
+            # Parse the new GML and add it
+            gml_element = ET.fromstring(gml)
+            parent.append(gml_element)
+        
+        # 4. Calculate and update bounding box from the geometry
+        bbox = self._calculate_bbox_from_gml(gml, namespaces)
+        
+        west = root.find('.//gex:westBoundLongitude/gco:Decimal', namespaces)
+        if west is not None:
+            west.text = f"{bbox['west']:.6f}"
+        
+        east = root.find('.//gex:eastBoundLongitude/gco:Decimal', namespaces)
+        if east is not None:
+            east.text = f"{bbox['east']:.6f}"
+        
+        south = root.find('.//gex:southBoundLatitude/gco:Decimal', namespaces)
+        if south is not None:
+            south.text = f"{bbox['south']:.6f}"
+        
+        north = root.find('.//gex:northBoundLatitude/gco:Decimal', namespaces)
+        if north is not None:
+            north.text = f"{bbox['north']:.6f}"
+        
+        # Convert back to string with XML declaration
+        xml_updated = '<?xml version="1.0" encoding="UTF-8"?>\n'
+        xml_updated += ET.tostring(root, encoding='unicode')
+        
+        # Upload the updated XML
+        headers = {
+            "Content-Type": "application/xml",
+            "Accept": "application/json"
+        }
+        
+        params = {
+            "metadataType": "SUB_TEMPLATE",
+            "uuidProcessing": "OVERWRITE",
+            "transformWith": "_none_"
+        }
+        
+        response = self.api.session.put(
+            url=self.api.env + "/geonetwork/srv/api/records",
+            headers=headers,
+            params=params,
+            data=xml_updated.encode('utf-8')
+        )
+        
         return response
+    
+    def _calculate_bbox_from_gml(self, gml: str, namespaces: dict) -> dict:
+        """
+        Calculate bounding box from GML polygon.
+        
+        Args:
+            gml: GML string
+            namespaces: dict of namespaces
+            
+        Returns:
+            dict with west, east, south, north
+        """
+        gml_element = ET.fromstring(gml)
+        
+        # Extract all coordinates from posList
+        all_coords = []
+        for poslist in gml_element.findall('.//gml:posList', namespaces):
+            coords = poslist.text.strip().split()
+            # Convert to pairs of floats (lon, lat)
+            for i in range(0, len(coords), 2):
+                all_coords.append((float(coords[i]), float(coords[i+1])))
+        
+        # Calculate bbox
+        lons = [coord[0] for coord in all_coords]
+        lats = [coord[1] for coord in all_coords]
+        
+        return {
+            "west": min(lons),
+            "east": max(lons),
+            "south": min(lats),
+            "north": max(lats)
+        }
 
     def validate_extent(self, uuid: str) -> object:
         """
@@ -1109,7 +1329,7 @@ class UpdateSubtemplatesExtent:
             "clear": True,
             "privileges": [
                 {
-                    "group": 1,
+                    "group": 6,
                     "operations": {
                         "view": True,
                         "download": False,
@@ -1142,7 +1362,7 @@ class UpdateSubtemplatesExtent:
         headers = {"Content-Type": "application/json", "Accept": "application/json"}
 
         parameters = {
-            "groupIdentifier": 1,
+            "groupIdentifier": 6,
             "userIdentifier": 1,
         }
 
@@ -1161,7 +1381,7 @@ class UpdateSubtemplatesExtent:
 
         # Get the feature in the geojson reference matching the given subtemplate uuid
         uuid_exist = False
-        for feature in self.ref_geojson[0]["features"]:
+        for feature in self.ref_geojson["features"]:
             if feature["properties"][self.number] == int(uuid.split("-")[-1]):
                 uuid_exist = True
                 break
@@ -1229,7 +1449,7 @@ class UpdateSubtemplatesExtent:
         Args:
             with_backup: optional, default = True, if set to False no backup is done before the update
         """
-        print(f"Update all subtemapltes - Number of subtemplates : {len(self.ref_geojson[0]['features'])}")
+        print(f"Update all subtemplates - Number of subtemplates : {len(self.ref_geojson['features'])}")  # ← CORRIGÉ
 
         if with_backup:
             self.backup_subtemplates()
@@ -1249,8 +1469,8 @@ class UpdateSubtemplatesExtent:
         subtemplate_update_failed = 0
 
         count = 0
-        total = len(self.ref_geojson[0]["features"])
-        for feature in self.ref_geojson[0]["features"]:
+        total = len(self.ref_geojson["features"])
+        for feature in self.ref_geojson["features"]:
 
             new_subtemplate = False
 
@@ -1270,6 +1490,7 @@ class UpdateSubtemplatesExtent:
                 if response.status_code == 201:
                     logger.info(f"{count}/{total} - {uuid} - creation successful")
                     new_subtemplate = True
+                    subtemplate_created += 1  # ← DÉPLACÉ ICI (incrémente immédiatement)
                 else:
                     logger.error(f"{count}/{total} - {uuid} - creation unsuccessful")
                     subtemplate_creation_failed += 1
@@ -1285,7 +1506,7 @@ class UpdateSubtemplatesExtent:
                 logger.info(f"{count}/{total} - {uuid} - update successful")
             else:
                 logger.error(f"{count}/{total} - {uuid} - update unsuccessful")
-                subtemplate_update_failed += 1  # If update failed, stop the process and pass to next subtemplate !
+                subtemplate_update_failed += 1
                 continue
 
             # Validate extent
@@ -1294,7 +1515,7 @@ class UpdateSubtemplatesExtent:
                 logger.info(f"{count}/{total} - {uuid} - validation successful")
             else:
                 logger.error(f"{count}/{total} - {uuid} - validation unsuccessful")
-                subtemplate_update_failed += 1  # If validation failed, stop the process and pass to next subtemplate !
+                subtemplate_update_failed += 1
                 continue
 
             # Set permission, good response= 204, no message
@@ -1303,20 +1524,18 @@ class UpdateSubtemplatesExtent:
                 logger.info(f"{count}/{total} - {uuid} - set permission successful")
             else:
                 logger.error(f"{count}/{total} - {uuid} - set permission unsuccessful")
-                subtemplate_update_failed += 1  # If permission failed, stop the process and pass to next subtemplate !
+                subtemplate_update_failed += 1
                 continue
 
             # Set ownership
             response = self.set_extent_owner(uuid=uuid)
             if geopycat.utils.process_ok(response=response):
                 logger.info(f"{count}/{total} - {uuid} - set ownership successful")
-                if new_subtemplate:
-                    subtemplate_created += 1
-                else:
+                if not new_subtemplate:  # ← CORRIGÉ : incrémente seulement si c'était un update
                     subtemplate_updated += 1
             else:
                 logger.error(f"{count}/{total} - {uuid} - set ownership unsuccessful")
-                subtemplate_update_failed += 1  # If ownership failed, stop the process and pass to next subtemplate !
+                subtemplate_update_failed += 1
                 continue
 
         print(f"Update all subtemplates : {geopycat.utils.okgreen('Done')}")
