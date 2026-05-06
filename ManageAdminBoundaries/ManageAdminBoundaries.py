@@ -111,39 +111,75 @@ def geojson_to_geocatgml(geojson_feature: dict):
 
     gml_core = ""
 
-    # Exterior polygons
-    if "coordinates" in geojson_feature["geometry"]:
-        exteriors = geojson_feature["geometry"]["coordinates"]
-    else:
-        exteriors = geojson_feature["geometry"]["geometries"][0]["coordinates"]
+    # Normalize geometry to a list of polygons (each polygon is a list of rings)
+    geom = geojson_feature.get("geometry", {})
+    coords = geom.get("coordinates")
+    polygons = []
 
-    for exterior in exteriors:
+    if coords is None and "geometries" in geom:
+        # GeometryCollection
+        for g in geom.get("geometries", []):
+            t = g.get("type")
+            c = g.get("coordinates")
+            if t == "Polygon" and c:
+                polygons.append(c)
+            elif t == "MultiPolygon" and c:
+                polygons.extend(c)
+    else:
+        gtype = geom.get("type", "")
+        if gtype == "Polygon":
+            polygons = [coords]
+        elif gtype == "MultiPolygon":
+            polygons = coords
+        else:
+            # Fallback: try to detect structure. If coords is a list of numbers -> invalid.
+            if isinstance(coords, list) and coords:
+                # If first element is a number, treat as single ring
+                first = coords[0]
+                if isinstance(first, (int, float)):
+                    # single coordinate pair? not expected — skip
+                    polygons = []
+                else:
+                    # If first element is a coordinate pair (lon,lat), wrap into polygon
+                    if isinstance(first, list) and isinstance(first[0], (int, float)):
+                        polygons = [[coords]]
+                    else:
+                        # assume it's a list of rings (Polygon)
+                        polygons = [coords]
+
+    for polygon in polygons:
+        if not polygon or not isinstance(polygon, list):
+            continue
+
         polygon_id = f"poly-{uuid_module.uuid4().hex[:8]}"
-        
+
         gml_core += "<gml:surfaceMember>" \
                     f"<gml:Polygon gml:id='{polygon_id}'>" \
                     "<gml:exterior>" \
                     "<gml:LinearRing>" \
                     "<gml:posList>"
 
-        for coordinates in exterior[0]:
+        # exterior ring
+        exterior_ring = polygon[0]
+        for coordinates in exterior_ring:
+            # coordinates expected as [lon, lat]
             gml_core += f"{coordinates[0]} {coordinates[1]} "
-        gml_core = gml_core[:-1]
+        gml_core = gml_core.rstrip()
 
         gml_core += "</gml:posList>" \
                     "</gml:LinearRing>" \
                     "</gml:exterior>"
 
-        # Interior polygons, if exist
-        if len(exterior) > 1:
-            for interior in exterior[1:]:
+        # interior rings, if any
+        if len(polygon) > 1:
+            for interior in polygon[1:]:
                 gml_core += "<gml:interior>" \
                             "<gml:LinearRing>" \
                             "<gml:posList>"
 
                 for coordinates in interior:
                     gml_core += f"{coordinates[0]} {coordinates[1]} "
-                gml_core = gml_core[:-1]
+                gml_core = gml_core.rstrip()
 
                 gml_core += "</gml:posList>" \
                             "</gml:LinearRing>" \
@@ -206,7 +242,8 @@ class CheckMunicipalityBoundaries:
         # Namespaces ISO 19115-3
         ns = {
             'gex': 'http://standards.iso.org/iso/19115/-3/gex/1.0',
-            'gco': 'http://standards.iso.org/iso/19115/-3/gco/1.0'
+            'gco': 'http://standards.iso.org/iso/19115/-3/gco/1.0',
+            'lan': 'http://standards.iso.org/iso/19115/-3/lan/1.0'
         }
 
         count = 0
@@ -569,7 +606,8 @@ class CheckCantonBoundaries:
         # Namespaces ISO 19115-3
         ns = {
             'gex': 'http://standards.iso.org/iso/19115/-3/gex/1.0',
-            'gco': 'http://standards.iso.org/iso/19115/-3/gco/1.0'
+            'gco': 'http://standards.iso.org/iso/19115/-3/gco/1.0',
+            'lan': 'http://standards.iso.org/iso/19115/-3/lan/1.0'
         }
 
         count = 0
@@ -582,17 +620,49 @@ class CheckCantonBoundaries:
             if response.status_code == 200:
                 xmlroot = ET.fromstring(response.content)
                 
+                # Try primary gco:CharacterString first, then fall back to localized strings
+                import re, unicodedata
+                kt_code = None
+                name_candidate = None
+
                 kt_name_elem = xmlroot.find('.//gex:description/gco:CharacterString', ns)
-                if kt_name_elem is not None:
-                    kt_name_full = kt_name_elem.text
-                    
-                    import re
-                    match = re.search(r'\(([A-Z]{2})\)', kt_name_full)
+                if kt_name_elem is not None and kt_name_elem.text:
+                    name_candidate = kt_name_elem.text
+                    match = re.search(r'\(([A-Z]{2})\)', kt_name_elem.text)
                     if match:
                         kt_code = match.group(1)
-                        
-                        new_row = pd.Series({"KTNR": i, "KTNAME": kt_code})
-                        df = pd.concat([df, new_row.to_frame().T], ignore_index=True)
+
+                # If not found, search localized strings (e.g. 'Canton of Jura (JU)')
+                if kt_code is None:
+                    for loc in xmlroot.findall('.//lan:LocalisedCharacterString', ns):
+                        if loc is None or loc.text is None:
+                            continue
+                        if name_candidate is None:
+                            name_candidate = loc.text
+                        match = re.search(r'\(([A-Z]{2})\)', loc.text)
+                        if match:
+                            kt_code = match.group(1)
+                            break
+
+                # If still not found, try to match the short name against CANTON_NAMES
+                if kt_code is None and name_candidate:
+                    def _norm(s: str) -> str:
+                        return ''.join(ch for ch in unicodedata.normalize('NFD', s) if not unicodedata.combining(ch)).casefold()
+
+                    norm_cand = _norm(name_candidate)
+                    for code, names in CANTON_NAMES.items():
+                        for lang_val in names.values():
+                            if lang_val is None:
+                                continue
+                            if norm_cand in _norm(lang_val) or _norm(lang_val) in norm_cand:
+                                kt_code = code
+                                break
+                        if kt_code:
+                            break
+
+                if kt_code:
+                    new_row = pd.Series({"KTNR": i, "KTNAME": kt_code})
+                    df = pd.concat([df, new_row.to_frame().T], ignore_index=True)
 
             count += 1
             print(f"Exporting all cantons from geocat : {round((count / 100) * 100, 1)}%", end="\r")

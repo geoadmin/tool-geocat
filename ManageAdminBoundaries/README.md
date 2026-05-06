@@ -37,6 +37,9 @@ cd tool-geocat/ManageAdminBoundaries
 
 ### Data preparation - geojson reference file
 The tool uses a geojson reference file to compare it with the data in geocat and to update or create admin boundaries as extent subtemplates.
+
+The geojson files can be downloaded from the [BFS boundaries portal](https://www.agvchapp.bfs.admin.ch/de/boundaries). On this page, you can select the **date** and the **type of boundaries** (municipality, district or canton).
+
 The geojson file must be as follows :
 * One feature per admin unit. If the admin unit has several polygons, the feature type must be Multipolygon
 * The SRS must be in WGS84 (EPSG:4326)
